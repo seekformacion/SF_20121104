@@ -1,6 +1,7 @@
 <?php
 
 require_once $v[path][fw] . '/func/templates/templates.php';
+require_once $v[path][fw] . '/func/templates/paths.php';
 
 $v[debug]=1;
 

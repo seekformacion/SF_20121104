@@ -2,7 +2,7 @@
 
 
 
-$valores[valor1]="11111";
-$valores[valor2]="22222";
+$Datos[valor1]="11111";
+$Datos[valor2]="22222";
 
 ?>
