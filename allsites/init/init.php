@@ -1,15 +1,16 @@
 <?php
 
-require_once $v[path][fw] . '/func/templates/templates.php';
-require_once $v[path][fw] . '/func/templates/paths.php';
+require_once $v[path][fw] . '/core/templates/paths.php';
+includeCORE('templates/templates');
 
-$v[debug]=1;
+
+
 
 $v[where][view]="categorias";
 $v[where][id]=122;
 
 
-echo loadChild('objt','footer');
+echo loadChild('objt','pagina');
 
 
 
