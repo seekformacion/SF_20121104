@@ -1,0 +1,292 @@
+
+
+
+
+.gris1 {color:#EBEBEB;}
+.gris1_BG {background-color:#EBEBEB;}
+
+
+.gris2 {color:#888888;}
+.gris2_BG {background-color:#888888;}
+
+.color {color:#1BB105;}
+.color_BG {background-color:#1BB105;}
+
+.color1 {color:#008F2F;}
+.color1_BG {background-color:#008F2F;}
+
+.color2 {color:#F4F7F4;}
+.color2_BG {background-color: #F4F7F4;}
+
+
+
+
+
+
+
+body {
+    
+    font-family: Arial;
+    font-size: 13px;
+    margin:0px;
+}
+
+
+.page {
+    background: none repeat scroll 0 0;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;}
+
+
+
+
+
+
+
+
+.clean{clear:both;}
+
+
+h2 strong {color:#008F2F;}
+
+
+.Tit_cat h1 {
+	font-family: "brandon_grotesque_boldregular",sans-serif;
+	font-size:25px;
+	color:#ffffff;
+	margin:0px;
+	 line-height: 1.2;
+	 letter-spacing: -1px;
+	 text-shadow: black 0.1em 0.1em 0.2em;
+	 filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,strength=2,color=000000);
+}
+
+h2 {
+	font-family: "brandon_grotesque_boldregular",sans-serif;
+	font-size:18px;
+	color:#333333;
+	margin:0px;
+	 line-height: 1.1;
+	 letter-spacing: -1px;
+}
+
+h2 a{
+	text-decoration: none;
+	color:#333333;
+}
+
+
+
+
+h3 {
+	font-family: Arial;
+	font-size:20px;
+	margin:0px;
+	line-height: 1.1;
+	
+}
+
+
+
+
+p {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.Tit_cat{
+	z-index: 999;
+   	height: 77px;
+    left: 46px;
+    padding: 0;
+    position: relative;
+    top: 88px;
+    width: 620px;
+    
+  }
+
+
+.M {text-transform: uppercase;}
+
+.Cont_bloque_negro {height:209px;}
+
+
+
+
+
+
+.left-col{
+	position: relative;
+	float:left;
+	margin-left:15px; margin-top: -60px; 
+	width:886px; 
+	
+}
+
+
+
+.shadow {
+    -moz-box-shadow: 3px 4px 8px #999;
+    -webkit-box-shadow: 3px 4px 8px #999;
+    box-shadow: 3px 4px 8px #999;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#999999')";
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#999999');
+}
+
+.shadow2 {
+    -moz-box-shadow: 3px 4px 8px #777;
+    -webkit-box-shadow: 3px 4px 8px #777;
+    box-shadow: 3px 4px 8px #777;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#777777')";
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#777777');
+}
+
+.bloque{
+border:1px solid #ffffff;	background-color:#ffffff;
+margin-bottom:20px;
+}
+
+
+
+
+
+
+
+.logo  {position:relative; top:-77px; left:20px;  float: left;}
+
+
+.masCATS {position:relative; float:left; padding: 0 0 10px 0;}
+.titmasCATS {font-size:16px; font-family:'brandon_grotesque_blackRg'; margin: 10px 0 0 10px;}
+.cadaCAT	{height:40px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd; position: relative; float:left; cursor:pointer;}
+.cadaCAT img {height: 40px; width:60px; position:relative; float:right; background-color: #F4F7F4;}
+.fTC {width:20px; height: 40px; background-color: #F4F7F4; position:relative; float:left;}
+.titCAT{font-family:Arial; position: relative; float: left; margin: 2px 0 0 -11px;}
+
+
+.PROVGeoImg p 	{float:right;	font-size:23px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+.titGeoImg p 	{				font-size:13px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+
+
+
+
+.listCursos	{width:886px;padding-top:10px;}
+.fichaCurso	{width:886px; height:140px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;margin: 15px 0 5px 0;}
+.fichaCurso .left {position:relative;padding:15px 10px 10px 27px;float:left;width:560px; cursor:pointer;}
+.fichaCurso .detalles {position:relative;float:left;width:217px;height:122px;margin-top:1px;padding:16px 0 0 18px;}
+.fichaCurso p {font-size:12px; color:#444444;}
+.logoF {position:relative; float:left; border:1px solid #dddddd; cursor: pointer;}
+.tipoF {position:relative; float:left; margin-left:15px;}
+.tipoF p {font-family:"brandon_grotesque_regularRg"; font-size:13px; line-height: 1.3; letter-spacing: -1px;margin:0px;}
+.valoracion {width:76px;height:15px; background-position: -4px -45px;}
+.masinfo {margin-top:10px;width:200px;height:50px; background-position: -4px -60px; cursor: pointer;}
+
+.addList {width: 53px; height: 43px; position:relative; float:left; background-color:#eeeeee;margin:80px 0 0 1px;border-bottom: 1px solid #DDDDDD;  border-top: 1px solid #DDDDDD;cursor: pointer;}
+.IaddList {width:26px; height: 22px; background-position: -140px -40px; margin: 11px 0 0 13px;}
+.IadlOFF {background-position: -140px -40px;}
+.IadlON {background-position: -113px -40px;}
+
+.contenido {position:relative; }
+
+
+
+
+
+
+
+
+
+
+
+
+/* BARRA MENU */
+
+.menuPAG {margin-left:-9px;position:relative;float:left;width:915px;}
+  
+.ipagin { height: 40px;    position: relative;    width: 39px; margin-top:5px; position:relative; }
+.ipP {background-position: 0 0; float:left;}
+.ipN {background-position: -40px 0; float:right;}
+
+.iFAV { background-position: -303px 0;
+    float: right;
+    height: 45px;
+    margin-right: 412px;
+    margin-top: 2px;
+    position: relative;
+    width: 47px;
+    cursor:pointer;}
+
+
+
+.paginacion {font-family:Arial; color:#ffffff; font-size:14px; margin-top:16px; margin-left:8px; position:relative; float:left;}
+
+.menuSOC {position:relative;float:left;width:168px;}
+.iFB {height: 40px;    position: relative;    width: 40px; margin-top:5px; float:left; background-position: -105px 0;}
+.iTW {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -184px 0;}
+.iGM {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -223px -42px;}
+.iML {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -143px 0;}
+
+
+
+.gris_fondo {  background-color: #333333;
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+     -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=40)';filter: alpha(opacity=40);
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9998;}
+
+
+.gris_up {
+	height: 600px;
+	width: 800px;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -300px;
+    position: fixed;
+    top: 50%;
+    visibility: hidden;
+    width: 591px;
+    z-index: 9999;
+	
+}
+
+.portapapeles{
+	height: 600px;
+	width: 800px;
+}
+
+
+
+.descTXT {padding:15px;}
+.descTXT h1 { font-family: 'brandon_grotesque_boldregular';    font-size: 14px;	color:#000000;	line-height: 1.1;	 letter-spacing: -1px; text-transform: uppercase;}
+.descTXT p  { font-family: 'Arial';    font-size: 13px;	color:#333333;	line-height: 1.1;}
+
+
+.masCATS {width:886px; margin-left:15px}
+.cadaCAT	{width:280px; margin: 10px 7px 0;}
+.titCAT{width:210px;}
+
+
+
+
+.grd05 {opacity: 0.6;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=60)';filter: alpha(opacity=60);}
+.grd07 {opacity: 0.7;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)';filter: alpha(opacity=70);}
+.grd08 {opacity: 0.8;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';filter: alpha(opacity=80);}
+
+.mapa {background-image:url('images/mapaSpain.png');  border: 1px solid;  height: 238px;   left: 20px;   position: absolute;  top: 20px;    width: 309px;}
+.iprov {background-image:url('images/iproSpain.png');}
+
+.p280 {  background-position: 	0px 0px;	width: 33px; height: 37px;	left: 107px;top: 84px;	 background-repeat: no-repeat;position: absolute;}
+.p400 {  background-position: -36px 0px;	width: 44px; height: 37px;	left: 131px;top: 79px;	 background-repeat: no-repeat;position: absolute;}
+.p080 {  background-position: -81px 0px;	width: 31px; height: 33px;	left: 239px;top: 50px;	 background-repeat: no-repeat;position: absolute;}
+.p170 {  background-position: -113px 0px;	width: 35px; height: 25px;	left: 245px;top: 45px;	 background-repeat: no-repeat;position: absolute;}
+
+
