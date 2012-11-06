@@ -1,8 +1,8 @@
 <?php
-
 require_once $v[path][fw] . '/core/templates/paths.php';
-includeCORE('templates/templates');
 
+includeINIT('config');
+includeCORE('templates/templates');
 
 
 
