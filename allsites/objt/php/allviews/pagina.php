@@ -11,7 +11,4 @@ $Datos[metas]=loadChild('objt','metas');
 
 
 
-
-
-includeCORE('debug/top_page');
 ?>
