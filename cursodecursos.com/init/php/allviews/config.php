@@ -1,6 +1,6 @@
 <?php
 
-$v[debug]=0;
+$v[debug]=1;
 
 $v[conf][state]=1; # 1=test 2=produccion
 $v[conf][mode]=1; # 1=local 2=cloud
