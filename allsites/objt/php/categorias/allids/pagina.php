@@ -1,14 +1,18 @@
 <?php 
 
 
+$Datos['header']=loadChild('objt','header');
+$Datos['sliders']=loadChild('objt','sliders');
 
-$Datos[sliders]=loadChild('objt','sliders');
-$Datos[footer]=loadChild('objt','footer');
-
-$Datos[descTXTcat]=loadChild('objt','descTXTcat');
+$Datos['listCursos']=loadChild('objt','listCursos');
 
 
-$Datos[metas]=loadChild('objt','metas');
+$Datos['footer']=loadChild('objt','footer');
+
+$Datos['descTXTcat']=loadChild('objt','descTXTcat');
+
+
+$Datos['metas']=loadChild('objt','metas');
 
 
 

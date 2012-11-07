@@ -1,25 +1,12 @@
 .page {width: 920px;}
 
-.margen_sup	{ height:22px;width: 920px;}
 
-.bloque_negro{
-	background-color:#000000;
-	height:209px;
-	margin-bottom: -209px;
-	width: 920px;
-}
 
 
 .menu_NAV {  height: 50px; z-index: 9000; width: 920px;}
 .menu_NAV_fijo { position: fixed; bottom: 0px; width: 920px;}
 
 
-
-
-.imgCat	{position: relative; float:left;}
-.imgCat {width:540px; height:150px;}
-.icat {margin-left: 380px; margin-top: -135px;}
-.imas {margin-left: 380px; margin-top: -150px;}
 
 
 

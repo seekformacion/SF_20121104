@@ -15,11 +15,11 @@ createCSS();
 #}}
 ##########################################################
 
-$Datos[links_css]=$v[linksCSS];
+$Datos['links_css']=$v['linksCSS'];
 
 createJS();
 
-$Datos[links_js]=$v[linksjS];
+$Datos['links_js']=$v['linksjS'];
 
 ##########################################################
 
