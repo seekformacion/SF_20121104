@@ -1,0 +1,11 @@
+.online{ width:309px; height:109px;}
+.OnlineImage{ height:99px;width: 299px; cursor:pointer; position: relative; float: left; }
+.OnlineImage img {width:309; height: 109px;}
+
+.titOnlineImg { 	float: left;	position: relative;    	width: 299px;  margin: -95px 0 0 5px;}
+.TIPOnlineImg { 	float:right;	position: relative; 	width: 299px; margin:-17px 5px 0 0;  height: 24px; }
+
+.TIPOnlineImg p {float:right;	font-size:23px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+.titOnlineImg p {				font-size:13px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+.flechaOnline {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
+

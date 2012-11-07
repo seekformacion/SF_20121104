@@ -4,9 +4,6 @@
 
 
 
-.menu_NAV {  height: 50px; z-index: 9000; width: 1255px;}
-.menu_NAV_fijo { position: fixed; bottom: 0px; width: 1255px; zoom: 0 ; }
-
 
 
 
@@ -22,55 +19,6 @@
 
 
 
-.geo{ width:309px; height:281px;}
-.GeoImage{ height:117px;padding:5px;width: 299px; cursor:pointer; }
-
-.titGeoImg { 	float: left;	position: relative;    	width: 299px;}
-.PROVGeoImg { 	float:right;	position: relative; 	width: 299px; margin-top:65px; height: 24px; }
-
-.flechaGeo {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
-
-
-.listadoPROVIS {width:290px; position: relative; float: left;}
-.listadoPROVIS ul {padding: 12px 0px 12px 13px; margin: 0px; font-size:12px;}
-.listadoPROVIS li {
-    background-position: -385px 0px;
-    background-repeat: no-repeat;
-    
-    height: 34px;
-    list-style-type: none;
-    padding: 0 0 0 17px;
-}
-
-.masPROVIS {width:44px; position:relative; float:right; margin:-25px 3px 0 0; font-size:13px; font-family:'brandon_grotesque_blackRg'; background-position: -356px 1px; }
-
-.online{ width:309px; height:109px;}
-.OnlineImage{ height:99px;width: 299px; cursor:pointer; position: relative; float: left; }
-.OnlineImage img {width:309; height: 109px;}
-
-
-
-
-
-.titOnlineImg { 	float: left;	position: relative;    	width: 299px;  margin: -95px 0 0 5px;}
-.TIPOnlineImg { 	float:right;	position: relative; 	width: 299px; margin:-17px 5px 0 0;  height: 24px; }
-
-.TIPOnlineImg p {float:right;	font-size:23px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
-.titOnlineImg p {				font-size:13px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
-
-
-
-
-
-
-
-
-.flechaOnline {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
-
-
-.distancia{ width:309px; height:109px;}
-.DistanciaImage{ height:99px;width: 299px; cursor:pointer; position: relative; float: left;}
-.DistanciaImage img {width:309; height: 109px;}
 
 
 
@@ -87,5 +35,5 @@
     padding: 0; }
     
     
-.menuSOC {margin-left:78px;}
+
     

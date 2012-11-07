@@ -2,7 +2,7 @@
 
 $v['debug']=0;
 
-$v['conf']['state']=2; # 1=test 2=produccion
+$v['conf']['state']=1; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 
 

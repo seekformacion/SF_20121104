@@ -3,11 +3,6 @@
 
 
 
-.menu_NAV {  height: 50px; z-index: 9000; width: 920px;}
-.menu_NAV_fijo { position: fixed; bottom: 0px; width: 920px;}
-
-
-
 
 
 .right-col{
@@ -19,55 +14,7 @@
 }
 
 
-.geoCONT {width:632px; height:127px; }
-.geo{ width:632px; height:127px;position: relative; float:left;}
-.GeoImage{ height:117px;padding:5px;width: 190px; cursor:pointer; background-position: -50px; position:relative; float:left;}
 
-.titGeoImg { 	float: left;	position: relative;    	width: 190px;}
-.PROVGeoImg { 	float:right;	position: relative; 	width: 190px; margin-top:50px; height: 24px; }
-.flechaGeo {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
-
-.listadoPROVIS {width:426px;position:relative; float:left;}
-.listadoPROVIS ul {padding: 13px 0px 12px 13px; margin: 0px; font-size:12px;}
-.listadoPROVIS li {
-		
-    background-position: -385px -1px;
-    background-repeat: no-repeat;
-    
-    height: 27px;
-    list-style-type: none;
-    padding: 0 0 0 17px;
-}
-
-.masPROVIS {width:44px; position:relative; float:right; margin:-28px 4px 0 0; font-size:13px; font-family:'brandon_grotesque_blackRg'; background-position: -356px 1px; }
-
-
-.online{ width:240px; height:60px;position: relative; float:left; margin-left: 13px;}
-.OnlineImage{ height:50px;width: 230px; cursor:pointer; }
-.OnlineImage img {width:240px; height: 60px;}
-
-
-
-
-
-
-.titOnlineImg { margin:-48px 0 0 2px;	float: left;	position: relative;    	width: 230px;}
-.TIPOnlineImg { margin:-10px 2px 0 0; 	float:right;	position: relative; 	width: 230px;  height: 24px; }
-
-.TIPOnlineImg p {float:right;	font-size:18px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
-.titOnlineImg p {				font-size:12px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
-
-
-
-
-
-
-.flechaOnline {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;  }
-
-
-.distancia{ width:240px; height:60px;position: relative; float:left; margin-left: 13px; margin-top:-15px;}
-.DistanciaImage{ height:50px;width: 230px; cursor:pointer; }
-.DistanciaImage img {width:240px; height: 60px;}
 
 
 
@@ -82,5 +29,5 @@
     margin: 0 auto;
     padding: 0; }
     
-.menuSOC {margin-left:-258px;}    
+
  
