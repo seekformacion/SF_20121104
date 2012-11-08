@@ -15,9 +15,11 @@ $v['path']['c_js']="/cskin/js"; #ruta httpd relativa para almacenar los css en p
 
 
 $v['path']['localBasePathimg']=					 "/img";
-$v['path']['cloudBasePathimg']=					 "http://d3af3ipdddujzp.cloudfront.net/img";
+$v['path']['cloudBasePathimg']=					 "https://d3af3ipdddujzp.cloudfront.net/img";
 
 $v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
-$v['path']['baseURLskin'][2]="http://d3af3ipdddujzp.cloudfront.net"; ## baseURL del SKIN en CLOUD
+$v['path']['baseURLskin'][2]="https://d3af3ipdddujzp.cloudfront.net"; ## baseURL del SKIN en CLOUD
+
+
 
 ?>
