@@ -1,10 +1,6 @@
 <?php
 
 
-
-
-
-
 $v['conf']['resolution']['A']="1110";
 $v['conf']['resolution']['B']="768";
 
