@@ -11,7 +11,6 @@ $v['conf']['mode']=1; # 1=local 2=cloud
 $v['conf']['resolution']['A']="1110";
 $v['conf']['resolution']['B']="768";
 
-$v['path']['httpd']=						 "/home/ebmoya/httpd/cdc201209/" . $v['where']['site'];
 
 $v['path']['l_css']="/lskin/css"; #ruta httpd relativa para almacenar los css en test  (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
 $v['path']['c_css']="/cskin/css"; #ruta httpd relativa para almacenar los css en produccion    (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
