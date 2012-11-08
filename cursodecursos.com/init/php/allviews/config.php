@@ -1,9 +1,6 @@
 <?php
 
-$v['debug']=0;
 
-$v['conf']['state']=1; # 1=test 2=produccion
-$v['conf']['mode']=1; # 1=local 2=cloud
 
 
 
@@ -18,8 +15,13 @@ $v['path']['c_css']="/cskin/css"; #ruta httpd relativa para almacenar los css en
 $v['path']['l_js']="/lskin/js"; #ruta httpd relativa para almacenar los css en test  (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
 $v['path']['c_js']="/cskin/js"; #ruta httpd relativa para almacenar los css en produccion    (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
 
-$v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
-$v['path']['baseURLskin'][2]="http://cloudfront.amazon.com/buquets/cursodecursos.com"; ## baseURL del SKIN en CLOUD
 
+
+
+$v['path']['localBasePathimg']=					 "/img";
+$v['path']['cloudBasePathimg']=					 "https://s3-eu-west-1.amazonaws.com/seekf/img";
+
+$v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
+$v['path']['baseURLskin'][2]="https://s3-eu-west-1.amazonaws.com/seekf"; ## baseURL del SKIN en CLOUD
 
 ?>
