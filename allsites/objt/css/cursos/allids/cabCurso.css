@@ -1,0 +1,19 @@
+.cabCurso{ width:884px; height:164px; position:relative; float:left;}
+
+.descCurso {width:480px; padding:15px; position:relative; float:left;}
+.descCurso p {margin:0px;}
+
+
+.franjLogo {position:relative; float:left; width:150px; height:100%; }
+
+
+.addList {width:43px; height: 43px; position:relative; float: right; cursor:pointer;}
+.IadlOFF {background-position: -140px -40px; height: 22px; margin: 11px 0 0 9px; width: 26px;}
+.IadlON  {background-position: -113px -40px; height: 22px; margin: 11px 0 0 9px; width: 26px;}
+
+
+.bloqMasInf {width:224px; height: 121px; position:relative; float: right; cursor:pointer;}
+
+
+.masinfo {background-position: -4px -60px;height: 50px; margin:0 0 0 12px; width: 200px;}
+.formatos {background-position: -4px -110px;height: 50px; margin:16px 0 0 13px; width: 200px;}

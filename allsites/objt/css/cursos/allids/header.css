@@ -3,6 +3,8 @@
 
 
 
+.margen_sup	{ height:22px;width: 1255px;}
+
 
 
 .imgCat	{position: relative; float:left;}
@@ -15,7 +17,11 @@
 
 
 
-.Cont_bloque_negro {height:209px;}
+
+.margen_sup	{ height:22px;width: 920px;}
+
+
+.Cont_bloque_negro {height:179px;}
 
 
 .imgCat	{position: relative; float:left;}
