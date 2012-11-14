@@ -1,9 +1,14 @@
 .logo  {position:relative; left:20px;  float: left;}
 
 
-
-
 .margen_sup	{ height:22px;width: 1255px;}
+
+
+.content {
+   	float: left;
+    margin-top: -112px;
+    position: relative;
+}
 
 
 
@@ -14,8 +19,11 @@
 
 
 
-
-
+.breadcrumbs {color: #FFFFFF; margin-left:30px; }
+.Tit_cur{width: 820px; margin-left:30px; min-height:40px; margin-top:6px;}
+.Tit_cur h1 {	font-family: "brandon_grotesque_boldregular",sans-serif;	font-size:25px;	color:#ffffff;	margin:0px;	 line-height: 1.2;	 letter-spacing: -1px;	 text-shadow: black 0.1em 0.1em 0.2em;
+	 filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,strength=2,color=000000);
+}
 
 
 .margen_sup	{ height:22px;width: 920px;}

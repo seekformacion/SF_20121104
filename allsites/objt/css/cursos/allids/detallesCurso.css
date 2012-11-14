@@ -1,1 +1,14 @@
-.detallesCurso{ height:231px;}
+.detallesCurso{ min-height:131px;}
+
+.curprecio{ width: 211px; height:67px; margin: 5px 0px 0px 5px; position: relative; float:left; padding:10px;}
+
+.curduracion{ width: 211px; height:67px; margin: 5px 0px 0px 5px;  position: relative; float:left; padding:10px;}
+
+.curtitof{ width: 382px; min-height:67px; margin: 5px 0px 0px 5px;  position: relative; float:left; padding:10px;}
+
+.currequisitos {width: 447px; margin: 5px 0px 0px 5px;  position: relative; float:left; padding:10px;}
+
+.detLeft {position: relative; float: left; width: 472px;}
+
+.otrosDat {margin: 5px 0px 0px 5px; position: relative; float:left; padding:0px 10px 10px 10px;}
+.titDetalle {  font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px;}

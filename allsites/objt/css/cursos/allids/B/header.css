@@ -15,7 +15,7 @@
 .margen_sup	{ height:22px;width: 920px;}
 
 .bloque_negro{	background-color:#000000;	height:179px;	margin-bottom: -179px;	width: 920px;}
-.Cont_bloque_negro {height:209px;}
+
 
 
 .imgCat	{position: relative; float:left;}
@@ -23,6 +23,4 @@
 .icat {margin-left: 380px; margin-top: -135px;}
 .imas {margin-left: 380px; margin-top: -150px;}
 
-
-.Tit_cat{	z-index: 999;   margin-top:-111px; margin-bottom:10px;	height: 77px;    left: 46px;   padding: 0;    position: relative;    width: 620px; }
 
