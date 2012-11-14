@@ -2,7 +2,11 @@
 
 
 
-
+.content {
+   	float: left;
+    margin-top: -142px;
+    position: relative;
+}
 
 
 .right-col{

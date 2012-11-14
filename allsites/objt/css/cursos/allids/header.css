@@ -1,4 +1,4 @@
-.logo  {position:relative; top:-77px; left:20px;  float: left;}
+.logo  {position:relative; left:20px;  float: left;}
 
 
 
@@ -30,8 +30,4 @@
 .imas {margin-left: 380px; margin-top: -150px;}
 
 
-.Tit_cat{	z-index: 999;   	height: 77px;    left: 46px;   padding: 0;    position: relative;    top: 88px;    width: 620px; }
 
-.Tit_cat h1 {	font-family: "brandon_grotesque_boldregular",sans-serif;	font-size:25px;	color:#ffffff;	margin:0px;	 line-height: 1.2;	 letter-spacing: -1px;	 text-shadow: black 0.1em 0.1em 0.2em;
-	 filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,strength=2,color=000000);
-}

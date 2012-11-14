@@ -45,7 +45,11 @@ body {
 
 
 
-
+.breadcrumbs {color: #FFFFFF; margin-left:40px; }
+.Tit_cat{width: 620px; margin-left:40px; min-height:40px; margin-top:6px;}
+.Tit_cat h1 {	font-family: "brandon_grotesque_boldregular",sans-serif;	font-size:25px;	color:#ffffff;	margin:0px;	 line-height: 1.2;	 letter-spacing: -1px;	 text-shadow: black 0.1em 0.1em 0.2em;
+	 filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,strength=2,color=000000);
+}
 
 
 
@@ -103,7 +107,7 @@ p {
 .left-col{
 	position: relative;
 	float:left;
-	margin-left:15px; margin-top: -60px; 
+	margin-left:15px; 
 	width:886px; 
 	
 }
