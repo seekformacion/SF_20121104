@@ -1,0 +1,26 @@
+/* BARRA MENU */
+
+.menuPAG {margin-left:-9px;position:relative;float:left;width:915px;}
+  
+.ipagin { height: 40px;    position: relative;    width: 39px; margin-top:5px; position:relative; }
+.ipP {background-position: 0 0; float:left;}
+.ipN {background-position: -40px 0; float:right;}
+
+.iFAV { background-position: -303px 0;
+    float: right;
+    height: 45px;
+    margin-right: 412px;
+    margin-top: 2px;
+    position: relative;
+    width: 47px;
+    cursor:pointer;}
+
+
+
+.paginacion {font-family:Arial; color:#ffffff; font-size:14px; margin-top:16px; margin-left:8px; position:relative; float:left;}
+
+.menuSOC {position:relative;float:left;width:168px;}
+.iFB {height: 40px;    position: relative;    width: 40px; margin-top:5px; float:left; background-position: -105px 0;}
+.iTW {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -184px 0;}
+.iGM {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -223px -42px;}
+.iML {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -143px 0;}

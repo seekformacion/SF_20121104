@@ -1,0 +1,5 @@
+
+.menu_NAV {  height: 50px; z-index: 9000; width: 920px;}
+.menu_NAV_fijo { position: fixed; bottom: 0px; width: 920px;}
+.menuSOC {margin-left:-258px;}    
+

@@ -1,7 +1,7 @@
 <?php
 global $v;
 
-$v['where']['view']="categorias";
+$v['where']['view']="cursos";
 $v['where']['id']=122;
 
 
