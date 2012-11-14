@@ -1,0 +1,10 @@
+.claves{ min-height:131px;}
+
+.claves h3{ margin:5px 0px 5px 15px; font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+
+.barraClaves {height: 30px; border-top:1px solid; width:100%;}
+
+.botClav{height: 24px; width:150px; text-align: center; padding-top:6px; position:relative; float:left;}
+
+.contClaves {padding:15px;}
+

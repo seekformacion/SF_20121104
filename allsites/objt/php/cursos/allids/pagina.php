@@ -5,6 +5,7 @@ $Datos['header']=loadChild('objt','header');
 $Datos['cabCurso']=loadChild('objt','cabCurso');
 $Datos['detallesCurso']=loadChild('objt','detallesCurso');
 
+$Datos['claves']=loadChild('objt','claves');
 
 
 #$Datos['descTXTcat']=loadChild('objt','descTXTcat');
