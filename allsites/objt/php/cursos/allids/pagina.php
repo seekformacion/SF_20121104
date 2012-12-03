@@ -6,12 +6,12 @@ $Datos['cabCurso']=loadChild('objt','cabCurso');
 $Datos['detallesCurso']=loadChild('objt','detallesCurso');
 
 $Datos['claves']=loadChild('objt','claves');
-
+$Datos['cursosSimilares']=loadChild('objt','cursosSimilares');
 
 #$Datos['descTXTcat']=loadChild('objt','descTXTcat');
 
 $Datos['sedes']=loadChild('objt','sedes');
-#$Datos['bloqueONLINE']=loadChild('objt','bloqueONLINE');
+$Datos['bloqueCurDist']=loadChild('objt','bloqueCurDist');
 #$Datos['bloqueDISTANCIA']=loadChild('objt','bloqueDISTANCIA');
 
 

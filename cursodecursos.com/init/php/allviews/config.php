@@ -1,5 +1,10 @@
 <?php
 
+$v['conf']['host']="ideosites.com";
+$v['conf']['db']="seekformacion";
+$v['conf']['usr']="root";
+$v['conf']['pass']="2010dos";
+
 
 $v['conf']['resolution']['A']="1110";
 $v['conf']['resolution']['B']="768";

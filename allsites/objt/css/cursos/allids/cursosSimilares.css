@@ -1,0 +1,10 @@
+.cursosSimilares{ padding: 8px 15px 15px 15px;}
+
+.cursosSimilares h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+
+.cadaCurSim {width:412px; height:31px; position:relative; float:left; cursor:pointer; margin:15px 15px 0 0;}
+.cadaCurSim img {position:relative; float:left;}
+.cadaCurSim h4 {position:relative; float:left; width:306px; height:31px; margin:0 0 0 5px; z-index: 100; font-family:Arial; font-size:13px; font-weight:normal;}
+
+.flchCadCur { background-position: -352px -85px;    float: left;    height: 31px;    margin-left: -26px;    position: relative;    width: 50px; }
+

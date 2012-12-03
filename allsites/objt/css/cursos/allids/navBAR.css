@@ -2,9 +2,9 @@
 
 .menuPAG {margin-left:-9px;position:relative;float:left;width:915px;}
   
-.ipagin { height: 40px;    position: relative;    width: 39px; margin-top:5px; position:relative; }
-.ipP {background-position: 0 0; float:left;}
-.ipN {background-position: -40px 0; float:right;}
+
+
+.masifoBarra { position:relative; float:left; background-position: -4px -60px;    height: 50px;    margin: 1px 0 0 6px;    width: 200px;}
 
 .iFAV { background-position: -303px 0;
     float: right;
@@ -16,8 +16,6 @@
     cursor:pointer;}
 
 
-
-.paginacion {font-family:Arial; color:#ffffff; font-size:14px; margin-top:16px; margin-left:8px; position:relative; float:left;}
 
 .menuSOC {position:relative;float:left;width:168px;}
 .iFB {height: 40px;    position: relative;    width: 40px; margin-top:5px; float:left; background-position: -105px 0;}
