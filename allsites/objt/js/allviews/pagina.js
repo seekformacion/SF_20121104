@@ -3,7 +3,11 @@
 window.addEventListener("orientationchange", function() {
 	// Announce the new orientation number
 	var mql = window.matchMedia("(orientation: portrait)");
-	alert(mql);
+	if(mql.matches) {  
+	alert('vertical');
+	} else {  
+	alert('horizontal');
+}
 }, false);
 
 
