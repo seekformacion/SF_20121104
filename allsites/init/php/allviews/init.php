@@ -1,9 +1,11 @@
 <?php
 global $v;
 
-
+if(array_key_exists('q', $_GET)){
 $v['where']['url']=$_GET['q'];
-
+}else{
+$v['where']['url']='home';	
+}
 
 
 $v['where']['view']="categorias";

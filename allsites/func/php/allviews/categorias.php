@@ -1,7 +1,7 @@
 <?php
 
 function filtraCATS($catsinf){
-
+$res=array();
 foreach ($catsinf as $point => $values) {
 $id=$values['id'];	
 $nom=$values['nom'];

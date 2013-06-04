@@ -40,9 +40,9 @@ $(function () {
 
 //window.onorientationchange = screen_init;
 
-//$(window).resize(function(e) {
-//screen_init();
-//});
+$(window).resize(function(e) {
+screen_init();
+});
 
 
  
