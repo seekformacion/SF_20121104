@@ -41,6 +41,8 @@ function screen_init(){
 	else if ( orientation == 90 )	{tipo="H"}
 	else if ( orientation == -90 )	{tipo="H"};
 
+alert(orientation);
+
 	cambia_css(tipo);
 }
 
