@@ -36,12 +36,12 @@ screen_init();
 function screen_init(){
 	var orientation=window.orientation;
 	if (orientation==undefined)		{tipo=mide();}
-	else if ( orientation == 0 )	{tipo="V"}
-	else if ( orientation == 180 )	{tipo="V"}
-	else if ( orientation == 90 )	{tipo="H"}
-	else if ( orientation == -90 )	{tipo="H"};
+	else if ( orientation == 0 )	{tipo="H"}
+	else if ( orientation == 180 )	{tipo="H"}
+	else if ( orientation == 90 )	{tipo="V"}
+	else if ( orientation == -90 )	{tipo="V"};
 
-alert(orientation);
+
 
 	cambia_css(tipo);
 }
