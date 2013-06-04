@@ -4,9 +4,9 @@ window.addEventListener("orientationchange", function() {
 	// Announce the new orientation number
 	var mql = window.matchMedia("(orientation: portrait)");
 	if(mql.matches) {  
-	alert('vertical');
+	cambia_css('V');
 	} else {  
-	alert('horizontal');
+	cambia_css('H');
 }
 }, false);
 
@@ -38,11 +38,11 @@ $(function () {
 
 
 
-window.onorientationchange = screen_init;
+//window.onorientationchange = screen_init;
 
-$(window).resize(function(e) {
-screen_init();
-});
+//$(window).resize(function(e) {
+//screen_init();
+//});
 
 
  
