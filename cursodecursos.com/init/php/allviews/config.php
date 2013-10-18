@@ -1,6 +1,6 @@
 <?php
 
-$v['conf']['host']="ideosites.com";
+$v['conf']['host']="localhost";
 $v['conf']['db']="seekformacion";
 $v['conf']['usr']="root";
 $v['conf']['pass']="2010dos";

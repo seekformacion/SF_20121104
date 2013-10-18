@@ -1,14 +1,14 @@
 
 // Listen for orientation changes
-window.addEventListener("orientationchange", function() {
+//window.addEventListener("orientationchange", function() {
 	// Announce the new orientation number
-	var mql = window.matchMedia("(orientation: portrait)");
-	if(mql.matches) {  
-	cambia_css('V');
-	} else {  
-	cambia_css('H');
-}
-}, false);
+//	var mql = window.matchMedia("(orientation: portrait)");
+//	if(mql.matches) {  
+//	cambia_css('V');
+//	} else {  
+//	cambia_css('H');
+//}
+//}, false);
 
 
 
@@ -40,34 +40,34 @@ $(function () {
 
 //window.onorientationchange = screen_init;
 
-$(window).resize(function(e) {
-screen_init();
-});
+//$(window).resize(function(e) {
+//screen_init();
+//});
 
 
  
-function screen_init(){
-	var orientation=window.orientation;
-	if (orientation==undefined)		{tipo=mide();}
+//function screen_init(){
+//	var orientation=window.orientation;
+//	if (orientation==undefined)		{tipo=mide();}
 	
 
 
-	cambia_css(tipo);
-}
+//	cambia_css(tipo);
+//}
 
 
 
 
 
    
-function cambia_css(tipo){
+//function cambia_css(tipo){
 	
-	if(tipo=="V"){
-	%B%
-	}else{ 
-	%A%
-	}   
-}		
+//	if(tipo=="V"){
+//	%B%
+//	}else{ 
+//	%A%
+//	}   
+//}		
 
 	
 
