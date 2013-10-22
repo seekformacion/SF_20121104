@@ -1,6 +1,10 @@
 <?php 
 
 
+includeFUNC('sacaCursos');
+
+$Datos['pagTittle']=$v['where']['pagTittle'];
+
 $Datos['header']=loadChild('objt','header');
 $Datos['sliders']=loadChild('objt','sliders');
 
@@ -23,10 +27,11 @@ $Datos['navBAR']=loadChild('objt','navBAR');
 $Datos['footer']=loadChild('objt','footer');
 
 
+
+
 $Datos['metas']=loadChild('objt','metas');
 
-$Datos['codTittle']=$v['where']['codTittle'];
-$Datos['pagTittle']=$v['where']['pagTittle'];
+
 
 
 

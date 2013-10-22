@@ -12,12 +12,19 @@ $res=DBselect("SELECT tipo, t_id, codTittle, pagTittle FROM skf_urls where idp=$
 $v['where']['view']=$eqtempl[$res[1]['tipo']];
 $v['where']['id']=	$res[1]['t_id'];
 
+$idts="";
+foreach ($v['vars']['tipPort'] as $idt => $idpp) {
+if($idp==$idpp){$idts .=$idt . ",";};	
+}
+$idts=substr($idts,0,-1);
+$v['where']['idt']=$idts; #### pueden crearse listas de tipos   ej: 1,2  EQUILAVE A: CURSOS Y MASTERS
+
 $v['where']['codTittle']=$res[1]['codTittle'];
 $v['where']['pagTittle']=$res[1]['pagTittle'];
 
 if($v['debug']>0){
 echo $v['where']['url']. " <br>\n";
-echo "Tipo:" . $v['where']['view'] . " id: " . $v['where']['id']  . " Pag: " . $v['where']['pag'] . " <br>\n";
+echo "Tipo:" . $v['where']['view'] . " id: " . $v['where']['id']  . " Pag: " . $v['where']['pag'] . " idts: " . $v['where']['idt'] . " <br>\n";
 }
 
 ?>

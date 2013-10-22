@@ -37,14 +37,20 @@ $pals[]=$data['keyword'];
 }
 
 	
-$ini=(($pag-1)*$cpp);	
+$ini=(($pag-1)*$cpp);
+$fin=($ini+$cpp)-1;	
 
 $listcur="";	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) LIMIT $ini,$cpp;");	
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt);");	
 foreach ($res as $key => $data) {
 $listcur.=$data['id_cur'] . ",";
 }
 $listcur=substr($listcur, 0,-1);
+
+$curs=ordenaCURs($listcur,$ini,$fin);
+
+$listcur="";	
+foreach ($curs as $key => $cur) {$listcur.=$cur . ",";};$listcur=substr($listcur, 0,-1);
 
 return $listcur;	
 }
@@ -56,7 +62,11 @@ return $listcur;
 ############# resalta palabras en un texto con <strong>
 function strongTXT($txt,$pals){
 if(count($pals)>0){foreach ($pals as $point => $pal){
+	
+$pal=str_replace('/', '\/', $pal);	
 $pal2="/ $pal /i";
+
+
 $out=array();					
 preg_match_all($pal2, $txt, $out, PREG_OFFSET_CAPTURE); $c=0;
 foreach ($out[0] as $key => $value) {
@@ -72,6 +82,17 @@ $c=$c+17;
 return $txt;
 }
 ##################################
+
+
+
+
+function ordenaCURs($curs,$ini,$fin){
+	
+$lcur=explode(',',$curs);
+for($i = $ini; $i <= $fin; $i++){if(array_key_exists($i, $lcur)){$result[]=$lcur[$i];};};		
+	
+return $result;
+}
 
 
 ?>
