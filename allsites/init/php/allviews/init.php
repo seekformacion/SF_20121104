@@ -16,25 +16,17 @@ $v['where']['view']='none';
 $v['where']['id']=0; #################
 require_once $v['path']['fw'] . '/core/templates/paths.php';
 
+
+
+includeINIT('vars');
 includeINIT('config');
 includeCORE('db/dbfuncs');
-
-############################# obtengo datos de la url tipo de pagina e id asociado
-$url=$v['where']['url'];
-$res=DBselect("SELECT tipo, t_id FROM skf_urls where url='$url';");
-$v['where']['view']=$res[1]['tipo'];
-$v['where']['id']=	$res[1]['t_id'];
-####################################################
-
-echo $v['where']['url']. " <br>\n";
-echo "Tipo:" . $v['where']['view'] . " id: " . $v['where']['id'] . " <br>\n";
-
-
-
-
 includeCORE('templates/templates');
+includeFUNC('URLdata');  ##### obtengo datos de la url tipo de pagina e id asociado
 
-echo loadChild('objt','arbol');
+
+
+#echo loadChild('objt','arbol');
 echo loadChild('objt','pagina');
 
 

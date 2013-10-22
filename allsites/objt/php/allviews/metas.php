@@ -4,6 +4,8 @@ includeCORE('js/js');
 
 createCSS();
 
+
+$Datos['codTittle']=$v['where']['codTittle'];
 $Datos['baseurlFonts']=$v['path']['baseURLskin'][$v['conf']['mode']];
 
 $Datos['imgIconos']=loadIMG("iconos.png");

@@ -25,6 +25,8 @@ $Datos['footer']=loadChild('objt','footer');
 
 $Datos['metas']=loadChild('objt','metas');
 
+$Datos['codTittle']=$v['where']['codTittle'];
+$Datos['pagTittle']=$v['where']['pagTittle'];
 
 
 
