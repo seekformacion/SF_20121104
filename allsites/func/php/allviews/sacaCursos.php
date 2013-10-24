@@ -1,5 +1,17 @@
 <?php
 
+
+############### obtengo url de un curso dado
+function urlCur($idc){global $v;
+$res=DBselect("SELECT url, idp FROM skf_urls WHERE tipo=2 AND t_id=$idc;");		
+$data['url']=$res[1]['url'];	
+if($res[1]['idp']!=$v['where']['idp']){$data['url']=$v['vars']['purl'][$res[1]['idp']] . $data['url'];};
+
+return $data['url'];
+} 
+#####################################3
+
+################## compone el bloque de cursos de una pagina
 function getBloqueCursos(){global $data; $bloqueCursos="";	
 
 
@@ -11,6 +23,8 @@ $res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripci
 						FROM skv_cursos where id IN ($listcur) ORDER BY FIELD(id, $listcur);");	
 	
 foreach ($res as $key => $data) {
+$data['url']=urlCur($data['id']);
+		
 $bloqueCursos .=loadChild('objt','cadaCurso');	
 }	
 	
@@ -19,6 +33,8 @@ $bloqueCursos .=loadChild('objt','cadaCurso');
 
 return $bloqueCursos;
 }
+
+############################3
 
 
 
@@ -55,6 +71,25 @@ foreach ($curs as $key => $cur) {$listcur.=$cur . ",";};$listcur=substr($listcur
 return $listcur;	
 }
 ##################################
+
+
+function getCURProv(){global $v;
+
+$idc=$v['where']['id'];
+$idt=$v['where']['idt'];
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt);");		
+$cin="";foreach ($res as $key => $data) {$idc=$data['id_cur']; $cin .=$idc . ",";};$cin=substr($cin, 0,-1);
+$res=DBselect("SELECT SUBSTRING(idpro,1,3) as idp, count(distinct idcur) as C FROM skv_relCurPro WHERE idcur IN ($cin) GROUP BY idp ORDER BY C DESC; ");
+$provins=array();
+if(count($res)>0){ foreach ($res as $key => $dat) {$idp=$dat['idp'];
+if(($idp=='070')||($idp=='077')||($idp=='078')){}else{$idp=substr($idp, 0,2) . "0";}
+if(array_key_exists($idp, $provins)){$provins[$idp]=$provins[$idp]+$dat['C'];}else{$provins[$idp]=$dat['C'];}
+}}
+
+arsort($provins);
+
+return $provins;	
+}
 
 
 

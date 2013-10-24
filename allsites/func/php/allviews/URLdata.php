@@ -21,6 +21,7 @@ $v['where']['idt']=$idts; #### pueden crearse listas de tipos   ej: 1,2  EQUILAV
 
 $v['where']['codTittle']=$res[1]['codTittle'];
 $v['where']['pagTittle']=$res[1]['pagTittle'];
+$v['where']['urlSimple']=$url;
 
 if($v['debug']>0){
 echo $v['where']['url']. " <br>\n";

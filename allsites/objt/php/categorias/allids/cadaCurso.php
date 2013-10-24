@@ -7,6 +7,7 @@ $eqmet=$v['vars']['eqmet'];
 
 $Datos['a']=$data['id'];	 
 $Datos['nombre']=$data['nombre'];
+$Datos['url']=$data['url'];
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 $Datos['met']=$eqmet[$data['cur_id_metodo']]['s'];
 

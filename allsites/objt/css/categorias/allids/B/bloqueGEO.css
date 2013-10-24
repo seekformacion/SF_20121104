@@ -5,7 +5,7 @@
 .GeoImage{ height:117px;padding:5px;width: 190px; cursor:pointer; background-position: -50px; position:relative; float:left;}
 
 .titGeoImg { 	float: left;	position: relative;    	width: 190px;}
-.PROVGeoImg { 	float:right;	position: relative; 	width: 190px; margin-top:50px; height: 24px; }
+.PROVGeoImg { 	float:right;	position: absolute;  top: 99px;	width: 190px; height: 24px; }
 .flechaGeo {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
 
 .listadoPROVIS {width:426px;position:relative; float:left;}

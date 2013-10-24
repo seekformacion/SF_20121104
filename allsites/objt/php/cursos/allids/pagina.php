@@ -1,5 +1,6 @@
 <?php 
 
+$Datos['pagTittle']=$v['where']['pagTittle'];
 
 $Datos['header']=loadChild('objt','header');
 $Datos['cabCurso']=loadChild('objt','cabCurso');

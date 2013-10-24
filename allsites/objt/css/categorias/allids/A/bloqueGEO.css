@@ -1,9 +1,9 @@
 
 .geo{ width:309px; height:281px;}
-.GeoImage{ height:117px;padding:5px;width: 299px; cursor:pointer; }
+.GeoImage{ height:117px;padding:5px;width: 299px; cursor:pointer; position: relative;}
 
 .titGeoImg { 	float: left;	position: relative;    	width: 299px;}
-.PROVGeoImg { 	float:right;	position: relative; 	width: 299px; margin-top:65px; height: 24px; }
+.PROVGeoImg { 	float:right;	position: absolute;  top: 99px;	width: 299px;  height: 24px; }
 
 .flechaGeo {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
 
@@ -19,7 +19,13 @@
     padding: 0 0 0 17px;
 }
 
-.masPROVIS {width:44px; position:relative; float:right; margin:-25px 3px 0 0; font-size:13px; font-family:'brandon_grotesque_blackRg'; background-position: -356px 1px; }
+.masPROVIS {background-position: -333px -90px;
+    float: right;
+    font-family: 'brandon_grotesque_blackRg';
+    font-size: 14px;
+    margin: -27px 3px 0 0;
+    position: relative;
+    width: 66px;}
 
 
 

@@ -4,6 +4,12 @@
 $v['vars']['eqtempl'][1]="categorias";
 $v['vars']['eqtempl'][2]="cursos";
 
+$v['vars']['purl'][1]="http://cursodecursos.com";
+$v['vars']['purl'][2]="http://masterenmasters.com";
+$v['vars']['purl'][3]="http://fp-formacionprofesional.com";
+$v['vars']['purl'][4]="http://oposicionesa.com";
+
+
 
 $v['vars']['eqtip'][1]['s']="Curso";                   			$v['vars']['tipPort'][1]=1;
 $v['vars']['eqtip'][2]['s']="Master";							$v['vars']['tipPort'][2]=2;
