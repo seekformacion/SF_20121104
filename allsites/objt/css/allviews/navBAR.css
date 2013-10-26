@@ -2,7 +2,7 @@
 
 .menuPAG {margin-left:-9px;position:relative;float:left;width:915px;}
   
-.ipagin { height: 40px;    position: relative;    width: 39px; margin-top:5px; position:relative; }
+.ipagin { height: 40px;    position: relative;    width: 39px; margin-top:5px; position:relative; cursor:pointer; }
 .ipP {background-position: 0 0; float:left;}
 .ipN {background-position: -40px 0; float:right;}
 

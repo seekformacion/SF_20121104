@@ -1,1 +1,4 @@
-/*** esto es una prueba  ***/
+function lK(url){window.location.href =	url;}
+
+
+

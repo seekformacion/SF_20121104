@@ -1,5 +1,5 @@
 <?php
-
+$idprovi="";
 $url=$v['where']['url']; $idp=$v['where']['idp'];
 $eqtempl=$v['vars']['eqtempl'];
 $eqp=$v['vars']['provN'];
@@ -42,6 +42,14 @@ $v['where']['idt']=$idts; #### pueden crearse listas de tipos   ej: 1,2  EQUILAV
 $v['where']['codTittle']=$res[1]['codTittle'];
 $v['where']['pagTittle']=$res[1]['pagTittle'];
 $v['where']['urlSimple']=$url;
+
+############# añado prov a los titulos
+$v['where']['pagTittleSimp']=$v['where']['pagTittle'];
+if($idprovi){
+$v['where']['codTittle']=$v['where']['codTittle'] . " en " . $eqp[$idprovi];
+$v['where']['pagTittle']=$v['where']['pagTittle'] . " en " . $eqp[$idprovi];
+}
+
 
 if($v['debug']>0){
 echo $v['where']['url']. " <br>\n";

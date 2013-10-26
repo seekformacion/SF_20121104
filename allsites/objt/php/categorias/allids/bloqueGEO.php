@@ -21,23 +21,23 @@ $url="/presencial/$provn2$urlS" . "_presenciales_en_$provn2.html";
 if($key==0){
 
 $Datos['imgGEO']=loadIMG("geo/" . $provn2 . ".jpg");
-$Datos['cabPROtit']=$v['where']['pagTittle'];
+$Datos['cabPROtit']=$v['where']['pagTittleSimp'];
 $Datos['cabPRO']=$provn;
 $Datos['cabPROURL']=$url;
-$Datos['cabPROURLA']=$v['where']['pagTittle'] . " presenciales en " . $provn;;	
+$Datos['cabPROURLA']=$v['where']['pagTittleSimp'] . " presenciales en " . $provn;;	
 }elseif($key <= 4){
 
 
-$rDatos['prov'][$key]['cpro']=$v['where']['pagTittle'] . " en ";
+$rDatos['prov'][$key]['cpro']=$v['where']['pagTittleSimp'] . " en ";
 $rDatos['prov'][$key]['idp']=$provn;
-$rDatos['prov'][$key]['cproal']=$v['where']['pagTittle'] . " presenciales en " . $provn;
+$rDatos['prov'][$key]['cproal']=$v['where']['pagTittleSimp'] . " presenciales en " . $provn;
 $rDatos['prov'][$key]['url']=$url;
 
 }
 $c=$key+1;
-$rDatos2['prov'][$c]['cpro']=$v['where']['pagTittle'] . " en ";
+$rDatos2['prov'][$c]['cpro']=$v['where']['pagTittleSimp'] . " en ";
 $rDatos2['prov'][$c]['idp']=$provn;
-$rDatos2['prov'][$c]['cproal']=$v['where']['pagTittle'] . " presenciales en " . $provn;
+$rDatos2['prov'][$c]['cproal']=$v['where']['pagTittleSimp'] . " presenciales en " . $provn;
 $rDatos2['prov'][$c]['url']=$url;
 
 

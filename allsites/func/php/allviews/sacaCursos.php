@@ -92,7 +92,11 @@ $idc=$v['where']['id'];
 $idt=$v['where']['idt'];
 $res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt);");		
 $cin="";foreach ($res as $key => $data) {$idc=$data['id_cur']; $cin .=$idc . ",";};$cin=substr($cin, 0,-1);
-$res=DBselect("SELECT SUBSTRING(idpro,1,3) as idp, count(distinct idcur) as C FROM skv_relCurPro WHERE idcur IN ($cin) GROUP BY idp ORDER BY C DESC; ");
+
+$iprov=$v['where']['id_provi'];
+if($iprov){$iprov="AND idpro NOT LIKE '$iprov%'";}else{$iprov="";}
+
+$res=DBselect("SELECT SUBSTRING(idpro,1,3) as idp, count(distinct idcur) as C FROM skv_relCurPro WHERE idcur IN ($cin) $iprov GROUP BY idp ORDER BY C DESC; ");
 $provins=array();
 if(count($res)>0){ foreach ($res as $key => $dat) {$idp=$dat['idp'];
 if(($idp=='070')||($idp=='077')||($idp=='078')){}else{$idp=substr($idp, 0,2) . "0";}
