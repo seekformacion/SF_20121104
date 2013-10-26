@@ -45,6 +45,7 @@ $idc=$v['where']['id'];
 $idt=$v['where']['idt'];
 $cpp=$v['conf']['cpp'];
 $pag=$v['where']['pag'];
+$idpro=$v['where']['id_provi'];
 
 $pals=array();
 $res=DBselect("SELECT id, keyword FROM skf_cat_keywords WHERE id_cat=$idc ORDER BY CHAR_LENGTH(keyword) DESC;");	
@@ -56,13 +57,25 @@ $pals[]=$data['keyword'];
 $ini=(($pag-1)*$cpp);
 $fin=($ini+$cpp)-1;	
 
-$listcur="";	
+$listcur="";$nc=0;	
 $res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt);");	
-foreach ($res as $key => $data) {
-$listcur.=$data['id_cur'] . ",";
-}
+foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";$nc++;};
 $listcur=substr($listcur, 0,-1);
 
+
+	########## filtro provincias
+	if($idpro){
+	if(($idpro=='070')||($idpro=='077')||($idpro=='078')){}else{$idpro=substr($idpro, 0,2);};	
+		
+	$res=DBselect("SELECT idcur FROM skv_relCurPro WHERE idpro like '$idpro%'  AND idcur IN ($listcur);");
+	$listcur="";$nc=0;	
+	foreach ($res as $key => $data) {$listcur.=$data['idcur'] . ",";$nc++;}
+	$listcur=substr($listcur, 0,-1);	
+	}
+	############
+
+	
+$v['where']['npags']=ceil($nc/$cpp);
 $curs=ordenaCURs($listcur,$ini,$fin);
 
 $listcur="";	

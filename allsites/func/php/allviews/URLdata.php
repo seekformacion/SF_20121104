@@ -2,6 +2,26 @@
 
 $url=$v['where']['url']; $idp=$v['where']['idp'];
 $eqtempl=$v['vars']['eqtempl'];
+$eqp=$v['vars']['provN'];
+															
+###################### comprobamos modalidad.
+if(strpos($url,'presencial/')){
+	$valsurl=explode('/presencial/',$url); 
+	$url=$valsurl[1]; 										 						
+	$valsurl=explode('/',$url); 
+	$prov=$valsurl[0]; 											 				
+	$url="/" . $valsurl[1]; $quito="_presenciales_en_" . trim($prov);								
+    $url=str_replace($quito, "", $url);
+	
+
+foreach ($eqp as $va => $ke){$ke=normaliza($ke);$equiPlow[$ke]=$va;};
+$idprovi=$equiPlow[$prov];
+$v['where']['id_provi']= $idprovi;
+}else{
+$v['where']['id_provi']="";	
+}
+############################################
+
 
 ##### obtenemos numero de pagina
 if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $v['where']['pag']=$valsurl[1]; $url=str_replace('-pag' . $valsurl[1], '', $url); }else{ $v['where']['pag']=1;}

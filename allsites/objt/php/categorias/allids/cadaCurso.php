@@ -3,10 +3,20 @@
 global $v;global $data; global $pals; 
 $eqtip=$v['vars']['eqtip'];
 $eqmet=$v['vars']['eqmet'];
+$eqp=$v['vars']['provN'];
 
+$nom=$data['nombre'];
 
-$Datos['a']=$data['id'];	 
-$Datos['nombre']=$data['nombre'];
+############ añado nombre de provin en titulo
+$idpro=$v['where']['id_provi'];
+if($idpro){
+$np=$eqp[$idpro];
+$nom="$nom en $np";		
+}
+#############################################
+
+ 
+$Datos['nombre']=$nom;
 $Datos['url']=$data['url'];
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 $Datos['met']=$eqmet[$data['cur_id_metodo']]['s'];

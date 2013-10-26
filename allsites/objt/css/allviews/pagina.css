@@ -2,31 +2,31 @@
 
 
 
-.gris1 {color:#EBEBEB;}
-.gris1_BG {background-color:#EBEBEB;}
+.gris1 {color:#EBEBEB !important;}
+.gris1_BG {background-color:#EBEBEB !important;}
 
 
-.gris2 {color:#888888;}
-.gris2_BG {background-color:#888888;}
+.gris2 {color:#888888 !important;}
+.gris2_BG {background-color:#888888 !important;}
 
-.gris3 {color:#DDE8DD;}
-.gris3_BG {background-color:#DDE8DD;}
+.gris3 {color:#DDE8DD !important;}
+.gris3_BG {background-color:#DDE8DD !important;}
 
 
-.color {color:#1BB105;}
-.color_BG {background-color:#1BB105;}
+.color {color:#1BB105 !important;}
+.color_BG {background-color:#1BB105 !important;}
 
-.color1 {color:#008F2F;}
-.color1_BG {background-color:#008F2F;}
+.color1 {color:#008F2F !important;}
+.color1_BG {background-color:#008F2F !important;}
 
-.color2 {color:#F4F7F4;}
-.color2_BG {background-color: #F4F7F4;}
+.color2 {color:#F4F7F4 !important;}
+.color2_BG {background-color: #F4F7F4 !important;}
 
-.blanco {color:#ffffff;}
-.blanco_BG {background-color: #ffffff;}
+.blanco {color:#ffffff !important;}
+.blanco_BG {background-color: #ffffff !important;}
 
-.negro {color:#000000;}
-.negro_BG {background-color: #000000;}
+.negro {color:#000000 !important;}
+.negro_BG {background-color: #000000 !important;}
 
 
 
@@ -76,9 +76,10 @@ h2 a{
 
 h3 {
 	font-family: Arial;
-	font-size:20px;
-	margin:0px;
-	line-height: 1.1;
+    font-size: 22px;
+    font-weight: normal;
+    margin:0px;
+    /*line-height: 1.1;*/
 	
 }
 
@@ -199,3 +200,4 @@ p {
 .p170 {  background-position: -113px 0px;	width: 35px; height: 25px;	left: 245px;top: 45px;	 background-repeat: no-repeat;position: absolute;}
 
 
+.contM {position:relative;width: 240px; float:left;}

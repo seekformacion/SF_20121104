@@ -1,0 +1,17 @@
+
+.gris_emer{ background-color: #333333; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; visibility: hidden; width: 100%; z-index: 9998;}
+
+.bloq_eme_provs { height: 600px; left: 50%;    margin-left: -340px;    margin-top: -300px;    position: fixed;    top: 50%;    visibility: hidden;    width: 591px;    z-index: 9999;}
+.em_tpro {width:600px; min-height: 400px;}
+
+.listTPROV {float: left;    position: relative;    width: 570px; }
+.listTPROV ul{ font-size: 14px;    margin: 0;    padding: 12px 0 12px 13px;}
+.listTPROV li{ background-position: -385px 0;    background-repeat: no-repeat;    height: 34px;    list-style-type: none;    padding: 0 0 0 17px;}
+
+.tit_eme {   position:relative; float:left; color:#FFFFFF; font-family: 'brandon_grotesque_blackRg'; margin-top:10px; 
+			 font-size: 14px; text-transform: uppercase;  padding: 5px 55px 5px 10px;  min-height: 33px;} 
+
+.tpro{ width: 535px;}
+
+
+.close_emer {background-position: -265px -117px; float: right; height: 38px; position: absolute; right: 4px; top: 13px; width: 36px; z-index: 999; }
