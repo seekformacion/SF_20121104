@@ -15,6 +15,16 @@ $nom="$nom en $np";
 }
 #############################################
 
+############ añado online en titulo
+//if($v['where']['online']){$nom="$nom online";};
+#############################################
+
+############ añado distancia en titulo
+//if($v['where']['distancia']){$nom="$nom a distancia";};
+#############################################
+
+
+
  
 $Datos['nombre']=$nom;
 $Datos['url']=$data['url'];

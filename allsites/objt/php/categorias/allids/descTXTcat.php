@@ -1,5 +1,5 @@
 <?php
 
-$Datos['nomcat']=$v['where']['pagTittle'];
+$Datos['nomcat']=$v['where']['pagTittleSimp'];
 
 ?>

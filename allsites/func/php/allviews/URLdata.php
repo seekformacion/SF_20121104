@@ -20,6 +20,32 @@ $v['where']['id_provi']= $idprovi;
 }else{
 $v['where']['id_provi']="";	
 }
+
+
+if(strpos($url,'online/')){
+	
+	$url=str_replace('/online/', "/", $url);
+	$url=str_replace('_online.html', ".html", $url);
+	$url=str_replace('_online-', "-", $url);									 				
+$v['where']['online']=1;
+}else{
+$v['where']['online']=0;	
+}
+
+
+if(strpos($url,'a_distancia/')){
+	
+	$url=str_replace('/a_distancia/', "/", $url);
+	$url=str_replace('_a_distancia.html', ".html", $url);
+	$url=str_replace('_a_distancia-', "-", $url);								 				
+$v['where']['distancia']=1;
+}else{
+$v['where']['distancia']=0;	
+}
+
+
+
+
 ############################################
 
 
@@ -29,6 +55,7 @@ if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $
 
 
 $res=DBselect("SELECT tipo, t_id, codTittle, pagTittle FROM skf_urls where idp=$idp AND url='$url';");
+
 $v['where']['view']=$eqtempl[$res[1]['tipo']];
 $v['where']['id']=	$res[1]['t_id'];
 
@@ -45,11 +72,23 @@ $v['where']['urlSimple']=$url;
 
 ############# añado prov a los titulos
 $v['where']['pagTittleSimp']=$v['where']['pagTittle'];
+
 if($idprovi){
 $v['where']['codTittle']=$v['where']['codTittle'] . " en " . $eqp[$idprovi];
 $v['where']['pagTittle']=$v['where']['pagTittle'] . " en " . $eqp[$idprovi];
 }
 
+############# añado online a los titulos
+if($v['where']['online']){
+$v['where']['codTittle']=$v['where']['codTittle'] . " online";
+$v['where']['pagTittle']=$v['where']['pagTittle'] . " online";	
+}
+
+############# añado a distancia a los titulos
+if($v['where']['distancia']){
+$v['where']['codTittle']=$v['where']['codTittle'] . " a distancia";
+$v['where']['pagTittle']=$v['where']['pagTittle'] . " a distancia";	
+}
 
 if($v['debug']>0){
 echo $v['where']['url']. " <br>\n";

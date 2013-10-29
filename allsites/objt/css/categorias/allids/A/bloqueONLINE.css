@@ -9,3 +9,5 @@
 .titOnlineImg p {				font-size:13px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
 .flechaOnline {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
 
+.TIPOnlineImg a {text-transform: uppercase; color:#ffffff;}
+.titOnlineImg a {text-transform: uppercase; color:#ffffff;}

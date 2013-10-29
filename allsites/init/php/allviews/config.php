@@ -9,7 +9,7 @@ $v['conf']['pass']="2010dos";
 $v['conf']['resolution']['A']="1110";
 $v['conf']['resolution']['B']="768";
 
-$v['conf']['cpp']=7;
+$v['conf']['cpp']=5;
 
 
 $v['path']['l_css']="/lskin/css"; #ruta httpd relativa para almacenar los css en test  (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
