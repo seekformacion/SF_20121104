@@ -4,12 +4,18 @@ includeFUNC('categorias');
 includeFUNC('sacaCursos');
 
 $idcat=$v['where']['id'];
-echo catsINF($idcat);
+catsINF($idcat);
+
+
 
 
 
 $Datos['pagTittle']=$v['where']['pagTittle'];
 
+
+
+
+$Datos['breadcrumbs']=breadCRUMBS($idcat);
 
 $Datos['sliders']=loadChild('objt','sliders');
 

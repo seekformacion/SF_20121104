@@ -1,8 +1,11 @@
 <?php
 $idprovi="";
-$url=$v['where']['url']; $idp=$v['where']['idp'];
+$url=$v['where']['url']; 
+$idp=$v['where']['idp'];
 $eqtempl=$v['vars']['eqtempl'];
 $eqp=$v['vars']['provN'];
+							
+
 															
 ###################### comprobamos modalidad.
 if(strpos($url,'presencial/')){
@@ -55,7 +58,6 @@ if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $
 
 
 $res=DBselect("SELECT tipo, t_id, codTittle, pagTittle FROM skf_urls where idp=$idp AND url='$url';");
-
 $v['where']['view']=$eqtempl[$res[1]['tipo']];
 $v['where']['id']=	$res[1]['t_id'];
 

@@ -3,7 +3,9 @@
 
 
 $Datos['fondCur']=loadIMG('fondos/fondolistC.gif');
-$Datos['suma_cadaCurso']=getBloqueCursos();
+
+$bcursos=getBloqueCursos();
+if(trim($bcursos)){$Datos['suma_cadaCurso']=$bcursos;}else{$Datos['codNULL']=1;};
 
 
 ?>

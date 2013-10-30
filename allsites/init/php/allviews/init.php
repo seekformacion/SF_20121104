@@ -4,9 +4,12 @@ global $v;
 if(array_key_exists('q', $_GET)){
 $v['where']['url']=$_GET['q'];
 }else{
-$v['where']['url']='home';	
+$v['where']['url']='/';	
 }
 
+
+if(strpos($v['where']['url'],'|sql')){$v['where']['url']=str_replace('|sql','',$v['where']['url']);$v['debug']=-1;};
+if(strpos($v['where']['url'],'|deb')){$v['where']['url']=str_replace('|deb','',$v['where']['url']);$v['debug']=1;};
 
 //if(strlen(str_replace('/cat=', '', $v['where']['url'])) < strlen($v['where']['url'])) {$v['where']['view']="categorias"; 	$sacos=explode('=', $v['where']['url']); 	$v['where']['id']=$sacos[1];};
 //if(strlen(str_replace('/cur=', '', $v['where']['url'])) < strlen($v['where']['url'])) {$v['where']['view']="cursos"; 		$sacos=explode('=', $v['where']['url']); 	$v['where']['id']=$sacos[1];};

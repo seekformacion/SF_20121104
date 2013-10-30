@@ -16,7 +16,8 @@ function getBloqueCursos(){global $data; $bloqueCursos="";
 
 
 
-$listcur=getCUR();
+$listcur=trim(getCUR());
+if($listcur){
 $res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripcion, cur_dirigidoa, cur_paraqueteprepara, 
 						id_centro, (SELECT nombre FROM skv_centros WHERE id=id_centro) as ncent, 
 						id_centro, (SELECT file_logo FROM skv_centros WHERE id=id_centro) as file_logo 
@@ -27,7 +28,7 @@ $data['url']=urlCur($data['id']);
 		
 $bloqueCursos .=loadChild('objt','cadaCurso');	
 }	
-	
+}	
 
 
 

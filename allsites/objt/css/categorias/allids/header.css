@@ -18,6 +18,8 @@
 }
 
 .breadcrumbs {color: #FFFFFF; margin-left:40px; }
+.breadcrumbs a {color: #FFFFFF;}
+
 .Tit_cat{width: 620px; margin-left:40px; min-height:40px; margin-top:6px;}
 .Tit_cat h1 {font-family: "brandon_grotesque_boldregular",sans-serif;
 	font-size:25px;	color:#ffffff;	margin:0px;	 line-height: 1.2;	 letter-spacing: -1px;	 text-shadow: black 0.1em 0.1em 0.2em;
@@ -33,5 +35,6 @@
 .imgCat {width:540px; height:150px;}
 
 
-
+.contM {position:relative;width: 240px; float:left;}
+.adwslid {background-color: #F4F7F4;    height: 120px;    margin-left: 143px;    padding-left: 11px;    padding-top: 16px;    width: 734px;}
 

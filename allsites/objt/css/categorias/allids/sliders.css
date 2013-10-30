@@ -1,6 +1,6 @@
 
 
-.allsliders{height: 167px; width:886px;}
+.allsliders{height: 167px; width:886px; position:relative; float:left;}
 
 .sliderContainer{
     margin-top:15px;

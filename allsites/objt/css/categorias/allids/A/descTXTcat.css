@@ -1,2 +1,5 @@
 
-.descTXT {width:279px;}
+.descTXT {width:279px; margin-left:20px; min-height: 137px;}
+
+.miniDescA{display:block;}
+.miniDescB{display:none;}
