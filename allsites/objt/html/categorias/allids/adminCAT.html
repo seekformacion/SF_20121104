@@ -1,0 +1,41 @@
+<!-- adminCAT -->
+
+<style>
+	.admTA {border:1px solid #444444; height: 100%; width: 100%; color:#333333;  font-family: 'Arial';   font-size: 13px;  line-height: 1.1; overflow:hidden;}
+</style>
+
+<div style="position:absolute; background-color:#cccccc; top:3px; left:380px; width:500px; height: 334px; z-index: 998;">
+
+<div style=" background-color: #FFFFFF;    height: 85px;    left: 10px;    position: absolute;    top: 3px;    width: 285px;    z-index: 999; padding: 4px;">
+
+<textarea id="mini_Text" style="" class="admTA" onchange="updtTXTcat(this.id,%idc%);">%mini_Text% </textarea> 	
+	
+</div>
+
+<div style=" background-color: #FFFFFF;    height: 105px;    left: 10px;    position: absolute;    top: 100px;    width: 285px;    z-index: 999; padding: 4px;">
+
+<textarea id="text_desc" style="" class="admTA" onchange="updtTXTcat(this.id,%idc%);">%text_desc% </textarea> 	
+	
+</div>
+
+
+<div style=" background-color: #FFFFFF;    height: 303px;    left: 310px;    position: absolute;    top: 3px;    width: 175px;    z-index: 999; padding: 4px;">
+
+<input type='text' id="kwds" style="height:20px; font-size: 9px; margin-bottom: 4px; " class="admTA" onchange="updtKWDS(this.id,%idc%);"> 
+
+<div id="lkwd">
+<!-- kwds -->	
+<div id="%id%" ondblclick="delKWD(%id%);" style="font-size:9px; border:1px solid #cccccc; padding: 3px; margin-top:3px; width: 169px"; class="color2_BG">%keyword%</div>
+<!-- fin kwds -->	
+	
+</div>
+</div>	
+
+
+
+</div>
+
+
+
+
+<!-- fin adminCAT -->

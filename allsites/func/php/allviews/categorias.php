@@ -106,12 +106,12 @@ if($lcatsT){
 $dcats=$catsPort=DBselect("select * from skf_urls where t_id IN ($lcatsT) AND idp=$idp ORDER BY pagTittleC;");
 }
 
-
-
 if(count($dcats)==0){$dcats=array();};
+
 }else{
 $dcats=array();	
 }
+
 $v['where']['cats_inf']=$dcats;
 
 
@@ -181,6 +181,18 @@ $listC['list']=substr($listinf, 0,-1);
 $listC['infA']=$infA;
 
 return $listC;
+}
+
+
+
+function miniTXTcat($cat){
+$txt=DBselect("select mini_Text from skf_txtDesc where t_id=$cat;");
+if(array_key_exists(1, $txt)){return $txt[1]['mini_Text'];}else{return '';};
+}
+
+function TXTcat($cat){
+$txt=DBselect("select text_desc from skf_txtDesc where t_id=$cat;");
+if(array_key_exists(1, $txt)){return $txt[1]['text_desc'];}else{return '';};
 }
 
 ?>

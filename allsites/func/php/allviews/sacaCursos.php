@@ -53,6 +53,9 @@ $distancia=$v['where']['distancia'];
 $pals=array();
 $res=DBselect("SELECT id, keyword FROM skf_cat_keywords WHERE id_cat=$idc ORDER BY CHAR_LENGTH(keyword) DESC;");	
 foreach ($res as $key => $data) {
+$pals[]="\(" . $data['keyword'] . "\),";
+$pals[]="\(" . $data['keyword'] . "\).";			
+$pals[]="\(" . $data['keyword'] . "\)";
 $pals[]=$data['keyword'] . ",";
 $pals[]=$data['keyword'] . ".";	
 $pals[]=$data['keyword'];	
@@ -68,10 +71,10 @@ $fin=($ini+$cpp)-1;
 	if($online){
 	$onl="AND id_metodo=3";	
 	}elseif($distancia){
-	$onl="AND id_metodo=2";	
+	$onl="AND id_metodo=4";	
 	}else{
 		if($idpro){
-		$onl="AND id_metodo != 2 AND id_metodo !=3";
+		$onl="AND id_metodo != 3 AND id_metodo !=4";
 		}else{
 		$onl="";
 		}		
@@ -114,7 +117,7 @@ function getCURProv(){global $v;
 
 $idc=$v['where']['id'];
 $idt=$v['where']['idt'];
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 2 AND id_metodo !=3;");		
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 4 AND id_metodo !=3;");		
 $cin="";foreach ($res as $key => $data) {$idc=$data['id_cur']; $cin .=$idc . ",";};$cin=substr($cin, 0,-1);
 
 $provins=array();
@@ -146,6 +149,9 @@ if(count($res)>0){return TRUE;}else{return FALSE;};
 
 ############# resalta palabras en un texto con <strong>
 function strongTXT($txt,$pals){
+	
+$borros=array('\\');
+	
 if(count($pals)>0){foreach ($pals as $point => $pal){
 	
 $pal=str_replace('/', '\/', $pal);	
@@ -156,7 +162,7 @@ $out=array();
 preg_match_all($pal2, $txt, $out, PREG_OFFSET_CAPTURE); $c=0;
 foreach ($out[0] as $key => $value) {
 $p=$value[1] +1 +$c;
-$l=$p + strlen($pal);
+$l=$p + strlen( str_replace($borros,'' , $pal) );
 $txt=substr($txt,0,$l) . "</strong>" . substr($txt,$l);	
 $txt=substr($txt,0,$p) . "<strong>" . substr($txt,$p);
 $c=$c+17;
