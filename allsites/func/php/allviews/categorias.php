@@ -4,6 +4,7 @@ function breadCRUMBS($idcat){global $v;
 $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
 
+
 $inf=DBselect("select superiores from skf_cats where id=$idcat;");
 $sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
 
@@ -22,6 +23,38 @@ $url=$dat['url']; $n=$dat['pagTittleC'];
 
 return ($bc);
 }
+
+
+
+function breadCRUMBSCUR($idcat){global $v;
+$idt=$v['where']['idt'];
+$idp=$v['where']['idp'];
+
+
+$inf=DBselect("select superiores from skf_cats where id=$idcat;");
+$sup=$inf[1]['superiores']; $sup = $sup . $idcat . "|"; 
+$sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
+
+$bc="";
+if($sup){
+$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo=1;");
+foreach ($dcats as $key => $dat) {
+$url=$dat['url']; $n=$dat['pagTittleC'];	
+	if($url=="/"){
+	$url=$v['vars']['purl'][$idp];
+	$n=$v['vars']['purlT'][$idp];
+	$bc.="<a href='$url'>$n</a>";
+	}else{$bc.="> <a href='$url'>$n</a> ";};
+}}
+
+
+return ($bc);
+}
+
+
+
+
+
 
 function catsSAME($idcat){global $v; 
 $idt=$v['where']['idt'];

@@ -1,3 +1,22 @@
+
+function pstClave(pest){
+pest='p' + pest;	
+
+
+document.getElementById('pp1').setAttribute("class", "botClav gris3_BG gris2 M");	
+document.getElementById('pp2').setAttribute("class", "botClav gris3_BG gris2 M");	
+document.getElementById('pp3').setAttribute("class", "botClav gris3_BG gris2 M");	
+
+document.getElementById('p1').setAttribute("style", "visibility:hidden;");	
+document.getElementById('p2').setAttribute("style", "visibility:hidden;");	
+document.getElementById('p3').setAttribute("style", "visibility:hidden;");	
+
+document.getElementById('p' + pest).setAttribute("class", "botClav blanco_BG gris2 M");	
+document.getElementById(pest).setAttribute("style", "visibility:visible;");	
+	
+}
+
+
 /*
  * Tiny Scrollbar
  * http://www.baijs.nl/tinyscrollbar/

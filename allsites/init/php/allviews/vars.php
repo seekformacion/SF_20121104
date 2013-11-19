@@ -88,7 +88,29 @@ $v['vars']['eqmet'][7]['s']="Otros";
 
 
 
+$v['vars']['certi'][0]="No reglado.";
+$v['vars']['certi'][1]="Certificado";
+$v['vars']['certi'][2]="Homologado";
+$v['vars']['certi'][3]="Autorizado";
+$v['vars']['certi'][4]="Titulación Oficial";
+$v['vars']['certi'][5]="Preparación Oficial";
+$v['vars']['certi'][6]="Título Propio";
+$v['vars']['certi'][7]="Homologable";
+$v['vars']['certi'][8]="Convalidación";
+$v['vars']['certi'][9]="Otros";
+$v['vars']['certi'][10]="Acreditado";
 
+$v['vars']['esmin'][0]="Estudios no requeridos";
+$v['vars']['esmin'][1]="Estudios no requeridos";
+$v['vars']['esmin'][10]="Certificado de escolaridad";
+$v['vars']['esmin'][11]="Graduado escolar, EGB, 2ºBUP";
+$v['vars']['esmin'][12]="ESO";
+$v['vars']['esmin'][21]="FP I, Grado Medio";
+$v['vars']['esmin'][23]="B.LOGSE, COU";
+$v['vars']['esmin'][41]="FP II, Grado Superior";
+$v['vars']['esmin'][51]="Diplomado";
+$v['vars']['esmin'][61]="Licenciado";
+$v['vars']['esmin'][71]="Doctorado";
 
 
 

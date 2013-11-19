@@ -1,16 +1,18 @@
-.claves{ min-height:131px;}
+.claves{ min-height:330px;}
 
-.claves h3{ margin:8px 0px 8px 15px; font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+.ppest {position:absolute;}
+
+.claves h3{ margin:8px 0px 8px 15px; font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal; text-transform:uppercase;}
 
 .barraClaves {height: 30px; border-top:1px solid; width:100%;}
 
 .botClav{height: 24px; width:150px; text-align: center; padding-top:6px; position:relative; float:left; cursor:pointer;}
 
-.contClaves {padding:15px;}
+.contClaves {padding:15px; position:absolute;}
 
 
 #scrollbar1 { width: 850px; clear: both; margin: 20px 0 10px; }
-#scrollbar1 .viewport { width: 830px; height: 200px; overflow: hidden; position: relative; }
+#scrollbar1 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
 #scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; }
 #scrollbar1 .thumb .end,
 
@@ -24,7 +26,7 @@
 
 
 #scrollbar2 { width: 850px; clear: both; margin: 20px 0 10px; }
-#scrollbar2 .viewport { width: 830px; height: 200px; overflow: hidden; position: relative; }
+#scrollbar2 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
 #scrollbar2 .overview { list-style: none; position: absolute; left: 0; top: 0; }
 #scrollbar2 .thumb .end,
 
@@ -33,6 +35,19 @@
 #scrollbar2 .thumb { height: 27px; width: 28px; cursor: pointer; overflow: hidden; position: absolute; top: 0; margin-left:-13px; background-position:-351px -6px; }
 #scrollbar2 .thumb .end { overflow: hidden; height: 5px; width: 13px; }
 #scrollbar2 .disable{ display: none; }
+
+
+
+#scrollbar3 { width: 850px; clear: both; margin: 20px 0 10px; }
+#scrollbar3 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
+#scrollbar3 .overview { list-style: none; position: absolute; left: 0; top: 0; }
+#scrollbar3 .thumb .end,
+
+#scrollbar3 .scrollbar { position: relative; float: right; width: 15px; }
+#scrollbar3 .track { height: 100%; width:1px; position: relative; padding: 0 0px; }
+#scrollbar3 .thumb { height: 27px; width: 28px; cursor: pointer; overflow: hidden; position: absolute; top: 0; margin-left:-13px; background-position:-351px -6px; }
+#scrollbar3 .thumb .end { overflow: hidden; height: 5px; width: 13px; }
+#scrollbar3 .disable{ display: none; }
 
 
 

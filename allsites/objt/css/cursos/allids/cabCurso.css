@@ -7,7 +7,7 @@
 .franjLogo {position:relative; float:left; width:150px; height:100%; }
 
 .tipoF 		{ float: left; margin-left: 15px; margin-top: 23px; position: relative;}
-.tipoF p 	{ font-family: "brandon_grotesque_regularRg"; font-size: 13px; letter-spacing: -1px; line-height: 1.3; margin: 0;}
+.tipoF p 	{ font-family: "brandon_grotesque_regularRg"; font-size: 13px; letter-spacing: -1px; line-height: 1.3; margin: 0; text-transform: uppercase;}
 .valoracion { background-position: -4px -45px; height: 15px; width: 76px;}
 
 
@@ -23,3 +23,5 @@
 
 .masinfo {background-position: -4px -60px;height: 50px; margin:0 0 0 12px; width: 200px;}
 .formatos {background-position: -4px -110px;height: 50px; margin:16px 0 0 13px; width: 200px;}
+
+.logoCent {background-color: #ffffff; border:1px solid #888888; width: 148px;}
