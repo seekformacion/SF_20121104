@@ -1,4 +1,4 @@
-.sedes {width:309px; height: 510px;}
+.sedes {width:309px; height: auto;}
 
 
 
@@ -8,4 +8,5 @@
 .cadprov {position: relative; float:left; margin:15px 0px 0px 5px; border-bottom:1px solid #bbbbbb; width:270px; padding-bottom:5px;}
 
 #scrollbar4 { width: 300px; clear: both; margin: 10px 0 10px; }
-#scrollbar4 .viewport { width: 280px; height: 175px; overflow: hidden; position: relative; }
+#scrollbar4 .viewport { width: 280px; height: 165px; overflow: hidden; position: relative; }
+#scrollbar4 .overview { height: 140px;}

@@ -1,8 +1,8 @@
 
 
-.bloqueCurDist{ padding: 8px 15px 5px 10px;}
+.bloqueCurDist{  position: relative;float: left; padding: 8px 10px 5px 10px;}
 
-.bloqueCurDist h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+.bloqueCurDist h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal; text-transform: uppercase;}
 
 .bloqueCurDist ul {padding: 0px; margin-top: 10px;}
 .bloqueCurDist li {background-position: -385px 0px; background-repeat: no-repeat; list-style-type: none;  padding: 0 0 0 17px; margin-bottom:3px;}

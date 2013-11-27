@@ -1,14 +1,48 @@
 
-.contSedes h2 {font-family: Arial;  font-size: 14px; font-weight:bold;}
-
+.contSedes h2 {font-family: Arial;  font-size: 13px; font-weight:bold;text-transform: uppercase;}
+.contSedes h3 {text-transform: uppercase;}
 
 .mapaSp{ width: 309px; height: 242px; position:relative; float:left;}
 
-.p280 {  background-position: 	0px 0px;	width: 40px; height: 39px;	left: 107px;top: 84px;	 background-repeat: no-repeat;position: absolute;}
+
+.p010 {  background-position: 	-152px 0px;	width: 24px; height: 24px;	left: 135px;top: 21px;	 background-repeat: no-repeat;position: absolute;}
+.p020 {  background-position: 	-178px 0px;	width: 45px; height: 42px;	left: 144px;top: 133px;	 background-repeat: no-repeat;position: absolute;}
+.p030 {  background-position: 	-226px 0px;	width: 30px; height: 32px;	left: 184px;top: 148px;	 background-repeat: no-repeat;position: absolute;}
+.p040 {  background-position: 	-256px 0px;	width: 35px; height: 36px;	left: 138px;top: 176px;	 background-repeat: no-repeat;position: absolute;}
+.p050 {  background-position: 	-291px 0px;	width: 36px; height: 34px;	left: 81px;top: 82px;	 background-repeat: no-repeat;position: absolute;}
+.p060 {  background-position: 	-328px 0px;	width: 61px; height: 44px;	left: 45px;top: 133px;	 background-repeat: no-repeat;position: absolute;}
+
+.p070 {  background-position: 	-391px 0px;	width: 27px; height: 23px;	left: 259px;top: 118px;	 background-repeat: no-repeat;position: absolute;}
+.p077 {  background-position: 	-407px -29px;	width: 13px; height: 11px;	left: 291px;top: 114px;	 background-repeat: no-repeat;position: absolute;}
+.p078 {  background-position: 	-390px -29px;	width: 11px; height: 10px;	left: 234px;top: 143px;	 background-repeat: no-repeat;position: absolute;}
+
+.p080 {  background-position: 	-81px 0px;	width: 32px; height: 39px;	left: 239px;top: 49px;	 background-repeat: no-repeat;position: absolute;}
+.p090 {  background-position: 	-422px 0px;	width: 43px; height: 53px;	left: 112px;top: 22px;	 background-repeat: no-repeat;position: absolute;}
+.p100 {  background-position: 	-466px 0px;	width: 58px; height: 43px;	left: 41px;top: 103px;	 background-repeat: no-repeat;position: absolute;}
+.p110 {  background-position: 	-524px 0px;	width: 32px; height: 31px;	left: 66px;top: 200px;	 background-repeat: no-repeat;position: absolute;}
+.p120 {  background-position: 	-556px 0px;	width: 32px; height: 34px;	left: 189px;top: 93px;	 background-repeat: no-repeat;position: absolute;}
+.p130 {  background-position: 	-589px 0px;	width: 55px; height: 38px;	left: 96px;top: 128px;	 background-repeat: no-repeat;position: absolute;}
+.p140 {  background-position: 	-643px 0px;	width: 37px; height: 45px;	left: 84px;top: 152px;	 background-repeat: no-repeat;position: absolute;}
+.p150 {  background-position: 	-680px 0px;	width: 38px; height: 40px;	left: 2px;top: 4px;	 background-repeat: no-repeat;position: absolute;}
+.p160 {  background-position: 	-719px 0px;	width: 47px; height: 43px;	left: 137px;top: 97px;	 background-repeat: no-repeat;position: absolute;}
+.p170 {  background-position: 	-114px 0px;	width: 36px; height: 25px;	left: 246px;top: 44px;	 background-repeat: no-repeat;position: absolute;}
+.p180 {  background-position: 	-769px 0px;	width: 47px; height: 44px;	left: 112px;top: 169px;	 background-repeat: no-repeat;position: absolute;}
+.p190 {  background-position: 	-34px 0px;	width: 46px; height: 35px;	left: 129px;top: 79px;	 background-repeat: no-repeat;position: absolute;}
+.p200 {  background-position:  	0px -61px;	width: 22px; height: 19px;	left: 149px;top: 15px;	 background-repeat: no-repeat;position: absolute;}
+.p210 {  background-position:  	-22px -61px;	width: 33px; height: 42px;	left: 41px;top: 167px;	 background-repeat: no-repeat;position: absolute;}
+.p220 {  background-position:  	-55px -61px;	width: 39px; height: 48px;	left: 188px;top: 31px;	 background-repeat: no-repeat;position: absolute;}
+.p230 {  background-position:  	-94px -61px;	width: 43px; height: 35px;	left: 112px;top: 158px;	 background-repeat: no-repeat;position: absolute;}
+.p240 {  background-position:  	-137px -61px;	width: 54px; height: 40px;	left: 52px;top: 20px;	 background-repeat: no-repeat;position: absolute;}
+.p250 {  background-position:  	-191px -61px;	width: 35px; height: 50px;	left: 216px;top: 32px;	 background-repeat: no-repeat;position: absolute;}
+.p260 {  background-position:  	-226px -61px;	width: 35px; height: 25px;	left: 137px;top: 38px;	 background-repeat: no-repeat;position: absolute;}
+.p270 {  background-position:  	-261px -61px;	width: 27px; height: 45px;	left: 31px;top: 4px;	 background-repeat: no-repeat;position: absolute;}
+.p280 {  background-position: 	0px 0px;	width: 34px; height: 39px;	left: 107px;top: 84px;	 background-repeat: no-repeat;position: absolute;}
+.p290 {  background-position:  	-288px -61px;	width: 47px; height: 30px;	left: 82px;top: 193px;	 background-repeat: no-repeat;position: absolute;}
+.p300 {  background-position:  	-335px -61px;	width: 37px; height: 41px;	left: 156px;top: 152px;	 background-repeat: no-repeat;position: absolute;}
 
 
 
-#scrollbar4 .overview { list-style: none; position: absolute; left: 0; top: 0; }
+#scrollbar4 .overview { list-style: none; position: absolute; left: 0; top: 0;}
 #scrollbar4 .thumb .end,
 
 #scrollbar4 .scrollbar { position: relative; float: right; width: 15px; }

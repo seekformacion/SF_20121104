@@ -1,10 +1,15 @@
 .cursosSimilares{ padding: 8px 15px 15px 15px;}
 
-.cursosSimilares h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+.cursosSimilares h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal; text-transform: uppercase;}
 
-.cadaCurSim {width:412px; height:31px; position:relative; float:left; cursor:pointer; margin:15px 15px 0 0;}
-.cadaCurSim img {position:relative; float:left;}
-.cadaCurSim h4 {position:relative; float:left; width:306px; height:31px; margin:0 0 0 5px; z-index: 100; font-family:Arial; font-size:13px; font-weight:normal;}
+.cadaCurSim {width:412px; margin: 10px 7px 0;}
+.cadaCurSim	{height:36px;border-top:1px solid #AAAAAA;border-bottom:1px solid #aaaaaa; position: relative; float:left; cursor:pointer;}
+.cadaCurSim img {height: 36px; width:60px; position:relative; float:right; background-color: #F4F7F4;}
 
-.flchCadCur { background-position: -352px -85px;    float: left;    height: 31px;    margin-left: -26px;    position: relative;    width: 50px; }
+
+.fTCCUR {width:45px; height: 36px; position:relative; float:left;}
+.titCCUR{font-family:Arial; position: relative; float: left; margin: 2px 0 0 -35px; font-size: 13px;   width: 352px;  height: 33px; overflow: hidden;}
+
+
+.flchCadCur { background-position: -305px -120px; width:48px; height: 36px; position: relative; float: right; }
 

@@ -1,6 +1,13 @@
 <?php
 
+global $rOtroscur;
 
-$Datos['logcentrop']=loadLogoCent('p/logo1.gif');
+
+$Datos['curnom']=$v['where']['pagTittle'];
+
+
+$rDatos['cadaCurSim']=$rOtroscur;
+
+
 
 ?>

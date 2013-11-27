@@ -1,4 +1,4 @@
-.claves{ min-height:330px;}
+.claves{ min-height:380px;}
 
 .ppest {position:absolute;}
 
@@ -12,7 +12,7 @@
 
 
 #scrollbar1 { width: 850px; clear: both; margin: 20px 0 10px; }
-#scrollbar1 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
+#scrollbar1 .viewport { width: 830px; height: 240px; overflow: hidden; position: absolute; }
 #scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; }
 #scrollbar1 .thumb .end,
 
@@ -26,7 +26,7 @@
 
 
 #scrollbar2 { width: 850px; clear: both; margin: 20px 0 10px; }
-#scrollbar2 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
+#scrollbar2 .viewport { width: 830px; height: 240px; overflow: hidden; position: absolute; }
 #scrollbar2 .overview { list-style: none; position: absolute; left: 0; top: 0; }
 #scrollbar2 .thumb .end,
 
@@ -39,7 +39,7 @@
 
 
 #scrollbar3 { width: 850px; clear: both; margin: 20px 0 10px; }
-#scrollbar3 .viewport { width: 830px; height: 200px; overflow: hidden; position: absolute; }
+#scrollbar3 .viewport { width: 830px; height: 240px; overflow: hidden; position: absolute; }
 #scrollbar3 .overview { list-style: none; position: absolute; left: 0; top: 0; }
 #scrollbar3 .thumb .end,
 

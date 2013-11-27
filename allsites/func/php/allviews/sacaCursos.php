@@ -1,6 +1,12 @@
 <?php
 
 
+function minidatCUR($idcur){global $v;
+	
+$res=DBselect("SELECT url, pagTittle, pagTittleC FROM skf_urls WHERE tipo=2 AND t_id=$idcur;");	
+return $res[1];	
+}
+
 ############### obtengo url de un curso dado
 function urlCur($idc){global $v;
 $res=DBselect("SELECT url, idp FROM skf_urls WHERE tipo=2 AND t_id=$idc;");		
