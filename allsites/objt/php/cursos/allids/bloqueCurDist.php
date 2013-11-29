@@ -57,6 +57,9 @@ $rDatos['cdBLOQ'][$cc]['bcur']=$bcur;
 
 
 
+if ($cc==0){
+$Datos['codNULL']=1;	
+}
 
 
 /*

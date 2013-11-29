@@ -1,7 +1,10 @@
 <?php
 
 $Datos['nomcat']=$v['where']['pagTittleSimp'];
-$txt=TXTcat($v['where']['id']);
+$txt=trim(TXTcat($v['where']['id']));
+
+if(!$txt){$txt=InventaTXTcat($v['where']['pagTittleSimp']);};
+
 $Datos['txtDesc']=$txt;
 	
 ?>

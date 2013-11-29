@@ -228,4 +228,20 @@ $txt=DBselect("select text_desc from skf_txtDesc where t_id=$cat;");
 if(array_key_exists(1, $txt)){return $txt[1]['text_desc'];}else{return '';};
 }
 
+function InventaTXTcat($nc){global $v;
+$idc=$v['where']['id'];
+
+$rest= ($idc % 4);
+
+$ncmin=strtolower($nc);
+$txt[1]="Encontraras una amplia variedad de $ncmin para desarrollar tus habilidades y ampliar tu formación en este sector y mejorar tus posibilidades de encontrar trabajo. Encuentra entre esta oferta de $ncmin el mas indicado para tí.";
+	
+return $txt[1];
+}
+
+
+
+
+
+
 ?>

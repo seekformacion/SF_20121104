@@ -1,0 +1,12 @@
+.sedes {width:884px; height: 242px;}
+
+
+.contSedes h3 {margin:10px 0px 0px 15px;font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
+.contSedes h2 a {width:224px;}
+
+.contSedes{padding:5px;  position:relative; float:left; width: 540px;}
+.cadprov {position: relative; float:left; margin:5px 0px 0px 15px; border-bottom:1px solid #bbbbbb; width:250px; padding-bottom:5px; height:25px;}
+
+#scrollbar4 { width: 570px; clear: both; margin: 10px 0 10px; }
+#scrollbar4 .viewport { width: 550px; height: 170px; overflow: hidden; position: relative; }
+#scrollbar4 .overview { height: 170px;}

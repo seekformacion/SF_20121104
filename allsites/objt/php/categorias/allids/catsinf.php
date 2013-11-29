@@ -7,6 +7,7 @@ if(count($catsinf)>0){
 
 foreach ($catsinf as $key => $value) {
 
+$newc[$key]['idc']=$value['t_id'];
 $newc[$key]['url']=$value['url'];
 $newc[$key]['pagTittleC']=$value['pagTittleC'];
 $newc[$key]['done']="";

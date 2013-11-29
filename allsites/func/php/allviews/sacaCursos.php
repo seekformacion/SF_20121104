@@ -75,12 +75,12 @@ $fin=($ini+$cpp)-1;
 
 	############# añado filtro online o a distancia
 	if($online){
-	$onl="AND id_metodo=3";	
+	$onl="AND id_metodo=5";	
 	}elseif($distancia){
 	$onl="AND id_metodo=4";	
 	}else{
 		if($idpro){
-		$onl="AND id_metodo != 3 AND id_metodo !=4";
+		$onl="AND id_metodo != 5 AND id_metodo !=4";
 		}else{
 		$onl="";
 		}		
@@ -120,10 +120,20 @@ return $listcur;
 
 
 function getCURProv(){global $v;
+global $datCur;
 
+if($datCur){
+	
+if(array_key_exists('idcat', $datCur)){
+$idc=$datCur['idcat'];}	
+
+}else{
 $idc=$v['where']['id'];
+}
+
+
 $idt=$v['where']['idt'];
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 4 AND id_metodo !=3;");		
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 4 AND id_metodo !=5;");		
 $cin="";foreach ($res as $key => $data) {$idc=$data['id_cur']; $cin .=$idc . ",";};$cin=substr($cin, 0,-1);
 
 $provins=array();
@@ -134,7 +144,7 @@ if($iprov){$iprov="AND idpro NOT LIKE '$iprov%'";}else{$iprov="";}
 if($cin){
 $res=DBselect("SELECT SUBSTRING(idpro,1,3) as idp, count(distinct idcur) as C FROM skv_relCurPro WHERE idcur IN ($cin) $iprov GROUP BY idp ORDER BY C DESC; ");
 $provins=array();
-if(count($res)>0){ foreach ($res as $key => $dat) {$idp=$dat['idp'];
+if(count($res)>0){ foreach ($res as $key => $dat) {$idp=$dat['idp']; if(strlen($idp)==2){$idp='0' . $idp;};
 if(($idp=='070')||($idp=='077')||($idp=='078')){}else{$idp=substr($idp, 0,2) . "0";}
 if(array_key_exists($idp, $provins)){$provins[$idp]=$provins[$idp]+$dat['C'];}else{$provins[$idp]=$dat['C'];}
 }}}

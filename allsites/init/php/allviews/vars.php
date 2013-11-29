@@ -80,9 +80,10 @@ $v['vars']['eqtip'][29]['p']="Apuntes";
 
 $v['vars']['eqmet'][1]['s']="Presencial";
 $v['vars']['eqmet'][2]['s']="Semipresencial";
-$v['vars']['eqmet'][3]['s']="Online";
+$v['vars']['eqmet'][3]['s']="Personalizado";
+
 $v['vars']['eqmet'][4]['s']="A distancia";
-$v['vars']['eqmet'][5]['s']="Personalizado";
+$v['vars']['eqmet'][5]['s']="Online";
 $v['vars']['eqmet'][6]['s']="En el extranjero";
 $v['vars']['eqmet'][7]['s']="Otros";
 

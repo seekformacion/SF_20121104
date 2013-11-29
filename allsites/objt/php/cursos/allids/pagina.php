@@ -62,10 +62,10 @@ $Datos['cursosSimilares']=loadChild('objt','cursosSimilares');
 
 
 #### si es presencial cargo sedes
-if(($datCur['cur_id_metodo']<=2)||($datCur['cur_id_metodo']==5)){
+if(($datCur['cur_id_metodo']<=3)){
 $Datos['sedes']=loadChild('objt','sedes');
 }else{
-$Datos['sedes']="";	
+$Datos['sedes']=loadChild('objt','sedes2');	
 }
 
 $Datos['adW_LD']=loadChild('objt','adW_LD');

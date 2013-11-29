@@ -11,6 +11,13 @@
 //}, false);
 
 
+function Glow(id){
+var cla=document.getElementById(id).className	
+var claSIN=cla.replace(' color2_BG','');
+if(claSIN.length < cla.length){document.getElementById(id).className=claSIN;}else{document.getElementById(id).className=cla + ' color2_BG';};
+	
+}
+
 
 
 $(function () {
