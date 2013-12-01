@@ -2,7 +2,7 @@
 
 
 $Datos['imgLogo']=loadIMG("logo.png");
-$Datos['imgCat']=loadIMGCat('g');
+$Datos['imgCat']=imgCATg($v['where']['id']);
 $Datos['imgMaskCat']=loadIMG("mascaras/mascarafondocat.png");
 
 $Datos['Hprev']=$v['where']['Hprev'];

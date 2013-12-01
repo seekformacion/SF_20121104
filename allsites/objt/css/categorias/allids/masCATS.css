@@ -11,7 +11,7 @@
 .cadaCAT	{height:36px;border-top:1px solid #AAAAAA;border-bottom:1px solid #aaaaaa; position: relative; float:left; cursor:pointer;}
 .cadaCAT img {height: 36px; width:60px; position:relative; float:right; background-color: #F4F7F4;}
 .fTC {width:45px; height: 36px; position:relative; float:left;}
-.titCAT{font-family:Arial; position: relative; float: left; margin: 2px 0 0 -35px; font-size: 13px;}
+.titCAT{font-family:Arial; position: relative; float: left; margin: 2px 0 0 6px; font-size: 13px;}
 
 .ticScatF { background-position: -305px -120px; width:48px; height: 36px; position: relative; float: right; }
 

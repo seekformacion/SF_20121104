@@ -2,6 +2,7 @@
 
 includeFUNC('categorias');
 includeFUNC('sacaCursos');
+includeFUNC('images');
 
 $Datos['pagTittle']=$v['where']['pagTittle'];
 
@@ -21,7 +22,7 @@ if($idcat){
 $Datos['breadcrumbs']=breadCRUMBSCUR($idcat);
 
 $datCur['idcat']=$idcat;
-
+$datCur['idCurso']=$idcur;
 
 $catnoms=DBselect("SELECT pagTittleC, url FROM skf_urls WHERE t_id=$idcat AND tipo=1;");
 $datCur['catDCurNOM']=$catnoms[1]['pagTittleC'];
@@ -30,12 +31,13 @@ $datCur['catDCurURL']=$catnoms[1]['url'];
 global $rOtroscur;
 
 $listcur="";	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idcat;");	
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idcat AND id_cur != $idcur;");
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";};
-$listcur=substr($listcur, 0,-1);
-$curs=ordenaCURs($listcur,0,5);
-$cc=0;
-foreach ($curs as $p => $idcur){$cc++;$rOtroscur[$cc]=minidatCUR($idcur);};
+$listcur=trim(substr($listcur, 0,-1));
+
+$curs=array();$cc=0;
+if($listcur){$curs=ordenaCURs($listcur,0,5);}
+if(count($curs)>0){foreach ($curs as $p => $idcur){$cc++;$rOtroscur[$cc]=minidatCUR($idcur);};}
 
 }else{$Datos['breadcrumbs']="";};
 

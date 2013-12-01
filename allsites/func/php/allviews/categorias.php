@@ -10,7 +10,7 @@ $sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=
 
 $bc="";
 if($sup){
-$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo=1;");
+$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1);");
 foreach ($dcats as $key => $dat) {
 $url=$dat['url']; $n=$dat['pagTittleC'];	
 	if($url=="/"){
@@ -37,7 +37,7 @@ $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup);
 
 $bc="";
 if($sup){
-$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo=1;");
+$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1);");
 foreach ($dcats as $key => $dat) {
 $url=$dat['url']; $n=$dat['pagTittleC'];	
 	if($url=="/"){
@@ -228,6 +228,13 @@ $txt=DBselect("select text_desc from skf_txtDesc where t_id=$cat;");
 if(array_key_exists(1, $txt)){return $txt[1]['text_desc'];}else{return '';};
 }
 
+function DTXTcat($cat){
+$txt=DBselect("select mini_Text from skf_txtDesc where t_id=$cat;");
+if(array_key_exists(1, $txt)){return $txt[1]['mini_Text'];}else{return '';};
+}
+
+
+
 function InventaTXTcat($nc){global $v;
 $idc=$v['where']['id'];
 
@@ -240,6 +247,16 @@ return $txt[1];
 }
 
 
+function InventaDTXTcat($nc){global $v;
+$idc=$v['where']['id'];
+
+$rest= ($idc % 4);
+
+$ncmin=strtolower($nc);
+$txt[1]="$nc. Encuentra la mejor selección de $ncmin y elige el el que mas se adapta a tus necesidades. Mejora tu curriculum con estos $ncmin.";
+	
+return $txt[1];
+}
 
 
 

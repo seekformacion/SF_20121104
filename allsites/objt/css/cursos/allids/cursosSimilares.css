@@ -8,7 +8,7 @@
 
 
 .fTCCUR {width:45px; height: 36px; position:relative; float:left;}
-.titCCUR{font-family:Arial; position: relative; float: left; margin: 2px 0 0 -35px; font-size: 13px;   width: 352px;  height: 33px; overflow: hidden;}
+.titCCUR{font-family:Arial; position: relative; float: left; margin: 2px 0 0 0px; font-size: 13px;   width: 352px;  height: 33px; overflow: hidden;}
 
 
 .flchCadCur { background-position: -305px -120px; width:48px; height: 36px; position: relative; float: right; }

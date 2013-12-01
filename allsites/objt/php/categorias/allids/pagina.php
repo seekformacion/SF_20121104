@@ -2,6 +2,7 @@
 
 includeFUNC('categorias');
 includeFUNC('sacaCursos');
+includeFUNC('images');
 
 $idcat=$v['where']['id'];
 catsINF($idcat);
@@ -10,7 +11,7 @@ catsINF($idcat);
 
 
 
-$Datos['pagTittle']=$v['where']['pagTittle'];
+$Datos['pagTittle']=$v['where']['pagTittle'] . " | " . $v['where']['id'];
 
 
 
@@ -23,7 +24,8 @@ $Datos['catsinf']=loadChild('objt','catsinf');
 
 $Datos['listCursos']=loadChild('objt','listCursos');
 
-
+global $lccu;
+$Datos['topCURinf']=$lccu['html'];
 
 $Datos['descTXTcat']=loadChild('objt','descTXTcat');
 $Datos['adW_LD']=loadChild('objt','adW_LD');

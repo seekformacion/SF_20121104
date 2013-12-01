@@ -1,0 +1,4 @@
+.tod_cur {padding:8px 5px 4px 26px; min-height:30px; font-family:'brandon_grotesque_blackRg'; text-transform:uppercase; line-height: 1.1; position: relative; cursor:pointer;}
+.tod_cur a {color:#ffffff;}
+
+.tcurB { background-position: -175px -41px;    height: 18px;   left: 5px;    position: absolute;    top: 7px; width: 18px;}

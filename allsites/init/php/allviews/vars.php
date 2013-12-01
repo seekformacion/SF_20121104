@@ -1,6 +1,7 @@
 <?php
 
 
+$v['vars']['eqtempl'][0]="home";
 $v['vars']['eqtempl'][1]="categorias";
 $v['vars']['eqtempl'][2]="cursos";
 

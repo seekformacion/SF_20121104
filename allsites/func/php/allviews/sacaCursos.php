@@ -3,7 +3,7 @@
 
 function minidatCUR($idcur){global $v;
 	
-$res=DBselect("SELECT url, pagTittle, pagTittleC FROM skf_urls WHERE tipo=2 AND t_id=$idcur;");	
+$res=DBselect("SELECT t_id, url, pagTittle, pagTittleC FROM skf_urls WHERE tipo=2 AND t_id=$idcur;");	
 return $res[1];	
 }
 

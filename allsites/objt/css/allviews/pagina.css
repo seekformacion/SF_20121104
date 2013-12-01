@@ -12,6 +12,9 @@
 .gris3 {color:#DDE8DD !important;}
 .gris3_BG {background-color:#DDE8DD !important;}
 
+.gris4 {color:#F4F7F4 !important;}
+.gris4_BG {background-color:#F4F7F4 !important;}
+
 
 .color {color:#1BB105 !important;}
 .color_BG {background-color:#1BB105 !important;}
@@ -19,8 +22,8 @@
 .color1 {color:#008F2F !important;}
 .color1_BG {background-color:#008F2F !important;}
 
-.color2 {color:#F4F7F4 !important;}
-.color2_BG {background-color: #F4F7F4 !important;}
+.color2 {color:#E0F3E6 !important;}
+.color2_BG {background-color: #E0F3E6 !important;}
 
 .blanco {color:#ffffff !important;}
 .blanco_BG {background-color: #ffffff !important;}
@@ -107,7 +110,7 @@ p {
 	position: relative;
 	float:left;
 	margin-left:15px; 
-	width:886px; 
+	width:889px; 
 	
 }
 
@@ -133,7 +136,7 @@ p {
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color='#777777');
 }
 
-.bloque{border:1px solid #ffffff;	background-color:#ffffff;margin-bottom:20px;}
+.bloque{border:1px solid #ffffff;	background-color:#ffffff; margin-bottom:20px;  border: 1px solid #BBBBBB;}
 
 
 /* .contenido {position:relative; } */

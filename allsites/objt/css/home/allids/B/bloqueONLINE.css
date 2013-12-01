@@ -1,0 +1,13 @@
+.online{ width:240px; height:60px;position: relative; float:left; margin-left: 13px; margin-bottom: 5px;}
+.OnlineImage{ height:50px;width: 230px; cursor:pointer; }
+.OnlineImage img {width:240px; height: 60px;}
+.titOnlineImg { margin:-48px 0 0 2px;	float: left;	position: relative;    	width: 230px;}
+.TIPOnlineImg { margin:-10px 2px 0 0; 	float:right;	position: relative; 	width: 230px;  height: 24px; }
+
+.TIPOnlineImg p {float:right;	font-size:18px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+.titOnlineImg p {				font-size:12px; font-family:'brandon_grotesque_blackRg'; line-height: 1.1; color:#ffffff; margin:0px; text-shadow: black 0.1em 0.1em 0.2em; filter: progid:DXImageTransform.Microsoft.Shadow( direction =135,strength=1,color=000000);}
+
+.TIPOnlineImg a {color:#FFFFFF; text-transform: uppercase;}
+.titOnlineImg a {color:#FFFFFF; text-transform: uppercase;}
+
+.flechaOnline {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;  }

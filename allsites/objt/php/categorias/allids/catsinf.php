@@ -5,9 +5,10 @@ $catsinf=$v['where']['cats_inf'];
 
 if(count($catsinf)>0){
 
+$listCats="";
 foreach ($catsinf as $key => $value) {
 
-$newc[$key]['idc']=$value['t_id'];
+$newc[$key]['idc']=$value['t_id']; $listCats.=$value['t_id'] . ",";
 $newc[$key]['url']=$value['url'];
 $newc[$key]['pagTittleC']=$value['pagTittleC'];
 $newc[$key]['done']="";
@@ -30,6 +31,19 @@ if(!$v['admin']){
 }	
 	
 $rDatos['cadCinf']=$newc;
+
+global $lccu;
+$listCats=substr($listCats, 0,-1); $lcusos=""; $lccu['html']="";
+$curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($listCats);");
+if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
+$lcusos=ordenaCURs($lcusos,0,2);
+if(count($lcusos)>0){foreach ($lcusos as $key => $idcc) {
+$lccu['key']=$key; $lccu['$idcc']=$idcc;
+$lccu['html'] .=loadChild('objt','subCURcatsinf');
+	
+}}
+
+
 }else{
 $Datos['codNULL']=1;		
 }

@@ -21,11 +21,16 @@ $slides="";
 if(count($catrel)>0){
 foreach ($catrel as $kk => $idcc){
 	
-$res=DBselect("SELECT idp, crsTittle, url, pagTittle FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
+$res=DBselect("SELECT idp, crsTittle, url, pagTittle, t_id FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
 if(count($res)>0){
 $dsliders['nom']=$res[1]['crsTittle'];
 $dsliders['url']=$v['vars']['purl'][$res[1]['idp']] . $res[1]['url'];
 $dsliders['pagTittle']=$res[1]['pagTittle'];
+
+$txt=trim(DTXTcat($res[1]['t_id']));
+if(!$txt){$txt=InventaDTXTcat($res[1]['pagTittle']);};
+$dsliders['description']=$txt;
+
 }
 	
 $listcur="";	

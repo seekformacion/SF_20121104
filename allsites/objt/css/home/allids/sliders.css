@@ -1,0 +1,43 @@
+
+
+.allsliders{height: 167px; width:886px; position:relative; float:left;}
+
+.sliderContainer{
+    margin-top:15px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	width:884px; height:134px;
+	position: relative;
+}
+
+#slider 		{width: 884px; height: 134px;overflow: hidden;position: relative;}
+#slider .slide	{width: 884px; height: 134px;float: left;}
+
+.prev, .next	{display: block; height: 40px; width: 39px; position: relative; cursor:pointer;}
+.prev			{position: relative; float:left; top: -90px;  left: -18px; background-position: 0px 0px; }
+.next			{position: relative; float:right; top: -90px;  left: 18px; background-position: -40px 0px; }
+
+
+
+
+.sliderContainer ul {padding: 9px 0px 12px 25px; margin: 0px; font-size:14px;}
+.sliderContainer li {
+    background-position: -385px -2px;
+    background-repeat: no-repeat;
+    
+    height: 40px;
+    list-style-type: none;
+    padding: 1px 0 0 18px;
+    line-height: 16px
+}
+
+
+
+
+
+
+
+.bannerSlideleft	{float:left;	width: 369px; height: 99px;	padding: 20px 15px 15px 30px;}
+.bannerSlideright	{float:right;	width: 445px; height: 109px;padding: 6px 20px 15px 5px;}
+
+

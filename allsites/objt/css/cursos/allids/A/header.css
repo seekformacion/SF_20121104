@@ -1,15 +1,19 @@
 
 
 
-
+.content {
+   	float: left;
+    margin-top: -144px;
+    position: relative;
+}
 
 .margen_sup	{ height:22px;width: 1255px;}
 
-.bloque_negro{background-color:#000000;	height:179px;	margin-bottom: -179px;	width: 1255px;}
+.bloque_negro{background-color:#000000;	height:209px;margin-bottom: -209px;	width: 1255px;}
 
 .imgCat	{position: relative; float:left;}
 .imgCat {width:781px; height:209px;}
-.icat {margin-left: 474px; margin-top: -135px;}
+.icat {margin-left: 474px; margin-top: -58px;}
 .imas {margin-left: 474px; margin-top: -209px;}
 
 
