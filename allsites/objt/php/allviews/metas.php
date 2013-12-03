@@ -30,8 +30,11 @@ $Datos['description']=$datCur['cur_descripcion'];
 
 
 $Datos['imgIconos']=loadIMG("iconos.png");
+$Datos['imgValor']=loadIMG("valoracion.png");
 $Datos['imgFspain']=loadIMG("spainF.png");
 $Datos['imgIprovis']=loadIMG("spainP.png");
+
+
 
 $Datos['links_css']=$v['linksCSS'];
 

@@ -20,4 +20,6 @@ $Datos['tip']=$v['vars']['eqtip'][$res[1]['cur_id_tipocurso']]['s'];
 $Datos['met']=$v['vars']['eqmet'][$res[1]['cur_id_metodo']]['s'];
 $Datos['imgLogoCent']=loadLogoCent('p/' . $res[1]['file_logo']);
 
+$Datos['v']=valoracion($idcu);
+
 ?>

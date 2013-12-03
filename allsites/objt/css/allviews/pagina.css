@@ -2,36 +2,6 @@
 
 
 
-.gris1 {color:#EBEBEB !important;}
-.gris1_BG {background-color:#EBEBEB !important;}
-
-
-.gris2 {color:#888888 !important;}
-.gris2_BG {background-color:#888888 !important;}
-
-.gris3 {color:#DDE8DD !important;}
-.gris3_BG {background-color:#DDE8DD !important;}
-
-.gris4 {color:#F4F7F4 !important;}
-.gris4_BG {background-color:#F4F7F4 !important;}
-
-
-.color {color:#1BB105 !important;}
-.color_BG {background-color:#1BB105 !important;}
-
-.color1 {color:#008F2F !important;}
-.color1_BG {background-color:#008F2F !important;}
-
-.color2 {color:#E0F3E6 !important;}
-.color2_BG {background-color: #E0F3E6 !important;}
-
-.blanco {color:#ffffff !important;}
-.blanco_BG {background-color: #ffffff !important;}
-
-.negro {color:#000000 !important;}
-.negro_BG {background-color: #000000 !important;}
-
-
 
 body {
     
@@ -57,7 +27,7 @@ body {
 .clean{clear:both;}
 
 
-h2 strong {color:#008F2F;}
+
 
 
 h2 {

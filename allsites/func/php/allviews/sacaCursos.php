@@ -1,5 +1,10 @@
 <?php
 
+function valoracion($idc){
+$rest= ($idc % 5);
+$rest++;
+return $rest;	
+}
 
 function minidatCUR($idcur){global $v;
 	

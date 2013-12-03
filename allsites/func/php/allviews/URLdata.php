@@ -57,7 +57,7 @@ if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $
 ################
 
 
-$res=DBselect("SELECT tipo, t_id, codTittle, pagTittle FROM skf_urls where idp=$idp AND url='$url';");
+$res=DBselect("SELECT tipo, t_id, codTittle, pagTittleC FROM skf_urls where idp=$idp AND url='$url';");
 $v['where']['view']=$eqtempl[$res[1]['tipo']];
 $v['where']['id']=	$res[1]['t_id'];
 
@@ -69,7 +69,7 @@ $idts=substr($idts,0,-1);
 $v['where']['idt']=$idts; #### pueden crearse listas de tipos   ej: 1,2  EQUILAVE A: CURSOS Y MASTERS
 
 $v['where']['codTittle']=$res[1]['codTittle'];
-$v['where']['pagTittle']=$res[1]['pagTittle'];
+$v['where']['pagTittle']=$res[1]['pagTittleC'];
 $v['where']['urlSimple']=$url;
 
 ############# añado prov a los titulos

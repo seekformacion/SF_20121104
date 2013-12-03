@@ -1,6 +1,11 @@
 a {text-decoration: none; color:#000000;}
 
 
+.v1 {background-position: 	0px -1px; height: 13px; width: 76px;}
+.v2 {background-position: 	0px -14px; height: 13px; width: 76px;}
+.v3 {background-position: 	0px -27px; height: 13px; width: 76px;}
+.v4 {background-position: 	0px -40px; height: 13px; width: 76px;}
+.v5 {background-position: 	0px -53px; height: 13px; width: 76px;}
 
 .mapaSp{ width: 309px; height: 242px; position:relative; float:left;}
 
