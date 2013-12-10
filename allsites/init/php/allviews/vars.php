@@ -115,5 +115,38 @@ $v['vars']['esmin'][61]="Licenciado";
 $v['vars']['esmin'][71]="Doctorado";
 
 
+$v['vars']['eqtip'][1]['c']="Curso";                   			
+$v['vars']['eqtip'][2]['c']="Master";							
+$v['vars']['eqtip'][3]['c']="Postgrado";						
+$v['vars']['eqtip'][4]['c']="Oposicion";						
+$v['vars']['eqtip'][5]['c']="F.P.";			
+$v['vars']['eqtip'][6]['c']="Grado medio";				
+$v['vars']['eqtip'][7]['c']="Grado Superior";				
+$v['vars']['eqtip'][8]['c']="C. universitaria";			
+$v['vars']['eqtip'][9]['c']="Curso técnico";					
+$v['vars']['eqtip'][10]['c']="Doctorado";				
+$v['vars']['eqtip'][11]['c']="Curso de Verano";					
+$v['vars']['eqtip'][12]['c']="Diplomatura";						
+$v['vars']['eqtip'][13]['c']="Doctorado";						
+$v['vars']['eqtip'][14]['c']="Experto";							
+$v['vars']['eqtip'][15]['c']="Feria";							
+$v['vars']['eqtip'][16]['c']="F.A Empresas";			
+$v['vars']['eqtip'][17]['c']="F.Ocupacional";			
+$v['vars']['eqtip'][18]['c']="F.subvencionada";			
+$v['vars']['eqtip'][19]['c']="Conferencias";			
+$v['vars']['eqtip'][20]['c']="Licenciatura";					
+$v['vars']['eqtip'][21]['c']="Manual";							
+$v['vars']['eqtip'][22]['c']="Monografía";						
+$v['vars']['eqtip'][23]['c']="Ocupacional";						
+$v['vars']['eqtip'][24]['c']="Otros estudios";					
+$v['vars']['eqtip'][25]['c']="Seminario";						
+$v['vars']['eqtip'][26]['c']="Taller";							
+$v['vars']['eqtip'][27]['c']="Tutorial";						
+$v['vars']['eqtip'][28]['c']="White Paper";						
+$v['vars']['eqtip'][29]['c']="Apunte";							
+
+
+
+
 
 ?>

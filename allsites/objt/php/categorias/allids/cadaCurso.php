@@ -27,6 +27,7 @@ $nom="$nom en $np";
  
 $Datos['nombre']=$nom;# . "-" . $data['cur_id_metodo'] . "-" . $data['id'];
 $Datos['url']=$data['url'];
+$Datos['id']=$data['id'];
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 $Datos['met']=$eqmet[$data['cur_id_metodo']]['s'];
 $Datos['v']=valoracion($data['id']);

@@ -1,5 +1,7 @@
 <?php
 global $datCur;
+
+$Datos['id']=$datCur['id'];
 $Datos['imgLogoCent']=loadLogoCent('g/logo1.gif');
 $Datos['v']=valoracion($datCur['id']);
 $Datos['cur_descripcion']=$datCur['cur_descripcion'];
