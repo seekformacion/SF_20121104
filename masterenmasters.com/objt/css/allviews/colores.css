@@ -21,8 +21,18 @@ h2 strong {color:#0052A3;}
 .color1 {color:#0052A3 !important;}
 .color1_BG {background-color:#0052A3 !important;}
 
+
 .color2 {color:#E6F5FA !important;}
 .color2_BG {background-color: #E6F5FA !important;}
+.titCAT a:hover { background-color: #E6F5FA; }
+.titCCUR a:hover { background-color: #E6F5FA; }
+.bloqueCurDist li:hover { background-color: #E6F5FA;}
+.listadoPROVIS li:hover { background-color: #E6F5FA;}
+
+
+
+.color4_BG {background-color: #D9E4EC !important;}
+    
 
 .blanco {color:#ffffff !important;}
 .blanco_BG {background-color: #ffffff !important;}

@@ -44,7 +44,7 @@ $Datos['navBAR']=loadChild('objt','navBAR');
 
 $Datos['header']=loadChild('objt','header');
 $Datos['footer']=loadChild('objt','footer');
-$Datos['emergentes']=loadChild('objt','emergentes');
+
 
 
 

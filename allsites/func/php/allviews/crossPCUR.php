@@ -20,9 +20,12 @@ global $dsliders;
 $slides="";
 if(count($catrel)>0){
 foreach ($catrel as $kk => $idcc){
-	
+
+$cinf=CATS_inf_T($idcc); 
+$lcinfe= $cinf['list'];
+$bb=0;	
 $res=DBselect("SELECT idp, crsTittle, url, pagTittle, t_id FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
-if(count($res)>0){
+if(count($res)>0){$bb++;
 $dsliders['nom']=$res[1]['crsTittle'];
 $dsliders['url']=$v['vars']['purl'][$res[1]['idp']] . $res[1]['url'];
 $dsliders['pagTittle']=$res[1]['pagTittle'];
@@ -33,16 +36,22 @@ $dsliders['description']=$txt;
 
 }
 	
-$listcur="";	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idcc;");	
-foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";};
+$listcur="";$res=array();
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat IN ($idcc);");	
+if(count($res)>0){foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";};};
+
+if($lcinfe){	
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat IN ($lcinfe);");	
+if(count($res)>0){foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";};};
+}
+
 
 $listcur=substr($listcur, 0,-1);
 $curs=ordenaCURs($listcur,0,2);
 
 $cc=0;$dsliders['cross-cursos']=array();
 
-foreach ($curs as $key => $cur) {
+if(count($curs)>0){foreach ($curs as $key => $cur) {
 if($cur){
 	
 $res=DBselect("
@@ -60,10 +69,10 @@ foreach ($res as $cc2 => $datos){
 	};
 
 
-}}
+}}}
 
 
-if($cc>0){
+if(($cc>0)&&($bb)){
 $slidesA[]=loadChild('objt','cadaSlide');
 }
 

@@ -8,16 +8,16 @@
 .PROVGeoImg { 	float:right;	position: absolute;  top: 99px;	width: 190px; height: 24px; }
 .flechaGeo {position: relative; float:right; width:17px; height:17px; background-position: -81px -22px; margin-left: 5px;    margin-top: 3px;}
 
-.listadoPROVIS {width:363px;position:relative; float:left;}
-.listadoPROVIS ul {padding: 13px 0px 12px 13px; margin: 0px; font-size:12px;}
+.listadoPROVIS {width:418px;position:relative; float:left;}
+.listadoPROVIS ul {padding: 3px 0 30px 13px; margin: 0px; font-size:12px;}
 .listadoPROVIS li {
 		
-    background-position: -385px -1px;
+      background-position: -385px 4px;
     background-repeat: no-repeat;
-    
-    height: 27px;
+    border-bottom: 1px solid #DDDDDD;
     list-style-type: none;
-    padding: 0 0 0 17px;
+    height: 19px;
+    padding: 5px 0 0 18px;
 }
 
 .masPROVIS {width:66px; position:relative; float:right; margin:-28px 4px 0 0; font-size:13px; font-family:'brandon_grotesque_blackRg'; background-position: -333px -90px; cursor:pointer;}

@@ -18,7 +18,10 @@
 
 
 .menuSOC {position:relative;float:left;width:168px;}
+.iFB {height: 40px;    position: relative;    width: 153px; margin-top:5px; float:left; background-position: -104px 0; cursor:pointer;}
+/*
 .iFB {height: 40px;    position: relative;    width: 40px; margin-top:5px; float:left; background-position: -105px 0;}
 .iTW {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -184px 0;}
 .iGM {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -223px -42px;}
 .iML {height: 40px;    position: relative;    width: 40px; margin-top:5px;margin-left:2px; float:left; background-position: -143px 0;}
+*/

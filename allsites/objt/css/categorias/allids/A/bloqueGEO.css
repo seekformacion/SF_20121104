@@ -9,14 +9,14 @@
 
 
 .listadoPROVIS {width:290px; position: relative; float: left;}
-.listadoPROVIS ul {padding: 12px 0px 12px 13px; margin: 0px; font-size:13px;}
+.listadoPROVIS ul {padding: 12px 0px 12px 13px; margin: 0px; font-size:12px;}
 .listadoPROVIS li {
-    background-position: -385px 0px;
+    background-position: -385px 4px;
     background-repeat: no-repeat;
-    
-    height: 34px;
+    border-bottom: 1px solid #DDDDDD;
     list-style-type: none;
-    padding: 0 0 0 17px;
+    min-height: 27px;
+    padding: 5px 0 0 18px;
 }
 
 .masPROVIS {background-position: -333px -90px; cursor:pointer;

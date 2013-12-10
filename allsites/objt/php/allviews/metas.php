@@ -2,6 +2,22 @@
 includeCORE('css/css');
 includeCORE('js/js');
 
+
+
+
+$lb=array("\n"); 
+$javacon=loadChild('objt','carrito');
+$java=str_replace($lb,'',$javacon);
+/*
+echo $javacon;
+echo "\n----------------\n ";
+echo $java;
+echo "\n---------------- \n";
+*/
+$v['JSpostPROCESS']['%listHTML%']=$java;
+loadJS('objt','init');
+
+
 createCSS();
 
 global $datCur;
@@ -37,6 +53,7 @@ $Datos['imgIprovis']=loadIMG("spainP.png");
 
 
 $Datos['links_css']=$v['linksCSS'];
+$Datos['links_cssIE']=$v['linksCSSIE'];
 
 createJS();
 

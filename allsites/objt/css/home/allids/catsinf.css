@@ -2,9 +2,6 @@
 .sbCURinf1 { width:265px; height: 250px; margin-right:13px; position:relative; float:left; padding:10px; cursor:pointer;}
 .sbCURinf2 { width:265px; height: 250px; position:relative; float:left; padding:10px; cursor:pointer;}
 
-.sbCURinf0:hover{ background-color:#EEEEEE; }
-.sbCURinf1:hover{ background-color:#EEEEEE; }
-.sbCURinf2:hover{ background-color:#EEEEEE; }
 
 .tCcl   {position: relative;    width: 260px;    z-index: 999; min-height:58px;}
 .tCcl a {font-family: Arial;  font-size: 16px;  font-weight: normal; }
@@ -28,7 +25,7 @@
     top: 3px;}
 
 
-.tCcd {color:#444444; font-family: Arial;  font-size: 12px;  font-weight: normal; position:relative; float:left; position:absolute; top:120px;width:260px; height: 126px;  overflow: hidden;}
+.tCcd {color:#444444; font-family: Arial;  font-size: 12px;  font-weight: normal; position:relative; float:left; position:absolute; top:120px;width:260px; height: 130px;  overflow: hidden;}
 .tCcFl { background-position: -305px -120px;
     float: right;
     height: 36px;

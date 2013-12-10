@@ -1,12 +1,12 @@
 .bloqueCurDist{   height: 252px;
    
     overflow: hidden;
-    width: 533px; }
+    width: 529px; }
 
 .BQDonline {
-	position:relative; float:left; width:540px; padding-bottom:5px; margin-bottom:15px; border-bottom: 1px solid #BBBBBB;
+	position:relative; float:left; width:520px;
 }
 
 .BQDdistancia{
-	position:relative; float:left; width:540px; margin-bottom:10px;
+	position:relative; float:left; width:520px; margin-bottom:10px;
 }

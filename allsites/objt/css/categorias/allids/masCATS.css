@@ -3,17 +3,31 @@
 
 .masCATS {width:886px;}
 .cadaCAT	{width:280px; margin: 10px 7px 0;}
-.titCAT{width:220px;}
 
-.catsInf { min-height: 30px;padding-bottom: 16px;padding-left: 3px;width: 883px;}
-.masCATS {position:relative; float:left; padding: 0 0 10px 0;}
+
+
+.titCAT{margin: 9px 0 0 7px; width:282px; height: 36px; border-top:1px solid #AAAAAA;border-bottom:1px solid #AAAAAA;  position: relative; float:left;cursor:pointer;}
+.titCAT a { display: block; height: 30px; font-family:Arial; color:#444444; font-size: 13px; overflow: hidden;    padding: 3px;    width: 229px; }
+
+
+.catsInf { min-height: 30px;padding-bottom: 16px;padding-left: 7px;width: 879px;}
+.masCATS {position:relative; float:left; padding: 0 0 10px 5px; width: 881px;}
 .titmasCATS {font-size:16px; font-family:'brandon_grotesque_blackRg'; margin: 10px 0 0 10px;}
-.cadaCAT	{height:36px;border-top:1px solid #AAAAAA;border-bottom:1px solid #aaaaaa; position: relative; float:left; cursor:pointer;}
-.cadaCAT img {height: 36px; width:60px; position:relative; float:right; background-color: #F4F7F4;}
-.fTC {width:45px; height: 36px; position:relative; float:left;}
-.titCAT{font-family:Arial; position: relative; float: left; margin: 2px 0 0 6px; font-size: 13px;}
 
-.ticScatF { background-position: -305px -120px; width:48px; height: 36px; position: relative; float: right; }
+.cadaCAT	{}
+
+.cadaCAT img {height: 36px; width:60px; position:relative; float:right; background-color: #F4F7F4;}
+
+
+.fTC {width:45px; height: 36px; position:relative; float:left;}
+
+.ticScatF {   background-position: -305px -120px;
+    float: right;
+    height: 36px;
+    left: 234px;
+    position: absolute;
+    top: 0;
+    width: 48px; }
 
 
 

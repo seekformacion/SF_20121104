@@ -1,13 +1,13 @@
-.cabCurso{ width:884px; height:164px; position:relative; float:left;}
+.cabCurso{ width:887px; height:164px; position:relative; float:left;}
 
-.descCurso {width:480px; padding:15px; position:relative; float:left;}
+.descCurso {width:482px; padding:15px; position:relative; float:left;}
 .descCurso p {margin:0px;}
 
 
 .franjLogo {position:relative; float:left; width:150px; height:100%; }
 
-.tipoF 		{ float: left; margin-left: 15px; margin-top: 23px; position: relative;}
-.tipoF p 	{ font-family: "brandon_grotesque_regularRg"; font-size: 13px; letter-spacing: -1px; line-height: 1.3; margin: 0; text-transform: uppercase;}
+.tipoF 		{ float: left; margin-left: 16px; margin-top: 23px; position: relative;}
+.tipoF p 	{ font-family: "brandon_grotesque_regularRg"; font-size: 10px;  line-height: 1.3; margin: 0; text-transform: uppercase; color:#444444;}
 .valoracion { background-position: -4px -45px; height: 15px; width: 76px;}
 
 
@@ -22,8 +22,12 @@
 
 
 .masinfo {background-position: -4px -60px;height: 50px; margin:0 0 0 12px; width: 200px;}
-.formatos {background-position: -4px -110px;height: 50px; margin:16px 0 0 13px; width: 200px;}
+.formatos {background-position: -4px -110px;height: 43px; margin:16px 0 7px 13px; width: 200px;}
 
-.logoCent {background-color: #ffffff; border:1px solid #DDE8DD; margin-left: 4px;    margin-top: 3px;    width: 139px;}
+.logoCent {border: 1px solid #BBBBBB;
+    margin-left: 15px;
+    margin-top: 14px;
+    padding: 1px;
+    width: 110px;}
 
 

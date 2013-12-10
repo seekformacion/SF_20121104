@@ -199,11 +199,21 @@ return $txt;
 
 
 function ordenaCURs($curs,$ini,$fin){
+$nlist=array();
+
+if($curs){
+$res=DBselect("SELECT id, OrdDESC FROM skv_cursos WHERE id IN ($curs);");		
+foreach ($res as $key => $value) {$preORD[$value['OrdDESC']]=$value['id'];};
+krsort($preORD);	
+$output = array_slice($preORD, $ini, $fin+1);
+
+
+foreach ($output as $kk => $id){$nlist[]=$id;};
+
+}
+
 	
-$lcur=explode(',',$curs);
-for($i = $ini; $i <= $fin; $i++){if(array_key_exists($i, $lcur)){$result[]=$lcur[$i];};};		
-	
-return $result;
+return $nlist;
 }
 
 

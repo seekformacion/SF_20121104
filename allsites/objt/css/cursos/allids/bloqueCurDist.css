@@ -1,8 +1,14 @@
 
 
-.bloqueCurDist{  position: relative;float: left; padding: 8px 10px 5px 10px;}
+.bloqueCurDist{  position: relative;float: left; padding:8px 15px 5px 13px;}
 
 .bloqueCurDist h3{font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal; text-transform: uppercase;}
 
-.bloqueCurDist ul {padding: 0px; margin-top: 10px;}
-.bloqueCurDist li {background-position: -385px 0px; background-repeat: no-repeat; list-style-type: none;  padding: 0 0 0 17px; margin-bottom:3px;}
+.bloqueCurDist ul {padding: 0px; margin-top: 10px; border-top: 1px solid #BBBBBB;}
+.bloqueCurDist li {background-position: -385px 1px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #BBBBBB;
+    list-style-type: none;
+    min-height: 19px;
+    padding: 3px 0 3px 20px;}
+

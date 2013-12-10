@@ -31,13 +31,42 @@
     line-height: 16px
 }
 
-
-
-
-
-
-
 .bannerSlideleft	{float:left;	width: 369px; height: 99px;	padding: 20px 15px 15px 30px;}
 .bannerSlideright	{float:right;	width: 445px; height: 113px;padding: 6px 20px 15px 5px;}
+
+
+/* del carrito */
+
+
+
+.allslidersCarr {height: 167px; width:886px; position:relative; float:left;}
+
+.sliderContainerCarr {
+    margin-top:15px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	width:884px; height:134px;
+	position: relative;
+}
+
+#sliderCarr 		{width: 884px; height: 134px;overflow: hidden;position: relative;}
+#sliderCarr .slideCarr	{width: 884px; height: 134px;float: left;}
+
+.prevCarr, .nextCarr	{display: block; height: 40px; width: 39px; position: relative; cursor:pointer;}
+.prevCarr			{position: relative; float:left; top: -90px;  left: -18px; background-position: 0px 0px; }
+.nextCarr			{position: relative; float:right; top: -90px;  left: 18px; background-position: -40px 0px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

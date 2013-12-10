@@ -1,5 +1,9 @@
 
-.gris_emer{ background-color: #333333; height: 100%; left: 0; opacity: 0.4; position: fixed; top: 0; visibility: hidden; width: 100%; z-index: 9998;}
+.gris_emer{ background-color: #333333; height: 100%; left: 0; 
+			opacity: 0.5; 
+			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+			position: fixed; top: 0; 
+			visibility: hidden; width: 100%; z-index: 9998;}
 
 .bloq_eme_provs { height: 600px; left: 50%;    margin-left: -340px;    margin-top: -300px;    position: fixed;    top: 50%;    visibility: hidden;    width: 591px;    z-index: 9999;}
 .em_tpro {width:600px; min-height: 400px;}

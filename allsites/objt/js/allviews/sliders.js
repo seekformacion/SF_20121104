@@ -36,17 +36,17 @@ $(document).ready(function(){
        switch (direction) {
             case 'right': //Derecha
                 if (position+slides[0].offsetWidth > totalWidth){ //Si la siguiente posiciÃ³n se sale del contenedor, vuelve al principio.
-                    $('#slider:not(:animated)').animate({scrollLeft:0},1000);
+                    $('#slider:not(:animated)').animate({scrollLeft:0},800);
                 } else { //Si no es el final, suma a la posiciÃ³n actual la anchura del slide.
-                    $('#slider:not(:animated)').animate({scrollLeft:position+slides[0].offsetWidth},1000);
+                    $('#slider:not(:animated)').animate({scrollLeft:position+slides[0].offsetWidth},800);
                 }
                 break;
 
             case 'left': //Izquierda
                 if (position-slides[0].offsetWidth < 0){ //Si la siguiente posiciÃ³n se sale del contenedor, vuelve al final.
-                    $('#slider:not(:animated)').animate({scrollLeft:totalWidth},1000);
+                    $('#slider:not(:animated)').animate({scrollLeft:totalWidth},800);
                 } else { //Si no es el final, resta a la posiciÃ³n actual la anchura del slide.
-                    $('#slider:not(:animated)').animate({scrollLeft:position-slides[0].offsetWidth},1000);
+                    $('#slider:not(:animated)').animate({scrollLeft:position-slides[0].offsetWidth},800);
                 }
                 break;
         }
@@ -55,7 +55,7 @@ $(document).ready(function(){
 
    //FunciÃ³n que crea el temporizador
    function initTimer(){
-        timer = setInterval(function(){sliderScroll('right');}, 5000);
+        timer = setInterval(function(){sliderScroll('right');}, 8000);
    }
 
 
@@ -89,3 +89,12 @@ $(document).ready(function(){
     initTimer();
 
 });
+
+
+
+
+
+
+
+
+

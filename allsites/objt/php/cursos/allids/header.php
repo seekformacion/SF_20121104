@@ -6,5 +6,6 @@ $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['imgCat']=imgCATg($datCur['idcat']);
 $Datos['imgMaskCat']=loadIMG("mascaras/mascarafondocat.png");
 
+$Datos['home']="http://" . $v['where']['site'];
 
 ?>
