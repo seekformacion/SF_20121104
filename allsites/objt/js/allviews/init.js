@@ -21,8 +21,8 @@ document.getElementById('pops').innerHTML=window.top.HTML;
 
 function formup(){
 	
-showSl(-800);	
-emerge('em-2');	selpC(1);cargaSel();
+	
+emerge('em-2'); showSl(800); selpC(1);cargaSel();
 }
 
 
@@ -117,7 +117,7 @@ function getremotecookie() {
  
 }; 
 
-function initCurSEL(){
+function initCurSEL(){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;
 var csels=getCookie("csels");
 
@@ -150,7 +150,7 @@ window.top.cSELS.push(val);
 }
 
 function chkCsels(){
-var csel=window.top.cSELS;  console.info(window.top.cSELS);
+var csel=window.top.cSELS;  //console.info(window.top.cSELS);
 for (i=0; i<=csel.length ; i++){
 if(document.getElementById(csel[i])){document.getElementById(csel[i]).className='iconos IaddList IadlON';}	
 }
@@ -164,16 +164,20 @@ cargaSel();
 	
 }
 
-function addVis(idcur){
+function addVis(idcur){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idcur=Number(idcur);
 var url='/ajx/curSelUID.php?do=4&uid=' + uid + '&idc=' + idcur;
 $.getJSON(url, function(data) {	$.each(data, function(key, val) { });
 });		
 }
 
-function adCS(idc){
+function adCS(idc){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idc=Number(idc);
-var posSel=	window.top.cSELS.indexOf(idc);
+var ind=window.top.cSELS;
+
+
+
+var posSel=	jQuery.inArray(idc,ind);
 if(posSel!=-1){
 	window.top.cSELS.splice(posSel, 1);
 	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlOFF';};
@@ -191,23 +195,24 @@ if(posSel!=-1){
 
 	
 var val= escape(window.top.cSELS.join(','));
-console.info(window.top.cSELS);
+
 setCookie('csels',val,0);
 }
 
 
 function cargaSel(){
-
+$.ajaxSetup({ cache: false });
 uid=window.top.ckk;
 window.top.cSELS=new Array;	
 var url='/ajx/cargaSels.php?uid=' + uid;
 $.getJSON(url, function(data) {
 $.each(data, function(key, val) {
+	
 if((key=='P1c')||(key=='P2c')){document.getElementById(key).innerHTML=val;}else{val=Number(val); window.top.cSELS.push(val);};
 });
 
 var val= escape(window.top.cSELS.join(','));
-console.info(window.top.cSELS);
+
 setCookie('csels',val,0);
 
 });	

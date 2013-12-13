@@ -74,9 +74,9 @@ $html.="
 
 $html.='</div></div>';
 
-if($c>5){
-$html.="<div class='farr' onclick='scrll(\"$p\",0);'></div>";
-$html.="<div class='faba' onclick='scrll(\"$p\",1);'></div>";
+if($c>=4){
+$html.="<div class='iconos farr' onclick='scrll(\"$p\",0);'></div>";
+$html.="<div class='iconos faba' onclick='scrll(\"$p\",1);'></div>";
 }
 return $html;	
 }

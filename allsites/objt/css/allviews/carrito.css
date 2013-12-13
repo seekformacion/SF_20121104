@@ -7,7 +7,7 @@
     
     
     
-.alSld {position: absolute; top: 0px; left: -800px; height: 500px;  width: 2400px;}
+.alSld {float:left; height: 500px;  width: 2400px;}
 
 .posSld0 {position: relative; top: 0px; float:left; height: 500px; width:800px;  }
 .posSld1 {position: relative; top: 0px; float:left; height: 500px; width:800px;  }
@@ -45,12 +45,12 @@
     position: relative;
     width: 720px;}
     
-.cdCr .tit { width: 300px; position: relative; float: left;}
-.cdCr .tip { width: 110px; position: relative; float: left; text-align: center;}
-.cdCr .met { width: 80px; position: relative; float: left; text-align: center;}
-.cdCr .dur { width: 62px; position: relative; float: left; text-align: center;}
-.cdCr .pre { width: 62px; position: relative; float: left; text-align: center;}
-.cdCr .imgCc { width: 45px; position: relative; float: left; border:1px solid #CCCCCC; padding:1px;}
+.cdCr .tit { width: 280px; position: relative; float: left;}
+.cdCr .tip { width: 110px; position: relative; float: left; text-align: center; margin-left: 10px;}
+.cdCr .met { width: 80px; position: relative; float: left; text-align: center; margin-left: 10px;}
+.cdCr .dur { width: 62px; position: relative; float: left; text-align: center; margin-left: 15px;}
+.cdCr .pre { width: 52px; position: relative; float: left; text-align: center; margin-left:3px;}
+.cdCr .imgCc { width: 45px; position: relative; float: left; border:1px solid #CCCCCC; padding:1px; margin-left: 10px;}
 
 .cdCrL {float: left;
     font-size: 11px;
@@ -61,14 +61,14 @@
 
 
 .cdCrL .tit { width: 300px; position: relative; float: left;}
-.cdCrL .tip { width: 110px; position: relative; float: left; text-align: center;}
-.cdCrL .met { width: 80px; position: relative; float: left; text-align: center;}
-.cdCrL .dur { width: 62px; position: relative; float: left; text-align: center;}
-.cdCrL .pre { width: 62px; position: relative; float: left; text-align: center;}
-.cdCrL .cent { width: 50px; position: relative; float: left; text-align: center;}
+.cdCrL .tip { width: 110px; position: relative; float: left; text-align: center;margin-left: 9px;}
+.cdCrL .met { width: 80px; position: relative; float: left; text-align: center;margin-left: 11px;}
+.cdCrL .dur { width: 62px; position: relative; float: left; text-align: center;margin-left: 14px;}
+.cdCrL .pre { width: 62px; position: relative; float: left; text-align: center;margin-left: 1px;}
+.cdCrL .cent { width: 50px; position: relative; float: left; text-align: center;margin-left: -11px;}
 
-.farr {position: absolute; top: 60px; left:720px; width:20px; height: 20px; background-color: orange;}
-.faba {position: absolute; top: 170px; left:720px; width:20px; height: 20px; background-color: red;}
+.farr {background-position: -317px -167px; height: 19px; left: 725px; position: absolute; top: 60px; width: 18px;}
+.faba {height: 19px; left: 725px; position: absolute; top: 170px; width: 18px; background-position: -297px -168px;}
 
 .facti {   background-position: -253px -154px;
     float: right;

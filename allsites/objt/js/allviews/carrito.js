@@ -3,11 +3,27 @@
 // del carrito
 
 
-function showSl(x){
+function showSl2(x){
  $("#alSld:not(:animated)").animate({left:x}, 500);
 
 //$('#alSld:not(:animated)').animate({scrollLeft:x},600);
 	
+	
+}
+
+
+
+
+function showSl(x){
+ if(navigator.appName!='Microsoft Internet Explorer'){	
+ $("#em-2:not(:animated)").animate({scrollLeft:x}, 500);
+ }else{
+ //$("#alSld").css('left', x);	
+ //document.getElementById('alSld').setAttribute("style", "left:" + x + 'px;');	
+ $("#em-2:not(:animated)").scrollLeft(x);
+ }	
+
+
 	
 }
 
@@ -48,8 +64,13 @@ if(w==1){pos=pos-103}
 if(pos>0){pos=0;}
 if(pos<=hei){pos=hei;}
 
+if(navigator.appName!='Microsoft Internet Explorer'){
 $("#" + p + ":not(:animated)").animate({top:pos}, 500);	
-console.log(p + "|" + pos + '|' + hei);	
+}else{
+document.getElementById(p).setAttribute("style", "top:" + pos + 'px;');		
+}
+
+
 }
 
 
