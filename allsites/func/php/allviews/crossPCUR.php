@@ -6,7 +6,7 @@ $idc=$v['where']['id'];
 $idt=$v['where']['idt'];
 	
 
-
+$catrel=array();
 
 
 

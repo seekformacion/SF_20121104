@@ -8,7 +8,21 @@ checkCookie();
 window.top.HTML=' %listHTML% ';
 loadCarrito();
 if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
+
+
+initiate_geolocation();
+
 }
+
+
+function initiate_geolocation() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query);  
+        }  
+function handle_geolocation_query(position){  
+            alert('Lat: ' + position.coords.latitude + ' ' +  
+                  'Lon: ' + position.coords.longitude);  
+        } 
+
 
 
 function loadCarrito(){

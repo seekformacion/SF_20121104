@@ -109,8 +109,10 @@ $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
 
 $lcats=array();
-	
+
+
 $listC=CATS_inf_T($idcat);
+
 
 $linfT=trim($listC['list']);
 $infA=$listC['infA'];
@@ -122,8 +124,12 @@ if($linfT){
 $catsPort=DBselect("select id_cat, count(distinct id_cur) as S from skv_relCurCats 
 where id_cat IN ($linfT) GROUP BY id_cat ORDER BY S DESC;");
 
-foreach ($catsPort as $key => $val) {$idc=$infA[$val['id_cat']]; $qty=$val['S'];
+foreach ($catsPort as $key => $val) {
+
+if (array_key_exists($val['id_cat'], $infA)){	
+$idc=$infA[$val['id_cat']]; $qty=$val['S'];
 if (array_key_exists($idc, $lcats)){$lcats[$idc]=$lcats[$idc]+$qty;}else{$lcats[$idc]=$qty;};
+}
 }
 
 
@@ -186,7 +192,7 @@ foreach ($inf as $key => $val) {$infA[$val['id']]=$val['id']; $infB[$val['id']]=
 
 
 
-$inferiores=DBselect("select id, superiores from skf_cats where superiores like '%|$cat|%';");
+$inferiores=DBselect("select id, superiores from skf_cats where superiores like '%|$cat|%';"); 
 
 
 
@@ -197,13 +203,18 @@ $listinf .=$idci . ",";
 if(!array_key_exists($idci, $infA)){
 	$sup=$values['superiores']; $sup=substr($sup, 1);$sup=substr($sup, 0,-1); $sups=explode('|', $sup);
 	$cc=count($sups) -1;
+	if($cc-1 < 0){$_1=0;}else{$_1=$cc-1;}
+	if($cc-2 < 0){$_2=0;}else{$_2=$cc-2;}
+	if($cc-3 < 0){$_3=0;}else{$_3=$cc-3;}
 	
-	
+				 
 		if(array_key_exists($sups[$cc], $infB)){			$infA[$idci]=$infB[$sups[$cc]];
-		}elseif(array_key_exists($sups[$cc-1], $infB)){		$infA[$idci]=$infB[$sups[$cc-1]];
-		}elseif(array_key_exists($sups[$cc-2], $infB)){		$infA[$idci]=$infB[$sups[$cc-2]];
-		}elseif(array_key_exists($sups[$cc-3], $infB)){		$infA[$idci]=$infB[$sups[$cc-3]];			
+		}elseif(array_key_exists($sups[$_1], $infB)){		$infA[$idci]=$infB[$sups[$_1]];
+		}elseif(array_key_exists($sups[$_2], $infB)){		$infA[$idci]=$infB[$sups[$_2]];
+		}elseif(array_key_exists($sups[$_3], $infB)){		$infA[$idci]=$infB[$sups[$_3]];			
 		}	
+		
+		
 }
 
 }

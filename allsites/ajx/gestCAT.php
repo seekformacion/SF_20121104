@@ -1,5 +1,11 @@
 <?php
 
+function cursinf($cat){
+$C="";	
+$res2=DBselect("select count(distinct id_cur) as c from skv_relCurCats where id_cat=$cat OR id_cat IN (select id from skf_cats where superiores like '%|$cat|%');");
+if(count($res2)>0){$C=$res2[1]['c'];};
+return $C;	
+}
 
 
 
@@ -20,12 +26,23 @@ $res=DBselect("select id, (select pagTittleC from skf_urls WHERE tipo IN (0,1) A
 
 $res2=DBselect("select id_sup from skf_cats where id=$cat AND idp=$idp;");
 
+$url=$dat[1]['url'];$duplis="";
+$urlsDUP=DBselect("select pagTittleC, url, t_id from skf_urls WHERE tipo IN (0,1) AND idp=$idp AND url='$url' AND t_id NOT IN ($cat);");
+
+
+if(count($urlsDUP)>0){
+foreach ($urlsDUP as $key => $value) {
+$go='/ajx/gestCAT.php?cat=' . $value['t_id'] . '&idp=' . $idp;
+$duplis.="<div style='color:red;'><a href='$go'>" . $value['pagTittleC'] . "</a></div>";	
+}	
+}
 
 //print_r($res);
 
 $CATES="";
 foreach ($res as $key => $values) {$ncat=$values['nom']; $idsc=$values['id'];
-$CATES.="<div class='cat' onclick='goto($idp,$idsc,$cat)' >$ncat</div>";	
+$C=cursinf($idsc);
+$CATES.="<div class='cat' onclick='goto($idp,$idsc,$cat)' >$ncat ($C)</div>";	
 	
 }
 
@@ -65,6 +82,65 @@ $.each(data, function(key, val) {
 });
 	
 }	
+
+function fus(){
+var fus=document.getElementById('fus').value;
+var cat=document.getElementById('cate').value;
+
+
+url = "/ajx/fusionCat.php?fus=" + fus + '&cat=' + cat;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+
+});
+});
+
+	
+}
+
+
+
+function mov(){
+var mov=document.getElementById('mov').value;
+var cat=document.getElementById('cate').value;
+
+
+url = "/ajx/moverCat.php?mov=" + mov + '&cat=' + cat;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+
+});
+});
+
+	
+}
+
+function creaCat(){
+var cat=document.getElementById('cate').value;	
+var url=document.getElementById('url2').value;
+var codTittle=document.getElementById('codTittle2').value;	
+var pagTittleC=document.getElementById('pagTittleC2').value;
+var crsTittle=document.getElementById('crsTittle2').value;	
+
+url = "/ajx/crearCat.php?idp=<?php echo $idp;?>&url=" + url 
++ '&cat=' + cat 
++ '&codTittle=' + codTittle 
++ '&pagTittleC=' + pagTittleC 
++ '&crsTittle=' + crsTittle 
+;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+
+});
+});
+
+
+	
+}
+
+
+
+
 </script>
 
 
@@ -81,7 +157,9 @@ $.each(data, function(key, val) {
 </div>
 
 
-<div style="position : absolute; width:420px; left:660px; height: 500px; background-color:#DDDDDD; padding: 10px;  ">
+<div style="position : absolute; width:420px; left:660px; height: 623px; background-color:#DDDDDD; padding: 10px;  ">
+
+<input  type="text" style="width:50px; font-size:10px; font-family: Arial;" id="cate" value="<?php echo $cat; ?>">
 
 <input onchange="update(this.id)" type="text" style="width:420px; font-size:10px; font-family: Arial;" id="url" value="<?php echo $dat[1]['url']; ?>">
 
@@ -93,6 +171,28 @@ $.each(data, function(key, val) {
 
 <div style="position: relative; margin-top: 10px; font-size:10px; font-family: Arial; left:4px;">title para CROSS:</div>
 <input onchange="update(this.id)" type="text" style="width:420px; font-size:10px; font-family: Arial;" id="crsTittle" value="<?php echo $dat[1]['crsTittle']; ?>">
+
+<?php echo $duplis;?>
+
+<div style="position: absolute; top:350px;">fusionar a: <input type="text" style="width:50px;" id="fus" /> <div onclick="fus();" style="position:relative; float:left; left:170px; cursor:pointer; width: 30px; height:20px; background-color: orange"></div></div>
+<div style="position: absolute; top:390px;">Mover dentro de: <input type="text" style="width:50px;" id="mov" /> <div onclick="mov();" style="position:relative; float:left; left:220px; cursor:pointer; width: 30px; height:20px; background-color: orange"></div></div>
+
+
+<div style="position: absolute; top: 450px;">
+	
+<input  type="text" style="width:420px; font-size:10px; font-family: Arial;" id="url2" value="/">
+
+<div style="position: relative; margin-top: 10px; font-size:10px; font-family: Arial; left:4px;">title:</div>
+<input  type="text" style="width:420px; font-size:10px; font-family: Arial;" id="codTittle2" value="">
+
+<div style="position: relative; margin-top: 10px; font-size:10px; font-family: Arial; left:4px;">title CORTO:</div>
+<input  type="text" style="width:420px; font-size:10px; font-family: Arial;" id="pagTittleC2" value="">
+
+<div style="position: relative; margin-top: 10px; font-size:10px; font-family: Arial; left:4px;">title para CROSS:</div>
+<input type="text" style="width:420px; font-size:10px; font-family: Arial;" id="crsTittle2" value="">
+
+<input type="button" style="width:420px; font-size:10px; font-family: Arial;" onclick="creaCat();" value="crear aqui">
+</div>
 
 
 </div>

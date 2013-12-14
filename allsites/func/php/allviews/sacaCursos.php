@@ -27,7 +27,7 @@ function getBloqueCursos(){global $data; $bloqueCursos="";
 
 
 
-$listcur=trim(getCUR());
+$listcur=trim(getCUR()); 
 if($listcur){
 $res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripcion, cur_dirigidoa, cur_paraqueteprepara, 
 						id_centro, (SELECT nombre FROM skv_centros WHERE id=id_centro) as ncent, 
@@ -116,6 +116,8 @@ $listcur=substr($listcur, 0,-1);
 $v['where']['npags']=ceil($nc/$cpp);
 $curs=ordenaCURs($listcur,$ini,$fin);
 
+
+
 $listcur="";	
 foreach ($curs as $key => $cur) {$listcur.=$cur . ",";};$listcur=substr($listcur, 0,-1);
 
@@ -201,15 +203,22 @@ return $txt;
 function ordenaCURs($curs,$ini,$fin){
 $nlist=array();
 
+
+
 if($curs){
 $res=DBselect("SELECT id, OrdDESC FROM skv_cursos WHERE id IN ($curs);");		
-foreach ($res as $key => $value) {$preORD[$value['OrdDESC']]=$value['id'];};
-krsort($preORD);	
-$output = array_slice($preORD, $ini, $fin+1);
+foreach ($res as $key => $value) {$preORD[$value['id']]=$value['OrdDESC'];};
+arsort($preORD);	
 
+foreach ($preORD as $id => $kk) {$preout[]=$id;}
 
-foreach ($output as $kk => $id){$nlist[]=$id;};
+//print_r($preout);
 
+$output = array_slice($preout, $ini, $fin+1);
+
+//print_r($output);
+
+foreach ($output as $ll => $id){$nlist[]=$id;};
 }
 
 	
