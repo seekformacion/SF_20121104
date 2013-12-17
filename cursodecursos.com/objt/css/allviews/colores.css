@@ -14,13 +14,13 @@
 .gris4_BG {background-color:#F4F7F4 !important;}
 
 
-.color {color:#1BB105 !important;}
-.color_BG {background-color:#1BB105 !important;}
+.color {color:#30A533 !important;}
+.color_BG {background-color:#30A533 !important;}
 
-h2 strong {color:#008F2F;}
-.color1 {color:#008F2F !important;}
-.color1_BG {background-color:#008F2F !important;}
-
+h2 strong {color:#30A533;}
+.color1 {color:#30A533 !important;}
+.color1_BG {background-color:#30A533 !important;}
+.bdc1 {border:1px solid #30A533; }
 
 .color2 {color:#E0F3E6 !important;}
 .color2_BG {background-color: #E0F3E6 !important;}

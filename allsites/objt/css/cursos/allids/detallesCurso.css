@@ -14,6 +14,6 @@
 .titDetalle {  font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px;position:relative; float:left;}
 
 
-.icPrecio 	{width: 19px; height:19px; background-position:-234px -88px; position:relative; float:right;margin-top:-2px;}
-.icDuracion {width: 19px; height:19px; background-position:-253px -88px; position:relative; float:right;margin-top:-2px;}
-.icTitOf	{width: 19px; height:19px; background-position:-273px -88px; position:relative; float:right;margin-top:-2px;}
+.icPrecio 	{width: 19px; height:19px; background-position:-339px -157px; position:relative; float:right;margin-top:-2px;}
+.icDuracion {width: 19px; height:19px; background-position:-359px -157px; position:relative; float:right;margin-top:-2px;}
+.icTitOf	{width: 19px; height:19px; background-position:-379px -157px; position:relative; float:right;margin-top:-2px;}

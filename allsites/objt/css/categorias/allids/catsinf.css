@@ -6,7 +6,7 @@
 .sbCURinf1:hover{ background-color:#EEEEEE; }
 .sbCURinf2:hover{ background-color:#EEEEEE; }
 
-.tCcl   {position: relative;    width: 260px;    z-index: 999; min-height:58px;}
+.tCcl   {position: relative;    width: 260px;    z-index: 999; height:58px; overflow:hidden;}
 .tCcl a {font-family: Arial;  font-size: 16px;  font-weight: normal; }
 
 .tCci { border-top: 1px solid #BBBBBB;padding-top: 3px;border-bottom: 1px solid #BBBBBB;height: 40px; position:relative; width:285px; left:-10px}

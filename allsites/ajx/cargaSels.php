@@ -78,6 +78,27 @@ if($c>=4){
 $html.="<div class='iconos farr' onclick='scrll(\"$p\",0);'></div>";
 $html.="<div class='iconos faba' onclick='scrll(\"$p\",1);'></div>";
 }
+
+if(($c<=2)&&($pt=="P1c")){
+$html.='
+<div class="color1 paso1">
+<div class="num1 iconos"></div>
+Selecciona en cuarquier listado o en las fichas de curso, aquellos que mas te interesan. Aqui podras compararlos facilmente.
+<div class="imgPs1 iconos color1"></div>
+</div>
+
+
+<div class="color1 paso2">
+<div class="num2 iconos"></div>
+Con los cursos seleccionados puedes...
+</div>
+
+
+
+';
+}
+
+
 return $html;	
 }
 

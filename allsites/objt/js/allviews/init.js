@@ -2,15 +2,14 @@
 
 
 
-function init(){
-
-checkCookie();	
+function init(){$.ajaxSetup({'async': false});	
+checkCookie();
 window.top.HTML=' %listHTML% ';
 loadCarrito();
 if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
 
 
-initiate_geolocation();
+//initiate_geolocation();
 
 }
 
@@ -34,14 +33,14 @@ document.getElementById('pops').innerHTML=window.top.HTML;
 
 
 function formup(){
-	
+chekData();	
 	
 emerge('em-2'); showSl(800); selpC(1);cargaSel();
 }
 
 
 function socialup(){
-		
+chekData();		
 showSl(0);	
 emerge('em-2'); selpC(1);cargaSel();
 }
@@ -64,7 +63,7 @@ for (i=1 ; i <= 5; i++){if(document.getElementById('P' + i + 'c')){
 document.getElementById('P' + i + 'c').setAttribute("style", "visibility:hidden;");
 }}
 
-
+insVals();
 }
 
 
@@ -108,14 +107,85 @@ var cookie=getCookie("seekforID");
   {
   	window.top.ckk=cookie;
   	initCurSEL();chkCsels(); 
-  	
+  	checkGEOip();
   	}else{
   	getremotecookie();
+  	
   	}
   
  
  
 }
+
+function chekData(){
+getDatos();	
+var datos=getCookie("datos");	
+
+if (datos!=null && datos!="")
+    {
+  	aDatos=datos.split('|');
+  	}else{
+  	aDatos=new Array;
+  	}
+
+
+for(a=1; a<=12; a++){if(document.getElementById(a)){
+if(aDatos[a]){document.getElementById(a).value=aDatos[a];};	
+}}	
+	
+}
+
+
+function checkGEOip(){
+$.ajaxSetup({'async': false});	
+var geoCP=getCookie("geoCP");	
+
+if (geoCP!=null && geoCP!="")
+  {
+  	window.top.geoCP=geoCP;
+  	  	
+  	}else{
+  	getgeoCP();
+  	}
+
+	
+	
+}
+
+function getDatos(){$.ajaxSetup({ cache: false });
+var UID=window.top.ckk;
+var url='/ajx/getDatos.php?uid=' + UID;	
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+	
+if(key=="datos"){
+setCookie("datos",val,365);
+return val;
+}	
+
+});
+});		
+
+}
+
+
+function getgeoCP(){
+var UID=window.top.ckk;
+var url='/ajx/geoip.php?uid=' + UID;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+if(key=="cp"){
+setCookie("geoCP",val,365);
+window.top.geoCP=val;
+}	
+
+
+});
+});	
+	
+}
+
+
 
 
 function getremotecookie() {
@@ -127,6 +197,7 @@ function getremotecookie() {
 	setCookie("seekforID",cookie,365);
 	window.top.ckk=cookie;
 	initCurSEL();chkCsels(); 
+	checkGEOip();
  });
  
 }; 
