@@ -1,15 +1,9 @@
 
-
-
-
 function init(){$.ajaxSetup({'async': false});	
 checkCookie();
 window.top.HTML=' %listHTML% ';
 loadCarrito();
 if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
-
-
-//initiate_geolocation();
 
 }
 
@@ -64,6 +58,8 @@ document.getElementById('P' + i + 'c').setAttribute("style", "visibility:hidden;
 }}
 
 insVals();
+
+
 }
 
 
@@ -137,13 +133,15 @@ if(aDatos[a]){document.getElementById(a).value=aDatos[a];};
 
 
 function checkGEOip(){
-$.ajaxSetup({'async': false});	
+$.ajaxSetup({'async': false});
+getCP();
+	
 var geoCP=getCookie("geoCP");	
 
 if (geoCP!=null && geoCP!="")
   {
   	window.top.geoCP=geoCP;
-  	  	
+  	geoIMG();  	
   	}else{
   	getgeoCP();
   	}
@@ -169,6 +167,44 @@ return val;
 }
 
 
+function geoIMG(){
+cp=window.top.geoCP; cp3=cp.substring(0,3);
+
+if((cp3=='077') || (cp3=='078')){
+cp=cp3;	
+}else{
+cp=cp.substring(0,2); 
+cp=cp + '0';	
+}
+
+
+var pos=window.top.PCOD.indexOf(cp);
+
+console.log(cp);
+console.info(window.top.PCOD);
+
+if(pos>0){
+
+
+var url=window.top.PURL[pos];
+var nom=window.top.PNOM[pos];
+var img=window.top.PIMG[pos];
+var tit=window.top.TIT[pos];
+var tita=window.top.TITA[pos];
+
+var html='<div onclick="lK(\'' + url 
++ '\');" style="background-image: url(\'' + img 
++ '\');" class="GeoImage"><div class="titGeoImg"><p><a alt="' + tita 
++ '" href="' + url + '" style="color: #FFFFFF;">' 
++ tit + ' EN:</a></p></div><div class="PROVGeoImg"><div class="iconos flechaGeo"></div><p><a alt="' + tita 
++ '" href="' 
++ url + '" style="color: #FFFFFF;">' 
++ nom + '</a></p></div></div>';
+
+document.getElementById('gI').innerHTML=html;	
+}}
+
+
 function getgeoCP(){
 var UID=window.top.ckk;
 var url='/ajx/geoip.php?uid=' + UID;
@@ -177,6 +213,7 @@ $.each(data, function(key, val) {
 if(key=="cp"){
 setCookie("geoCP",val,365);
 window.top.geoCP=val;
+geoIMG();
 }	
 
 
@@ -186,7 +223,38 @@ window.top.geoCP=val;
 }
 
 
+function bfecha(id){
+if(document.getElementById(id).value=='dd/mm/aaaa'){	
+document.getElementById(id).value="";
+}	
+}
 
+function ffecha(id){
+var f=document.getElementById(id).value;
+if(f.length==2){f=f+'/';};	
+if(f.length==5){f=f+'/';};
+if(f.length>10){f=f.substring(0,10);};
+document.getElementById(id).value=f;
+}
+
+
+function getCP(){
+uid=window.top.ckk;
+var url='/ajx/getCP.php?&uid=' + uid;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+
+if((key=='cp')&&(val)){
+setCookie("geoCP",val,365);
+window.top.geoCP=val;
+}else{
+getgeoCP();	
+}
+
+});
+});		
+	
+}
 
 function getremotecookie() {
 
@@ -200,7 +268,7 @@ function getremotecookie() {
 	checkGEOip();
  });
  
-}; 
+}
 
 function initCurSEL(){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;
@@ -292,7 +360,13 @@ window.top.cSELS=new Array;
 var url='/ajx/cargaSels.php?uid=' + uid;
 $.getJSON(url, function(data) {
 $.each(data, function(key, val) {
-	
+
+if(key=="nnc"){
+if(val==0){document.getElementById('social2').setAttribute("style", "visibility:hidden;");	}	
+if(val>0) {document.getElementById('social2').setAttribute("style", "visibility:inherit;");	}	
+}
+if(key=="social"){document.getElementById(key).innerHTML=val;}
+if(key=="ncur"){document.getElementById(key).innerHTML=val;}	
 if((key=='P1c')||(key=='P2c')){document.getElementById(key).innerHTML=val;}else{val=Number(val); window.top.cSELS.push(val);};
 });
 
@@ -301,7 +375,11 @@ var val= escape(window.top.cSELS.join(','));
 setCookie('csels',val,0);
 
 });	
-	
+
+
+document.getElementById('showdoit').setAttribute("style", "visibility:hidden;");
+document.getElementById('timer').setAttribute("style", "visibility:inherit;");	
+document.getElementById('fin').setAttribute("style", "visibility:hidden;");	
 }	
 
 

@@ -6,7 +6,7 @@
 
 .barraClaves {height: 30px; border-top:1px solid; width:100%;}
 
-.botClav{height: 24px; width:150px; text-align: center; padding-top:6px; position:relative; float:left; cursor:pointer;}
+.botClav{height: 24px; width:150px; text-align: center; padding-top:6px; position:relative; float:left; cursor:pointer; color:#444444;}
 
 .contClaves {padding:15px; position:absolute;}
 

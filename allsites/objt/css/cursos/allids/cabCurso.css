@@ -1,6 +1,6 @@
 .cabCurso{ width:887px; height:164px; position:relative; float:left;}
 
-.descCurso {width:482px; padding:15px; position:relative; float:left;}
+.descCurso { float: left;    height: 123px;    overflow: hidden;    padding: 15px;    position: relative;    width: 482px;}
 .descCurso p {margin:0px;}
 
 

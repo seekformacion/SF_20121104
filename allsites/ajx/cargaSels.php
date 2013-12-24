@@ -103,9 +103,9 @@ return $html;
 }
 
 
-$lcurs="";$lsel=array();
+$lcurs="";$lsel=array();$ncur=0;
 $res=DBselect("SELECT idc FROM skv_user_sels WHERE UID='$uid' ORDER BY id DESC;");
-if(count($res)>0){foreach ($res as $key => $value) {$lcurs.=$value['idc'] . ","; $vals[]=$value['idc']; $lsel[$value['idc']]=1;};
+if(count($res)>0){foreach ($res as $key => $value) {$lcurs.=$value['idc'] . ","; $vals[]=$value['idc']; $lsel[$value['idc']]=1; $ncur++;};
 $lcurs=substr($lcurs, 0,-1);$noa=array();
 $vals['P1c']=getResult($lcurs,'P1c',$noa);
 }else{
@@ -122,8 +122,16 @@ $vals['P2c']=getResult($lcurs,'P2c',$lsel);
 $vals['P2c']="";	
 }
 
+if($ncur>1){
+$vals['social']="Solicitar opinión sobre los $ncur cursos seleccionados en las siguientes redes sociales.";
+}elseif ($ncur==1) {
+$vals['social']="Solicitar opinión sobre el curso seleccionado en las siguientes redes sociales.";
+}elseif ($ncur==0){
+$vals['social']="No tienes ningún curso seleccionado.";	
+}
+$vals['nnc']=$ncur;	
 
-
+if($ncur>1){$vals['ncur']="de los $ncur cursos seleccionados";} else {$vals['ncur']="del curso seleccionado";}
 
 
 echo json_encode($vals);

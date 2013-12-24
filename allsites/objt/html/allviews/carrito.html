@@ -1,7 +1,29 @@
+
+<iframe src="https://www.facebook.com/dialog/feed?
+  app_id=673960869311429
+  &display=popup&caption=Esto es una prueba de texto compartiendo enlace
+  &link=http://cursodecursos.com
+  &redirect_uri=http://cursodecursos.com
+" width="300px" scrolling="no" height="200px" frameborder="0" ></iframe>
+
+
+https://www.facebook.com/dialog/feed?app_id=673960869311429&display=popup&caption=Esto es una prueba de texto compartiendo enlace&link=http://cursodecursos.com&redirect_uri=http://cursodecursos.com
+
+https://plus.google.com/share?url=http://cursodecursos.com
+
+https://m.google.com/app/plus/x/?v=compose&content=hhhhh - http://cursodecursos.com
+
+
+https://twitter.com/intent/tweet?original_referer=http://cursodecursos.com&text=Dadme%20vuestra%20opini%C3%B3n%20sobre%20estos%20cursos&tw_p=tweetbutton&url=http%3A%2F%2Fcursodecursos.com&via=e_b_moya
+
 <!-- carrito -->
 
 
 <div class="bloque shadow carrito" id="em-2">
+
+
+
+
 
 <div class="alSld" id="alSld">
 
@@ -11,6 +33,19 @@
 
 <div class="frjSup color4_BG color1"><p>Medios sociales</p></div>
 <div class="iconos iFAV"></div>
+
+
+<div class="social color1" id="social">
+No tienes ningún curso seleccionado.
+</div>
+
+<div class="social2" id="social2" style="visibility: hidden;">
+<div class="bsoci shadow tweet"  onclick="tweet();"><img src="/img/global/allviews/tweeter.jpg"><div class="iconos fabaS"></div></div> 
+<div class="bsoci shadow facebook" onclick="facebook();"><img src="/img/global/allviews/facebook.jpg"><div class="iconos fabaS"></div></div> 
+<div class="bsoci shadow gplus" onclick="gplus();"><img src="/img/global/allviews/gplus.jpg"><div class="iconos fabaS"></div></div> 
+</div>
+
+
 
 <div class="frjIn color4_BG"></div>	
 
@@ -98,7 +133,7 @@
 
 <div class="cDat color1">
 <p>Fecha de nacimiento</p>
-<input class="inpF bdc1 color2_BG" type="text" value="dd/mm/aaaa" id="4" style="width:120px; text-align: center;">
+<input class="inpF bdc1 color2_BG" type="text" value="dd/mm/aaaa" id="4" style="width:120px; text-align: center;" onkeyup="ffecha(this.id);" onfocus="bfecha(this.id);">
 <div id="e4" class="err" style="visibility: hidden;"></div>		
 </div>	
 
@@ -171,17 +206,19 @@
 
 <div class="contScuF">	
 
-<div class="ffL1">
+<div class="ffL1B">
 
 <div class="cDat color1">
 <p>Dirección</p>
-<input class="inpF bdc1 color2_BG" type="text" value="" id="8" style="width:320px; ">	
+<input class="inpF bdc1 color2_BG" type="text" value="" id="8" style="width:320px; ">
+<div id="e8" class="err" style="visibility: hidden;"></div>			
 </div>	
 
 
 <div class="cDat color1">
 <p>Localidad</p>
-<input class="inpF bdc1 color2_BG" type="text" value="" id="9" style="width:300px;">	
+<input class="inpF bdc1 color2_BG" type="text" value="" id="9" style="width:235px;">
+<div id="e9" class="err" style="visibility: hidden;"></div>			
 </div>	
 
 
@@ -190,7 +227,7 @@
 <div class="clean"></div>
 
 
-<div class="ffL2">
+<div class="ffL2B">
 
 
 
@@ -198,7 +235,7 @@
 <p>País</p>
 
 
-<select class="selF bdc1 color2_BG" id="10">
+<select class="selF bdc1 color2_BG" id="10" onchange="changePRO();" style="width:250px">
 <option value="0">
 </option>
 <option value="AF">Afganistán</option>
@@ -437,27 +474,37 @@
 <option value="ZW">Zimbabue</option>
 
 
-</select>	
+</select>
+<div id="e10" class="err" style="visibility: hidden;"></div>			
 </div>	
 
 <div class="cDat color1">
 <p>Provincia</p>
-<select class="selF bdc1 color2_BG" id="11">
+<select class="selF bdc1 color2_BG" id="11" onchange="changePAIS();" style="width:170px">
 	<option value="0"></option>
 <option value="01">Álaba</option><option value="02">Albacete</option><option value="03">Alicante</option><option value="04">Almería</option><option value="33">Asturias</option><option value="05">Ávila</option><option value="06">Badajoz</option><option value="07">Baleares</option><option value="08">Barcelona</option><option value="48">Bizkaia</option><option value="09">Burgos</option><option value="39">Cantabria</option><option value="12">Castellón</option><option value="51">Ceuta</option><option value="13">Ciudad Real</option><option value="15">Coruña</option><option value="16">Cuenca</option><option value="10">Cáceres</option><option value="11">Cádiz</option><option value="14">Córdoba</option><option value="20">Gipuzkoa</option><option value="17">Girona</option><option value="18">Granada</option><option value="19">Guadalajara</option><option value="21">Huelva</option><option value="22">Huesca</option><option value="23">Jaén</option><option value="26">La Rioja</option><option value="35">Las Palmas</option><option value="24">León</option><option value="25">Lleida</option><option value="27">Lugo</option><option value="28">Madrid</option><option value="52">Melilla</option><option value="30">Murcia</option><option value="29">Málaga</option><option value="31">Navarra</option><option value="32">Ourense</option><option value="34">Palencia</option><option value="36">Pontevedra</option><option value="38">S.C. Tenerife</option><option value="37">Salamanca</option><option value="40">Segovia</option><option value="41">Sevilla</option><option value="42">Soria</option><option value="43">Tarragona</option><option value="44">Teruel</option><option value="45">Toledo</option><option value="46">Valencia</option><option value="47">Valladolid</option><option value="49">Zamora</option><option value="50">Zaragoza</option>
 <option value="99">Fuera de España</option>
-	</select>	
+	</select>
+<div id="e11" class="err" style="visibility: hidden;"></div>				
 </div>	
 
 <div class="cDat color1">
 <p>Código postal</p>
-<input class="inpF bdc1 color2_BG" type="text" value="" id="12" style="width:120px; ">	
+<input class="inpF bdc1 color2_BG" type="text" value="" id="12" style="width:120px; ">
+<div id="e12" class="err" style="visibility: hidden;"></div>			
 </div>	
 
 
 
 </div>
 
+<div class="acept">Al pulsar el siguiente botón para solicitar más información estas aceptando y dando tu conformidad a las <a href="#" class="color1">condiciones de uso y politica interna.</a></div>
+
+<div class="RhtBF color1 shadow" onclick="revi2();">
+<p>Solicitar información gratuita <span id="ncur"></span></p>
+<div class="color2_BG fenv"></div>
+<div class="iconos frigENV"></div>
+</div>
 
 	
 </div>
@@ -470,7 +517,26 @@
 
 
 
+<div class="showdoit" id="showdoit" style="visibility: hidden;">
+<img src="/img/global/allviews/timer.gif" id="timer" style="visibility: inherit;">	
 
+<div class="fin" id="fin" style="visibility: hidden">
+	<div class="ft1 color1">
+	Tus datos han sido enviados correctamente. En breve te será facilitada más información detallada. <br><br> ¡Recuerda!
+	</div>
+	
+<div class="recuerda color1 shadow" onclick="showSl(0);">
+<div class="latIfin color4_BG"></div>
+<div class="iconos flef" style="top:39px; left:5px;"></div>
+Puedes encontrar información adicional que te será de grán utilidad a la hora de elegir un curso consultando en tus redes sociales. <br><br>
+Prueba nuestra herramienta para pedir opinión..	
+<div class="dedo"></div>
+</div>
+	
+</div>
+
+
+</div>
 
 </div>
 

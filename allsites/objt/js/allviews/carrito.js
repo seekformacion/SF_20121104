@@ -74,6 +74,111 @@ document.getElementById(p).setAttribute("style", "top:" + pos + 'px;');
 
 }
 
+
+function changePRO(){
+var pais=document.getElementById(10).value;
+if(pais!='ES'){
+document.getElementById(11).value=99;	
+}else{
+
+if(document.getElementById(11).value==99){	
+document.getElementById(11).value=0;
+}
+		
+}	
+}
+
+
+function changePAIS(){
+var pro=document.getElementById(11).value;
+if(pro==99){
+if(document.getElementById(10).value=='ES'){	
+document.getElementById(10).value=0;
+}	
+}else{
+if(document.getElementById(10).value!='ES'){	
+document.getElementById(10).value='ES';
+}}}
+
+
+function showdoit(){
+document.getElementById('showdoit').setAttribute("style", "visibility:inherit;");	
+setTimeout('showdoit2();', 1000);	
+}
+
+function showdoit2(){
+document.getElementById('timer').setAttribute("style", "visibility:hidden;");	
+document.getElementById('fin').setAttribute("style", "visibility:inherit;");
+}
+
+
+function revi2(){
+
+var doit=1;
+for (a=8 ; a<=12 ; a++){
+var cnt="";
+var cnt = document.getElementById(a).value; if(cnt==0){cnt="";};
+
+if(!cnt){doit=0;
+
+document.getElementById('e'+ a).innerHTML="Campo obligatorio.";
+document.getElementById('e'+ a).setAttribute("style", "visibility:inherit;");
+
+var clas=document.getElementById(a).className; 
+clas=clas.replace('bdc1','bdcE');
+clas=clas.replace('color2_BG','color2_B_GE');
+document.getElementById(a).className=clas; 		
+}else{
+
+document.getElementById('e'+ a).innerHTML="";
+document.getElementById('e'+ a).setAttribute("style", "visibility:hidden;");
+var clas=document.getElementById(a).className; 
+clas=clas.replace('bdcE','bdc1');
+clas=clas.replace('color2_B_GE','color2_BG');
+document.getElementById(a).className=clas; 
+	
+}
+
+var pro=document.getElementById(11).value;
+var cp=document.getElementById(12).value;
+var cp2=document.getElementById(12).value;
+cp=cp.substring(0,2);
+
+if(pro && cp){
+if(pro!=cp){doit=0;
+	
+document.getElementById('e12').innerHTML="No coincide con la provincia";
+document.getElementById('e12').setAttribute("style", "visibility:inherit;");
+
+var clas=document.getElementById(12).className; 
+clas=clas.replace('bdc1','bdcE');
+clas=clas.replace('color2_BG','color2_B_GE');
+document.getElementById(12).className=clas; 
+
+
+
+}else{
+
+setCookie("geoCP",cp2,365);
+window.top.geoCP=cp2;
+
+document.getElementById('e12').innerHTML="";
+document.getElementById('e12').setAttribute("style", "visibility:hidden;");
+var clas=document.getElementById(12).className; 
+clas=clas.replace('bdcE','bdc1');
+clas=clas.replace('color2_B_GE','color2_BG');
+document.getElementById(12).className=clas; 
+
+	
+}}
+
+
+}	
+
+
+if(doit){insVals();showdoit();};	
+}	
+
 function revi1(){
 
 var doit=1;
@@ -84,7 +189,7 @@ var cnt = document.getElementById(a).value; if(cnt==0){cnt="";}; cnt=cnt.replace
 if(!cnt){doit=0;
 
 document.getElementById('e'+ a).innerHTML="Campo obligatorio.";
-document.getElementById('e'+ a).setAttribute("style", "visibility:visible;");
+document.getElementById('e'+ a).setAttribute("style", "visibility:inherit;");
 
 var clas=document.getElementById(a).className; 
 clas=clas.replace('bdc1','bdcE');
@@ -241,4 +346,8 @@ return false;
 }
 
 
-
+function facebook(){
+var pagina="https://www.facebook.com/dialog/feed?app_id=673960869311429&display=popup&caption=Me gustaría que me dierais vuestra opinon sobre los siguientes cursos&link=http://cursodecursos.com&redirect_uri=http://cursodecursos.com";	
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
+window.open(pagina,"",opciones);	
+}

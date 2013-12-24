@@ -11,7 +11,7 @@ document.getElementById('p1').setAttribute("style", "visibility:hidden;");
 document.getElementById('p2').setAttribute("style", "visibility:hidden;");	
 document.getElementById('p3').setAttribute("style", "visibility:hidden;");	
 
-document.getElementById('p' + pest).setAttribute("class", "botClav blanco_BG gris2 M");	
+document.getElementById('p' + pest).setAttribute("class", "botClav blanco_BG negro M");	
 document.getElementById(pest).setAttribute("style", "visibility:visible;");	
 	
 }

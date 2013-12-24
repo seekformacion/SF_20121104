@@ -44,7 +44,7 @@ $Datos['description']=$datCur['cur_descripcion'];
 }
 ##########################################
 
-
+$Datos['imgDedo']=loadIMG("dedo.png");
 $Datos['imgIconos']=loadIMG("iconos.png");
 $Datos['imgValor']=loadIMG("valoracion.png");
 $Datos['imgFspain']=loadIMG("spainF.png");
