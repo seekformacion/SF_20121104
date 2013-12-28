@@ -1,2 +1,4 @@
 
-.footer { position:relative; height: 200px;  background-color:#888888; width: 1255px;}
+.footInf {position:relative; float: left; width:200px; height: 69px; margin-left: 20px;  top:10px; }
+.subinf {color: #dddddd; font-family:Arial; font-size: 12px; height:19px; }
+

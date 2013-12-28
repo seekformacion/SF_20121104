@@ -1,3 +1,9 @@
+.alert { background-color: #888888;    border: 1px dotted;    color: #FFFFFF;    height: 23px;    left: 21px;    padding: 12px 0 0 33px;    position: absolute;    top: 10px;    width: 842px;}
+.closeA { background-position: -5px -41px;    cursor: pointer;    height: 15px;    left: 855px;    position: absolute;    top: 3px;    width: 15px;}
+.ialert { background-position: -31px -41px;    cursor: pointer;    height: 20px;    left: 8px;    position: absolute;    top: 7px;    width: 25px;}
+
+
+
 .carrito {  height: 500px; overflow:hidden;     left: 50%;    position: fixed;     border: 1px solid #666666;    top: 50%;    width: 800px;    z-index: 9999; visibility: hidden;}
     
 .showdoit {  background-color: #FFFFFF;    height: 238px;    left: 22px;    position: absolute;    top: 102px;    width: 753px;}    
@@ -117,6 +123,8 @@
 .err {font-size:9px; font-family:Arial; color: red; }
 .bdcE {border:1px dotted red;}
 .color2_B_GE {background-color:#FFFFA3 !important; }
+
+.close { background-position: -5px -41px;    height: 15px;    left: 781px;    position: absolute;    top: 3px;    width: 15px; cursor:pointer;}
 
 .dot1 {    background-position: -318px -50px;    height: 56px;    left: 398px;    position: absolute;    top: 347px;    width: 6px;   }
 

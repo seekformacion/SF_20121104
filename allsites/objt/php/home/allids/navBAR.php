@@ -32,6 +32,8 @@ $v['where']['Hprev']="<a href='$nU' alt='$nT' class='color'>$nT</a>
 
 }
 
+
+/*
 if(($pag+1) <= $v['where']['npags']){
 $v['where']['nextURL']=str_replace('.html', '-pag' . ($pag+1) . '.html', $urlSinpag);
 $Datos['npag']="<div class='iconos ipagin ipN' onclick='bnav(1);'></div>";
@@ -47,15 +49,15 @@ $v['where']['Hnext']="<a href='$nU' alt='$nT' class='color'>$nT</a>
 $Datos['npag']="";$v['where']['nextURL']="";
 $v['where']['Hnext']="";
 }
+*/
 
 
 
 
 
 
-
-$Datos['pag']=$v['where']['pag'];
-$Datos['npags']=$v['where']['npags'];
+//$Datos['pag']=$v['where']['pag'];
+//$Datos['npags']=$v['where']['npags'];
 
 
 

@@ -1,3 +1,10 @@
 
 
 .footer { position:relative; height: 200px;  background-color:#888888; width: 920px;}
+
+
+
+.intfoo {position:relative; top:10px; height: 115px;  background-color:#999999; width: 920px; border-bottom:1px solid #777777; border-top:1px solid #777777;}
+.amazon {position: absolute; top:14px; left:750px;}
+
+

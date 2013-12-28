@@ -2,7 +2,8 @@
 
 
 $Datos['imgLogo']=loadIMG("logo.png");
-$Datos['imgCat']=imgCATg($v['where']['id']);
+$v['imgCat']=imgCATg($v['where']['id']); 
+$Datos['imgCat']=$v['imgCat'];
 $Datos['imgMaskCat']=loadIMG("mascaras/mascarafondocat.png");
 
 $Datos['home']="http://" . $v['where']['site'];

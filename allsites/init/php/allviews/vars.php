@@ -11,9 +11,9 @@ $v['vars']['purl'][3]="http://fp-formacionprofesional.com";
 $v['vars']['purl'][4]="http://oposicionesa.com";
 
 $v['vars']['purlT'][1]="Cursos";
-$v['vars']['purlT'][2]="Masters";
-$v['vars']['purlT'][3]="FP";
-$v['vars']['purlT'][4]="Oposiciones";
+$v['vars']['purlT'][2]="Masters y postgrados";
+$v['vars']['purlT'][3]="Formación profesional";
+$v['vars']['purlT'][4]="Preparación oposiciones";
 
 
 

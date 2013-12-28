@@ -104,7 +104,7 @@ return $html;
 
 
 $lcurs="";$lsel=array();$ncur=0;
-$res=DBselect("SELECT idc FROM skv_user_sels WHERE UID='$uid' ORDER BY id DESC;");
+$res=DBselect("SELECT distinct idc FROM skv_user_sels WHERE UID='$uid' ORDER BY id DESC;");
 if(count($res)>0){foreach ($res as $key => $value) {$lcurs.=$value['idc'] . ","; $vals[]=$value['idc']; $lsel[$value['idc']]=1; $ncur++;};
 $lcurs=substr($lcurs, 0,-1);$noa=array();
 $vals['P1c']=getResult($lcurs,'P1c',$noa);
@@ -114,7 +114,7 @@ $vals['P1c']="";
 
 
 $lcurs="";
-$res=DBselect("SELECT idc FROM skv_user_vist WHERE UID='$uid' ORDER BY id DESC;");
+$res=DBselect("SELECT distinct idc FROM skv_user_vist WHERE UID='$uid' ORDER BY id DESC;");
 if(count($res)>0){foreach ($res as $key => $value) {$lcurs.=$value['idc'] . ",";};
 $lcurs=substr($lcurs, 0,-1);
 $vals['P2c']=getResult($lcurs,'P2c',$lsel);

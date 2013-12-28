@@ -1,0 +1,21 @@
+.cabhome {width: 887px; height: 200px;}
+.cabhome img {position:absolute; top:53px; left:615px;}
+
+.opT { position:absolute;  height:28px; width: 886px; top:18px; left:1px;    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;}
+    
+.opTi {position:relative; float:left;  height:22px; margin:6px 0 0 40px; width:220px; font-size:14px; cursor:pointer;}
+
+
+.frCab {    background-position: -313px -127px;
+    height: 26px;
+    left: 160px;
+    position: absolute;
+    top: -3px;
+    width: 28px;}
+
+
+.mods { position:absolute; background-color:#E4E7E4; height:90px; width: 886px; top:90px; left:1px;    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;}
+    
+.intCab {width: 600px; margin:15px;}

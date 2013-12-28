@@ -7,6 +7,21 @@ if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').va
 
 }
 
+function closAlert(){
+document.getElementById('header').innerHTML="";
+$("#header:not(:animated)").animate({height:22}, 600);	
+}
+
+function acceptC(){
+if(window.top.accept>0){
+
+
+$("#header:not(:animated)").animate({height:60},800,function(){
+document.getElementById('header').innerHTML='<div class="alert"><div class="ialert iconos"></div> Esta página utiliza Cookies para mejorar su navegación. Si continua navegando entendemos que acepta la <a href="/cookies.html" style="color:#bbbbbb; font-weight: normal;" >política de Cookies</a>.<div class="iconos closeA" onclick="closAlert();"></div> </div>';    
+});
+
+	
+}}
 
 function initiate_geolocation() {  
             navigator.geolocation.getCurrentPosition(handle_geolocation_query);  
@@ -103,8 +118,9 @@ var cookie=getCookie("seekforID");
   {
   	window.top.ckk=cookie;
   	initCurSEL();chkCsels(); 
-  	checkGEOip();
+  	checkGEOip();window.top.accept=0;
   	}else{
+  	
   	getremotecookie();
   	
   	}
@@ -147,7 +163,7 @@ if (geoCP!=null && geoCP!="")
   	}
 
 	
-	
+acceptC();	
 }
 
 function getDatos(){$.ajaxSetup({ cache: false });
@@ -180,8 +196,8 @@ cp=cp + '0';
 
 var pos=window.top.PCOD.indexOf(cp);
 
-console.log(cp);
-console.info(window.top.PCOD);
+//console.log(cp);
+//console.info(window.top.PCOD);
 
 if(pos>0){
 
@@ -262,6 +278,16 @@ function getremotecookie() {
 	var me = $(this); 
 	$.getJSON(surl,  function(rtndata) { 
 	var cookie=rtndata.message;
+	
+	var csin=cookie.replace('||new','');
+	console.log(csin);
+	
+	if(csin.length < cookie.length){
+	cookie=csin;
+	window.top.accept=1;	
+	}
+	
+	
 	setCookie("seekforID",cookie,365);
 	window.top.ckk=cookie;
 	initCurSEL();chkCsels(); 
@@ -323,6 +349,22 @@ var url='/ajx/curSelUID.php?do=4&uid=' + uid + '&idc=' + idcur;
 $.getJSON(url, function(data) {	$.each(data, function(key, val) { });
 });		
 }
+
+function masinfo(idc){
+uid=window.top.ckk;	idc=Number(idc);	
+
+	window.top.cSELS.push(idc);
+	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlON';};	
+	var url='/ajx/curSelUID.php?do=2&uid=' + uid + '&idc=' + idc;
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) { });
+	});
+
+
+var val= escape(window.top.cSELS.join(','));
+setCookie('csels',val,0);
+formup()		
+}
+
 
 function adCS(idc){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idc=Number(idc);

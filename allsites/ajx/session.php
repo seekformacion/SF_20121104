@@ -10,10 +10,10 @@ require_once ('iniAJX.php');
 includeCORE('funcs/funcSESSION');
 
 
-
+$new=0;
 if (isset($_COOKIE["seekforID"])){
 $seekforID= $_COOKIE["seekforID"];
-}else{
+}else{$new=1;
 $seekforID=create_new_user();
 $expire=time()+60*60*24*30;
 setcookie("seekforID", $seekforID, $expire, '/');
@@ -21,7 +21,10 @@ setcookie("seekforID", $seekforID, $expire, '/');
 
 
 
-if (isset($_GET['id'])) $rtnjsonobj->id = $_GET['id']; 
+if (isset($_GET['id'])) $rtnjsonobj->id = $_GET['id'];
+
+if($new){$seekforID.="||new";};
+ 
 $rtnjsonobj->message = $seekforID;
 echo $_GET['callback']. '('. json_encode($rtnjsonobj) . ')';  
 

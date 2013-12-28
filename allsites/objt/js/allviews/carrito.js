@@ -15,14 +15,19 @@ function showSl2(x){
 
 
 function showSl(x){
-	
- if(navigator.appName!='Microsoft Internet Explorer'){	
- $("#em-2:not(:animated)").animate({scrollLeft:x}, 500);
- }else{
- //$("#alSld").css('left', x);	
- //document.getElementById('alSld').setAttribute("style", "left:" + x + 'px;');	
- $("#em-2:not(:animated)").scrollLeft(x);
- }	
+ 
+if (jQuery.browser.msie == true) { 
+
+	if (jQuery.browser.version < 9.0){
+	$("#em-2:not(:animated)").scrollLeft(x);
+	}else{ 
+	$("#em-2:not(:animated)").animate({scrollLeft:x}, 500);
+	}
+ 
+ 
+}else{
+$("#em-2:not(:animated)").animate({scrollLeft:x}, 500);
+}	
 
 
 	
@@ -65,11 +70,22 @@ if(w==1){pos=pos-103}
 if(pos>0){pos=0;}
 if(pos<=hei){pos=hei;}
 
-if(navigator.appName!='Microsoft Internet Explorer'){
-$("#" + p + ":not(:animated)").animate({top:pos}, 500);	
+
+if (jQuery.browser.msie == true) { 
+
+	if (jQuery.browser.version < 9.0){
+	document.getElementById(p).setAttribute("style", "top:" + pos + 'px;');	
+	}else{ 
+	$("#" + p + ":not(:animated)").animate({top:pos}, 500);
+	}
+ 
+ 
 }else{
-document.getElementById(p).setAttribute("style", "top:" + pos + 'px;');		
+$("#" + p + ":not(:animated)").animate({top:pos}, 500);
 }
+
+
+
 
 
 }
