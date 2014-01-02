@@ -1,6 +1,7 @@
 <?php
+header("Age:2592000");
 header("Cache-Control: max-age=2592000");
-header("ttl:2592000");
+header("TTL:2592000");
 global $v;
 
 if(array_key_exists('q', $_GET)){
