@@ -5,6 +5,8 @@ header('Cache-Control: public, s-maxage=2592000');
 header("TTL:2592000");
 global $v;
 
+echo time();
+
 if(array_key_exists('q', $_GET)){
 $v['where']['url']=$_GET['q'];
 }else{
