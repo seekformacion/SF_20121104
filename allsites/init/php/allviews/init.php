@@ -1,6 +1,7 @@
 <?php
 header("Age:2592000");
-header("Cache-Control: max-age=2592000");
+#header("Cache-Control: max-age=2592000");
+header('Cache-Control: public, s-maxage=2592000');
 header("TTL:2592000");
 global $v;
 
