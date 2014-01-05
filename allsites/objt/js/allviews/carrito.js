@@ -361,9 +361,35 @@ return false;
     }	
 }
 
+function getURLSOC(red){
+uid=window.top.ckk;	
+var url='/ajx/getURLSOC.php?uid=' + uid;
+$.getJSON(url,function(data) {
+$.each(data, function(key, val) {
+doSOC(val,red);
+});
+});		
+	
+}
+
+function doSOC(url,red){
+
+
+if(red=='face'){
+var dats=url.split('|');
+var url=dats[0]; var url2=dats[1];
+
+var pagina="https://www.facebook.com/dialog/feed?app_id=673960869311429&display=popup&caption=Me gustaría que me dierais vuestra opinon sobre los siguientes cursos&link=" + url +  "&redirect_uri=" + url2;	
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
+}
+
+window.open(pagina,"",opciones);
+	
+}
+
 
 function facebook(){
-var pagina="https://www.facebook.com/dialog/feed?app_id=673960869311429&display=popup&caption=Me gustaría que me dierais vuestra opinon sobre los siguientes cursos&link=http://cursodecursos.com&redirect_uri=http://cursodecursos.com";	
-var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
-window.open(pagina,"",opciones);	
+var urlsoc=getURLSOC('face');	
+
+	
 }
