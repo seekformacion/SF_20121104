@@ -28,6 +28,23 @@ $first_key = key($catsels);
 $res=DBselect("SELECT idp, url, pagTittleC FROM skf_urls WHERE t_id=$first_key AND tipo=1;");
 if(count($res)>0){foreach($res as $c => $vals){$url=$v['vars']['purl'][$vals['idp']] . $vals['url']; $nom=$vals['pagTittleC'];}};
 
-$d[]=$url ."|" . "http://cursodecursos.com/ajx/facedone.php" . "|" . $nom;
+$res2=array();$id="";
+$res2=DBselect("SELECT id FROM skv_user_social WHERE uid='$uid' AND red='$red' AND estado=0;");
+if(count($res2)>0){	if(array_key_exists('id', $res[1])){$id=$res[1]['id']; }}
+
+if($id){
+$res=DBUpIns("UPDATE skv_user_social SET sel='$idsels' WHERE id='$id';");
+}else{
+$res=DBUpIns("INSERT INTO skv_user_social (uid,sel,red) VALUES ('$uid','$idsels','$red');");
+$res2=DBselect("SELECT id FROM skv_user_social WHERE uid='$uid' AND red='$red' AND estado=0;");
+$id=$res2[1]['id'];
+}
+
+$d[]=$url . "#soc_$id" ."|" . "http://cursodecursos.com/ajx/socialdone.php?done=" . $id . "|" . $nom;
+
+
+
+
+
 echo json_encode($d);
 ?>
