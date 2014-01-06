@@ -40,8 +40,13 @@ $res2=DBselect("SELECT id FROM skv_user_social WHERE uid='$uid' AND red='$red' A
 $id=$res2[1]['id'];
 }
 
-$d[]=$url . "#lc$id" ."|" . "http://cursodecursos.com/ajx/socialdone.php?done=" . $id . "|" . $nom;
 
+$dat1=urlencode($url . "#lc$id");
+$dat2=urlencode("http://cursodecursos.com/ajx/socialdone.php?done=" . $id);
+
+$datospass=$dat1 ."|" . $dat2 . "|" . $nom;
+
+$d[]=$datospass;
 
 
 
