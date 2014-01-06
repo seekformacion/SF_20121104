@@ -30,7 +30,7 @@ if(count($res)>0){foreach($res as $c => $vals){$url=$v['vars']['purl'][$vals['id
 
 $res2=array();$id="";
 $res2=DBselect("SELECT id FROM skv_user_social WHERE uid='$uid' AND red='$red' AND estado=0;");
-if(count($res2)>0){	if(array_key_exists('id', $res[1])){$id=$res[1]['id']; }}
+if(count($res2)>0){	if(array_key_exists('id', $res2[1])){$id=$res2[1]['id']; }}
 
 if($id){
 $res=DBUpIns("UPDATE skv_user_social SET sel='$idsels' WHERE id='$id';");
