@@ -361,6 +361,7 @@ return false;
     }	
 }
 
+
 function getURLSOC(red){
 uid=window.top.ckk;	
 var url='/ajx/getURLSOC.php?uid=' + uid + '&red=' + red;
