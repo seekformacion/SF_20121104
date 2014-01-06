@@ -40,7 +40,7 @@ $res2=DBselect("SELECT id FROM skv_user_social WHERE uid='$uid' AND red='$red' A
 $id=$res2[1]['id'];
 }
 
-$d[]=$url . "?lc=$id" ."|" . "http://cursodecursos.com/ajx/socialdone.php?done=" . $id . "|" . $nom;
+$d[]=$url . "#lc$id" ."|" . "http://cursodecursos.com/ajx/socialdone.php?done=" . $id . "|" . $nom;
 
 
 
