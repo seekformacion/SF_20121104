@@ -16,6 +16,6 @@ $res=DBUpIns("UPDATE skv_user_social SET estado='1' WHERE id='$done';");
 
 <script>
 
-soc.close(); 	
+window.close();	
 	
 </script>
