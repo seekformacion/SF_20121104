@@ -61,9 +61,14 @@ createJS();
 
 $Datos['links_js']=$v['linksjS'];
 
+$gaccounts[1]="UA-36119979-1"; $gaccountsN[1]="cursodecursos.com";
+$gaccounts[2]="UA-46923978-1"; $gaccountsN[2]="masterenmasters.com";
+$gaccounts[3]="UA-36119979-1"; $gaccountsN[3]="cursodecursos.com";
+$gaccounts[4]="UA-36119979-1"; $gaccountsN[4]="cursodecursos.com";
+
+$Datos['analytics']=$gaccounts[$v['where']['idp']];
+$Datos['analyticsN']=$gaccountsN[$v['where']['idp']];
 ##########################################################
-
-
 
 
 
