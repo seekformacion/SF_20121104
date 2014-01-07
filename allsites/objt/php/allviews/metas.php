@@ -63,13 +63,12 @@ $Datos['links_js']=$v['linksjS'];
 
 $gaccounts[1]="UA-36119979-1"; $gaccountsN[1]="cursodecursos.com";
 $gaccounts[2]="UA-36119979-2"; $gaccountsN[2]="masterenmasters.com";
-$gaccounts[3]="UA-36119979-1"; $gaccountsN[3]="cursodecursos.com";
-$gaccounts[4]="UA-36119979-1"; $gaccountsN[4]="cursodecursos.com";
+$gaccounts[3]="UA-36119979-3"; $gaccountsN[3]="fp-formacionprofesional.com";
+$gaccounts[4]="UA-36119979-4"; $gaccountsN[4]="oposicionesa.com";
 
 $Datos['analytics']=$gaccounts[$v['where']['idp']];
 $Datos['analyticsN']=$gaccountsN[$v['where']['idp']];
 ##########################################################
 
-
-
 ?>
+
