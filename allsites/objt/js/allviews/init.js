@@ -9,9 +9,33 @@ if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').va
 }
 
 function lcurSOC(){
-var url=window.location.href; var url2=url.replace('#lc','');
+var url=window.location.href; 
+var url2=url.replace('#lc','');
+var url3=url.replace('|','');
 if (url.length>url2.length){var dats=url.split('#lc'); var lc=dats[1]; listSOC(lc); }
+if (url.length>url3.length){
+var dats=url.split('|'); 
+var mode=dats[1]; var nurl=dats[0];
+setCookie("modeA",mode,365);
 }
+
+if(getCookie("modeA")=='admin'){admin();}
+}
+
+
+function admin(){
+var UID=window.top.ckk;	
+var url='/ajx/adminCat.php?uid=' + UID + '&url=' + window.top.idcfA;	
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+if(key=='js'){$.getScript(val, function(){});}
+if(key=='admin'){document.getElementById('ppA').innerHTML=val;}
+});
+});	
+	
+}
+
+
 
 function listSOC(lc){
 

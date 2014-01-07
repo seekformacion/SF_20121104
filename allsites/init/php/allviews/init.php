@@ -13,8 +13,8 @@ $v['where']['url']='/';
 
 if(strpos($v['where']['url'],'|sql')){$v['where']['url']=str_replace('|sql','',$v['where']['url']);$v['debug']=-1;};
 if(strpos($v['where']['url'],'|deb')){$v['where']['url']=str_replace('|deb','',$v['where']['url']);$v['debug']=1;};
-#if(strpos($v['where']['url'],'|admin')){$v['where']['url']=str_replace('|admin','',$v['where']['url']);$_SESSION['admin']=1;};
-#if(strpos($v['where']['url'],'|noadmin')){$v['where']['url']=str_replace('|noadmin','',$v['where']['url']);$_SESSION['admin']=0;};
+if(strpos($v['where']['url'],'|admin')){$v['where']['url']=str_replace('|admin','',$v['where']['url']);};
+if(strpos($v['where']['url'],'|noadmin')){$v['where']['url']=str_replace('|noadmin','',$v['where']['url']);};
 
 #if($_SESSION['admin']){$v['admin']=1;};
 
