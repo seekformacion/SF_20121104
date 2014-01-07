@@ -374,15 +374,28 @@ doSOC(val,red);
 }
 
 function doSOC(url,red){
-
-
-if(red=='face'){
 var dats=url.split('|');
 var url=dats[0]; var url2=dats[1];
 
+if(red=='face'){
 var pagina="https://www.facebook.com/dialog/feed?app_id=673960869311429&display=popup&caption=Me gustaría que me dierais vuestra opinión sobre los siguientes cursos&link=" + url +  "&redirect_uri=" + url2;	
 var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
 }
+
+if(red=='tweet'){
+var pagina="http://twitter.com/share?text=Me gustaría que me dierais vuestra opinión sobre los siguientes cursos&url=" + url;
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
+
+}
+
+
+if(red=='gplus'){
+var pagina="https://plus.google.com/share?url=" + url;	
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=390, top=85, left=140";
+
+}
+
+
 
 window.open(pagina,"soc",opciones);
 	
@@ -390,7 +403,14 @@ window.open(pagina,"soc",opciones);
 
 
 function facebook(){
-var urlsoc=getURLSOC('face');	
+	var urlsoc=getURLSOC('face');	
+}
 
-	
+function tweet(){
+	var urlsoc=getURLSOC('tweet');	
+}
+
+
+function gplus(){
+	var urlsoc=getURLSOC('gplus');	
 }

@@ -5,6 +5,37 @@ window.top.HTML=' %listHTML% ';
 loadCarrito();
 if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
 
+
+}
+
+function lcurSOC(){
+var url=window.location.href; var url2=url.replace('#lc','');
+if (url.length>url2.length){var dats=url.split('#lc'); var lc=dats[1]; listSOC(lc); }
+}
+
+function listSOC(lc){
+
+var UID=window.top.ckk;
+var url='/ajx/importSOC.php?uid=' + UID + '&lc=' + lc;	
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+
+if(key=="newlc"){
+
+var pops=document.getElementById('pops2').innerHTML;
+var newlc=val; 
+pops=pops + newlc;
+document.getElementById('pops2').innerHTML=pops;
+emerge('em-3'); 
+
+
+}	
+
+});
+});		
+
+
+
 }
 
 function closAlert(){
@@ -118,7 +149,7 @@ var cookie=getCookie("seekforID");
   {
   	window.top.ckk=cookie;
   	initCurSEL();chkCsels(); 
-  	checkGEOip();window.top.accept=0;
+  	checkGEOip();window.top.accept=0;lcurSOC();
   	}else{
   	
   	getremotecookie();
@@ -291,7 +322,7 @@ function getremotecookie() {
 	setCookie("seekforID",cookie,365);
 	window.top.ckk=cookie;
 	initCurSEL();chkCsels(); 
-	checkGEOip();
+	checkGEOip();lcurSOC();
  });
  
 }
