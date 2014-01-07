@@ -11,7 +11,7 @@ catsINF($idcat);
 
 
 
-$Datos['pagTittle']=$v['where']['pagTittle'];# . " | " . $v['where']['id'];
+$Datos['pagTittle']=$v['where']['pagTittle'] . " | " . $v['where']['id'];
 
 
 

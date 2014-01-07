@@ -192,8 +192,22 @@ document.getElementById(12).className=clas;
 }	
 
 
-if(doit){insVals();showdoit();};	
+if(doit){insVals();showdoit();setcupon();};	
 }	
+
+
+function setcupon(){
+
+uid=window.top.ckk;
+var url='/ajx/setcupon.php?uid=' + uid;
+$.getJSON(url, function(data) {
+$.each(data, function(key, val) {
+	
+});
+});
+	
+}
+
 
 function revi1(){
 
