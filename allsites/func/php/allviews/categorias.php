@@ -142,7 +142,7 @@ $lcatsT=substr($lcatsT, 0,-1);
 $dcats=array();
 
 if($lcatsT){
-$dcats=$catsPort=DBselect("select * from skf_urls where t_id IN ($lcatsT) AND idp=$idp ORDER BY pagTittleC;");
+$dcats=$catsPort=DBselect("select * from skf_urls where t_id IN ($lcatsT) AND idp=$idp AND tipo=1 ORDER BY pagTittleC;");
 }
 
 if(count($dcats)==0){$dcats=array();};
