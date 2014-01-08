@@ -13,7 +13,10 @@ $newc[$key]['url']=$value['url'];
 $newc[$key]['pagTittleC']=$value['pagTittleC'];
 $newc[$key]['done']="";
 
-if(!$v['admin']){
+$noadmin=1;
+if(array_key_exists('modeA', $_COOKIE)){if($_COOKIE['modeA']=='admin'){$noadmin=0;}}
+
+if($noadmin){
 		
 	$newc[$key]['done']='<div class="iconos ticScatF color2_BG"></div>';
 
