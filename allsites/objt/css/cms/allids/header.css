@@ -1,9 +1,9 @@
 .logo  {position:relative; left:20px;  float: left;}
 
 
+.cmsB { min-height: 512px; padding: 20px;}
 
-
-
+.cmsB h2{font-family:Arial;}
 
 .imgCat	{position: relative; float:left;}
 .imgCat {width:781px; height:209px;}
