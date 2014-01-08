@@ -4,6 +4,7 @@
 $v['vars']['eqtempl'][0]="home";
 $v['vars']['eqtempl'][1]="categorias";
 $v['vars']['eqtempl'][2]="cursos";
+$v['vars']['eqtempl'][5]="cms";
 
 $v['vars']['purl'][1]="http://cursodecursos.com";
 $v['vars']['purl'][2]="http://masterenmasters.com";

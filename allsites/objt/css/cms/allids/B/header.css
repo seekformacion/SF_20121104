@@ -1,0 +1,11 @@
+.margen_sup	{ height:22px;width: 920px;}
+
+
+.bloque_negro{	background-color:#000000;height:170px;margin-bottom: -170px;width: 920px;}
+
+.imgCat	{position: relative; float:left;}
+.imgCat {width:540px; height:150px;}
+.icat {margin-left: 380px; }
+.imas {margin-left: 380px; margin-top: -150px;}
+
+.slyTxt {width:890px;  margin-left: 15px;}
