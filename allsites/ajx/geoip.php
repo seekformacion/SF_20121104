@@ -30,6 +30,8 @@ echo json_encode($val);
 function geo_ip($ipaddress)
 {
 $buf="";	
+
+echo $ipaddress;
 #$license_key="TsbcQPRGZjU0";#e
 $license_key="g9wRUqbb76W3";#b
 
