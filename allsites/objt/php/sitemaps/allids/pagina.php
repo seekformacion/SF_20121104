@@ -1,4 +1,5 @@
 <?php
+set_time_limit(0);
 
 function doitC($idp,$idc,$url){global $sqlI;global $v;
 $dt=date('Y') . date('m') . date('d');
