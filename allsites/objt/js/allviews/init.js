@@ -278,7 +278,7 @@ document.getElementById('gI').innerHTML=html;
 
 function getgeoCP(){
 var UID=window.top.ckk;
-var url='/ajx/geoip.php?uid=' + UID;
+var url='http://cursodecursos.com:8080/ajx/geoip.php?uid=' + UID;
 $.getJSON(url, function(data) {
 $.each(data, function(key, val) {
 if(key=="cp"){
