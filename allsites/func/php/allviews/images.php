@@ -15,9 +15,14 @@ $catsup[0]= array_reverse(explode(",",$sup));
 
 
 $res=DBselect("SELECT rel_idc FROM skf_relCatsPort WHERE idc=$idcat;");	
-foreach ($res as $key => $value) {$idcc=$value['rel_idc'];
+foreach ($res as $key => $value) {$idcc=$value['rel_idc']; 
+
 $inf=DBselect("select superiores from skf_cats where id=$idcc;");
-$sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=str_replace('|', ',', $sup) .  $idcc; 	
+
+if(array_key_exists(1,$inf)){
+$sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=str_replace('|', ',', $sup) .  $idcc;
+} 	
+
 $catsup[]= array_reverse(explode(",",$sup));	
 }
 

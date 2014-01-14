@@ -10,7 +10,7 @@ $sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=
 
 $bc="";
 if($sup){
-$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1);");
+$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1) ORDER BY FIELD(t_id,$sup);");
 foreach ($dcats as $key => $dat) {
 $url=$dat['url']; $n=$dat['pagTittleC'];	
 	if($url=="/"){
@@ -37,7 +37,7 @@ $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup);
 
 $bc="";
 if($sup){
-$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1);");
+$dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1) ORDER BY FIELD(t_id,$sup);");
 foreach ($dcats as $key => $dat) {
 $url=$dat['url']; $n=$dat['pagTittleC'];	
 	if($url=="/"){
@@ -248,25 +248,150 @@ if(array_key_exists(1, $txt)){return $txt[1]['mini_Text'];}else{return '';};
 
 function InventaTXTcat($nc){global $v;
 $idc=$v['where']['id'];
+$idp=$v['where']['idp']; 
 
-$rest= ($idc % 4);
 
-$ncmin=strtolower($nc);
-$txt[1]="Encontraras una amplia variedad de $ncmin para desarrollar tus habilidades y ampliar tu formación en este sector y mejorar tus posibilidades de encontrar trabajo. Encuentra entre esta oferta de $ncmin el mas indicado para tí.";
-	
-return $txt[1];
+############ cursos
+$p=strtolower($nc); $s=str_replace('cursos ', 'curso ', $p);
+
+$cur[0]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+$cur[1]="Encontraras una amplia variedad de $p para desarrollar tus habilidades y ampliar tu formación en este sector y mejorar tus posibilidades de encontrar trabajo.";
+$cur[2]="Diversos $p que te facilitarán encontrar trabajo a corto plazo. Tenemos la oferta más variada del mercado. ¡Hay uno a tu medida!";
+$cur[3]="Te ofrecemos varios $p para que te puedas convertir en un profesional y recibir la formación necesaria para desempeñar un oficio en este sector.";
+$cur[4]="Estos $p te aportarán el aprendizaje necesario para dominar todos los aspectos necesarios para desempeñar funciones en este sector.";
+$cur[5]="Estos $p están diseñados para que se dominen todas las técnicas relacionadas, Conviertete en un profesional. ";
+$cur[6]="Con estos $p podrás obtener la mejor formación en este sector y acceso a puestos de trabajo altamente cualificados.";
+$cur[7]="Con estos $p podrás desarrollar los aspectos que te permitirán ampliar tu formación dentro de este mundo.";
+$cur[8]="Te ofrecemos los $p más variados, unidades didácticas, programas formativos, investigación en el aula, formación abierta y a distancia, y muchos más.";
+$cur[9]="Ante la gran demanda de este tipo de formación te ofrecemos un abanico de $p con los que podrás obtener todos los conocimientos necesarios.";
+$cur[10]="Con estos $p podrás desarrollar tus conocimientos y habilidades en este campo y desenvolverte sin dificultades en este sector laboral. ";
+$cur[11]="¿Buscas un $s? Tenemos una gran oferta con la que podrás ampliar tus perspectivas laborales. ";
+$cur[12]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+
+
+if($idp==1){
+$rest= ($idc % 13);	
+return $cur[$rest];
+}
+
+
+
+############ masters
+$p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
+$mas[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+$mas[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+
+if($idp==2){
+$rest= ($idc % 2);	
+return $mas[$rest];
+}
+
+
+
+
+
+
+############ fp
+$ncmin=strtolower($nc); 
+$p=str_replace('fp: grado medio ','grados medios ',$ncmin);          $s=str_replace('fp: grado medio ','grado medio ',$ncmin); 
+$p=str_replace('fp: grado superior ','grados superiores ',$ncmin);   $s=str_replace('fp: grado superior ','grado superior ',$ncmin); 
+
+$fp[0]="Tenemos para ti distintos $p, con ellos podras convertirte en un profesional de este campo y te abrirán las puertas del mercado laboral.";	
+$fp[1]="Si quieres estudiar un $s este es tu sitio, tenemos la mejor oferta de grados de formación profesional relacionados con este sector para que puedas conseguir los conocimientos que necesitas. ";
+$fp[2]="¿Quiéres estudiar y encontrar empleo en un sector con gran demanda de profesionales? Tenemos los mejores $p para que te conviertas en un experto.";
+$fp[3]="¿Te gustaría estudiar formación profesional? Aquí encontrarás $p con los que te resultará más sencillo encontrar empleo en este sector con múltiples salidas laborales. ";
+$fp[4]="Si estas pensando en estudiar un $s. No te pierdas la oferta de $p que te ofrecemos.";
+$fp[5]="Conviertete en un profesional con los $p que te te proponemos. Realiza un $s y certifica tu valía";
+$fp[6]="Decídete a estudiar un $s de formación profesional, con ellos podrás obtener empleo y promocionar tanto en el ámbito privado como en el público.";
+$fp[7]="Tenemos la mejor oferta de $p con los que obtendrás el título de formación profesional que te abrirá las puertas del mercado laboral.";
+$fp[8]="¿Quiéres estudiar y encontrar empleo como un profesional cualificado? Tenemos los mejores $p para que puedas acreditar tus conocimientos. ";
+
+if($idp==3){
+$rest= ($idc % 9);	
+return $fp[$rest];
+}
+
+
+
+
+############ oposiciones
+$p=strtolower($nc); $s=str_replace('oposiciones ', 'oposición ', $p);
+$op[0]="¿Estás pensando en opositar? Aquí encontrarás lo necesario para formarte y obtener los mejores resultados en las pruebas de acceso para $p.";
+$op[1]="¿Quieres preparar una $s? Con estos cursos preparativos conseguirás la preparación necesaria para superar el examen con una gran calificación.";
+
+if($idp==4){
+$rest= ($idc % 2);	
+return $op[$rest];
+}
+
+
+
+
 }
 
 
 function InventaDTXTcat($nc){global $v;
+$idp=$v['where']['idp'];
 $idc=$v['where']['id'];
+$nidc=(($idc+17)*($idc+50/($idc+3)));
 
-$rest= ($idc % 4);
 
-$ncmin=strtolower($nc);
-$txt[1]="$nc. Encuentra la mejor selección de $ncmin y elige el el que mas se adapta a tus necesidades. Mejora tu curriculum con estos $ncmin.";
-	
-return $txt[1];
+############ cursos
+$p=strtolower($nc); $s=str_replace('cursos ', 'curso ', $p);
+$cur[0]="Los mejores $p con los que podrás convertirte en un profesional de este sector y mejora tus conocimientos para encontrar empleo fácilmente.";
+$cur[1]="¿Estas interesado en un $s? Te ofrecemos los mejores y más completos $p ";
+
+if($idp==1){
+$rest= ($nidc % 2);	
+return $cur[$rest];
+}
+
+
+
+
+
+############ masters
+$p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
+$mas[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+$mas[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+
+if($idp==2){
+$rest= ($nidc % 2);	
+return $mas[$rest];
+}
+
+
+
+############ fp
+$ncmin=strtolower($nc); 
+$p=str_replace('fp: grado medio ','grados medios ',$ncmin);          $s=str_replace('fp: grado medio ','grado medio ',$ncmin); 
+$p=str_replace('fp: grado superior ','grados superiores ',$ncmin);   $s=str_replace('fp: grado superior ','grado superior ',$ncmin); 
+
+$p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
+$fp[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+$fp[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+
+if($idp==3){
+$rest= ($nidc % 2);	
+return $fp[$rest];
+}
+
+
+
+############ oposiciones
+$p=strtolower($nc); $s=str_replace('oposiciones ', 'oposición ', $p);
+$op[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+$op[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+
+if($idp==4){
+$rest= ($nidc % 2);	
+return $op[$rest];
+}
+
+
+
+
+
 }
 
 

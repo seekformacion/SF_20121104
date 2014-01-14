@@ -1,4 +1,4 @@
 
 .footInf {position:relative; float: left; width:200px; height: 69px; margin-left: 20px;  top:10px; }
 .subinf {color: #dddddd; font-family:Arial; font-size: 12px; height:19px; }
-
+.subinf a {color: #dddddd;}

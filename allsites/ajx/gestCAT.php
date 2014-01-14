@@ -145,9 +145,24 @@ $.each(data, function(key, val) {
 
 
 
+
+	
+
+
+
 <div style="position : absolute; width:620px; left:37px; ">
+	
+<div style="position:relative; float: left; margin-left: 5px; width:100px;" class="cat"><a href="http://cursodecursos.com/ajx/gestCAT.php?cat=1&idp=1&catsup=0">Cursos</a></div>
+<div style="position:relative; float: left; margin-left: 5px; width:100px;" class="cat"><a href="http://cursodecursos.com/ajx/gestCAT.php?cat=1183&idp=2&catsup=0">Masters</a></div>
+<div style="position:relative; float: left; margin-left: 5px; width:100px;" class="cat"><a href="http://cursodecursos.com/ajx/gestCAT.php?cat=2365&idp=3&catsup=0">FP</a></div>
+<div style="position:relative; float: left; margin-left: 5px; width:100px;" class="cat"><a href="http://cursodecursos.com/ajx/gestCAT.php?cat=3547&idp=4&catsup=0">Oposiciones</a></div>
+
+<div style="clear:both;"></div>	
+	
 <div id="vol" class="cat" onclick='goto(<?php echo $idp . ',' . $catsup ;?>)'>Volver << </div>
 <div style="clear:both;"></div>
+
+
 
 <?php echo $CATES; ?>	
 <div style="clear:both;"></div>
