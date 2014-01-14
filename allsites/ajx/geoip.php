@@ -16,6 +16,7 @@ $cp=$res[1]['cp']; $ct=$res[1]['ct'];
 if(!$cp){
 $ip=getRealIpAddr();
 $res= geo_ip($ip);
+
 $cp=$res['cp'];
 $ct=$res['ct']; $val['ins']=1;
 $res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', ct='$ct' WHERE seekforID='$uid';");	
@@ -30,13 +31,11 @@ echo json_encode($val);
 function geo_ip($ipaddress)
 {
 $buf="";	
+$license_key="TsbcQPRGZjU0";#e
+#$license_key="g9wRUqbb76W3";#b
 
-echo $ipaddress;
-#$license_key="TsbcQPRGZjU0";#e
-$license_key="g9wRUqbb76W3";#b
-
-$query = "http://geoip.maxmind.com/b?l=" . $license_key . "&i=" . $ipaddress;
-$url = parse_url($query);
+$query = "http://geoip.maxmind.com/e?l=" . $license_key . "&i=" . $ipaddress;
+$url = parse_url($query); echo $query;
 $host = $url["host"];
 $path = $url["path"] . "?" . $url["query"];
 $timeout = 1;
