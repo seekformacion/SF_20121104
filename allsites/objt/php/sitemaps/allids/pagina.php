@@ -143,7 +143,7 @@ $mets=array();
 doit($idp,$rvH[$idp],$v['vars']['purl'][$idp],0,$mets);
 
 
-$dcats=DBselect("select t_id, url, (select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo IN (0,1) AND idp=$idp ORDER BY t_id ASC;");
+$dcats=DBselect("select t_id, url, (select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo IN (0,1) AND idp=$idp ORDER BY t_id ASC limit 10;;");
 foreach ($dcats as $key => $values) {
 $mets=array();	
 $c=$values['C']; $idc=$values['t_id']; $url=$values['url'];
