@@ -36,7 +36,7 @@ $Datos['imgCatPEQ']=$v['imgCat'];
 if($v['where']['view']=='categorias'){
 
 $txt=trim(DTXTcat($v['where']['id']));
-if(!$txt){$txt=InventaDTXTcat($v['where']['pagTittle']);};
+if(!$txt){$txt=InventaDTXTcat($v['where']['pagTittle'],0);};
 
 $Datos['description']=$txt;
 }

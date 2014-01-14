@@ -24,14 +24,14 @@ foreach ($catrel as $kk => $idcc){
 $cinf=CATS_inf_T($idcc); 
 $lcinfe= $cinf['list'];
 $bb=0;	
-$res=DBselect("SELECT idp, crsTittle, url, pagTittle, t_id FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
+$res=DBselect("SELECT idp, crsTittle, url, pagTittle, pagTittleC, t_id FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
 if(count($res)>0){$bb++;
 $dsliders['nom']=$res[1]['crsTittle'];
 $dsliders['url']=$v['vars']['purl'][$res[1]['idp']] . $res[1]['url'];
-$dsliders['pagTittle']=$res[1]['pagTittle'];
+$dsliders['pagTittle']=$res[1]['pagTittleC'];
 
 $txt=trim(DTXTcat($res[1]['t_id']));
-if(!$txt){$txt=InventaDTXTcat($res[1]['pagTittle']);};
+if(!$txt){$txt=InventaDTXTcat($res[1]['pagTittleC'],$res[1]['idp']);};
 $dsliders['description']=$txt;
 
 }

@@ -246,9 +246,9 @@ if(array_key_exists(1, $txt)){return $txt[1]['mini_Text'];}else{return '';};
 
 
 
-function InventaTXTcat($nc){global $v;
+function InventaTXTcat($nc,$idp){global $v;
 $idc=$v['where']['id'];
-$idp=$v['where']['idp']; 
+if(!$idp){$idp=$v['where']['idp'];};
 
 
 ############ cursos
@@ -294,7 +294,7 @@ return $mas[$rest];
 ############ fp
 $ncmin=strtolower($nc); 
 $p=str_replace('fp: grado medio ','grados medios ',$ncmin);          $s=str_replace('fp: grado medio ','grado medio ',$ncmin); 
-$p=str_replace('fp: grado superior ','grados superiores ',$ncmin);   $s=str_replace('fp: grado superior ','grado superior ',$ncmin); 
+$p=str_replace('fp: grado superior ','grados superiores ',$p);       $s=str_replace('fp: grado superior ','grado superior ',$s); 
 
 $fp[0]="Tenemos para ti distintos $p, con ellos podras convertirte en un profesional de este campo y te abrirán las puertas del mercado laboral.";	
 $fp[1]="Si quieres estudiar un $s este es tu sitio, tenemos la mejor oferta de grados de formación profesional relacionados con este sector para que puedas conseguir los conocimientos que necesitas. ";
@@ -330,8 +330,8 @@ return $op[$rest];
 }
 
 
-function InventaDTXTcat($nc){global $v;
-$idp=$v['where']['idp'];
+function InventaDTXTcat($nc,$idp){global $v;
+if(!$idp){$idp=$v['where']['idp'];};
 $idc=$v['where']['id'];
 $nidc=(($idc+17)*($idc+50/($idc+3)));
 
@@ -339,7 +339,7 @@ $nidc=(($idc+17)*($idc+50/($idc+3)));
 ############ cursos
 $p=strtolower($nc); $s=str_replace('cursos ', 'curso ', $p);
 $cur[0]="Los mejores $p con los que podrás convertirte en un profesional de este sector y mejora tus conocimientos para encontrar empleo fácilmente.";
-$cur[1]="¿Estas interesado en un $s? Te ofrecemos los mejores y más completos $p ";
+$cur[1]="¿Estas interesado en un $s? Te ofrecemos los mejores y más completos $p";
 
 if($idp==1){
 $rest= ($nidc % 2);	
@@ -365,9 +365,8 @@ return $mas[$rest];
 ############ fp
 $ncmin=strtolower($nc); 
 $p=str_replace('fp: grado medio ','grados medios ',$ncmin);          $s=str_replace('fp: grado medio ','grado medio ',$ncmin); 
-$p=str_replace('fp: grado superior ','grados superiores ',$ncmin);   $s=str_replace('fp: grado superior ','grado superior ',$ncmin); 
+$p=str_replace('fp: grado superior ','grados superiores ',$p);       $s=str_replace('fp: grado superior ','grado superior ',$s); 
 
-$p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
 $fp[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
 $fp[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
 
