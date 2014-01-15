@@ -354,11 +354,15 @@ $op[3]="¿Te gustaría ser empleado público? Pierde el respeto a las pruebas de
 $op[4]="¿Llevas tiempo pensando en prepararte unas oposiciones? Esta es tu oportunidad, aquí encontrarás una amplia oferta de cursos de preparación para $p.";
 $op[5]="¿Quiéres encontrar plaza fija como empleado público? Tenemos para ti los cursos preparativos para $p con los que tu éxito está asegurado.";
 $op[6]="Prepara tus $p con el curso de preparación que más encaje contigo, tenemos cursos para que puedas presentarte a multitud de oposiciones y puedas conseguir una plaza.";
-
+$op[7]="¿Estás interesado en ser funcionario del estado? Si no sabes cómo hacerlo te ayudamos con estos cursos de preparación para $p.";
+$op[8]="Si buscas encontrar plaza fija como funcionario te ofrecemos diversos cursos de preparación a $p con los que podrás superar la convocatoria.";
+$op[9]="Aquí podrás encontrar los cursos de preparación para $p que te permitan conseguir exitosamente el puesto tan deseado que siempre has querido.";
+$op[10]="¿Has decidido presentarte a una convocatoria para $p? Visítanos y consigue encontrar el curso de preparación que mejor encaja con tu perfil.";
+$op[11]="Si tu objetivo es conseguir un empleo estable tenemos para ti una serie de cursos preparativos para $p con los mejores temarios para que superes fácilmente las pruebas de acceso.";
 
 
 if($idp==4){
-$rest= ($idc % 7);	
+$rest= ($idc % 12);	
 return $op[$rest];
 }
 
@@ -464,11 +468,16 @@ $op[3]="¿Te gustaría ser empleado público? Pierde el respeto a las pruebas de
 $op[4]="¿Llevas tiempo pensando en prepararte unas oposiciones? Esta es tu oportunidad, aquí encontrarás una amplia oferta de cursos de preparación para $p.";
 $op[5]="¿Quiéres encontrar plaza fija como empleado público? Tenemos para ti los cursos preparativos para $p con los que tu éxito está asegurado.";
 $op[6]="Prepara tus $p con el curso de preparación que más encaje contigo, tenemos cursos para que puedas presentarte a multitud de oposiciones y puedas conseguir una plaza.";
+$op[7]="¿Estás interesado en ser funcionario del estado? Si no sabes cómo hacerlo te ayudamos con estos cursos de preparación para $p.";
+$op[8]="Si buscas encontrar plaza fija como funcionario te ofrecemos diversos cursos de preparación a $p con los que podrás superar la convocatoria.";
+$op[9]="Aquí podrás encontrar los cursos de preparación para $p que te permitan conseguir exitosamente el puesto tan deseado que siempre has querido.";
+$op[10]="¿Has decidido presentarte a una convocatoria para $p? Visítanos y consigue encontrar el curso de preparación que mejor encaja con tu perfil.";
+$op[11]="Si tu objetivo es conseguir un empleo estable tenemos para ti una serie de cursos preparativos para $p con los mejores temarios para que superes fácilmente las pruebas de acceso.";
 
 
 
 if($idp==4){
-$rest= ($nidc % 7);	
+$rest= ($nidc % 12);	
 return $op[$rest];
 }
 
