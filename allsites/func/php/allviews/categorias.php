@@ -267,10 +267,20 @@ $cur[9]="Ante la gran demanda de este tipo de formación te ofrecemos un abanico
 $cur[10]="Con estos $p podrás desarrollar tus conocimientos y habilidades en este campo y desenvolverte sin dificultades en este sector laboral. ";
 $cur[11]="¿Buscas un $s? Tenemos una gran oferta con la que podrás ampliar tus perspectivas laborales. ";
 $cur[12]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
+$cur[13]="Te ofrecemos varios $p para que te puedas convertir en un experto y recibir la formación necesaria para desempeñar un oficio en este sector.";
+$cur[14]="Con estos $p podrás obtener la mejor formación en este sector y acceso a puestos de trabajo altamente cualificados.";
+$cur[15]="Te ofrecemos los mejores $p. Conviértete en un profesional en este sector con grandes posibilidades y consigue unos conocimientos que te ayudarán a prosperar en este sector.";
+$cur[16]="Tenemos para ti una gran oferta de $p con los que obtendrás las habilidades y conocimientos necesarios para conseguir un empleo de calidad.";
+$cur[17]="¿Quiéres encontrar empleo? Nuestros $p te proporcionarán la formación que necesitas y podrás trabajar este sector en auge.";
+$cur[18]="Aquí podrás encontrar una gran variedad de $p con los que abrirte paso en el mercado laboral y trabajar en el puesto que siempre has deseado.";
+$cur[19]="Decídete y comienza uno de nuestros $p conseguirás un excelente currículum a la vez que los conocimientos necesarios para desempeñar un empleo en este sector.";
+$cur[20]="Si estás buscando un $s te ofrecemos distintas opciones con las que llegarás a ser un experto en este sector que actualmente ofrece grandes oportunidades laborales.";
+$cur[21]="Tenemos una oferta de $p con los que aprenderás a dominar los aspectos más importantes  y estarás capacitado para cualquier tipo de situación laboral.";
+$cur[22]="Visítanos y encontrarás la mejor oferta de $p, si decides estudiar unos de estos cursos no te arrepentirás ya que podrás lograr alcanzar tus objetivos laborales.";
 
 
 if($idp==1){
-$rest= ($idc % 13);	
+$rest= ($idc % 23);	
 return $cur[$rest];
 }
 
@@ -340,9 +350,19 @@ $nidc=(($idc+17)*($idc+50/($idc+3)));
 $p=strtolower($nc); $s=str_replace('cursos ', 'curso ', $p);
 $cur[0]="Los mejores $p con los que podrás convertirte en un profesional de este sector y mejora tus conocimientos para encontrar empleo fácilmente.";
 $cur[1]="¿Estas interesado en un $s? Te ofrecemos los mejores y más completos $p";
+$cur[2]="Te ofrecemos varios $p para que te puedas convertir en un experto y recibir la formación necesaria para desempeñar un oficio en este sector.";
+$cur[3]="Con estos $p podrás obtener la mejor formación en este sector y acceso a puestos de trabajo altamente cualificados.";
+$cur[4]="Te ofrecemos los mejores $p. Conviértete en un profesional en este sector con grandes posibilidades y consigue unos conocimientos que te ayudarán a prosperar en este sector.";
+$cur[5]="Tenemos para ti una gran oferta de $p con los que obtendrás las habilidades y conocimientos necesarios para conseguir un empleo de calidad.";
+$cur[6]="¿Quiéres encontrar empleo? Nuestros $p te proporcionarán la formación que necesitas y podrás trabajar este sector en auge.";
+$cur[7]="Aquí podrás encontrar una gran variedad de $p con los que abrirte paso en el mercado laboral y trabajar en el puesto que siempre has deseado.";
+$cur[8]="Decídete y comienza uno de nuestros $p conseguirás un excelente currículum a la vez que los conocimientos necesarios para desempeñar un empleo en este sector.";
+$cur[9]="Si estás buscando un $s te ofrecemos distintas opciones con las que llegarás a ser un experto en este sector que actualmente ofrece grandes oportunidades laborales.";
+$cur[10]="Tenemos una oferta de $p con los que aprenderás a dominar los aspectos más importantes  y estarás capacitado para cualquier tipo de situación laboral.";
+$cur[11]="Visítanos y encontrarás la mejor oferta de $p, si decides estudiar unos de estos cursos no te arrepentirás ya que podrás lograr alcanzar tus objetivos laborales.";
 
 if($idp==1){
-$rest= ($nidc % 2);	
+$rest= ($nidc % 12);	
 return $cur[$rest];
 }
 

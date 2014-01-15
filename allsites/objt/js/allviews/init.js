@@ -303,7 +303,7 @@ var UID=window.top.ckk;
 	var me = $(this); 
 	$.getJSON(surl,  function(rtndata) { 
 	var cp=rtndata.message; var cp = cp.toString();
-	console.log(cp);
+	//console.log(cp);
 	setCookie("geoCP",cp,365);
 	window.top.geoCP=cp;
 	geoIMG();
@@ -357,7 +357,7 @@ function getremotecookie() {
 	var cookie=rtndata.message;
 	
 	var csin=cookie.replace('||new','');
-	console.log(csin);
+	//console.log(csin);
 	
 	if(csin.length < cookie.length){
 	cookie=csin;

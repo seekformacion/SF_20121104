@@ -23,7 +23,9 @@ $id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior'];
 $date2=substr($date, 0,4) . "-" . substr($date, 4,2) .  "-" . substr($date, 6,2);$dateV2=$date2;
 if(array_key_exists($idc, $homes)){$freq="monthly";}else{$freq="weekly";};
 
-$pri=($pri/10);	if($pri==1){$pri="1.0";};	
+if($pri <= 1){$pri=1;};
+$pri=($pri/10);	
+if($pri==1){$pri="1.0";};	
 		
 $content = file_get_contents($url);
 

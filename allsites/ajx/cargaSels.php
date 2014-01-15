@@ -83,7 +83,7 @@ if(($c<=2)&&($pt=="P1c")){
 $html.='
 <div class="color1 paso1">
 <div class="num1 iconos"></div>
-Selecciona en cualquier listado o en las fichas de curso, aquellos que más te interesan. Aquí podrás compararlos fácilmente.
+Selecciona en cualquier listado o en las fichas de curso aquellos que más te interesan. Aquí podrás compararlos fácilmente.
 <div class="imgPs1 iconos color1"></div>
 </div>
 
