@@ -299,7 +299,7 @@ var UID=window.top.ckk;
 //var url='http:/ajx/geoip.php?uid=' + UID;
 
 
-	var surl =  "http://cursodecursos.com/ajx/geoip2.php?uid=" + UID + "&callback=?"; 
+	var surl =  "http://cursodecursos.com:8080/ajx/geoip2.php?uid=" + UID + "&callback=?"; 
 	var me = $(this); 
 	$.getJSON(surl,  function(rtndata) { 
 	var cp=rtndata.message; var cp = cp.toString();
@@ -351,7 +351,7 @@ getgeoCP();
 
 function getremotecookie() {
 
-	var surl =  "http://cursodecursos.com/ajx/session.php?callback=?"; 
+	var surl =  "http://cursodecursos.com:8080/ajx/session.php?callback=?"; 
 	var me = $(this); 
 	$.getJSON(surl,  function(rtndata) { 
 	var cookie=rtndata.message;
