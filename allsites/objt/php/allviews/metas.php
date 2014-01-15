@@ -33,7 +33,7 @@ if(array_key_exists('imgCat', $v)){
 $Datos['imgCatPEQ']=$v['imgCat'];
 }else{$Datos['imgCatPEQ']="";}
 ########## diferentes tipos de descripcion
-if($v['where']['view']=='categorias'){
+if(($v['where']['view']=='categorias')||($v['where']['view']=='home')){
 
 $txt=trim(DTXTcat($v['where']['id']));
 if(!$txt){$txt=InventaDTXTcat($v['where']['pagTittle'],0);};
