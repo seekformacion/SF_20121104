@@ -44,6 +44,11 @@ $Datos['description']=$txt;
 if($v['where']['view']=='cursos'){
 $Datos['description']=$datCur['cur_descripcion'];
 }
+
+if($v['where']['view']=='cms'){
+$Datos['description']=$v['where']['pagTittle'];
+}
+
 ##########################################
 
 $Datos['imgDedo']=loadIMG("dedo.png");
