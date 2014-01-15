@@ -290,9 +290,21 @@ return $cur[$rest];
 $p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
 $mas[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
 $mas[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+$mas[2]="¿Estás pensando en hacer un master? Puedes elegir entre nuestra selección de $p, encontrarás el que mejor se adapta a tus necesidades.";
+$mas[3]="Tenemos la mayor oferta de masters, decídete a estudiar uno de estos $p y completarás tu currículum con una óptima formación de calidad.";
+$mas[4]="¿Quiéres hacer un $s? No dudes en visitarnos, tenemos la más amplia oferta con la que abrirás las puertas del mercado laboral o prosperarás en tu empleo.";
+$mas[5]="¿Quiéres una formación avanzada y altamente especializada? Te ofrecemos gran cantidad de $p que te aportarán las habilidades y conocimientos que necesitas.";
+$mas[6]="Comienza un $s, conseguirás la capacitación que necesitas  y se te abrirán las puertas de este sector con grandes oportunidades laborales.";
+$mas[7]="Si quieres introducirte en un mundo con múltiples salidas laborales te ofrecemos la oportunidad de estudiar uno de nuestros $p.";
+$mas[8]="Aquí encontrarás la más variada oferta en $p, especialízate en este sector en crecimiento y dominarás todas las funciones que tengas que superar a nivel laboral.";
+$mas[9]="El mercado de trabajo es cada vez más exigente, te ofrecemos una gran oferta de $p que te facilitarán tanto la consecución de empleo como la promoción en caso de que ya lo tuvieses.";
+$mas[10]="¿Quiéres diferenciarte del resto de profesionales de tu sector? Aquí encontrarás multitud de $p con los que conseguirás un valor añadido y te aportarán un factor diferenciador.";
+$mas[11]="¿Necesitas complementar tus estudios actuales? Estos $p te ofrecen esa oportunidad. Con ellos ampliarás las posibilidades de encontrar empleo o de mejorar el que ya tienes.";
+
+
 
 if($idp==2){
-$rest= ($idc % 2);	
+$rest= ($idc % 12);	
 return $mas[$rest];
 }
 
@@ -374,9 +386,19 @@ return $cur[$rest];
 $p=strtolower($nc); $s=str_replace('masters ', 'master ', $p);
 $mas[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
 $mas[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+$mas[2]="¿Estás pensando en hacer un master? Puedes elegir entre nuestra selección de $p, encontrarás el que mejor se adapta a tus necesidades.";
+$mas[3]="Tenemos la mayor oferta de masters, decídete a estudiar uno de estos $p y completarás tu currículum con una óptima formación de calidad.";
+$mas[4]="¿Quiéres hacer un $s? No dudes en visitarnos, tenemos la más amplia oferta con la que abrirás las puertas del mercado laboral o prosperarás en tu empleo.";
+$mas[5]="¿Quiéres una formación avanzada y altamente especializada? Te ofrecemos gran cantidad de $p que te aportarán las habilidades y conocimientos que necesitas.";
+$mas[6]="Comienza un $s, conseguirás la capacitación que necesitas  y se te abrirán las puertas de este sector con grandes oportunidades laborales.";
+$mas[7]="Si quieres introducirte en un mundo con múltiples salidas laborales te ofrecemos la oportunidad de estudiar uno de nuestros $p.";
+$mas[8]="Aquí encontrarás la más variada oferta en $p, especialízate en este sector en crecimiento y dominarás todas las funciones que tengas que superar a nivel laboral.";
+$mas[9]="El mercado de trabajo es cada vez más exigente, te ofrecemos una gran oferta de $p que te facilitarán tanto la consecución de empleo como la promoción en caso de que ya lo tuvieses.";
+$mas[10]="¿Quiéres diferenciarte del resto de profesionales de tu sector? Aquí encontrarás multitud de $p con los que conseguirás un valor añadido y te aportarán un factor diferenciador.";
+$mas[11]="¿Necesitas complementar tus estudios actuales? Estos $p te ofrecen esa oportunidad. Con ellos ampliarás las posibilidades de encontrar empleo o de mejorar el que ya tienes.";
 
 if($idp==2){
-$rest= ($nidc % 2);	
+$rest= ($nidc % 12);	
 return $mas[$rest];
 }
 
