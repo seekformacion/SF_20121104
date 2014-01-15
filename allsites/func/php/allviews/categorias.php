@@ -327,9 +327,18 @@ $fp[5]="Conviertete en un profesional con los $p que te te proponemos. Realiza u
 $fp[6]="Decídete a estudiar un $s de formación profesional, con ellos podrás obtener empleo y promocionar tanto en el ámbito privado como en el público.";
 $fp[7]="Tenemos la mejor oferta de $p con los que obtendrás el título de formación profesional que te abrirá las puertas del mercado laboral.";
 $fp[8]="¿Quiéres estudiar y encontrar empleo como un profesional cualificado? Tenemos los mejores $p para que puedas acreditar tus conocimientos. ";
+$fp[9]="¿Estás pensando en comenzar un grado medio o superior de formación profesional? Te ofrecemos la oportunidad de elegir entre nuestros $p.";
+$fp[10]="Hoy en día la mejor opción para encontrar empleo es estudiar formación profesional, te presentamos nuestra extensa oferta en $p.";
+$fp[11]="Con nuestros $p conseguirás la mejor formación y te abrirás las puertas del mercado laboral estudiando lo que más te gusta.";
+$fp[12]="¿Quiéres conocer a fondo una profesión? Decídete a comenzar un $s de formación profesional y podrás conseguir el trabajo que más encaja contigo.";
+$fp[13]="¿Sabías que 4 de cada 10 ofertas de empleo son para titulados en formación profesional? Tenemos distintos $p que te permitirán desarrollar la profesión que más te guste.";
+
+
+
+
 
 if($idp==3){
-$rest= ($idc % 9);	
+$rest= ($idc % 14);	
 return $fp[$rest];
 }
 
@@ -340,9 +349,16 @@ return $fp[$rest];
 $p=strtolower($nc); $s=str_replace('oposiciones ', 'oposición ', $p);
 $op[0]="¿Estás pensando en opositar? Aquí encontrarás lo necesario para formarte y obtener los mejores resultados en las pruebas de acceso para $p.";
 $op[1]="¿Quieres preparar una $s? Con estos cursos preparativos conseguirás la preparación necesaria para superar el examen con una gran calificación.";
+$op[2]="Ser funcionario es tener la certeza de un empleo estable y para toda la vida, da el paso, lánzate y comienza uno de nuestros cursos de preparación a $p.";
+$op[3]="¿Te gustaría ser empleado público? Pierde el respeto a las pruebas de acceso con esta oferta de cursos de preparación a $p y encuentra un empleo con la mayor estabilidad.";
+$op[4]="¿Llevas tiempo pensando en prepararte unas oposiciones? Esta es tu oportunidad, aquí encontrarás una amplia oferta de cursos de preparación para $p.";
+$op[5]="¿Quiéres encontrar plaza fija como empleado público? Tenemos para ti los cursos preparativos para $p con los que tu éxito está asegurado.";
+$op[6]="Prepara tus $p con el curso de preparación que más encaje contigo, tenemos cursos para que puedas presentarte a multitud de oposiciones y puedas conseguir una plaza.";
+
+
 
 if($idp==4){
-$rest= ($idc % 2);	
+$rest= ($idc % 7);	
 return $op[$rest];
 }
 
@@ -372,9 +388,17 @@ $cur[8]="Decídete y comienza uno de nuestros $p conseguirás un excelente curr�
 $cur[9]="Si estás buscando un $s te ofrecemos distintas opciones con las que llegarás a ser un experto en este sector que actualmente ofrece grandes oportunidades laborales.";
 $cur[10]="Tenemos una oferta de $p con los que aprenderás a dominar los aspectos más importantes  y estarás capacitado para cualquier tipo de situación laboral.";
 $cur[11]="Visítanos y encontrarás la mejor oferta de $p, si decides estudiar unos de estos cursos no te arrepentirás ya que podrás lograr alcanzar tus objetivos laborales.";
+$cur[12]="Estos $p te aportarán el aprendizaje necesario para dominar todos los aspectos necesarios para desempeñar funciones en este sector.";
+$cur[13]="Estos $p están diseñados para que se dominen todas las técnicas relacionadas, Conviertete en un profesional. ";
+$cur[14]="Con estos $p podrás obtener la mejor formación en este sector y acceso a puestos de trabajo altamente cualificados.";
+$cur[15]="Con estos $p podrás desarrollar los aspectos que te permitirán ampliar tu formación dentro de este mundo.";
+$cur[16]="Te ofrecemos los $p más variados, unidades didácticas, programas formativos, investigación en el aula, formación abierta y a distancia, y muchos más.";
+$cur[17]="Ante la gran demanda de este tipo de formación te ofrecemos un abanico de $p con los que podrás obtener todos los conocimientos necesarios.";
+$cur[18]="Con estos $p podrás desarrollar tus conocimientos y habilidades en este campo y desenvolverte sin dificultades en este sector laboral. ";
+
 
 if($idp==1){
-$rest= ($nidc % 12);	
+$rest= ($nidc % 19);	
 return $cur[$rest];
 }
 
@@ -411,9 +435,21 @@ $p=str_replace('fp: grado superior ','grados superiores ',$p);       $s=str_repl
 
 $fp[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
 $fp[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+$fp[2]="¿Quiéres estudiar y encontrar empleo en un sector con gran demanda de profesionales? Tenemos los mejores $p para que te conviertas en un experto.";
+$fp[3]="¿Te gustaría estudiar formación profesional? Aquí encontrarás $p con los que te resultará más sencillo encontrar empleo en este sector con múltiples salidas laborales. ";
+$fp[4]="Si estas pensando en estudiar un $s. No te pierdas la oferta de $p que te ofrecemos.";
+$fp[5]="Conviertete en un profesional con los $p que te te proponemos. Realiza un $s y certifica tu valía";
+$fp[6]="Decídete a estudiar un $s de formación profesional, con ellos podrás obtener empleo y promocionar tanto en el ámbito privado como en el público.";
+$fp[7]="Tenemos la mejor oferta de $p con los que obtendrás el título de formación profesional que te abrirá las puertas del mercado laboral.";
+$fp[8]="¿Quiéres estudiar y encontrar empleo como un profesional cualificado? Tenemos los mejores $p para que puedas acreditar tus conocimientos. ";
+$fp[9]="¿Estás pensando en comenzar un grado medio o superior de formación profesional? Te ofrecemos la oportunidad de elegir entre nuestros $p.";
+$fp[10]="Hoy en día la mejor opción para encontrar empleo es estudiar formación profesional, te presentamos nuestra extensa oferta en $p.";
+$fp[11]="Con nuestros $p conseguirás la mejor formación y te abrirás las puertas del mercado laboral estudiando lo que más te gusta.";
+$fp[12]="¿Quiéres conocer a fondo una profesión? Decídete a comenzar un $s de formación profesional y podrás conseguir el trabajo que más encaja contigo.";
+$fp[13]="¿Sabías que 4 de cada 10 ofertas de empleo son para titulados en formación profesional? Tenemos distintos $p que te permitirán desarrollar la profesión que más te guste.";
 
 if($idp==3){
-$rest= ($nidc % 2);	
+$rest= ($nidc % 14);	
 return $fp[$rest];
 }
 
@@ -423,9 +459,16 @@ return $fp[$rest];
 $p=strtolower($nc); $s=str_replace('oposiciones ', 'oposición ', $p);
 $op[0]="Tenemos los mejores $p que te permitirán convertirte en un profesional y así encontrar empleo es este sector.";
 $op[1]="Tenemos para ti una gran variedad de $p, estos cursos tienen el objetivo de formar a profesionales altamente cualificados. ";
+$op[2]="Ser funcionario es tener la certeza de un empleo estable y para toda la vida, da el paso, lánzate y comienza uno de nuestros cursos de preparación a $p.";
+$op[3]="¿Te gustaría ser empleado público? Pierde el respeto a las pruebas de acceso con esta oferta de cursos de preparación a $p y encuentra un empleo con la mayor estabilidad.";
+$op[4]="¿Llevas tiempo pensando en prepararte unas oposiciones? Esta es tu oportunidad, aquí encontrarás una amplia oferta de cursos de preparación para $p.";
+$op[5]="¿Quiéres encontrar plaza fija como empleado público? Tenemos para ti los cursos preparativos para $p con los que tu éxito está asegurado.";
+$op[6]="Prepara tus $p con el curso de preparación que más encaje contigo, tenemos cursos para que puedas presentarte a multitud de oposiciones y puedas conseguir una plaza.";
+
+
 
 if($idp==4){
-$rest= ($nidc % 2);	
+$rest= ($nidc % 7);	
 return $op[$rest];
 }
 
