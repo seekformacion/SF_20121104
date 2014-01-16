@@ -149,19 +149,20 @@ document.cookie=c_name + "=" + c_value + '; path=/';
 }
 
 
-function getCookie(c_name)
-{
-var i,x,y,ARRcookies=document.cookie.split(";");
-for (i=0;i<ARRcookies.length;i++)
-{
-  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-  x=x.replace(/^\s+|\s+$/g,"");
-  if (x==c_name)
-    {
-    return unescape(y);
-    }
-  }
+
+
+function getCookie(w){
+	cName = "";
+	pCOOKIES = new Array();
+	pCOOKIES = document.cookie.split('; ');
+	for(bb = 0; bb < pCOOKIES.length; bb++){
+		NmeVal  = new Array();
+		NmeVal  = pCOOKIES[bb].split('=');
+		if(NmeVal[0] == w){
+			cName = unescape(NmeVal[1]);
+		}
+	}
+	return cName;
 }
 
 
