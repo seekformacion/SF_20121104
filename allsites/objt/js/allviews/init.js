@@ -249,7 +249,9 @@ cp=cp + '0';
 }
 
 
-var pos=window.top.PCOD.indexOf(cp);
+var pos=$.inArray(cp,window.top.PCOD);
+
+//var pos=window.top.PCOD.indexOf(cp);
 
 //console.log(cp);
 //console.info(window.top.PCOD);
