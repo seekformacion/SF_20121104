@@ -300,11 +300,16 @@ $mas[8]="Aquí encontrarás la más variada oferta en $p, especialízate en este
 $mas[9]="El mercado de trabajo es cada vez más exigente, te ofrecemos una gran oferta de $p que te facilitarán tanto la consecución de empleo como la promoción en caso de que ya lo tuvieses.";
 $mas[10]="¿Quiéres diferenciarte del resto de profesionales de tu sector? Aquí encontrarás multitud de $p con los que conseguirás un valor añadido y te aportarán un factor diferenciador.";
 $mas[11]="¿Necesitas complementar tus estudios actuales? Estos $p te ofrecen esa oportunidad. Con ellos ampliarás las posibilidades de encontrar empleo o de mejorar el que ya tienes.";
+$mas[12]="¿Pensando en hacer un $s? No lo pienses más. Elije entre la selección de $p que te ofrecemos.";
+$mas[13]="La mejor selección de $p. Para que puedas elegir el $s que más se adapta a ti.";
+$mas[14]="¿Estás buscando un master? Aquí te ofrecemos una amplia selección de $p";
+$mas[15]="En un mercado laboral cada vez más exigente es necesario ampliar las oportunidades profesionales. Informate aquí de los $p.";
+$mas[16]="Completa tu formación orientándote a resultados inmediatos. Elije el $s que más se adapta a ti.";
 
 
 
 if($idp==2){
-$rest= ($idc % 12);	
+$rest= ($idc % 17);	
 return $mas[$rest];
 }
 
@@ -424,9 +429,14 @@ $mas[8]="Aquí encontrarás la más variada oferta en $p, especialízate en este
 $mas[9]="El mercado de trabajo es cada vez más exigente, te ofrecemos una gran oferta de $p que te facilitarán tanto la consecución de empleo como la promoción en caso de que ya lo tuvieses.";
 $mas[10]="¿Quiéres diferenciarte del resto de profesionales de tu sector? Aquí encontrarás multitud de $p con los que conseguirás un valor añadido y te aportarán un factor diferenciador.";
 $mas[11]="¿Necesitas complementar tus estudios actuales? Estos $p te ofrecen esa oportunidad. Con ellos ampliarás las posibilidades de encontrar empleo o de mejorar el que ya tienes.";
+$mas[12]="¿Pensando en hacer un $s? No lo pienses más. Elije entre la selección de $p que te ofrecemos.";
+$mas[13]="La mejor selección de $p. Para que puedas elegir el $s que más se adapta a ti.";
+$mas[14]="¿Estás buscando un master? Aquí te ofrecemos una amplia selección de $p";
+$mas[15]="En un mercado laboral cada vez más exigente es necesario ampliar las oportunidades profesionales. Informate aquí de los $p.";
+$mas[16]="Completa tu formación orientándote a resultados inmediatos. Elije el $s que más se adapta a ti.";
 
 if($idp==2){
-$rest= ($nidc % 12);	
+$rest= ($nidc % 17);	
 return $mas[$rest];
 }
 
