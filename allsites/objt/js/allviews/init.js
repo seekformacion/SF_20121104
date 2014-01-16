@@ -1,5 +1,7 @@
 
-function init(){$.ajaxSetup({'async': false});	
+function init(){$.ajaxSetup({'async': false});
+if(!window.top.cSELS){window.top.cSELS=new Array;}
+	
 checkCookie();
 window.top.HTML=' %listHTML% ';
 loadCarrito();
