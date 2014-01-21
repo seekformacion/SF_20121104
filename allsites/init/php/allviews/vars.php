@@ -17,6 +17,12 @@ $v['vars']['purlT'][3]="Formación profesional";
 $v['vars']['purlT'][4]="Preparación oposiciones";
 
 
+$v['vars']['raizS'][1]="Curso de ";
+$v['vars']['raizS'][2]="Master en ";
+$v['vars']['raizS'][3]="Fp Grado, Grado en ";
+$v['vars']['raizS'][4]="oposicion a ";
+
+
 
 $v['vars']['eqtip'][1]['s']="Curso";                   			$v['vars']['tipPort'][1]=1;
 $v['vars']['eqtip'][2]['s']="Master";							$v['vars']['tipPort'][2]=2;

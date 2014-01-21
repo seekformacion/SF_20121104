@@ -12,6 +12,7 @@ $Datos['home']="http://" . $v['where']['site'];
 $Datos['Hprev']=$v['where']['Hprev'];
 $Datos['Hnext']=$v['where']['Hnext'];
 
+$Datos['altIMGc']=$v['where']['pagTittle'];
 
  /*
 if($v['admin']==1){

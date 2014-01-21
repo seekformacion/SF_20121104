@@ -8,5 +8,5 @@ $Datos['imgCat']=$v['imgCat'];
 $Datos['imgMaskCat']=loadIMG("mascaras/mascarafondocat.png");
 
 $Datos['home']="http://" . $v['where']['site'];
-
+$Datos['altIMGc']=$v['where']['pagTittle'];
 ?>

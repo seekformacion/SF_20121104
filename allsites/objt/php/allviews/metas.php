@@ -1,7 +1,7 @@
 <?php 
 includeCORE('css/css');
 includeCORE('js/js');
-
+includeFUNC('funcmetas');
 
 
 
@@ -49,6 +49,7 @@ if($v['where']['view']=='cms'){
 $Datos['description']=$v['where']['pagTittle'];
 }
 
+$Datos['keywords']=getKeywords();
 ##########################################
 
 $Datos['imgDedo']=loadIMG("dedo.png");
