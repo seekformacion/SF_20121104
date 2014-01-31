@@ -31,6 +31,7 @@ $Datos['id']=$data['id'];
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 $Datos['met']=$eqmet[$data['cur_id_metodo']]['s'];
 $Datos['v']=valoracion($data['id']);
+$Datos['bc']=$v['where']['bc'];
 
 $descripcion=$data['cur_paraqueteprepara'] . "</p><p>" . $data['cur_descripcion'];
 $descripcion=strongTXT($descripcion,$pals);

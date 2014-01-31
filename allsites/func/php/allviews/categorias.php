@@ -16,8 +16,8 @@ $url=$dat['url']; $n=$dat['pagTittleC'];
 	if($url=="/"){
 	$url=$v['vars']['purl'][$idp];
 	$n=$v['vars']['purlT'][$idp];
-	$bc.="<a href='$url'>$n</a>";
-	}else{$bc.="> <a href='$url'>$n</a> ";};
+	$bc.="<a href='$url' title='$n'>$n</a>";
+	}else{$bc.=" > <a href='$url'>$n</a> ";};
 }}
 
 
