@@ -8,7 +8,7 @@ $idp=$v['where']['idp'];
 $inf=DBselect("select superiores from skf_cats where id=$idcat;");
 $sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
 
-$bc="";
+$bc=""; $bc2="";
 if($sup){
 $dcats=DBselect("select * from skf_urls where t_id IN ($sup) AND tipo IN (0,1) ORDER BY FIELD(t_id,$sup);");
 foreach ($dcats as $key => $dat) {
@@ -17,10 +17,11 @@ $url=$dat['url']; $n=$dat['pagTittleC'];
 	$url=$v['vars']['purl'][$idp];
 	$n=$v['vars']['purlT'][$idp];
 	$bc.="<a href='$url' title='$n'>$n</a>";
-	}else{$bc.=" > <a href='$url'>$n</a> ";};
+	}else{$bc.=" > <a href='$url'>$n</a> "; $bc2.="<a href='$url'>$n</a> >> ";};
 }}
 
 
+$v['where']['bc2']=substr($bc2, 0,-1);
 return ($bc);
 }
 

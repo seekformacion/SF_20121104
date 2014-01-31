@@ -19,10 +19,10 @@ $Datos['idcfA']=$v['where']['id'];
 $Datos['breadcrumbs']=breadCRUMBS($idcat);
 
 
-$bc=$Datos['breadcrumbs'];
-$bc=str_replace('</a> > ', '</a> >> ', $bc);
+$bc=$v['where']['bc2'];
+
 $bc=str_replace('<a href', '<a class="color1" href', $bc);
-$v['where']['bc']=$bc;
+$v['where']['bc']=$bc . " ". $v['where']['pagTittle'];
 
 $Datos['sliders']=loadChild('objt','sliders');
 
