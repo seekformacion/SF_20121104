@@ -107,7 +107,15 @@ $cp=$res[1]['cp']; $ct=$res[1]['ct'];
 
 if(!$cp){
 $ip=getRealIpAddr();
+
+if(($ip=="2.139.164.215")||($ip=="88.26.254.6")){
+$res['cp']="00";
+$res['ct']="00";
+}else{
 $res= geo_ip($ip);
+}
+	
+
 
 $cp=$res['cp'];
 $ct=$res['ct']; $val['ins']=1;
