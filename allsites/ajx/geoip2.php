@@ -116,9 +116,13 @@ $res= geo_ip($ip);
 }
 	
 
+if (isset($_COOKIE["seekforReferal"])){
+$ante= $_COOKIE["seekforReferal"];
+}else{$ante="";}
+
 $cp=$res['cp'];
-$ct=$res['ct']; $val['ins']=1;
-$res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', ct='$ct' WHERE seekforID='$uid';");	
+$ct=$res['ct']; $val['ins']=1; $dest=$_SERVER['HTTP_REFERER'];
+$res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', ct='$ct', referer='$ante', destino='$dest' WHERE seekforID='$uid';");	
 }
 
 
