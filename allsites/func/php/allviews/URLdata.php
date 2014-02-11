@@ -72,6 +72,10 @@ $v['where']['codTittle']=$res[1]['codTittle'];
 $v['where']['pagTittle']=$res[1]['pagTittleC'];
 $v['where']['urlSimple']=$url;
 
+$quits=array('Cursos de ', 'Cursos para la ', 'Cursos para ', 'Cursos ', 'Masters en ', 'Masters de ', 'Masters ', 'Fp: Grado medio en ', 'Fp: Grado superior en ', 'Oposiciones a ', 'Oposiciones al ', 'Oposiciones para ');
+$Catsin=$res[1]['pagTittleC'];  $Catsin=str_replace($quits, '', $Catsin);
+$v['where']['Catsin']=$Catsin;
+
 ############# añado prov a los titulos
 $v['where']['pagTittleSimp']=$v['where']['pagTittle'];
 

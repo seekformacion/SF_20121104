@@ -21,7 +21,7 @@ if(array_key_exists(1, $res)){ foreach ($res as $key => $value) {
 $id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior']; $date=$value['date']; $chksum=$value['chksum'];
 
 $date2=substr($date, 0,4) . "-" . substr($date, 4,2) .  "-" . substr($date, 6,2);$dateV2=$date2;
-if(array_key_exists($idc, $homes)){$freq="monthly";}else{$freq="weekly";};
+if(array_key_exists($idc, $homes)){$freq="weekly";}else{$freq="daily";};
 
 if($pri <= 1){$pri=1;};
 $pri=($pri/10);	
@@ -53,7 +53,7 @@ $res=DBUpIns("UPDATE util_sitemap SET chksum='$cks', done=1 WHERE id='$id';");
 
 
 	
-$SiteTXT .="<url>\n<loc>$url</loc>\n<lastmod>$date2</lastmod>\n<changefreq>$freq</changefreq>\n<priority>$pri</priority>\n</url>\n\n";
+$SiteTXT .="<url>\n<loc>$url</loc>\n<changefreq>$freq</changefreq>\n<priority>$pri</priority>\n</url>\n\n";
 
 	 	 
 }}

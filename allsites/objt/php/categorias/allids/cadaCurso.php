@@ -28,13 +28,15 @@ $nom="$nom en $np";
 $Datos['nombre']=$nom;# . "-" . $data['cur_id_metodo'] . "-" . $data['id'];
 $Datos['url']=$data['url'];
 $Datos['id']=$data['id'];
-$Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
+$Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'] . " / " . $v['where']['Catsin'];
 $Datos['met']=$eqmet[$data['cur_id_metodo']]['s'];
 $Datos['v']=valoracion($data['id']);
 $Datos['bc']=$v['where']['bc'];
 
 $descripcion=$data['cur_paraqueteprepara'] . "</p><p>" . $data['cur_descripcion'];
 $descripcion=strongTXT($descripcion,$pals);
+
+if(strlen($descripcion)>400){$descripcion=substr($descripcion, 0,400) . " ..";};
 
 $Datos['cur_descripcion']= $descripcion;
 $Datos['ncent']=$data['ncent'];
