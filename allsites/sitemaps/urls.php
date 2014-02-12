@@ -91,7 +91,7 @@ doitC($idp,$idcur,$url);
 
 $sqlI=substr($sqlI,0,-1);
 DBUpIns("DELETE from util_sitemap;");
-DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $sqlI;");
+//DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $sqlI;");
 
 
 
