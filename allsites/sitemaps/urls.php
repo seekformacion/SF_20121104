@@ -3,6 +3,8 @@ echo  "\n" . exec('clear') . "\n";
 global $v;
 global $curs; global $sqlI; $sqlI="";
 
+include('/www/dbA.php');
+
 $homes[1]=1;
 $homes[1183]=1;
 $homes[2365]=1;
@@ -20,14 +22,15 @@ $v['conf']['state']=1; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 $v['where']['idp']=						1; #### ID DEL PORTAL PARA TABLA urls
 $v['where']['view']=					'sitemaps'; #### ID DEL PORTAL PARA TABLA urls
-$v['where']['id']=					'1'; 
+$v['where']['id']=					    '1'; 
 $v['where']['site']=					"cursodecursos.com";
 
-$v['path']['repo']=						"/home/ebmoya/repositorios";
+
+
 $v['path']['bin']=$v['path']['repo'] .	"/SF_20121104";
 $v['path']['fw']=$v['path']['repo'] .	"/FrameW_1";
 $v['path']['img']=$v['path']['repo'] .	"/SeekFormacion_images";
-$v['path']['httpd']=					"/home/ebmoya/httpd/sf_201211/" . $v['where']['site'];
+
 $v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
 $v['path']['baseURLskin'][2]="http://s3-eu-west-1.amazonaws.com/seekf"; ## baseURL del SKIN en CLOUD
 
@@ -36,7 +39,7 @@ $v['path']['baseURLskin'][2]="http://s3-eu-west-1.amazonaws.com/seekf"; ## baseU
 
 
 
-include('/www/dbA.php');
+
 include('funcSitemaps.php');  
 require_once $v['path']['fw'] . '/core/templates/paths.php';
 
