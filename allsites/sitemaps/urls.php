@@ -1,5 +1,7 @@
 <?php
-echo  "\n" . exec('clear') . "\n";
+set_time_limit(0);
+ini_set("memory_limit", "-1");
+
 global $v;
 global $curs; global $sqlI; $sqlI=array();
 
@@ -90,7 +92,7 @@ $a=$min;
 
 while ($a <= $max){
 $b=$a+200;
-
+echo "recuperando hasta $b \n";
 $dcats=DBselect("select idp, tipo, t_id, url, 
 (select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where id >= $a AND id < $b AND tipo=1 AND doSitemap=0 ORDER BY tipo, t_id ASC;");
 
@@ -143,6 +145,7 @@ $b=0; $SQQ="";
 	}
 
 $SQQ=substr($SQQ,0,-1);
+echo "insertando hasta $i \n";
 DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $SQQ;");	
 }
 
