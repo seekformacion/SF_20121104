@@ -84,6 +84,7 @@ $dcats=DBselect("select max(id) as M, min(id) as I from skf_urls where tipo=1;")
 
 $min= $dcats[1]['I'];
 $max= $dcats[1]['M'];
+
 $a=$min;
 
 
