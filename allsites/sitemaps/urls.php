@@ -79,7 +79,6 @@ doit($idp,$rvH[$idp],$vvv,0,$mets);
 ##################
 
 
-
 $dcats=DBselect("select max(id) as M, min(id) as I from skf_urls where tipo=1;");
 
 $min= $dcats[1]['I'];
