@@ -1,5 +1,11 @@
 <?php
 
+if( ! ini_get('date.timezone') )
+{
+   date_default_timezone_set('GMT');
+}
+
+
 function doitC($idp,$idc,$url){global $sqlI;global $v;
 $dt=date('Y') . date('m') . date('d');
 $url=$v['vars']['purl'][$idp] . $url;

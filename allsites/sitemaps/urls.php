@@ -54,7 +54,7 @@ echo "\n\n";
 
 
 $dcats=DBselect("select idp, tipo, t_id, url, 
-(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo IN (0,1) AND doSitemap=0 ORDER BY tipo, t_id ASC;");
+(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo IN (0,1) AND doSitemap=0 ORDER BY tipo, t_id ASC limit 50;");
 
 foreach ($dcats as $key => $values) {
 $mets=array();	
