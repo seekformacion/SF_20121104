@@ -1,7 +1,7 @@
 <?php
 echo  "\n" . exec('clear') . "\n";
 global $v;
-global $curs; global $sqlI; $sqlI="";
+global $curs; global $sqlI; $sqlI=array();
 
 include('/www/dbA.php');
 
@@ -129,9 +129,24 @@ doitC($idp,$idcur,$url);
 
 
 
-$sqlI=substr($sqlI,0,-1);
+
 DBUpIns("DELETE from util_sitemap;");
-DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $sqlI;");
+
+$maxI=count($sqlI);
+
+$i=0;
+while($i <= $maxI){
+$b=0; $SQQ="";	
+	while($b <= 500){
+	if(array_key_exists($i, $sqlI)){$SQQ .=$sqlI[$i];};
+	$b++;$i++;	
+	}
+
+$SQQ=substr($SQQ,0,-1);
+DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $SQQ;");	
+}
+
+
 
 
 

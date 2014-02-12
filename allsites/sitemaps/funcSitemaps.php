@@ -9,7 +9,7 @@ if( ! ini_get('date.timezone') )
 function doitC($idp,$idc,$url){global $sqlI;global $v;
 $dt=date('Y') . date('m') . date('d');
 $url=$v['vars']['purl'][$idp] . $url;
-$sqlI.="(2,$idp,$idc,'$url',5,$dt),";
+$sqlI[]="(2,$idp,$idc,'$url',5,$dt),";
 
 }
 
@@ -19,14 +19,14 @@ $cpp=$v['conf']['cpp'];		$dt=date('Y') . date('m') . date('d');
 //print_r($mets);	
 $p=10;
 if( substr($url, 0,4) != "http"){ $url=$v['vars']['purl'][$idp] . $url;}; //$url=str_replace('http://', '', $url);
-$sqlI.="(1,$idp,$idc,'$url',$p,$dt),";
+$sqlI[]="(1,$idp,$idc,'$url',$p,$dt),";
 
 	if(count($mets)>0){
 	$pags=ceil($c/$cpp);
 		if($pags > 1){$a=2;
 			while ($a <= $pags) {$p--;
 			$url2=str_replace('.html', '-pag' . $a . '.html', $url);$a++;
-			$sqlI.="(1,$idp,$idc,'$url2',$p,$dt),";	
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";	
 			}
 		}
 	
@@ -38,10 +38,10 @@ $sqlI.="(1,$idp,$idc,'$url',$p,$dt),";
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
 	    	if($a==1){
-			$sqlI.="(1,$idp,$idc,'$url2',$p,$dt),";					
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
 			}else{$p--;	
 			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI.="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
 			}$a++;
 	}}}
 	
@@ -55,10 +55,10 @@ $sqlI.="(1,$idp,$idc,'$url',$p,$dt),";
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
 	    	if($a==1){
-			$sqlI.="(1,$idp,$idc,'$url2',$p,$dt),";					
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
 			}else{$p--;	
 			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI.="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
 			}$a++;
 	}}}
 	
@@ -72,10 +72,10 @@ $sqlI.="(1,$idp,$idc,'$url',$p,$dt),";
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
 	    	if($a==1){
-			$sqlI.="(1,$idp,$idc,'$url2',$p,$dt),";					
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
 			}else{$p--;	
 			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI.="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
 			}$a++;
 	
 	
