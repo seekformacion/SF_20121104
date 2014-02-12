@@ -52,10 +52,21 @@ includeCORE('funcs/general');
 
 echo "\n\n";
 
+$dcats=DBselect("select max(id) as M, min(id) as I from skf_urls where tipo=1;");
+
+$min= $dcats[1]['I'];
+$max= $dcats[1]['M'];
+$a=$min;
+
+
+
+while ($a <= $max){
+$b=$a+200;
 
 $dcats=DBselect("select idp, tipo, t_id, url, 
-(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo IN (0,1) AND doSitemap=0 ORDER BY tipo, t_id ASC;");
+(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where id >= $a AND id < $b AND tipo IN (0,1) AND doSitemap=0 ORDER BY tipo, t_id ASC;");
 
+if(count($dcats)>0){
 foreach ($dcats as $key => $values) {
 $mets=array();	
 $c=$values['C']; $idc=$values['t_id']; $url=$values['url']; $tipo=$values['tipo']; $idp=$values['idp'];
@@ -73,7 +84,8 @@ $vvv=$v['vars']['purl'][$idp];$mets=array();
 doit($idp,$rvH[$idp],$vvv,0,$mets); 	
 }}
 
-}
+}}
+$a=$a+200;}
 
 
 foreach ($curs as $idcur => $idp) {
@@ -91,7 +103,7 @@ doitC($idp,$idcur,$url);
 
 $sqlI=substr($sqlI,0,-1);
 DBUpIns("DELETE from util_sitemap;");
-//DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $sqlI;");
+DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $sqlI;");
 
 
 
