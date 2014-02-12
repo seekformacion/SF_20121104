@@ -52,6 +52,34 @@ includeCORE('funcs/general');
 
 echo "\n\n";
 
+######## homes
+
+$dcats=DBselect("select idp, tipo, t_id, url, 
+(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where tipo = 0 AND doSitemap=0 ORDER BY tipo, t_id ASC;");
+
+if(count($dcats)>0){
+foreach ($dcats as $key => $values) {
+$mets=array();	
+$c=$values['C']; $idc=$values['t_id']; $url=$values['url']; $tipo=$values['tipo']; $idp=$values['idp'];
+
+
+
+if($c>0){$mets=getMET($idc,$idp);}
+if($c==0){$c=getINF($idc);}
+
+if($c>0){
+if(!array_key_exists($idc, $homes)){	
+doit($idp,$idc,$url,$c,$mets);	
+}else{
+$vvv=$v['vars']['purl'][$idp];$mets=array();	
+doit($idp,$rvH[$idp],$vvv,0,$mets); 	
+}}
+
+}}
+##################
+
+
+
 $dcats=DBselect("select max(id) as M, min(id) as I from skf_urls where tipo=1;");
 
 $min= $dcats[1]['I'];
@@ -64,7 +92,7 @@ while ($a <= $max){
 $b=$a+200;
 
 $dcats=DBselect("select idp, tipo, t_id, url, 
-(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where id >= $a AND id < $b AND tipo IN (0,1) AND doSitemap=0 ORDER BY tipo, t_id ASC;");
+(select count(id) FROM skv_relCurCats WHERE id_cat=t_id AND showC=1) as C from skf_urls where id >= $a AND id < $b AND tipo=1 AND doSitemap=0 ORDER BY tipo, t_id ASC;");
 
 if(count($dcats)>0){
 foreach ($dcats as $key => $values) {
