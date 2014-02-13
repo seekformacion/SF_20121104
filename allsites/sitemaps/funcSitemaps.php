@@ -61,6 +61,8 @@ refress($idpp,$idpp2,$urlR);
 
 function refress($idpp,$idpp2,$url){
 
+$url=str_replace($idpp, '', $url);
+
 exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\"") . "\n";
 
 echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\" \n";
