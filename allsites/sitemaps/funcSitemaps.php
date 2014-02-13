@@ -13,7 +13,7 @@ function GetURLtoCACHE($idp){global $v;
 
 
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id ASC limit 100;");
+$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 100;");
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
 $id=$val['id'];	
@@ -59,14 +59,72 @@ refress($idpp,$idpp2,$urlR);
 	
 }
 
+
+function createSitemap($idp){global $v;
+
+$homes[1]=1;
+$homes[1183]=1;
+$homes[2365]=1;
+$homes[3547]=1;
+
+
+$ruta= $v['path']['httpd'];
+$port=$v['vars']['purl'][$idp]; 
+$port=str_replace('http://', '', $port); 
+$ruta=str_replace('cursodecursos.com', $port, $ruta);
+
+echo "\n";
+echo $ruta;
+echo "\n";
+echo "\n";
+
+
+$SiteTXT="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\n";
+
+
+
+$res=DBselect("SELECT * FROM util_sitemap WHERE idp=$idp ORDER BY tipo;");
+if(array_key_exists(1, $res)){ foreach ($res as $key => $value) {
+$id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior']; $date=$value['date']; $chksum=$value['chksum'];
+
+
+if($pri <= 1){$pri=1;};
+$pri=($pri/10);	
+if($pri==1){$pri="1.0";};	
+$SiteTXT .="<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n"; //echo "<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n";
+echo "#";
+
+}}
+
+$SiteTXT.="</urlset>\n";
+
+echo "\n";echo "\n";
+echo $ruta . "/sitemap.xml";
+echo "\n";echo "\n";
+
+$myFile = $ruta . "/sitemap.xml";
+$fh = fopen($myFile, 'w') or die("can't open file");
+$stringData = $SiteTXT;
+fwrite($fh, $stringData);
+fclose($fh);	
+
+$ppp=$v['vars']['purl'][$idp];	
+$urlR=$v['vars']['purl'][$idp] . "/sitemap.xml";	
+refress($ppp,$port,$urlR);	
+}
+
+
+
 function refress($idpp,$idpp2,$url){
 
 $url2=str_replace($idpp, '', $url);
 
 exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"") . "\n";
 
+//echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
+
 usleep(800000);
-echo "GET:  \n";	
+echo "GET: \n";	
 $content = file_get_contents($url);	
 
 }
