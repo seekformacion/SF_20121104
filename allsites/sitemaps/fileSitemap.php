@@ -55,7 +55,7 @@ includeINIT('config');
 includeCORE('db/dbfuncs');
 includeCORE('templates/templates');
 includeCORE('funcs/general');
-foreach ($idps as $key => $idp) {if($idp!='fileSitemap.php'){
+foreach ($idps as $key => $idp) {if(strlen($idp)<3){
 
 createSitemap($idp);
 
