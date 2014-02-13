@@ -27,7 +27,7 @@ $idpp2=str_replace('http://', '', $idpp);
 echo "URL: $url \n";	
 refress($idpp,$idpp2,$url);
 
-DBUpIns("UPDATE util_sitemap SET date='$dt' WHERE id=$id;"); echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
+DBUpIns("UPDATE util_sitemap SET date='$dt' WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
 
 
 $dcats=DBselect("select Redir, url from skf_urls where idp = ($idppp) AND t_id ='$t_id' AND tipo=$tipo;"); 
