@@ -6,10 +6,73 @@ if( ! ini_get('date.timezone') )
 }
 
 
+
+function GetURLtoCACHE($idp){global $v;
+
+
+
+
+$dt=date('Y') . date('m') . date('d');
+$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id ASC limit 10;");
+if(count($dcats)>0){foreach($dcats as $key => $val){
+
+$id=$val['id'];	
+$tipo=$val['tipo'];
+$t_id=$val['t_id'];
+$url=$val['url'];
+$idppp=$val['idp'];
+$idpp=$v['vars']['purl'][$idppp];
+$idpp2=str_replace('http://', '', $idpp);
+
+echo "URL: $url \n";	
+refress($idpp,$idpp2,$url);
+
+DBUpIns("UPDATE util_sitemap SET date='$dt' WHERE id=$id;");	
+
+
+$dcats=DBselect("select Redir, url from skf_urls where idp = ($idppp) AND t_id ='$t_id' AND tipo=$tipo;"); 
+if(count($dcats)>0){
+$redir=$dcats[1]['Redir'];
+if($redir){
+	
+$url2=$dcats[1]['url']; 
+$redir=str_replace('.html', '', $redir);	
+$url2=str_replace('.html', '', $url2);
+	
+$urlR=str_replace($url2, $redir, $url);
+//echo $urlR . "\n";
+
+if($urlR!=$url){
+		
+echo "RED: $urlR \n";		
+refress($idpp,$idpp2,$urlR);
+	
+}
+
+
+}}
+
+
+
+	
+}}
+	
+}
+
+function refress($idpp,$idpp2,$url){
+
+exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\"");
+usleep(800000);
+echo "GET:  \n";	
+$content = file_get_contents($url);	
+
+}
+
+
 function doitC($idp,$idc,$url){global $sqlI;global $v;
 $dt=date('Y') . date('m') . date('d');
-$url=$v['vars']['purl'][$idp] . $url;
-$sqlI[]="(2,$idp,$idc,'$url',5,$dt),";
+$url=$v['vars']['purl'][$idp] . $url;$dt="";
+$sqlI[]="(2,$idp,$idc,'$url',5,'$dt'),";
 
 }
 
@@ -18,15 +81,15 @@ $cpp=$v['conf']['cpp'];		$dt=date('Y') . date('m') . date('d');
 //echo "$idc - $url - $c \n";
 //print_r($mets);	
 $p=10;
-if( substr($url, 0,4) != "http"){ $url=$v['vars']['purl'][$idp] . $url;}; //$url=str_replace('http://', '', $url);
-$sqlI[]="(1,$idp,$idc,'$url',$p,$dt),";
+if( substr($url, 0,4) != "http"){ $url=$v['vars']['purl'][$idp] . $url;};$dt="0"; //$url=str_replace('http://', '', $url);
+$sqlI[]="(1,$idp,$idc,'$url',$p,'$dt'),";
 
 	if(count($mets)>0){
 	$pags=ceil($c/$cpp);
 		if($pags > 1){$a=2;
 			while ($a <= $pags) {$p--;
-			$url2=str_replace('.html', '-pag' . $a . '.html', $url);$a++;
-			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";	
+			$url2=str_replace('.html', '-pag' . $a . '.html', $url);$a++;$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,'$dt'),";	
 			}
 		}
 	
@@ -37,11 +100,11 @@ $sqlI[]="(1,$idp,$idc,'$url',$p,$dt),";
 	$pags=ceil($cd/$cpp);	
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
-	    	if($a==1){
-			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
+	    	if($a==1){$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,'$dt'),";					
 			}else{$p--;	
-			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,'$dt'),";	
 			}$a++;
 	}}}
 	
@@ -54,11 +117,11 @@ $sqlI[]="(1,$idp,$idc,'$url',$p,$dt),";
 	$pags=ceil($cd/$cpp);	
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
-	    	if($a==1){
-			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
+	    	if($a==1){$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,'$dt'),";					
 			}else{$p--;	
-			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,'$dt'),";	
 			}$a++;
 	}}}
 	
@@ -71,11 +134,11 @@ $sqlI[]="(1,$idp,$idc,'$url',$p,$dt),";
 	$pags=ceil($cd/$cpp);	
 	if($pags > 0){$a=1;
 		while ($a <= $pags) {
-	    	if($a==1){
-			$sqlI[]="(1,$idp,$idc,'$url2',$p,$dt),";					
-			}else{$p--;	
+	    	if($a==1){$dt="0";
+			$sqlI[]="(1,$idp,$idc,'$url2',$p,'$dt'),";					
+			}else{$p--;	$dt="0";
 			$url3=str_replace('.html', '-pag' . $a . '.html', $url2);
-			$sqlI[]="(1,$idp,$idc,'$url3',$p,$dt),";	
+			$sqlI[]="(1,$idp,$idc,'$url3',$p,'$dt'),";	
 			}$a++;
 	
 	

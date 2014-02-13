@@ -157,5 +157,5 @@ DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $SQQ;");
 
 
 
-echo  "\n" . exec('ls -l\n') . "\n";
+
 ?>

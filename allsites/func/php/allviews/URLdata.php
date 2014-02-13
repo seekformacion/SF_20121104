@@ -57,7 +57,11 @@ if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $
 ################
 
 
-$res=DBselect("SELECT tipo, t_id, codTittle, pagTittleC FROM skf_urls where idp=$idp AND url='$url';");
+$res=DBselect("SELECT id, tipo, t_id, codTittle, pagTittleC, Redir FROM skf_urls where idp=$idp AND url='$url';");
+
+
+if(count($res)>0){
+	
 $v['where']['view']=$eqtempl[$res[1]['tipo']];
 $v['where']['id']=	$res[1]['t_id'];
 
@@ -100,5 +104,30 @@ if($v['debug']>0){
 echo $v['where']['url']. " <br>\n";
 echo "Tipo:" . $v['where']['view'] . " id: " . $v['where']['id']  . " Pag: " . $v['where']['pag'] . " idts: " . $v['where']['idt'] . " <br>\n";
 }
+
+}else{
+
+$res=DBselect("SELECT id, tipo, t_id, codTittle, pagTittleC, url FROM skf_urls where idp=$idp AND Redir='$url';");
+if(count($res)>0){
+$newURL=$res[1]['url'];	
+$newURL=str_replace('.html', '', $newURL);	
+
+if($v['where']['online']==1){$newURL='/online' . $newURL ."_online";};
+if($v['where']['distancia']==1){$newURL='/a_distancia' . $newURL ."_a_distancia";};
+if($v['where']['id_provi']){$newURL='/presencial/' . normaliza($v['vars']['provN'][$v['where']['id_provi']]) . $newURL ."_presenciales_en_" . normaliza($v['vars']['provN'][$v['where']['id_provi']]);};
+
+
+
+if($v['where']['pag']>1){$newURL=$newURL ."-pag" . $v['where']['pag'];};
+
+
+$newURL=$newURL . ".html";
+header("HTTP/1.1 301 Moved Permanently"); 
+header("Location: $newURL");
+		
+exit();	
+}	
+}
+
 
 ?>

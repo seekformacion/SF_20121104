@@ -22,7 +22,9 @@ createCSS();
 
 global $datCur;
 
-$Datos['codTittle']=$v['where']['codTittle'];
+if($v['where']['pag']>1){$addpag=" - Página " . $v['where']['pag'];}else{$addpag="";};
+
+$Datos['codTittle']=$v['where']['codTittle'] . $addpag;
 $Datos['baseurlFonts']=$v['path']['baseURLskin'][$v['conf']['mode']];
 
 $Datos['codTittleSIN']=$v['where']['pagTittle'];
