@@ -61,7 +61,11 @@ refress($idpp,$idpp2,$urlR);
 
 function refress($idpp,$idpp2,$url){
 
-exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\"");
+exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\"") . "\n";
+
+"varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url\" \n";
+
+
 usleep(800000);
 echo "GET:  \n";	
 $content = file_get_contents($url);	
