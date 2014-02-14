@@ -20,7 +20,7 @@ echo "<br>
 EL USUARIO DIOOO A MEGUSTAAAAAA
 <br>";
 
-echo "---> " . $facebook->getLoginUrl(array("scope" => "publish_actions"));
+echo "---> " . $facebook->getLoginUrl(array("scope" => "publish_stream,publish_actions"));
 
 $permissions = $facebook->api("/me/permissions");
 
