@@ -26,6 +26,9 @@ EL USUARIO DIOOO A MEGUSTAAAAAA
 
 
 $permissions = $facebook->api("/me/permissions");
+
+print_r($permissions);
+
 if( array_key_exists('publish_actions', $permissions['data'][0]) ) {
     // Permission is granted!
     echo "we have permission";
