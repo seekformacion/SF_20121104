@@ -20,7 +20,10 @@ echo "<br>
 EL USUARIO DIOOO A MEGUSTAAAAAA
 <br>";
 
-echo "---> " . $facebook->getLoginUrl(array("scope" => "publish_stream,publish_actions"));
+$url= $facebook->getLoginUrl(array("scope" => "publish_stream,publish_actions"));
+
+echo "<br><br>";
+
 
 $permissions = $facebook->api("/me/permissions");
 
@@ -29,10 +32,14 @@ $permissions = $facebook->api("/me/permissions");
 if( array_key_exists('publish_actions', $permissions['data'][0]) ) {
     // Permission is granted!
     echo "we have permission";
+	echo "<br><br>";
+	
 } else {
     // We don't have the permission
     echo "no perms";
-     $login_url = $facebook->getLoginUrl( array( 'scope' => 'publish_actions' ) );
+    echo "<br><br>";
+	
+    $login_url = $facebook->getLoginUrl( array( 'scope' => 'publish_actions' ) );
       echo 'Please <a href="' . $login_url . '">login.</a>';
 }
 
@@ -49,5 +56,11 @@ EL USUARIO NO DIO A MEGUSTA
 }
 
 ?>
+
+
+<script>
+	window.open('<?php echo $url; ?>','popup','width=300,height=400');
+</script>
+
 
 
