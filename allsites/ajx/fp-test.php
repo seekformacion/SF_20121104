@@ -4,4 +4,7 @@ hola esto es una prueba
 
 
 echo time();
+
+
+print_r($_SERVER);
 ?>
