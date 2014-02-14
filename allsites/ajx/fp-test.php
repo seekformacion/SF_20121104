@@ -2,9 +2,6 @@
 
 
 
-print_r($_GET);
-
-
 require '/www/repositorios/facebook-php-sdk/src/facebook.php';
 
 $app_id = "622071311181276";
@@ -27,7 +24,7 @@ EL USUARIO DIOOO A MEGUSTAAAAAA
 
 $permissions = $facebook->api("/me/permissions");
 
-echo "---> " . $facebook->getLoginUrl( array( 'scope' => 'publish_actions' ) );
+
 
 if( array_key_exists('publish_actions', $permissions['data'][0]) ) {
     // Permission is granted!
