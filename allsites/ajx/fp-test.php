@@ -1,5 +1,6 @@
 <?php
 
+foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
 
 require '/www/repositorios/facebook-php-sdk/src/facebook.php';
@@ -42,7 +43,6 @@ if( array_key_exists('publish_actions', $permissions['data'][0]) ) {
     $login_url = $facebook->getLoginUrl( array( 'scope' => 'publish_actions' ) );
       echo 'Please <a href="' . $login_url . '">login.</a>';
 }
-
 
 
 	
