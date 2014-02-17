@@ -3,6 +3,7 @@
 foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
 
+
 require '/www/repositorios/facebook-php-sdk/src/facebook.php';
 
 $app_id = "622071311181276";
