@@ -1,7 +1,17 @@
 <?php
 
+foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
 
+
+
+
+if (!isset($_COOKIE["seekforFB_REFDE"])){
+$expire=time()+60*60*24*2;
+setcookie("seekforFB_REFDE", $ref, $expire, '/');	
+}
+
+$url="https://www.facebook.com/cursodecursos/app_715730281795141";
 
 ?>
 
@@ -38,7 +48,7 @@
 
 <script type="text/javascript">
 
-window.location = "https://www.facebook.com/cursodecursos/app_715730281795141?app_data=edededd";
+top.location.href = "https://www.facebook.com/cursodecursos/app_715730281795141";
 
 </script>
 
