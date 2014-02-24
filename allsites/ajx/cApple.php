@@ -2,6 +2,10 @@
 
 foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
+$portales[1]="cursodecursos";
+$portales[2]="masterenmasters";
+$portales[3]="formacionprofesional";
+$portales[4]="oposicionesa";
 
 
 
@@ -48,7 +52,7 @@ $url="https://www.facebook.com/cursodecursos/app_715730281795141";
 
 <script type="text/javascript">
 
-top.location.href = "https://www.facebook.com/cursodecursos/app_715730281795141";
+top.location.href = "https://www.facebook.com/<?php echo $portales[$idp]; ?>/app_715730281795141";
 
 </script>
 
