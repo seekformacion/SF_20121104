@@ -33,10 +33,9 @@ function geo_ip($ipaddress)
 {
 global $v;
 
-echo "select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ";
 
 $rest=DBselect("select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ");
-if(count($res)>0){
+if(count($rest)>0){
 $cp=$rest[1]['postalCode']; $ct=$rest[1]['country'];	
 }
 
