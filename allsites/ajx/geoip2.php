@@ -41,7 +41,7 @@ $cordenadas=$rest[1]['latitude'] . "," . $rest[1]['longitude'];
 }
 
 
-
+echo $cordenadas;
 
 $exludecords['40,-4']=1;
 
@@ -58,7 +58,7 @@ $geodatos=json_decode($page,TRUE);
 foreach ($geodatos['results'][0]['address_components'] as $id => $vals) {
 if(array_key_exists('types', $vals)){
 foreach ($geodatos['results'][0]['address_components'][$id]['types'] as $key => $value) {
-if($value=='postal_code'){$res['cp']=$geodatos['results'][0]['address_components'][$id]['long_name'];}  ;
+if($value=='postal_code'){$cp=$geodatos['results'][0]['address_components'][$id]['long_name'];}  ;
 }}}
 
 
