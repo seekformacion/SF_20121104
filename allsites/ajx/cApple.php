@@ -15,7 +15,6 @@ $expire=time()+60*60*24*2;
 setcookie("seekforFB_REFDE", $ref, $expire, '/');	
 }
 
-$url="https://www.facebook.com/cursodecursos/app_715730281795141";
 
 ?>
 
