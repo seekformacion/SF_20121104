@@ -4,6 +4,8 @@ header("content-type: application/json");
 
 
 
+
+
 function getRealIpAddr()
 {
     if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
@@ -28,61 +30,16 @@ function getRealIpAddr()
 
 
 function geo_ip($ipaddress)
-{
-$buf="";	
-#$license_key="TsbcQPRGZjU0";#e
-$license_key="m340FBz95kRx";#b
+{global $v;
 
-$query = "http://geoip.maxmind.com/b?l=" . $license_key . "&i=" . $ipaddress;
-$url = parse_url($query); //echo $query;
-$host = $url["host"];
-$path = $url["path"] . "?" . $url["query"];
-$timeout = 1;
-$fp = fsockopen ($host, 80, $errno, $errstr, $timeout)
-	or die('Can not open connection to server.');
-if ($fp) {
-  fputs ($fp, "GET $path HTTP/1.0\nHost: " . $host . "\n\n");
-  while (!feof($fp)) {
-    $buf .= fgets($fp, 128);
-  }
-  $lines = explode("\n", $buf);
-  $data = $lines[count($lines)-1];
-  fclose($fp);
-} else {
-  # enter error handing code here
+$rest=DBselect("select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ");
+if(count($res)>0){
+$cp=$rest[1]['postalCode']; $ct=$rest[1]['country'];	
 }
 
 
-
-$valores=explode(',',$data);
-//print_r($valores);
-
-$res['ct']=$valores[0];
-$cordenadas=$valores[3] . "," . $valores[4];
-
-$exludecords['40.0000,-4.0000']=1;
-
-
-
-if(($valores[0]=="ES")&&(!array_key_exists($cordenadas,$exludecords))){
-$c = curl_init("http://maps.googleapis.com/maps/api/geocode/json?latlng=$cordenadas&sensor=false");
-curl_setopt($c, CURLOPT_VERBOSE, true);
-curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
-$page = curl_exec($c);
-curl_close($c);
-$geodatos=json_decode($page,TRUE);
-
-foreach ($geodatos['results'][0]['address_components'] as $id => $vals) {
-if(array_key_exists('types', $vals)){
-foreach ($geodatos['results'][0]['address_components'][$id]['types'] as $key => $value) {
-if($value=='postal_code'){$res['cp']=$geodatos['results'][0]['address_components'][$id]['long_name'];}	;
-}}}
-
-
-
-
-}
-//print_r($res);
+$res['ct']=$ct;
+$res['cp']=$cp;
 return $res;
 	
 }
