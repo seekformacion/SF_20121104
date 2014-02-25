@@ -47,19 +47,7 @@ $exludecords['40,-4']=1;
 
 
 
-if((!$cp)&&($ct=="ES")&&(!array_key_exists($cordenadas,$exludecords))){
-$c = curl_init("http://maps.googleapis.com/maps/api/geocode/json?latlng=$cordenadas&sensor=false");
-curl_setopt($c, CURLOPT_VERBOSE, true);
-curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
-$page = curl_exec($c);
-curl_close($c);
-$geodatos=json_decode($page,TRUE);
 
-foreach ($geodatos['results'][0]['address_components'] as $id => $vals) {
-if(array_key_exists('types', $vals)){
-foreach ($geodatos['results'][0]['address_components'][$id]['types'] as $key => $value) {
-if($value=='postal_code'){$cp=$geodatos['results'][0]['address_components'][$id]['long_name'];}  ;
-}}}
 
 
 
