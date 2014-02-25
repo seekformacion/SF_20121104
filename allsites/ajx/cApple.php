@@ -4,7 +4,7 @@ foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo .
 
 $portales[1]="cursodecursos";
 $portales[2]="masterenmasters";
-$portales[3]="formacionprofesional";
+$portales[3]="fpformacionprofesional";
 $portales[4]="oposicionesa";
 
 
