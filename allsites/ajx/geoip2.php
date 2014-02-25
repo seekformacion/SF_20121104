@@ -33,11 +33,36 @@ function geo_ip($ipaddress)
 {
 global $v;
 
-
-$rest=DBselect("select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ");
+$cp="";$cordenadas="";
+$rest=DBselect("select country, postalCode, latitude, longitude FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ");
 if(count($rest)>0){
-$cp=$rest[1]['postalCode']; $ct=$rest[1]['country'];	
+$cp=$rest[1]['postalCode']; $ct=$rest[1]['country'];
+$cordenadas=$rest[1]['latitude'] . "," . $rest[1]['longitude'];		
 }
+
+
+
+
+$exludecords['40,-4']=1;
+
+
+
+if((!$cp)&&($ct=="ES")&&(!array_key_exists($cordenadas,$exludecords))){
+$c = curl_init("http://maps.googleapis.com/maps/api/geocode/json?latlng=$cordenadas&sensor=false");
+curl_setopt($c, CURLOPT_VERBOSE, true);
+curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+$page = curl_exec($c);
+curl_close($c);
+$geodatos=json_decode($page,TRUE);
+
+foreach ($geodatos['results'][0]['address_components'] as $id => $vals) {
+if(array_key_exists('types', $vals)){
+foreach ($geodatos['results'][0]['address_components'][$id]['types'] as $key => $value) {
+if($value=='postal_code'){$res['cp']=$geodatos['results'][0]['address_components'][$id]['long_name'];}  ;
+}}}
+
+
+
 
 
 $res['ct']=$ct;
