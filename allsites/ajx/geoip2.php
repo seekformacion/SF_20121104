@@ -30,7 +30,10 @@ function getRealIpAddr()
 
 
 function geo_ip($ipaddress)
-{global $v;
+{
+global $v;
+
+echo "select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ";
 
 $rest=DBselect("select country, postalCode FROM location WHERE locId = (SELECT locId FROM blocks WHERE INET_ATON('$ipaddress') >= startIpNum  AND INET_ATON('$ipaddress') <= endIpNum); ");
 if(count($res)>0){
