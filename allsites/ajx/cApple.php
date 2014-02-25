@@ -40,12 +40,12 @@ setcookie("seekforFB_REFDE", $ref, $expire, '/');
 <meta property="og:locale" content="es_ES"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Concurso Apple. Iphone 5, IPad, IPad mini"/>
-<meta property="og:description" content="Dale a `Me gusta` a esta página y ayúdame a ganar este concurso."/>
+<meta property="og:description" content="Concurso Apple. Gana un Iphone 5 un IPad o un IPad mini"/>
 <meta property="og:image" content="http://cursodecursos.com/img/global/fb/banerconcurso.jpg"/>
 
 
 <meta itemprop="name" content="Concurso Apple. Iphone 5, IPad, IPad mini" />
-<meta itemprop="description" content="Dale a `Me gusta` a esta página y ayúdame a ganar este concurso." />
+<meta itemprop="description" content="Concurso Apple. Gana un Iphone 5 un IPad o un IPad mini" />
 <meta itemprop="image" content="http://cursodecursos.com/img/global/fb/banerconcurso.jpg" />
 
 
