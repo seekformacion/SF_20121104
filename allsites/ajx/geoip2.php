@@ -41,7 +41,6 @@ $cordenadas=$rest[1]['latitude'] . "," . $rest[1]['longitude'];
 }
 
 
-echo $cordenadas;
 
 $exludecords['40,-4']=1;
 
