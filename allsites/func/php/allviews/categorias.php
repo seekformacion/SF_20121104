@@ -88,7 +88,13 @@ if(count($dcats)==0){$dcats=array();};
 }else{
 $dcats=array();	
 }
-$v['where']['cats_same']=$dcats;
+
+$limit=6;
+foreach ($dcats as $key => $value) {$limit--;
+if($limit>=0){$dcats2[$key]=$value;}	
+}
+
+$v['where']['cats_same']=$dcats2;
 
 
 

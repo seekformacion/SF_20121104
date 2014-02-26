@@ -34,7 +34,7 @@ global $lccu;
 $Datos['topCURinf']=$lccu['html'];
 
 $Datos['descTXTcat']=loadChild('objt','descTXTcat');
-$Datos['adW_LD']=loadChild('objt','adW_LD');
+//$Datos['adW_LD']=loadChild('objt','adW_LD');
 
 
 $Datos['tod_CUR']=loadChild('objt','tod_CUR');

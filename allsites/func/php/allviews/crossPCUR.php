@@ -80,13 +80,15 @@ $slidesA[]=loadChild('objt','cadaSlide');
 
 $nadd=0;
 foreach ($slidesA as $key => $sd) {
-if($key==1){$slides.=loadChild('objt','adW_slide');$nadd++;};
+//if($key==1){$slides.=loadChild('objt','adW_slide');$nadd++;};
 $slides.=$sd;
 }
 
-if(!$nadd){$slides.=loadChild('objt','adW_slide');}
+//if(!$nadd){$slides.=loadChild('objt','adW_slide');}
+
 
 return $slides;
+	
 }
 
 

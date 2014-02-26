@@ -55,7 +55,7 @@ $Datos['header']=loadChild('objt','header');
 $Datos['cabCurso']=loadChild('objt','cabCurso');
 $Datos['detallesCurso']=loadChild('objt','detallesCurso');
 
-$Datos['add_CUR_cent']=loadChild('objt','add_CUR_cent');
+//$Datos['add_CUR_cent']=loadChild('objt','add_CUR_cent');
 
 $Datos['claves']=loadChild('objt','claves');
 $Datos['cursosSimilares']=loadChild('objt','cursosSimilares');
@@ -70,7 +70,7 @@ $Datos['sedes']=loadChild('objt','sedes');
 $Datos['sedes']=loadChild('objt','sedes2');	
 }
 
-$Datos['adW_LD']=loadChild('objt','adW_LD');
+//$Datos['adW_LD']=loadChild('objt','adW_LD');
 
 $Datos['bloqueCurDist']=loadChild('objt','bloqueCurDist');
 #$Datos['bloqueDISTANCIA']=loadChild('objt','bloqueDISTANCIA');
