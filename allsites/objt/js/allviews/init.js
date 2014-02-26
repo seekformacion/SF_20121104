@@ -105,6 +105,14 @@ emerge('em-2'); showSl(800); selpC(1);cargaSel();
 }
 
 
+function formupC(){
+chekData();	
+	
+emerge('em-2'); showSl(1600); selpC(1);cargaSel();
+}
+
+
+
 function socialup(){
 chekData();		
 showSl(0);	
@@ -446,7 +454,7 @@ uid=window.top.ckk;	idc=Number(idc);
 
 var val= escape(window.top.cSELS.join(','));
 setCookie('csels',val,0);
-formup()		
+formupC()		
 }
 
 
