@@ -13,7 +13,7 @@
 .titCAT a { display: block; height: 30px; font-family:Arial; color:#444444; font-size: 13px; overflow: hidden;    padding: 3px;    width: 229px; }
 
 
-.catsInf { min-height: 30px;padding-bottom: 16px;padding-left: 7px;width: 879px;}
+.catsInf { min-height: 30px;padding-bottom: 16px;padding-left: 7px;width: 879px;  width: 879px;}
 
 
 

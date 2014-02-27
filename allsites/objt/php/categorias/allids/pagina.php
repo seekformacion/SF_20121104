@@ -33,7 +33,7 @@ $Datos['listCursos']=loadChild('objt','listCursos');
 global $lccu;
 $Datos['topCURinf']=$lccu['html'];
 
-$Datos['descTXTcat']=loadChild('objt','descTXTcat');
+
 //$Datos['adW_LD']=loadChild('objt','adW_LD');
 
 
@@ -52,7 +52,7 @@ $Datos['header']=loadChild('objt','header');
 $Datos['footer']=loadChild('objt','footer');
 
 
-
+$Datos['descTXTcat']=loadChild('objt','descTXTcat');
 
 $Datos['metas']=loadChild('objt','metas');
 

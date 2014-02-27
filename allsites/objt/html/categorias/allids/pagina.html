@@ -13,9 +13,18 @@
 
 
 
-
-
 <body class="gris1_BG">
+	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=715730281795141";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>	
+	
+	
 <script>window.top.idcfA=%idcfA%;</script>	
 <div class="page gris1_BG">
 
@@ -27,29 +36,27 @@
 <div class="content">
 
 <div class="breadcrumbs">%breadcrumbs%</div>
-<div class="Tit_cat"><h1>%pagTittle%</h1></div>
-
-
-
-<div class="slyTxt">	
-	
-%sliders%
-
-%descTXTcat%
-
-</div>
 
 
 <div class="left-col">
 
 
+%descTXTcat%
+
+<div class="clean"></div>	
+
 %catsinf%	
+	
+<div class="clean"></div>		
 	
 %listCursos%
 
 %topCURinf%
+
+%sliders%
+
 <div class="clean"></div>		
-	
+
 
 
 </div>

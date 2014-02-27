@@ -73,10 +73,25 @@ if($lcats){
 	
 $catsPort=DBselect("select id_cat, count(distinct id_cur) as S from skv_relCurCats 
 where id_cat IN ($lcats) GROUP BY id_cat ORDER BY S DESC;");
-
 $qty=0;$lcatsT="";
 foreach ($catsPort as $kk => $val) {if($val['S']>5){$lcatsT .=$val['id_cat'] . ",";};}; 
 $lcatsT=substr($lcatsT, 0,-1);
+
+
+#########3 para curso destacado
+$lcusos=""; 
+$curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($lcatsT);");
+if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
+$lcusos=ordenaCURs($lcusos,0,0);
+
+global $lccuT;
+if(count($lcusos)>0){foreach ($lcusos as $key => $idcc) {
+$lccuT['key']=$key; $lccuT['$idcc']=$idcc;
+$lccuT['html']=loadChild('objt','subCURcatsinfT');
+}}
+#########################
+
+
 
 $dcats=array();
 if($lcatsT){
@@ -84,8 +99,13 @@ $dcats=DBselect("select * from skf_urls where t_id IN ($lcatsT) AND tipo=1 ORDER
 }
 
 
+
+
+
+
 if(count($dcats)==0){$dcats=array();};
 }else{
+	
 $dcats=array();	
 }
 

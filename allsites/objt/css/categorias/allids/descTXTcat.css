@@ -1,5 +1,36 @@
-.descTXT {padding:13px 15px 15px 15px;  float: left; position: relative;}
-.descTXT h2 { font-family: 'brandon_grotesque_boldregular'; font-size: 14px;color:#000000;line-height: 1.1; text-transform: uppercase;}
-.descTXT p  { font-family: 'Arial';    font-size: 13px;	color:#333333;	line-height: 1.1;}
+.descTXT {width:871px; height: 171px; padding:13px 0px 15px 15px;  float: left; position: relative;}
+
+.miniDescA{display:block;}
+.miniDescB{display:none;}
+
+
+.descTXT h1 { font-family: "brandon_grotesque_boldregular",sans-serif;
+    font-size: 25px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 0.1em 0.1em 0.1em #BBBBBB;
+    text-transform: uppercase;}
+
+.descTXT p  {  color: #333333;
+    display: block;
+    float: left;
+    font-family: 'Arial';
+    font-size: 14px;
+    position: relative;
+}
+    
+    
+.vid {    
+    float: left;
+    height: 199px;
+    position: relative;
+    top: -13px;
+    width: 312px; margin-left: 6px; }
+    
+.tit { 
+    float: left;
+    position: relative;
+    width: 553px; }    
 
 
