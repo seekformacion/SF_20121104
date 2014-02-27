@@ -1,7 +1,7 @@
 <?php
 global $datCur;
 
-$Datos['fburl']="http://" . $v['where']['site'] . $v['where']['url'];
+$Datos['fburl']=trim("http://" . $v['where']['site'] . $v['where']['url']);
 
 $Datos['pagTittle']=$v['where']['pagTittle'];
 
