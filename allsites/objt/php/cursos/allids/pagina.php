@@ -1,8 +1,18 @@
 <?php 
 
+
+
 includeFUNC('categorias');
 includeFUNC('sacaCursos');
 includeFUNC('images');
+
+$appid[1]="676600425716555";
+$appid[2]="586283288126818";
+$appid[3]="726238200741616";
+$appid[4]="1468920489988724";
+
+$Datos['fbAPP']=$appid[$v['where']['idp']];
+
 
 $Datos['pagTittle']=$v['where']['pagTittle'];
 
