@@ -462,6 +462,7 @@ function adCS(idc){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idc=Number(idc);
 var ind=window.top.cSELS;
 
+document.getElementById('timR').style.visibility = "visible" ;
 
 
 var posSel=	jQuery.inArray(idc,ind);
@@ -484,6 +485,14 @@ if(posSel!=-1){
 var val= escape(window.top.cSELS.join(','));
 
 setCookie('csels',val,0);
+setTimeout('hidTim()', 900);
+}
+
+
+function hidTim(){
+
+
+document.getElementById('timR').style.visibility = "hidden" ;	
 }
 
 
