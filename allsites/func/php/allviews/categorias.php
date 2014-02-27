@@ -75,7 +75,7 @@ foreach ($cats as $key => $vals) {if($vals['id']!=$idcat){$lcats .=$vals['id'] .
 $catsPort=DBselect("select id_cat, count(distinct id_cur) as S from skv_relCurCats 
 where id_cat IN ($lcats) GROUP BY id_cat ORDER BY S DESC;");
 $qty=0;$lcatsT="";
-foreach ($catsPort as $kk => $val) {if($val['S']>5){$lcatsT .=$val['id_cat'] . ",";};}; 
+foreach ($catsPort as $kk => $val) {if($val['S']>0){$lcatsT .=$val['id_cat'] . ",";};}; 
 $lcatsT=substr($lcatsT, 0,-1);
 
 
