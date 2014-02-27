@@ -77,7 +77,7 @@ where id_cat IN ($lcats) GROUP BY id_cat ORDER BY S DESC;");
 $qty=0;$lcatsT="";
 foreach ($catsPort as $kk => $val) {if($val['S']>0){$lcatsT .=$val['id_cat'] . ",";};}; 
 $lcatsT=substr($lcatsT, 0,-1);
-print_r($lcatsT);
+
 
 $inf=DBselect("select pagTittleC from skf_urls where t_id=$idsup AND tipo=1;");
 if(count($inf)>0){$pagTC=$inf[1]['pagTittleC'];};
