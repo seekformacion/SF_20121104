@@ -20,7 +20,7 @@
 
 
 
-.sliderContainer ul {padding: 5px 0px 5px 0px; margin: 0px; font-size:9px;}
+.sliderContainer ul {padding: 5px 0px 5px 0px; margin: 0px; font-size:10px;}
 .sliderContainer li {
    background-position: -385px 0;
     background-repeat: no-repeat;
@@ -65,9 +65,9 @@
 
 
 
-.bannerSlideleft p {font-size:10px; color:#444444;}
+.bannerSlideleft p {font-size:11px; color:#444444;}
 
-.slide h3 {  font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 13px;   letter-spacing: -1px;   line-height: 1.1;   margin: 0; text-transform: uppercase}
+.slide h3 {  font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px;   letter-spacing: -1px;   line-height: 1.1;   margin: 0; text-transform: uppercase}
 
 
 
