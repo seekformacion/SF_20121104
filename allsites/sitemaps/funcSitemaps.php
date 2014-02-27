@@ -14,6 +14,7 @@ function GetURLtoCACHE($idp){global $v;
 
 $dt=date('Y') . date('m') . date('d');
 $dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 100;");
+echo "select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 100;";
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
 $id=$val['id'];	
