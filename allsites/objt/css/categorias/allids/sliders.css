@@ -1,37 +1,43 @@
 
 
-.allsliders{height: 191px; width:886px; position:relative; float:left;}
+.allsliders{height: 235px; width:309px; position:relative; float:left;}
 
 .sliderContainer{
     margin-top:15px;
 	border-top:1px solid #dddddd;
 	border-bottom:1px solid #dddddd;
-	width:884px; height:134px;
+	width:309px; height:174px;
 	position: relative;
 }
 
-#slider 		{width: 884px; height: 134px;overflow: hidden;position: relative;}
-#slider .slide	{width: 884px; height: 134px;float: left;}
+#slider 		{width: 309px; height: 174px; overflow: hidden;position: relative;}
+#slider .slide	{width: 309px; height: 174px; float: left; }
 
 .prev, .next	{display: block; height: 40px; width: 39px; position: relative; cursor:pointer;}
-.prev			{position: relative; float:left; top: -90px;  left: -18px; background-position: 0px 0px; }
-.next			{position: relative; float:right; top: -90px;  left: 18px; background-position: -40px 0px; }
+.prev			{background-position: 0 0;float: left;left: 7px; position: relative;  top: 3px; }
+.next			{background-position: -40px 0;    float: right;    left: -3px;    position: relative;    top: 3px; }
 
 
 
 
-.sliderContainer ul {padding: 9px 0px 12px 25px; margin: 0px; font-size:14px;}
+.sliderContainer ul {padding: 5px 0px 5px 0px; margin: 0px; font-size:9px;}
 .sliderContainer li {
-    background-position: -385px 0px;
+   background-position: -385px 0;
     background-repeat: no-repeat;
-    
-    height: 40px;
+    line-height: 14px;
     list-style-type: none;
-    padding: 1px 0 0 18px;
-    line-height: 16px
+    margin-top: 1px;
+    padding: 1px 0 0 17px;
 }
 
-.bannerSlideleft	{float:left;	width: 369px; height: 99px;	padding: 20px 15px 15px 30px;}
+.bannerSlideleft	{ 
+     float: left;
+    height: 99px;
+    padding: 8px 8px 10px 15px;
+    width: 284px;
+    
+    }
+    
 .bannerSlideright	{float:right;	width: 445px; height: 113px;padding: 6px 20px 15px 5px;}
 
 
@@ -59,9 +65,9 @@
 
 
 
+.bannerSlideleft p {font-size:10px; color:#444444;}
 
-
-
+.slide h3 {  font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 13px;   letter-spacing: -1px;   line-height: 1.1;   margin: 0; text-transform: uppercase}
 
 
 

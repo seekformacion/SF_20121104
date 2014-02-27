@@ -3,8 +3,12 @@ includeFUNC('crossPCUR');
 
 $slid=getSliders();
 
-$Datos['Slides']=getSliders();
 
+if($slid){
+$Datos['Slides']=$slid; 
+}else{
+$Datos['codNULL']=1; 
+}
 
 
 ?>

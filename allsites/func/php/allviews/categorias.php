@@ -5,8 +5,12 @@ $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
 
 
-$inf=DBselect("select superiores from skf_cats where id=$idcat;");
-$sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
+
+$inf=DBselect("select id_sup, superiores from skf_cats where id=$idcat;");
+$sup=$inf[1]['superiores']; $id_sup=$inf[1]['id_sup']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
+
+curDesc($id_sup,$idcat);
+
 
 $bc=""; $bc2="";
 if($sup){
@@ -54,12 +58,58 @@ return ($bc);
 
 
 
+function curDesc($idsup,$idcat){
+$homes[1]=1;	
+
+
+
+ 
+#########3 para curso destacado
+if(array_key_exists($idsup,$homes)){$idsup=$idcat;};
+
+$cats=DBselect("select id from skf_cats where id_sup=$idsup;"); 
+$lcats="";
+foreach ($cats as $key => $vals) {if($vals['id']!=$idcat){$lcats .=$vals['id'] . ",";}};$lcats=substr($lcats, 0,-1);
+	
+	
+$catsPort=DBselect("select id_cat, count(distinct id_cur) as S from skv_relCurCats 
+where id_cat IN ($lcats) GROUP BY id_cat ORDER BY S DESC;");
+$qty=0;$lcatsT="";
+foreach ($catsPort as $kk => $val) {if($val['S']>5){$lcatsT .=$val['id_cat'] . ",";};}; 
+$lcatsT=substr($lcatsT, 0,-1);
+
+
+$inf=DBselect("select pagTittleC from skf_urls where t_id=$idsup AND tipo=1;");
+if(count($inf)>0){$pagTC=$inf[1]['pagTittleC'];};
+
+$lcusos=""; 
+$curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($lcatsT);");
+if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
+$lcusos=ordenaCURs($lcusos,0,0);
+
+global $lccuT;
+if(count($lcusos)>0){foreach ($lcusos as $key => $idcc) {
+$lccuT['key']=$key; $lccuT['$idcc']=$idcc; $lccuT['pagTC']=$pagTC;
+$lccuT['html']=loadChild('objt','subCURcatsinfT');
+}}
+#########################	
+
+
+
+}
+
+
+
+
+
 
 
 
 function catsSAME($idcat){global $v; 
 $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
+
+
 
 $inf=DBselect("select id_sup from skf_cats where id=$idcat;");
 $idsup=$inf[1]['id_sup']; 
@@ -78,18 +128,7 @@ foreach ($catsPort as $kk => $val) {if($val['S']>5){$lcatsT .=$val['id_cat'] . "
 $lcatsT=substr($lcatsT, 0,-1);
 
 
-#########3 para curso destacado
-$lcusos=""; 
-$curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($lcatsT);");
-if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
-$lcusos=ordenaCURs($lcusos,0,0);
 
-global $lccuT;
-if(count($lcusos)>0){foreach ($lcusos as $key => $idcc) {
-$lccuT['key']=$key; $lccuT['$idcc']=$idcc;
-$lccuT['html']=loadChild('objt','subCURcatsinfT');
-}}
-#########################
 
 
 
@@ -182,7 +221,7 @@ $v['where']['cats_inf']=$dcats;
 
 
 if(count($dcats)<10){
-catsSAME($idcat);	
+catsSAME($idcat);
 }else{
 $v['where']['cats_same']=array();	
 }

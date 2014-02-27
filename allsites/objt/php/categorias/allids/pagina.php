@@ -38,6 +38,10 @@ $Datos['topCURinf']=$lccu['html'];
 
 
 $Datos['tod_CUR']=loadChild('objt','tod_CUR');
+
+
+
+
 $Datos['bloqueGEO']=loadChild('objt','bloqueGEO');
 $Datos['bloqueONLINE']=loadChild('objt','bloqueONLINE');
 $Datos['bloqueDISTANCIA']=loadChild('objt','bloqueDISTANCIA');
@@ -53,6 +57,10 @@ $Datos['footer']=loadChild('objt','footer');
 
 
 $Datos['descTXTcat']=loadChild('objt','descTXTcat');
+
+global $lccuT;
+$Datos['curDEST']=$lccuT['html'];
+
 
 $Datos['metas']=loadChild('objt','metas');
 

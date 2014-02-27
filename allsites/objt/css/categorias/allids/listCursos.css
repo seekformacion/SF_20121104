@@ -41,12 +41,58 @@
 
 /* Curso destacado */
 
-.cDcon { width: 200px; height: 100px; border:1px solid; }
+.cDes {position:relative; float:left;   height: 190px;
+ width: 309px;
+	
+}
+
+.cDcon {  border: 1px solid; padding:5px;
+    height: 147px;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 259px; background-color:#FFFFFF; cursor: pointer; }
  
 
+.cDmt { font-size: 10px;
+    left: 20px;
+    position: absolute;
+    top: 5px;}
+    
+.cDtit { border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    font-size: 13px;
+    left: 0;
+    min-height: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 259px;}
 
+.cDlog { border: 1px solid;
+    left: 152px;
+    position: absolute;
+    top: 55px;}
 
+.cDmet {
 
+    left: 9px;
+    position: absolute;
+    top: 59px;
+    width:50px;
+	
+}
 
+.cDmetT {
+position:relative; float: left; color:#666666;
+font-size:11px; text-transform: uppercase;	width: 146px;
+
+}
+
+.cDvalor {
+position:relative; float:left;	
+background-image: url("/img/cursodecursos.com/allviews/valoracion.png");
+    background-repeat: no-repeat;	
+}
 
 

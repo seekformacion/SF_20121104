@@ -10,8 +10,7 @@ $Datos['txtDesc']=$txt;
 $Datos['fburl']="http://" . $v['where']['site']  . $v['where']['urlSimple'];
 
 
-global $lccuT;
-$Datos['curDEST']=$lccuT['html'];
+
 
 	
 ?>

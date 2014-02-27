@@ -2,6 +2,7 @@
 
 global $lccuT;
 
+$Datos['pagTC']=$lccuT['pagTC'];
 $Datos['class']=$lccuT['key'];
 $idcu= $lccuT['$idcc'];
 
