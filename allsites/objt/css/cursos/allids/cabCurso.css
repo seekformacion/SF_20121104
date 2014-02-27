@@ -1,7 +1,7 @@
-.cabCurso{ width:887px; height:164px; position:relative; float:left;}
+.cabCurso{ width:887px; height:200px; position:relative; float:left;}
 
-.descCurso { float: left;    height: 123px;    overflow: hidden;    padding: 15px;    position: relative;    width: 482px;}
-.descCurso p {margin:0px;}
+.descCurso { float: left;    height: 150px;    overflow: hidden;    padding: 12px;    position: relative;    width: 488px;}
+.descCurso p {margin:0px; color: #444444; font-size: 11px;}
 
 
 .franjLogo {position:relative; float:left; width:150px; height:100%; }
@@ -18,7 +18,7 @@
 .IadlON  {background-position: -113px -40px; height: 22px; margin: 11px 0 0 9px; width: 26px;}
 
 
-.bloqMasInf {width:224px; height: 121px; position:relative; float: right; cursor:pointer;}
+.bloqMasInf {width:224px; height: 157px; position:relative; float: right; cursor:pointer;}
 
 
 .masinfo {background-position: -4px -60px;height: 50px; margin:0 0 0 12px; width: 200px;}
@@ -31,3 +31,4 @@
     width: 110px;}
 
 
+.fbLik {left: 12px;    position: absolute;    top: 171px;    width: 185px;}

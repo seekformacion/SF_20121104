@@ -1,6 +1,10 @@
 <?php
 global $datCur;
 
+$Datos['fburl']="http://" . $v['where']['site'] . $v['where']['url'];
+
+$Datos['pagTittle']=$v['where']['pagTittle'];
+
 $Datos['id']=$datCur['id'];
 $Datos['imgLogoCent']=loadLogoCent('g/logo1.gif');
 $Datos['v']=valoracion($datCur['id']);
