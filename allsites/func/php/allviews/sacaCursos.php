@@ -227,7 +227,10 @@ foreach ($preORD as $id => $kk) {$preout[]=$id;}
 
 //print_r($preout);
 
-$output = array_slice($preout, $ini, $fin+1);
+
+//echo "________________- $ini ___  $fin __ \n";
+
+$output = array_slice($preout, $ini, $fin - $ini +1);
 
 //print_r($output);
 

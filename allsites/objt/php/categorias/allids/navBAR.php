@@ -6,7 +6,8 @@ $pag=$v['where']['pag'];
 
 if(($pag-1) >= 1){
 $v['where']['prevURL']=str_replace('.html', '-pag' . ($pag-1) . '.html', $urlSinpag);
-$Datos['ppag']="<div class='iconos ipagin ipP' onclick='bnav(0);'></div>";
+	
+
 
 if(($pag-1) > 1){
 			$nT=$v['where']['pagTittle'] . " pagina " . ($pag-1);
@@ -16,6 +17,10 @@ if(($pag-1) > 1){
 			$nT=$v['where']['pagTittle'];
 			$nU=$urlSinpag;
 };
+
+$Datos['ppag']="<div class='iconos ipagin ipP' onclick='bnav(0);'></div><a href='$nU' class='bANT' title='$nT'>Página Anterior</a>";
+
+
 
 $v['where']['Hprev']="	<a href='$nU' title='$nT' class='color'>$nT</a>
 						<script>window.top.urlP='$nU';</script>		";
@@ -34,11 +39,15 @@ $v['where']['Hprev']="<a href='$nU' title='$nT' class='color'>$nT</a>
 
 if(($pag+1) <= $v['where']['npags']){
 $v['where']['nextURL']=str_replace('.html', '-pag' . ($pag+1) . '.html', $urlSinpag);
-$Datos['npag']="<div class='iconos ipagin ipN' onclick='bnav(1);'></div>";
 
 
 $nT=$v['where']['pagTittle'] . " pagina " . ($pag+1);
 $nU=$v['where']['nextURL'];
+
+
+$Datos['npag']="<div class='iconos ipagin ipN' onclick='bnav(1);'></div><a href='$nU' class='bSIG' title='$nT'>Página Siguiente</a>";
+
+
 $v['where']['Hnext']="<a href='$nU' title='$nT' class='color'>$nT</a>
 						<script>window.top.urlN='$nU';</script>		";
 

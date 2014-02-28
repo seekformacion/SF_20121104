@@ -13,7 +13,7 @@
 
 
 .content {
-   	float: left;
+   	float: left;min-height:950px;
     margin-top: -144px;
     position: relative;
 }

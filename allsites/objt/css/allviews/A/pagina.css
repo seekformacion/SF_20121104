@@ -21,7 +21,7 @@
 
 
 .menu_inf { 
-	
+	position: relative;
 	height:40px;
 	width: 1225px;
 	background: none repeat scroll 0 0;

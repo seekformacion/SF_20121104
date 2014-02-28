@@ -1,4 +1,4 @@
 
 .menu_NAV {  height: 50px; z-index: 9000; width: 1255px;}
 .menu_NAV_fijo { position: fixed; bottom: 0px; width: 1255px; zoom: 0 ; }
-.menuSOC {margin-left:78px;}
+.menuSOC {left:1000px;}
