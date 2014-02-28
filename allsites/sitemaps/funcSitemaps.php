@@ -13,7 +13,7 @@ function GetURLtoCACHE($idp){global $v;
 
 
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 100;");
+$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 200;");
 
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
@@ -124,7 +124,7 @@ exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host ==
 
 //echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
 
-usleep(800000);
+usleep(400000);
 echo "GET: \n";	
 $content = file_get_contents($url);	
 
