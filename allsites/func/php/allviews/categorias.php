@@ -80,7 +80,7 @@ $lcatsT=substr($lcatsT, 0,-1);
 
 
 $inf=DBselect("select pagTittleC from skf_urls where t_id=$idsup AND tipo=1;");
-if(count($inf)>0){$pagTC=$inf[1]['pagTittleC'];};
+if(count($inf)>0){$pagTC=$inf[1]['pagTittleC'];}else{$pagTC="";};
 
 $lcusos=""; 
 $curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($lcatsT);");

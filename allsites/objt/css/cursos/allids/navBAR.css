@@ -7,13 +7,13 @@
 .masifoBarra { position:relative; float:left; background-position: -4px -60px;    height: 50px;    margin: 1px 0 0 6px;    width: 200px;}
 
 .iFAV { background-position: -303px 0;
+    cursor: pointer;
     float: right;
     height: 45px;
-    margin-right: 412px;
-    margin-top: 2px;
-    position: relative;
-    width: 47px;
-    cursor:pointer;}
+    left: 421px;
+    position: absolute;
+    top: 2px;
+    width: 47px;}
 
 
 

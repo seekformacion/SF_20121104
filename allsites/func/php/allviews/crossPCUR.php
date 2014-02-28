@@ -11,12 +11,12 @@ $catrel=array();
 
 
 $listPorts=array();	
-$res=DBselect("SELECT rel_idc FROM skf_relCatsPort WHERE idc=$idc;");	
+$res=DBselect("SELECT distinct rel_idc FROM skf_relCatsPort WHERE idc=$idc;");	
 foreach ($res as $key => $data) {$catrel[]=$data['rel_idc'];};
 
 
 
-global $dsliders;
+global $dsliders; $dsliders=array();
 $slides="";
 if(count($catrel)>0){
 foreach ($catrel as $kk => $idcc){
@@ -25,7 +25,9 @@ $cinf=CATS_inf_T($idcc);
 $lcinfe= $cinf['list'];
 $bb=0;	
 $res=DBselect("SELECT idp, crsTittle, url, pagTittle, pagTittleC, t_id FROM skf_urls WHERE tipo=1 AND t_id=$idcc;");		
-if(count($res)>0){$bb++;
+if(count($res)>0){
+		
+$bb++;
 $dsliders['nom']=$res[1]['crsTittle'];
 $dsliders['url']=$v['vars']['purl'][$res[1]['idp']] . $res[1]['url'];
 $dsliders['pagTittle']=$res[1]['pagTittleC'];
@@ -34,7 +36,7 @@ $txt=trim(DTXTcat($res[1]['t_id']));
 if(!$txt){$txt=InventaDTXTcat($res[1]['pagTittleC'],$res[1]['idp']);};
 $dsliders['description']=$txt;
 
-}
+
 	
 $listcur="";$res=array();
 $res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat IN ($idcc);");	
@@ -72,8 +74,15 @@ foreach ($res as $cc2 => $datos){
 }}}
 
 
+
+
+
 if(($cc>0)&&($bb)){
 $slidesA[]=loadChild('objt','cadaSlide');
+}
+
+
+
 }
 
 }}

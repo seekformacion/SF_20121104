@@ -27,10 +27,11 @@ $Datos['catsinf']=loadChild('objt','catsinf');
 
 //$Datos['listCursos']=loadChild('objt','listCursos');
 
+$Datos['topCurH']=loadChild('objt','topCurH');
 
 
 //$Datos['descTXTcat']=loadChild('objt','descTXTcat');
-$Datos['adW_LD']=loadChild('objt','adW_LD');
+//$Datos['adW_LD']=loadChild('objt','adW_LD');
 
 
 //$Datos['tod_CUR']=loadChild('objt','tod_CUR');
@@ -40,7 +41,7 @@ $Datos['adW_LD']=loadChild('objt','adW_LD');
 
 
 $Datos['masCATS']=loadChild('objt','masCATS');
-
+$Datos['fblike']=loadChild('objt','fblike');
 
 $Datos['navBAR']=loadChild('objt','navBAR');
 

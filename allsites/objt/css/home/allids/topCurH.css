@@ -1,0 +1,27 @@
+.topCurH { width:304px; height:214px; relative; float:left;}
+
+
+.fblike {height: 360px; position: relative; float:left;
+    padding: 13px 0px 0px 4px;
+    width: 300px;
+    
+    }
+
+.fblike2 {  float: left;
+    height: 213px;
+    margin-left: 15px;
+    padding: 1px 0 0 2px;
+    position: relative;
+    width: 563px;
+    }
+
+
+.tDe {font-size:9px; position:relative; left:8px; top:3px; margin-bottom: 15px;}
+
+.cDEsH {position:relative; margin-bottom: 10px; float:left; width:300px; height:52px; cursor:pointer;}
+
+.cDEsHlog {position:absolute; top: 0px; left:8px; border:1px solid;  width: 67px;}
+
+.cDEsT {  border-bottom: 1px solid;border-top: 1px solid;font-size: 11px;height: 32px;left: 0px;padding: 3px 30px 0 83px;position: absolute;top: 5px; width: 191px;}
+
+.cDEsF { background-position: -305px -120px;height: 28px;left: 264px;position: absolute;top: 6px; width: 36px;}

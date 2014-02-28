@@ -2,3 +2,10 @@
 .footInf {position:relative; float: left; width:200px; height: 69px; margin-left: 20px;  top:10px; }
 .subinf {color: #dddddd; font-family:Arial; font-size: 12px; height:19px; }
 .subinf a {color: #dddddd;}
+
+
+.etiNC {  background-color: #FF0000;border: 1px solid #FFFFFF;border-radius: 26%;color: #FFFFFF;float: left; font-size: 11px; height: 14px; 
+    padding: 4px 4px 4px 7px;
+    position: absolute;
+    text-align: center;
+    width: 17px;}

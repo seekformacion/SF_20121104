@@ -7,13 +7,13 @@
 .ipN {background-position: -40px 0; float:right;}
 
 .iFAV { background-position: -303px 0;
+    cursor: pointer;
     float: right;
     height: 45px;
-    margin-right: 412px;
-    margin-top: 2px;
-    position: relative;
-    width: 47px;
-    cursor:pointer;}
+    left: 421px;
+    position: absolute;
+    top: 2px;
+    width: 47px;}
 
 
 

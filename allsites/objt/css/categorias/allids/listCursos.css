@@ -41,7 +41,7 @@
 
 /* Curso destacado */
 
-.cDes {position:relative; float:left;   height: 190px;
+.cDes {position:relative; float:left;   height: 199px;
  width: 309px;
 	
 }
@@ -50,14 +50,14 @@
     height: 147px;
     left: 20px;
     position: absolute;
-    top: 20px;
+    top: 24px;
     width: 259px; background-color:#FFFFFF; cursor: pointer; }
  
 
 .cDmt { font-size: 10px;
     left: 20px;
     position: absolute;
-    top: 5px;}
+    top: 7px;}
     
 .cDtit { border-bottom: 1px solid #CCCCCC;
     border-top: 1px solid #CCCCCC;

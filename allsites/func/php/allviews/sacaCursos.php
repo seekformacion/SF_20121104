@@ -204,11 +204,24 @@ function ordenaCURs($curs,$ini,$fin){
 $nlist=array();
 
 
-
+$lastC="";
 if($curs){
-$res=DBselect("SELECT id, OrdDESC FROM skv_cursos WHERE id IN ($curs);");		
-foreach ($res as $key => $value) {$preORD[$value['id']]=$value['OrdDESC'];};
+$res=DBselect("SELECT id, pccur, id_centro, OrdDESC FROM skv_cursos WHERE id IN ($curs) ORDER BY pccur DESC, OrdDESC DESC ;");		
+foreach ($res as $key => $value) {
+	
+	if(!$value['pccur']){$value['pccur']=0;};
+	
+	$idcent=$value['id_centro']; if($idcent==$lastC){$pcc=$value['pccur']-0.5;}else{$pcc=$value['pccur'];}$lastC=$idcent;
+		
+	$preORD[$value['id']]=$pcc;
+	
+	}
+
+//print_r($preORD);
+
 arsort($preORD);	
+
+//print_r($preORD);
 
 foreach ($preORD as $id => $kk) {$preout[]=$id;}
 

@@ -7,7 +7,7 @@ window.top.HTML=' %listHTML% ';
 loadCarrito();
 if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
 
-
+Ncsel();
 }
 
 function lcurSOC(){
@@ -442,21 +442,29 @@ $.getJSON(url, function(data) {	$.each(data, function(key, val) { });
 });		
 }
 
-function masinfo(idc){
+function masinfo(idc){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idc=Number(idc);	
 
 	window.top.cSELS.push(idc);
 	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlON';};	
 	var url='/ajx/curSelUID.php?do=2&uid=' + uid + '&idc=' + idc;
-	$.getJSON(url, function(data) {	$.each(data, function(key, val) { });
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  if(key=='N'){window.top.Ncs=val; hidTim();}  });
 	});
 
 
 var val= escape(window.top.cSELS.join(','));
 setCookie('csels',val,0);
-formupC()		
+
+formupC();
+		
 }
 
+function Ncsel(){
+uid=window.top.ckk;
+var url='/ajx/curSelUID.php?do=5&uid=' + uid;
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  if(key=='N'){window.top.Ncs=val; hidTim();}  });
+	});	
+}
 
 function adCS(idc){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;	idc=Number(idc);
@@ -470,14 +478,14 @@ if(posSel!=-1){
 	window.top.cSELS.splice(posSel, 1);
 	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlOFF';};
 	var url='/ajx/curSelUID.php?do=3&uid=' + uid + '&idc=' + idc;
-	$.getJSON(url, function(data) {	$.each(data, function(key, val) { });
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) { if(key=='N'){window.top.Ncs=val;} });
 	});	
 	
 	}else{
 	window.top.cSELS.push(idc);
 	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlON';};	
 	var url='/ajx/curSelUID.php?do=2&uid=' + uid + '&idc=' + idc;
-	$.getJSON(url, function(data) {	$.each(data, function(key, val) { });
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) { if(key=='N'){window.top.Ncs=val;} });
 	});	
 	}	
 
@@ -485,13 +493,15 @@ if(posSel!=-1){
 var val= escape(window.top.cSELS.join(','));
 
 setCookie('csels',val,0);
-setTimeout('hidTim()', 900);
+setTimeout('hidTim()', 700);
 }
 
 
 function hidTim(){
 
 
+
+document.getElementById('etiNC').innerHTML = window.top.Ncs;
 document.getElementById('timR').style.visibility = "hidden" ;	
 }
 

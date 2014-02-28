@@ -1,6 +1,6 @@
-.descTXT {width:871px; height: 171px; padding:13px 0px 15px 15px;  float: left; position: relative;  z-index: 9999;}
+.descTXT {width:871px; height: 171px; padding:13px 0px 15px 15px;  float: left; position: relative;  z-index: 8999;}
 
-.fbLik { height: 15px;    left: 6px;    padding: 10px;    position: absolute;    top: 160px;    width: 259px;    z-index: 9999;}
+.fbLik { height: 15px;    left: 6px;    padding: 10px;    position: absolute;    top: 160px;    width: 259px;    z-index: 8999;}
 
 .miniDescA{display:block;}
 .miniDescB{display:none;}
