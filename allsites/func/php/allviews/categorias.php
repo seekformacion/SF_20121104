@@ -83,9 +83,11 @@ $inf=DBselect("select pagTittleC from skf_urls where t_id=$idsup AND tipo=1;");
 if(count($inf)>0){$pagTC=$inf[1]['pagTittleC'];}else{$pagTC="";};
 
 $lcusos=""; 
+if($lcatsT){
 $curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($lcatsT);");
 if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
 $lcusos=ordenaCURs($lcusos,0,0);
+}
 
 global $lccuT;
 if(count($lcusos)>0){foreach ($lcusos as $key => $idcc) {
