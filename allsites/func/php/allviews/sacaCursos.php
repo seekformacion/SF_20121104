@@ -92,7 +92,7 @@ $fin=($ini+$cpp)-1;
 	}
 
 $listcur="";$nc=0;	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) $onl;");	
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt) $onl;");	
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";$nc++;};
 $listcur=substr($listcur, 0,-1);
 
