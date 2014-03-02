@@ -39,8 +39,8 @@ window.addEventListener("orientationchange", function() {
 
 	if(((max.position().top)+150)<largo){
 	var contH=$(".content").height();
-	var falta=largo-(footP+150);
-	var anadir=contH+falta;	
+	var falta=largo-(footP);
+	var anadir=contH+falta-150;	
 	$('.content').css({ "min-height": anadir});	
 	}
 
@@ -68,8 +68,8 @@ $(document).ready(function(){
 
 	if(((max.position().top)+150)<largo){
 	var contH=$(".content").height();
-	var falta=largo-(footP+150);
-	var anadir=contH+falta;	
+	var falta=largo-(footP);
+	var anadir=contH+falta-150;	
 	$('.content').css({ "min-height": anadir});	
 	}
 
@@ -97,8 +97,8 @@ $(function () {
 
 	if(((max.position().top)+150)<largo){
 	var contH=$(".content").height();
-	var falta=largo-(footP+150);
-	var anadir=contH+falta;	
+	var falta=largo-(footP);
+	var anadir=contH+falta-150;	
 	$('.content').css({ "min-height": anadir});	
 	}
 
