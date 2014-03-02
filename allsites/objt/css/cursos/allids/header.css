@@ -5,7 +5,11 @@
 
 
 
-
+.content {
+   	float: left;
+    margin-top: -110px;
+    position: relative;
+}
 
 
 .imgCat	{position: relative; float:left;}
