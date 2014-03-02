@@ -84,9 +84,9 @@ $(function () {
     var footP=max.position().top;
     var limit = (footP)+18; 
     var largo=alto();
-    top=top+largo; 
-   
-     if(top <= limit){
+    top=top+largo;  
+
+    if(top <= limit){
  	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
 	$("#mNAV").addClass("menu_NAV_fijo");	 
  	}else{
@@ -94,14 +94,12 @@ $(function () {
  	 $("#mNAV").removeClass("menu_NAV_fijo");	 
  	}
 
-
 	if(((max.position().top)+150)<largo){
 	var contH=$(".content").height();
 	var falta=largo-(footP);
 	var anadir=contH+falta-130;	
 	$('.content').css({ "min-height": anadir});	
 	}
-
 
      
   });
