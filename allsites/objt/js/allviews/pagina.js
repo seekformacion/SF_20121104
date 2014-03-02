@@ -19,6 +19,28 @@ if(claSIN.length < cla.length){document.getElementById(id).className=claSIN;}els
 }
 
 
+
+window.addEventListener("orientationchange", function() {
+
+    var top=f_scrollTop();
+    var max = $("#footer");
+    var limit = (max.position().top)+18;
+    var largo=alto();
+    top=top+largo;  
+
+    if(top <= limit){
+ 	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
+	$("#mNAV").addClass("menu_NAV_fijo");	 
+ 	}else{
+ 	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);
+ 	 $("#mNAV").removeClass("menu_NAV_fijo");	 
+ 	}
+
+
+}, false);
+
+
+
 $(document).ready(function(){ 
 
     var top=f_scrollTop();
