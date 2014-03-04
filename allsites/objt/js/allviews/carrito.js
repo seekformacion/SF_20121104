@@ -335,7 +335,7 @@ return true;
     }else{   
 
 document.getElementById('e4').innerHTML="Fecha incorrecta";
-document.getElementById('e4').setAttribute("style", "visibility:visible;");
+document.getElementById('e4').setAttribute("style", "visibility:inherit;");
 
 var clas=document.getElementById(4).className; 
 clas=clas.replace('bdc1','bdcE');
@@ -365,7 +365,7 @@ return true;
     }else{   
 
 document.getElementById('e6').innerHTML="Formato incorrecto";
-document.getElementById('e6').setAttribute("style", "visibility:visible;");
+document.getElementById('e6').setAttribute("style", "visibility:inherit;");
 
 var clas=document.getElementById(6).className; 
 clas=clas.replace('bdc1','bdcE');
