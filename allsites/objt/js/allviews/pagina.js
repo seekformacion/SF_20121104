@@ -82,7 +82,7 @@ $(function () {
     var top=f_scrollTop();
     var max = $("#footer");
     var footP=max.position().top;
-    var limit = (footP); 
+    var limit = (footP)+118; 
     var largo=alto();
     top=top+largo;  
 
