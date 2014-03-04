@@ -5,7 +5,7 @@
 
 .cmsB h1{font-family:Arial; font-size:18px;}
 .cmsB h2{font-family:Arial; font-size:15px;}
-.cmsB h3{font-family:Arial; font-size:13px;}
+.cmsB h3{font-family:Arial; font-size:13px; font-weight: bold;}
 
 .imgCat	{position: relative; float:left;}
 .imgCat {width:781px; height:209px;}
