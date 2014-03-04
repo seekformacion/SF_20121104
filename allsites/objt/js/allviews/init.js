@@ -459,7 +459,7 @@ formupC();
 		
 }
 
-function Ncsel(){
+function Ncsel(){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;
 var url='/ajx/curSelUID.php?do=5&uid=' + uid;
 	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  if(key=='N'){window.top.Ncs=val; hidTim();}  });
