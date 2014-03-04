@@ -87,11 +87,11 @@ $(function () {
     top=top+largo;  
 
     if(top <= limit){
- 	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
+ 	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
 	$("#mNAV").addClass("menu_NAV_fijo");	 
  	}else{
- 	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);
- 	 $("#mNAV").removeClass("menu_NAV_fijo");	 
+ 	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);
+ 	$("#mNAV").removeClass("menu_NAV_fijo");	 
  	}
 
 	if(((max.position().top)+150)<largo){
