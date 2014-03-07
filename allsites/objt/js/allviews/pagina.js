@@ -98,9 +98,9 @@ $(function () {
     //console.log("foot1:" + footP);
     
     if(document.getElementById('mNAV').className=='menu_NAV color_BG menu_NAV_fijo'){
-    var limit = (footP)+50;	    console.log('fij')
+    var limit = (footP)+50;	    //console.log('fij')
     }else{
-    var limit = (footP);	   console.log('rel')
+    var limit = (footP);	   //console.log('rel')
     }
     
     
