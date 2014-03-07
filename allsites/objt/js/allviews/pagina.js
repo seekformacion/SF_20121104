@@ -91,22 +91,31 @@ $(function () {
     var max = $("#footer");
     var footP=max.position().top;
     
-    //if(==)
-    
+    if(document.getElementById('pp1')){ //diferencia en pagina de cursos
+    footP=(footP*1)+100;
+    }
+    //console.log("________________________________");
+    //console.log("foot1:" + footP);
     
     if(document.getElementById('mNAV').className=='menu_NAV color_BG menu_NAV_fijo'){
-    var limit = (footP)+50;	
+    var limit = (footP)+50;	    console.log('fij')
     }else{
-    var limit = (footP);	
+    var limit = (footP);	   console.log('rel')
     }
+    
+    
      
     var largo=alto();
+    
+    
+    //console.log("foot2:" + limit);
+    
     top=top+largo;  
 
-    if(top <= limit){ console.log("Fijo " + top + ":" + limit);
+    if(top <= limit){ 
  	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
 	$("#mNAV").addClass("menu_NAV_fijo");	 
- 	}else{ console.log("Rel " + top + ":" + limit);
+ 	}else{ 
  	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);
  	$("#mNAV").removeClass("menu_NAV_fijo");	 
  	}
