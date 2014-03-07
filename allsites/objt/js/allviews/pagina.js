@@ -25,7 +25,11 @@ window.addEventListener("orientationchange", function() {
     var top=f_scrollTop();
     var max = $("#footer");
     var footP=max.position().top;
-    var limit = (footP)+18; 
+  if(document.getElementById('mNAV').className=='menu_NAV color_BG menu_NAV_fijo'){
+    var limit = (footP)+50;	
+    }else{
+    var limit = (footP);	
+    }
     var largo=alto();
     top=top+largo;  
 
@@ -54,14 +58,18 @@ $(document).ready(function(){
     var top=f_scrollTop();
     var max = $("#footer");
     var footP=max.position().top;
-    var limit = (footP)+18; 
+    if(document.getElementById('mNAV').className=='menu_NAV color_BG menu_NAV_fijo'){
+    var limit = (footP)+50;	
+    }else{
+    var limit = (footP);	
+    }
     var largo=alto();
     top=top+largo;  
 
-    if(top <= limit){
+    if(top <= limit){ 
  	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
 	$("#mNAV").addClass("menu_NAV_fijo");	 
- 	}else{
+ }else{ 
  	 $("#test").html(top + ' limit ' +limit + ' alto ' + largo);
  	 $("#mNAV").removeClass("menu_NAV_fijo");	 
  	}
@@ -82,14 +90,23 @@ $(function () {
     var top=f_scrollTop();
     var max = $("#footer");
     var footP=max.position().top;
-    var limit = (footP)+118; 
+    
+    //if(==)
+    
+    
+    if(document.getElementById('mNAV').className=='menu_NAV color_BG menu_NAV_fijo'){
+    var limit = (footP)+50;	
+    }else{
+    var limit = (footP);	
+    }
+     
     var largo=alto();
     top=top+largo;  
 
-    if(top <= limit){
+    if(top <= limit){ console.log("Fijo " + top + ":" + limit);
  	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);	
 	$("#mNAV").addClass("menu_NAV_fijo");	 
- 	}else{
+ 	}else{ console.log("Rel " + top + ":" + limit);
  	$("#test").html(top + ' limit ' +limit + ' alto ' + largo);
  	$("#mNAV").removeClass("menu_NAV_fijo");	 
  	}

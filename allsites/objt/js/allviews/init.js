@@ -339,10 +339,18 @@ document.getElementById(id).value="";
 
 function ffecha(id){
 var f=document.getElementById(id).value;
-if(f.length==2){f=f+'/';};	
-if(f.length==5){f=f+'/';};
-if(f.length>10){f=f.substring(0,10);};
-document.getElementById(id).value=f;
+if(f.slice(-1)=='/'){var not=1}else{var not=0;}
+
+f=f.replace(/\//g,'');
+var l=f.length;
+var a="";
+for (var i = 0; i < l; i ++) {
+a=a + f.substring(i, i + 1); 
+if((i==1)&&((l>2)||(not))){a=a+'/';}
+if((i==3)&&((l>4)||(not))){a=a+'/';}
+}
+
+document.getElementById(id).value=a;
 }
 
 
