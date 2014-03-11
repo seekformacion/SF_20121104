@@ -5,7 +5,7 @@ if(!window.top.cSELS){window.top.cSELS=new Array;}
 checkCookie();
 window.top.HTML=' %listHTML% ';
 loadCarrito();
-if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
+
 
 Ncsel();
 }
@@ -392,6 +392,7 @@ function getremotecookie() {
 	window.top.ckk=cookie;
 	initCurSEL();chkCsels(); 
 	checkGEOip();lcurSOC();
+	if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
  });
  
 }
