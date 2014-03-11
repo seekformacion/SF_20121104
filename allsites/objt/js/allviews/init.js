@@ -187,6 +187,7 @@ var cookie=getCookie("seekforID");
   	window.top.ckk=cookie;
   	initCurSEL();chkCsels(); 
   	checkGEOip();window.top.accept=0;lcurSOC();
+  	if(document.getElementById('hidc')){var idcur=document.getElementById('hidc').value; addVis(idcur);}	
   	}else{
   	
   	getremotecookie();
