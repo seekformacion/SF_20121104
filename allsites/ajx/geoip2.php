@@ -105,7 +105,7 @@ $ante= $_COOKIE["seekforReferal"];
 
 $cp=$res['cp'];
 $ct=$res['ct']; $val['ins']=1; $dest=$_SERVER['HTTP_REFERER'];
-$res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', ct='$ct', referer='$ante', destino='$dest' WHERE seekforID='$uid';");	
+$res=DBUpIns("UPDATE skv_user_sessions SET cpo='$cp', cp='$cp', ct='$ct', referer='$ante', destino='$dest' WHERE seekforID='$uid';");	
 }
 
 
