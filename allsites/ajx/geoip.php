@@ -19,7 +19,7 @@ $res= geo_ip($ip);
 
 $cp=$res['cp'];
 $ct=$res['ct']; $val['ins']=1;
-$res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', ct='$ct' WHERE seekforID='$uid';");	
+$res=DBUpIns("UPDATE skv_user_sessions SET cp='$cp', cpo='$cp', ct='$ct' WHERE seekforID='$uid';");	
 }
 
 $val['cp']=$cp;
