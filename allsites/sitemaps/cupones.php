@@ -54,15 +54,18 @@ $datos[$idc][$idcup][$idcur]=$idins;
 
 $date=date('Y') . date('m') . date('d');
 
-print_r($datos);
+//print_r($datos);
 
 if(count($datos)>0){
 foreach ($datos as $idcent => $cups){foreach ($cups as $idcupon => $curs){foreach($curs as $idcurso => $idins){
 $err="";
 $err=DBUpInsSDB("INSERT INTO skP_cupones (id_cent,id_cupon,fecha,id_curso) VALUES ($idcent,$idcupon,$date,$idcurso);",'seekpanel');		
-if(!$err){DBUpIns("UPDATE skf_datCupon_cur SET done=1 WHERE id=$idins;");};
-
+if(!$err){
+DBUpIns("UPDATE skf_datCupon_cur SET done=1 WHERE id=$idins;");
 sendCupon($idcent,$idcupon,$idcurso);
+}
+
+
 
 		
 }}}}
