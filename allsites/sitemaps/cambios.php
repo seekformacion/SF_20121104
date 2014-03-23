@@ -42,7 +42,7 @@ $ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
 $err2=DBUpInsSDB("INSERT INTO skf_urls (t_id,tipo) VALUES ($idcur,2);",'seekformacion');
 
-echo "CREO $idcur" .  $err . " : ";
+echo "CREO $idcur" .  $err . " : \n";
 	$eid="";
 	if((!trim($err))&&(!trim($err2))){
 	$eid=updtCUR($idcur);
@@ -60,7 +60,7 @@ $nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=5 AND done=0 O
 if(count($nue)>0){
 foreach ($nue as $key => $value) {
 $ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
-echo "Modif $idcur" .  $err . " : ";
+echo "Modif $idcur" .  $err . " : \n";
 	$eid="";
 	$eid=updtCUR($idcur);
 	if(!$eid){
@@ -84,7 +84,7 @@ $nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=4 AND done=0 O
 if(count($nue)>0){
 foreach ($nue as $key => $value) {
 $ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
-echo "Borra $idcur" .  $err . " : ";
+echo "Borra $idcur" .  $err . " : \n";
 	$eid="";
 	$eid=borraCUR($idcur);
 	if(!$eid){
