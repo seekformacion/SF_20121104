@@ -43,8 +43,12 @@ $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
 $err2=DBUpInsSDB("INSERT INTO skf_urls (t_id,tipo) VALUES ($idcur,2);",'seekformacion');
 
 echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
+	$id="";
 	if((!trim($err))&&(!trim($err2))){
-	updtCUR($idcur);	
+	$id=updtCUR($idcur);
+	if($id){
+		
+	}		
 	}
 }}
 
