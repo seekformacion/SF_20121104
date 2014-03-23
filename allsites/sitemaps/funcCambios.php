@@ -75,8 +75,8 @@ $err.=DBUpInsSDB("DELETE FROM skv_relCurPro WHERE idcur=$idcur;",'seekformacion'
 
 
 $err.=DBUpInsSDB("DELETE from skP_cur_sedes WHERE id=$idcur;",'seekpanel');
-$err.=DBUpInsSDB("DELETE from skv_cursos WHERE id=$idcur;",'seekpanel');	
-$err.=DBUpInsSDB("DELETE from skf_urls WHERE t_id=$idcur AND tipo=2;",'seekpanel');	
+$err.=DBUpInsSDB("DELETE from skP_cursos WHERE id=$idcur;",'seekpanel');	
+$err.=DBUpInsSDB("DELETE from skP_C_urls WHERE t_id=$idcur AND tipo=2;",'seekpanel');	
 
 return $err;	
 }
