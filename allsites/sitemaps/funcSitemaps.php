@@ -25,7 +25,7 @@ $idppp=$val['idp'];
 $idpp=$v['vars']['purl'][$idppp];
 $idpp2=str_replace('http://', '', $idpp);
 
-echo "URL: $url \n";	
+//echo "URL: $url \n";	
 refress($idpp,$idpp2,$url);
 
 DBUpIns("UPDATE util_sitemap SET date='$dt' WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
@@ -45,7 +45,7 @@ $urlR=str_replace($url2, $redir, $url);
 
 if($urlR!=$url){
 		
-echo "RED: $urlR \n";		
+//echo "RED: $urlR \n";		
 refress($idpp,$idpp2,$urlR);
 	
 }
@@ -127,7 +127,7 @@ exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host ==
 //echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
 
 usleep(400000);
-echo "GET: \n";	
+//echo "GET: \n";	
 $content = file_get_contents($url);	
 
 }
