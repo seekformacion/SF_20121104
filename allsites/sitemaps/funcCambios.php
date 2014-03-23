@@ -56,6 +56,7 @@ if(count($sed)>0){if($sed[0]!=""){
 $q="INSERT INTO skv_relCurPro (idcur,idpro) VALUES ";
 foreach ($sed as $key => $sedeid) {
 $sedeid=$sedeid . "00";
+if(strlen($sedeid)==4){$sedeid="0" . $sedeid;};	
 $q.="($idcur,$sedeid),";	
 }	
 $q=substr($q, 0,-1) . ";";
