@@ -50,10 +50,12 @@ $err.=DBUpInsSDB("INSERT INTO skv_relCurCats (id_cur, id_cat, id_tipo, id_metodo
 $err.=DBUpInsSDB("DELETE FROM skv_relCurPro WHERE idcur=$idcur;",'seekformacion');
 $dcur=DBselectSDB("SELECT sedes FROM skP_cur_sedes WHERE id=$idcur;",'seekpanel');
 $sed=array();
-if(count($dcur)>0){$sedes=$dcur[1]['sedes'];$sed=explode(',', $sedes);};
+if(count($dcur)>0){$sedes=$dcur[1]['sedes'];$sed=explode(',', trim($sedes));};
+print_r($sed);
 if(count($sed)>0){
 $q="INSERT INTO skv_relCurPro (idcur,idpro) VALUES ";
-foreach ($sed as $key => $sedeid) {$sedeid=$sedeid . "00";
+foreach ($sed as $key => $sedeid) {
+$sedeid=$sedeid . "00";
 $q.="($idcur,$sedeid),";	
 }	
 $q=substr($q, 0,-1) . ";";
