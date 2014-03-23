@@ -17,6 +17,8 @@ $cps=DBselect("SELECT idpro FROM skv_relCurPro WHERE idcur=$idcur;");
 //$cps=DBselect("SELECT distinct provincia FROM skv_sedes WHERE idcentro=$idcentroS ORDER BY nombre;");
 $cc=0;
 
+echo "SELECT idpro FROM skv_relCurPro WHERE idcur=$idcur;";
+print_r($cps);
 
 if(count($cps)>0){
 foreach ($cps as $key => $prov) {$cc++;
