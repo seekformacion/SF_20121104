@@ -66,6 +66,17 @@ $err.=DBUpInsSDB($q,'seekformacion');
 return $err;
 }
 
+
+function borraCUR($idcur){$err="";
+$err.=DBUpInsSDB("DELETE from skv_cursos WHERE id=$idcur;",'seekformacion');	
+$err.=DBUpInsSDB("DELETE from skf_urls WHERE t_id=$idcur AND tipo=2;",'seekformacion');	
+$err.=DBUpInsSDB("DELETE FROM skv_relCurCats WHERE id_cur=$idcur;",'seekformacion');
+$err.=DBUpInsSDB("DELETE FROM skv_relCurPro WHERE idcur=$idcur;",'seekformacion');
+return $err;	
+}
+
+
+
 ?>
 
 

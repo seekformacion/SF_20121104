@@ -74,4 +74,26 @@ echo "Modif $idcur" .  $err . " : ";
 
 
 
+
+
+
+
+
+######## cursos borrar
+$nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=4 AND done=0 ORDER BY datestamp",'seekpanel');
+if(count($nue)>0){
+foreach ($nue as $key => $value) {
+$ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
+echo "Borra $idcur" .  $err . " : ";
+	$eid="";
+	$eid=borraCUR($idcur);
+	if(!$eid){
+	$err=DBUpInsSDB("UPDATE skP_actions SET done=1 WHERE id=$ida;",'seekpanel');	
+	}		
+	
+}}
+
+##############3
+
+
 ?>
