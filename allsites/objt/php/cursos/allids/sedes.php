@@ -20,7 +20,7 @@ $cc=0;
 
 if(count($cps)>0){
 foreach ($cps as $key => $prov) {$cc++;
-$idp=substr($prov['provincia'],0,3);
+$idp=substr($prov['provincia'];
 if(($idp=='070')||($idp=='077')||($idp=='078')){}else{$idp=substr($idp, 0,2) . "0";}	
 $rDatos['cadasede'][$cc]['cp']=	$idp;
 $rDatos['cadasede2'][$cc]['nombre']=$eqp[$idp];
