@@ -42,8 +42,8 @@ $ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
 $err2=DBUpInsSDB("INSERT INTO skf_urls (t_id,tipo) VALUES ($idcur,2);",'seekformacion');
 
-echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
-	$id="";
+echo "CREO $idcur" .  $err . " : ";
+	$eid="";
 	if((!trim($err))&&(!trim($err2))){
 	$eid=updtCUR($idcur);
 	if(!$eid){
@@ -53,6 +53,24 @@ echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
 }}
 
 ##############3
+
+
+######## cursos modificados
+$nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=5 AND done=0 ORDER BY datestamp",'seekpanel');
+if(count($nue)>0){
+foreach ($nue as $key => $value) {
+$ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
+echo "Modif $idcur" .  $err . " : ";
+	$eid="";
+	$eid=updtCUR($idcur);
+	if(!$eid){
+	$err=DBUpInsSDB("UPDATE skP_actions SET done=1 WHERE id=$ida;",'seekpanel');	
+	}		
+	
+}}
+
+##############3
+
 
 
 
