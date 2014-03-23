@@ -41,6 +41,7 @@ foreach ($nue as $key => $value) {
 $ida=$value['id']; $idcur=$value['act_id'];
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
 	if(!$err){
+	echo $err;	
 	updtCUR($idcur);	
 	}
 }}
