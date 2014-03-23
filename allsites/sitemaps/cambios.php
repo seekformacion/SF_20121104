@@ -40,7 +40,7 @@ if(count($nue)>0){
 foreach ($nue as $key => $value) {
 $ida=$value['id']; $idcur=$value['act_id'];$err="";
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
-echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . "\n";
+echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
 	if(!trim($err)){
 	updtCUR($idcur);	
 	}

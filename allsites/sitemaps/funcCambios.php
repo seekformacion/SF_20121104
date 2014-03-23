@@ -1,7 +1,7 @@
 <?php 
 
 function updtCUR($idcur){
-echo $idcur;	
+echo $idcur . "\n";	
 	
 }
 
