@@ -1,7 +1,7 @@
 <?php 
 
 function updtCUR($idcur){
-echo $idcur . "\n";	
+echo "SELECT * FROM skP_cursos WHERE id=$idcur;" . "\n";	
 
 $nue=DBselectSDB("SELECT * FROM skP_cursos WHERE id=$idcur;",'seekpanel');
 
