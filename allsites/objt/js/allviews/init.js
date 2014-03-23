@@ -388,7 +388,7 @@ function getremotecookie() {
 	window.top.accept=1;	
 	}
 	
-	setCookie("seekforReferal",document.referrer,365);
+	setCookie("seekforReferal",navigator.userAgent,365);
 	setCookie("seekforID",cookie,365);
 	window.top.ckk=cookie;
 	initCurSEL();chkCsels(); 
