@@ -63,7 +63,7 @@ $err.=DBUpInsSDB($q,'seekformacion');
 }}
 
 
-
+return $err;
 }
 
 ?>

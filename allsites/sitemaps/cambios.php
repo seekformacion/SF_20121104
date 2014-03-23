@@ -35,7 +35,7 @@ echo "\n\n";
 
 
 ######## cursos nuevos
-$nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=1 ORDER BY datestamp",'seekpanel');
+$nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=1 AND done=0 ORDER BY datestamp",'seekpanel');
 if(count($nue)>0){
 foreach ($nue as $key => $value) {
 $ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
@@ -45,9 +45,9 @@ $err2=DBUpInsSDB("INSERT INTO skf_urls (t_id,tipo) VALUES ($idcur,2);",'seekform
 echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
 	$id="";
 	if((!trim($err))&&(!trim($err2))){
-	$id=updtCUR($idcur);
-	if($id){
-		
+	$eid=updtCUR($idcur);
+	if(!$eid){
+	$err=DBUpInsSDB("UPDATE skP_actions SET done=1 WHERE id=$ida;",'seekpanel');	
 	}		
 	}
 }}
