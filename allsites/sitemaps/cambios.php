@@ -38,10 +38,12 @@ echo "\n\n";
 $nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=1 ORDER BY datestamp",'seekpanel');
 if(count($nue)>0){
 foreach ($nue as $key => $value) {
-$ida=$value['id']; $idcur=$value['act_id'];$err="";
+$ida=$value['id']; $idcur=$value['act_id'];$err="";$err2="";
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
+$err2=DBUpInsSDB("INSERT INTO skf_urls (t_id,tipo) VALUES ($idcur,2);",'seekformacion');
+
 echo "INSERT INTO skv_cursos (id) VALUES ($idcur);" .  $err . " : ";
-	if(!trim($err)){
+	if((!trim($err))&&(!trim($err2))){
 	updtCUR($idcur);	
 	}
 }}
