@@ -38,9 +38,9 @@ echo "\n\n";
 $nue=DBselectSDB("SELECT id, act_id from skP_actions WHERE accion=1 ORDER BY datestamp",'seekpanel');
 if(count($nue)>0){
 foreach ($nue as $key => $value) {
-$ida=$value['id']; $idcur=$value['act_id'];
+$ida=$value['id']; $idcur=$value['act_id'];$err="";
 $err=DBUpInsSDB("INSERT INTO skv_cursos (id) VALUES ($idcur);",'seekformacion');
-	if(!$err){
+	if(!trim($err)){
 	echo $err;	
 	updtCUR($idcur);	
 	}
