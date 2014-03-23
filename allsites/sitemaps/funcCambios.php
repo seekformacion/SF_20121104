@@ -83,6 +83,23 @@ return $err;
 
 
 
+
+
+
+function showCCUR($idcur){
+	
+$err="";
+$nue=DBselectSDB("SELECT showC FROM skP_cursos WHERE id=$idcur;",'seekpanel');
+if(count($nue)>0){$show=$nue[1]['showC'];
+
+$err.=DBUpInsSDB("UPDATE skv_relCurCats SET showC='$show' WHERE id_cur=$idcur;",'seekformacion');	
+	
+}
+
+
+return $err;	
+}
+
 ?>
 
 
