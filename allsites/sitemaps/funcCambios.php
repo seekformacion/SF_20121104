@@ -57,7 +57,7 @@ $q="INSERT INTO skv_relCurPro (idcur,idpro) VALUES ";
 foreach ($sed as $key => $sedeid) {
 $sedeid=$sedeid . "00";
 if(strlen($sedeid)==4){$sedeid="0" . $sedeid;};	
-$q.="($idcur,$sedeid),";	
+$q.="($idcur,'$sedeid'),";	
 }	
 $q=substr($q, 0,-1) . ";";
 $err.=DBUpInsSDB($q,'seekformacion');
