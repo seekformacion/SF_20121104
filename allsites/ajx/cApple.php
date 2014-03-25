@@ -10,10 +10,7 @@ $portales[4]="oposicionesa";
 
 
 
-if (!isset($_COOKIE["seekforFB_REFDE"])){
-$expire=time()+60*60*24*2;
-setcookie("seekforFB_REFDE", $ref, $expire, '/');	
-}
+
 
 
 ?>
@@ -50,6 +47,41 @@ setcookie("seekforFB_REFDE", $ref, $expire, '/');
 
 
 <script type="text/javascript">
+
+function setCookie(c_name,value,exdays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+if(exdays==0){
+var c_value=escape(value);
+}else{
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());	
+}
+
+
+function getCookie(w){
+	cName = "";
+	pCOOKIES = new Array();
+	pCOOKIES = document.cookie.split('; ');
+	for(bb = 0; bb < pCOOKIES.length; bb++){
+		NmeVal  = new Array();
+		NmeVal  = pCOOKIES[bb].split('=');
+		if(NmeVal[0] == w){
+			cName = unescape(NmeVal[1]);
+		}
+	}
+	return cName;
+}
+
+
+if(!getCookie('seekforFB_REFDE')){
+setCookie('seekforFB_REFDE','<?php echo $ref;?>','2');
+}
+document.cookie=c_name + "=" + c_value + '; path=/';
+}
+
+
+
 
 top.location.href = "https://www.facebook.com/<?php echo $portales[$idp]; ?>/app_715730281795141";
 
