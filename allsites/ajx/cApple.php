@@ -57,6 +57,9 @@ var c_value=escape(value);
 }else{
 var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());	
 }
+document.cookie=c_name + "=" + c_value + '; path=/';
+}
+
 
 
 function getCookie(w){
@@ -74,14 +77,10 @@ function getCookie(w){
 }
 
 
+
 if(!getCookie('seekforFB_REFDE')){
 setCookie('seekforFB_REFDE','<?php echo $ref;?>','2');
 }
-document.cookie=c_name + "=" + c_value + '; path=/';
-}
-
-
-
 
 top.location.href = "https://www.facebook.com/<?php echo $portales[$idp]; ?>/app_715730281795141";
 
