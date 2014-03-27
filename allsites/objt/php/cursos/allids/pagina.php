@@ -18,6 +18,10 @@ $Datos['pagTittle']=$v['where']['pagTittle'];
 
 $idcur=$v['where']['id'];
 
+$shc=DBselect("SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur;");
+if(count($shc)>0){$showc=$shc[0]['showC'];}
+
+echo $showc;
 
 $datCur=array();
 global $datCur;
