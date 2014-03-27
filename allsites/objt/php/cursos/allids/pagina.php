@@ -19,7 +19,7 @@ $Datos['pagTittle']=$v['where']['pagTittle'];
 $idcur=$v['where']['id'];
 
 $shc=DBselect("SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur;");
-if(count($shc)>0){$showc=$shc[0]['showC'];}
+if(count($shc)>0){$showc=$shc[1]['showC'];}
 
 //echo "SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur; --- $showc";
 
