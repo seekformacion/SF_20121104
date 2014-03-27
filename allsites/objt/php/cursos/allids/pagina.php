@@ -21,7 +21,10 @@ $idcur=$v['where']['id'];
 $shc=DBselect("SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur;");
 if(count($shc)>0){$showc=$shc[0]['showC'];}
 
-echo "SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur; --- $showc";
+//echo "SELECT showC FROM skv_relCurCats WHERE id_cur=$idcur; --- $showc";
+
+
+
 
 $datCur=array();
 global $datCur;
@@ -32,6 +35,7 @@ if(array_key_exists(1, $datos)){$datCur=$datos[1];};
 $idcat="";
 $dato=DBselect("select id_cat from skv_relCurCats where id_cur=$idcur;");
 if(array_key_exists(1, $dato)){$idcat=$dato[1]['id_cat'];};
+
 if($idcat){
 $Datos['breadcrumbs']=breadCRUMBSCUR($idcat);
 
@@ -57,12 +61,7 @@ if(count($curs)>0){foreach ($curs as $p => $idcur){$cc++;$rOtroscur[$cc]=minidat
 
 
 
-
-
-
-
-
-
+if ($showc){
 
 
 $Datos['header']=loadChild('objt','header');
@@ -101,7 +100,13 @@ $Datos['footer']=loadChild('objt','footer');
 $Datos['metas']=loadChild('objt','metas');
 
 
+}else{
 
+$Datos['H_redirect']=$datCur['catDCurURL'];
+
+
+	
+}
 
 
 ?>
