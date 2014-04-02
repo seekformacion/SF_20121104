@@ -190,7 +190,7 @@ $infA=$listC['infA'];
 if($linfT){
 	
 $catsPort=DBselect("select id_cat, count(distinct id_cur) as S from skv_relCurCats 
-where id_cat IN ($linfT) GROUP BY id_cat ORDER BY S DESC;");
+where id_cat IN ($linfT) AND showC=1 GROUP BY id_cat ORDER BY S DESC;");
 
 foreach ($catsPort as $key => $val) {
 
