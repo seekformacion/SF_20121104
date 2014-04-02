@@ -39,7 +39,7 @@ includeINIT('config');
 includeCORE('db/dbfuncs');
 includeCORE('templates/templates');
 includeCORE('funcs/general');
-
+includeCORE('mail/mail');
 
 
 
@@ -79,6 +79,21 @@ sendCupon($idcent,$idcupon,$idcurso);
 
 function sendCupon($idcent,$idcupon,$idcurso){
 	
+
+$from="cupones@seekformacion.com";
+$fromN="Test Seek Formación";
+
+$to="e.b.moya@gmail.com";
+$toN="Eduardo Buenadicha";
+
+$subject="Cupon enviado a $idcent;";
+$message="Cupon enviado a $idcent";
+
+
+sendM($from,$fromN,$to,$toN,$subject,$message);
+
+$message=loadChild('mails','cupon');
+
 	
 	
 }
