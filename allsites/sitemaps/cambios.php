@@ -107,6 +107,14 @@ echo "showC $idcur" .  $err . " : \n";
 	$eid=showCCUR($idcur);
 	if(!$eid){
 	$err=DBUpInsSDB("UPDATE skP_actions SET done=1 WHERE id=$ida;",'seekpanel');	
+	}
+	
+	$urls=DBselectSDB("SELECT idp, url FROM skf_urls WHERE tipo=2 AND t_id=$idcur;",'seekformacion');
+	if(count($urls)>0){$urlB=$urls[1]['url']; $idport=$urls[1]['idp'];
+	
+	$urlB=$v['vars']['purl'][$idport] . $urlB;
+	
+	$err=DBUpInsSDB("INSERT INTO util_sitemap (idp,tipo,t_id,url,prior) VALUES ($idport,2,$idcur,'$urlB',0);",'seekformacion');		
 	}		
 	
 }}
