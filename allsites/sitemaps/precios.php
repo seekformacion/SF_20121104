@@ -39,7 +39,7 @@ includeCORE('db/dbfuncs');
 includeCORE('templates/templates');
 includeCORE('funcs/general');
 
-$hoy=date('Y') . date('m') . date('d');
+//$hoy=date('Y') . date('m') . date('d');
 $defP=array();
 
 $lcents="";
