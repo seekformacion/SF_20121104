@@ -114,7 +114,7 @@ echo "showC $idcur" .  $err . " : \n";
 	
 	$urlB=$v['vars']['purl'][$idport] . $urlB;
 	
-	$err=DBUpInsSDB("INSERT INTO util_sitemap (idp,tipo,t_id,url,prior) VALUES ($idport,2,$idcur,'$urlB',0);",'seekformacion');		
+	$err=DBUpInsSDB("INSERT INTO util_sitemap (idp,tipo,t_id,url,prior,date) VALUES ($idport,2,$idcur,'$urlB',0,0);",'seekformacion');		
 	}		
 	
 }}
