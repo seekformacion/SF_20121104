@@ -81,7 +81,7 @@ function sendCupon($idcent,$idcupon,$idcurso){
 	
 
 $from="cupones@seekformacion.com";
-$fromN="Test Seek Formación";
+$fromN="Cupones Seek Formación";
 
 $to="e.b.moya@gmail.com";
 $toN="Eduardo Buenadicha";
@@ -92,7 +92,7 @@ $message="Cupon enviado a $idcent";
 
 sendM($from,$fromN,$to,$toN,$subject,$message);
 
-$message=loadChild('mails','cupon');
+//$message=loadChild('mails','cupon');
 
 	
 	
