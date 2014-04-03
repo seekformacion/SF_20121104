@@ -20,7 +20,7 @@
 
 .cDEsH {position:relative; margin-bottom: 10px; float:left; width:300px; height:52px; cursor:pointer;}
 
-.cDEsHlog {position:absolute; top: 0px; left:8px; border:1px solid;  width: 67px;}
+.cDEsHlog {position:absolute; top: 0px; left:8px; border:1px solid;  width: 67px; background-color: #FFFFFF; }
 
 .cDEsT {  border-bottom: 1px solid;border-top: 1px solid;font-size: 11px;height: 32px;left: 0px;padding: 3px 30px 0 83px;position: absolute;top: 5px; width: 191px;}
 
