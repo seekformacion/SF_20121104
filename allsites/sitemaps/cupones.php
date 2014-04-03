@@ -43,6 +43,8 @@ includeCORE('mail/mail');
 
 
 
+$datos=array();
+
 $dcats=DBselect("select * from skf_datCupon_cur where done=0 GROUP BY cent, id_dat_cupon, cur;");
 
 foreach ($dcats as $key => $vals) {
