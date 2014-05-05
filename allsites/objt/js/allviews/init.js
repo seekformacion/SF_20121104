@@ -98,17 +98,22 @@ document.getElementById('pops').innerHTML=window.top.HTML;
 }
 
 
+function formup2(){
+	
+}
+
+
 function formup(){
 chekData();	
 	
-emerge('em-2'); showSl(800); selpC(1);cargaSel();
+ showSl(800); emerge('em-2');selpC(1);cargaSel();
 }
 
 
 function formupC(){
 chekData();	
 	
-emerge('em-2'); showSl(1600); selpC(1);cargaSel();
+emerge('em-4'); // selpC(1);cargaSel();
 }
 
 
@@ -137,7 +142,7 @@ for (i=1 ; i <= 5; i++){if(document.getElementById('P' + i + 'c')){
 document.getElementById('P' + i + 'c').setAttribute("style", "visibility:hidden;");
 }}
 
-insVals();
+//insVals();
 
 
 }
@@ -452,8 +457,27 @@ $.getJSON(url, function(data) {	$.each(data, function(key, val) { });
 });		
 }
 
-function masinfo(idc){$.ajaxSetup({ cache: false });
-uid=window.top.ckk;	idc=Number(idc);	
+
+function multicup(){
+var csel=window.top.cSELS; var lcurs="";
+
+//console.log(csel);
+
+for (i=0; i<=csel.length ; i++){
+var cur=Number(csel[i]);
+	if((cur>0)&&(!isNaN(cur))){
+	lcurs=lcurs + csel[i] + ",";	
+	}
+}
+lcurs=lcurs.slice(0,-1);
+
+//console.log(lcurs);
+outemer();
+masinfo(lcurs);	
+}
+
+function masinfo(idc){$.ajaxSetup({'async': false}); $.ajaxSetup({ cache: false });
+uid=window.top.ckk;	//idc=Number(idc);	
 
 	window.top.cSELS.push(idc);
 	if(document.getElementById(idc)){document.getElementById(idc).className='iconos IaddList IadlON';};	
@@ -466,8 +490,16 @@ var val= escape(window.top.cSELS.join(','));
 setCookie('csels',val,0);
 
 formupC();
-		
+
+var url='/ajx/form.php?uid=' + uid + '&idc=' + idc;
+	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  
+		if(key=='html'){document.getElementById('formdinamico').innerHTML=val;}
+		if(key=='idp'){window.top.idport=val;} 
+	});
+	});
+
 }
+
 
 function Ncsel(){$.ajaxSetup({ cache: false });
 uid=window.top.ckk;
@@ -529,7 +561,7 @@ if(val==0){document.getElementById('social2').setAttribute("style", "visibility:
 if(val>0) {document.getElementById('social2').setAttribute("style", "visibility:inherit;");	}	
 }
 if(key=="social"){document.getElementById(key).innerHTML=val;}
-if(key=="ncur"){document.getElementById(key).innerHTML=val;}	
+//if(key=="ncur"){document.getElementById(key).innerHTML=val;}	
 if((key=='P1c')||(key=='P2c')){document.getElementById(key).innerHTML=val;}else{val=Number(val); window.top.cSELS.push(val);};
 });
 
@@ -540,9 +572,9 @@ setCookie('csels',val,0);
 });	
 
 
-document.getElementById('showdoit').setAttribute("style", "visibility:hidden;");
-document.getElementById('timer').setAttribute("style", "visibility:inherit;");	
-document.getElementById('fin').setAttribute("style", "visibility:hidden;");	
+//document.getElementById('showdoit').setAttribute("style", "visibility:hidden;");
+//document.getElementById('timer').setAttribute("style", "visibility:inherit;");	
+//document.getElementById('fin').setAttribute("style", "visibility:hidden;");	
 }	
 
 

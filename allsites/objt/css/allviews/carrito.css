@@ -7,6 +7,9 @@
 .amiSOC {width:360px; text-align: center; font-family: Arial; font-size:13px; margin:40px 0 0 20px;}
 
 .carrito {  height: 500px; overflow:hidden;     left: 50%;    position: fixed;     border: 1px solid #666666;    top: 50%;    width: 800px;    z-index: 9999; visibility: hidden;}
+
+
+
     
 .showdoit {  background-color: #FFFFFF;    height: 238px;    left: 22px;    position: absolute;    top: 102px;    width: 753px;}    
 #timer {position: absolute; top:90px; left:352px;}
@@ -153,3 +156,59 @@
 .latIfin { position:absolute; top:0px; left:0px; width:43px; height:114px; }
 
 .dedo {   height: 85px;    left: 482px;    position: absolute;    top: 29px;    width: 122px; }
+
+
+
+
+
+
+/* carrito 2 */
+
+
+.carrito2 { padding:15px;  min-height:530px;    left: 50%;    position: fixed;     border: 1px solid #666666;    top: 50%;    width: 470px;    z-index: 9999; visibility: hidden;}
+
+.close2 { background-position: -5px -41px;    cursor: pointer;    height: 15px;    left: 481px;    position: absolute;    top: 3px;    width: 15px;}
+.TitForm { position: relative; float: left; width:450px; font-family: Arial; font-size:16px; font-weight:bold; color:#444444; text-align: center; margin-top:10px;}
+
+
+.nomCamp { position: relative; float: left; width:450px; font-family: Arial; font-size:12px; color:#888888; margin-top:8px; margin-bottom:0px; }
+.obli { color:red; }
+
+.formI 		{padding-left:5px; margin-left:-2px; font-family:Arial; color:#444444; font-size:12px; position:relative; border: 1px solid #AAAAAA; border-radius:0; height:16px; background-color:#ffffff;}
+.formI_e 	{padding-left:5px; margin-left:-2px; font-family:Arial; color:#444444; font-size:12px; position:relative; border: 1px dotted red; border-radius:0; height:16px; background-color:#FFFFA3;}
+
+
+
+.ftext1 {width: 245px; }
+
+
+.formS {margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFFF;   border: 1px solid #AAAAAA; padding:1px; margin-right:6px; }
+.formS_e {margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFA3;   border:1px dotted red; padding:1px; margin-right:6px; }
+
+
+option.fst {color:#888888;}
+option.nfst {color:#444444;}
+
+
+.titCurF {color: #888888;font-family: Arial;font-size: 14px;height: 17px; left: 120px; margin: 0;overflow: hidden;position: absolute; width: 310px;}
+
+.contFields {position:relative; float:left; width:256px;height:20px;}
+.contError	{position:relative; float:left; width:170px;height:20px; visibility:hidden;}
+.fleCErr	{background-position: -60px -41px; width :10px; height: 21px; position:relative; float: left; }
+.TxtErr		{font-family:Arial; font-size:9px; color:red; position:relative; float:left; margin:5px 0px 0px 1px;}
+
+
+.minfoF {   background-position: -134px -253px;float: left;height: 41px;margin-left: 26px; margin-top: 11px; position: relative; width: 262px; cursor:pointer; }
+
+.fmtF1 { background-position: -8px -110px;	float: left;  height: 44px;  margin-left: 5px;  margin-top: 8px;  position: relative;  width: 44px;}
+.fmtF2 { background-position: -57px -110px;	float: left;  height: 44px;  margin-left: 5px;  margin-top: 8px;  position: relative;  width: 44px;}
+.fmtF3 { background-position: -106px -110px;float: left;  height: 44px;  margin-left: 15px;  margin-top: 8px;  position: relative;  width: 44px;}
+.fmtF4 { background-position: -154px -110px;float: left;  height: 44px;  margin-left: 5px;  margin-top: 8px;  position: relative;  width: 48px;}
+
+
+.basesSeek {border: 1px solid #888888;float: left;position: relative;top: 5px;}
+
+.cdcurF {position:relative; float:left; height:60px; width: 433px;}
+.fupForm {background-position: -75px -41px; position:absolute; top:3px; left:450px;width:15px; height:15px; cursor:pointer}
+.fdwForm {background-position: -88px -41px; position:absolute; top:37px; left:451px;width:15px; height:15px; cursor:pointer}
+

@@ -12,6 +12,25 @@ function showSl2(x){
 }
 
 
+function cuforMove(d){
+var nc=document.getElementById('cc').value;
+var max=(nc-1)*(-60);
+	
+var position = $("#cntCurF").position();
+  
+var top=position.top;
+if(d==2){var x=top-60;}else{var x=top+60;}
+
+if(x<max){x=0;}
+if(x>0){x=max;}
+
+var counter=((x/60)*-1)+1;
+counter2=counter + '/' + nc; 
+document.getElementById('counter').innerHTML=counter2;
+
+$("#cntCurF:not(:animated)").animate({top:x}, 400);
+ 	
+}
 
 
 function showSl(x){
@@ -192,7 +211,7 @@ document.getElementById(12).className=clas;
 }	
 
 
-if(doit){insVals();showdoit();setcupon();};	
+if(doit){showdoit();setcupon();};	
 }	
 
 
@@ -251,10 +270,10 @@ var naci=document.getElementById(4).value; naci=naci.replace('dd/mm/aaaa','');
 if(naci!=''){if(!chkNacimiento()){doit=0;}}
 
 	
-if(doit){insVals();showSl(2400);};	
+if(doit){showSl(2400);};	
 }
 
-
+/*
 function insVals(){if(!window.top.fields){window.top.fields=new Array;window.top.fields[0]="";}
 
 for (a=1; a<=12 ; a++){
@@ -269,7 +288,7 @@ insDatos(datos);
 }
 
 }
-
+*/
 
 function insDatos(datos){
 uid=window.top.ckk;		
@@ -284,7 +303,7 @@ $.getJSON(url, function(data) {
 
 
 function chkPhone(){
-var phone=document.getElementById(5).value; 
+var phone=document.getElementById('df_4').value; 
 phone=phone.replace(/ /g,'');
 phone=phone.replace(/\+/g,'');
 phone=phone.replace(/\-/g,'');
@@ -293,24 +312,8 @@ phone=phone.replace(/\)/g,'');
 
 var pattern=/^[0-9]+$/;	
 if((pattern.test(phone))&&(phone.length>=9)){ 
-document.getElementById('e5').innerHTML="";
-document.getElementById('e5').setAttribute("style", "visibility:hidden;");
-var clas=document.getElementById(5).className; 
-clas=clas.replace('bdcE','bdc1');
-clas=clas.replace('color2_B_GE','color2_BG');
-document.getElementById(5).className=clas; 
-	
-	        
 return true;   
     }else{   
-
-document.getElementById('e5').innerHTML="Formato incorrecto";
-document.getElementById('e5').setAttribute("style", "visibility:visible;");
-
-var clas=document.getElementById(5).className; 
-clas=clas.replace('bdc1','bdcE');
-clas=clas.replace('color2_BG','color2_B_GE');
-document.getElementById(5).className=clas;
 return false;
     }
 	
@@ -350,27 +353,11 @@ return false;
 
 
 function chkMail(){
-var mail=document.getElementById(6).value;
+var mail=document.getElementById('df_3').value;
 var pattern=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
 if(pattern.test(mail)){ 
-document.getElementById('e6').innerHTML="";
-document.getElementById('e6').setAttribute("style", "visibility:hidden;");
-var clas=document.getElementById(6).className; 
-clas=clas.replace('bdcE','bdc1');
-clas=clas.replace('color2_B_GE','color2_BG');
-document.getElementById(6).className=clas; 
-	
-	        
 return true;   
     }else{   
-
-document.getElementById('e6').innerHTML="Formato incorrecto";
-document.getElementById('e6').setAttribute("style", "visibility:inherit;");
-
-var clas=document.getElementById(6).className; 
-clas=clas.replace('bdc1','bdcE');
-clas=clas.replace('color2_BG','color2_B_GE');
-document.getElementById(6).className=clas;
 return false;
     }	
 }
@@ -428,3 +415,234 @@ function tweet(){
 function gplus(){
 	var urlsoc=getURLSOC('gplus');	
 }
+
+
+// new form
+
+
+function sndForm(){
+$.ajaxSetup({'async': true});
+//console.log('sndForm');
+var no0="";
+var no3=""; var no6=""; var no11="";
+for (i=1 ; i <= 50; i++){
+	
+	if(document.getElementById('df_' + i)){
+	var cln=document.getElementById('df_' + i).className; 	
+	val=document.getElementById('df_' + i).value;
+	
+	if(!val){no0++;
+	cln=cln.replace('formI ','formI_e '); cln=cln.replace('formS ','formS_e ');	document.getElementById('df_' + i).className=cln;	
+	}else{
+	cln=cln.replace('formI_e ','formI '); cln=cln.replace('formS_e ','formS ');	document.getElementById('df_' + i).className=cln;	
+	}
+		}else{val="";}
+	
+	
+	if(i==3){
+	if (!val){var no3=no3+ 'E-mail obligatorio';}else{chkMail();}
+	
+	}else if(i==4){if (!val){if(!no3){var no3='Teléfono obligatorio';}else{var no3='Teléfono y Mail obligatorios';}}
+	}else if(i==6){if (!val){var no6='Campos obligatorios';}
+	}else if(i==7){if (!val){var no6='Campos obligatorios';}
+	}else if(i==10){if(!val){var no6='Campos obligatorios';}
+	}else if(i==11){if(!val){var no11='Campos obligatorios';}	
+		
+	}else{	
+		
+		if(document.getElementById('df_' + i)){	
+		if (!val){
+				document.getElementById('et_' + i).innerHTML='Campo obligatorio';	
+				document.getElementById('e_' + i).style.visibility='inherit';
+		}else{
+				document.getElementById('e_' + i).style.visibility='hidden';
+		}
+				
+	}
+}	
+}
+
+
+	if(!document.getElementById('df_dn').value){var no11='Campos obligatorios';document.getElementById('df_dn').className='formS_e ';}else{document.getElementById('df_dn').className='formS ';}
+	if(!document.getElementById('df_mn').value){var no11='Campos obligatorios';document.getElementById('df_mn').className='formS_e ';}else{document.getElementById('df_mn').className='formS ';}
+	if(!document.getElementById('df_an').value){var no11='Campos obligatorios';document.getElementById('df_an').className='formS_e ';}else{document.getElementById('df_an').className='formS ';}
+	
+    if(no3){
+    document.getElementById('et_3').innerHTML=no3;	
+	document.getElementById('e_3').style.visibility='inherit';	
+    }else{
+    	
+    var chkM=chkMail();	
+    var chkT=chkPhone();	
+    
+    var clnT=document.getElementById('df_4').className;
+    var clnM=document.getElementById('df_3').className; 
+    
+    if(!chkT)				{no0++;no3="Teléfono incorrecto"	;clnT=clnT.replace('formI ','formI_e ');}else{clnT=clnT.replace('formI_e ','formI ');};
+    if(!chkM)				{no0++;no3="Mail incorrecto"		;clnM=clnM.replace('formI ','formI_e ');}else{clnM=clnM.replace('formI_e ','formI ');};
+    if((!chkM)&&(!chkT))	{no0++;no3="Teléfono y Mail incorrectos";}
+    
+    document.getElementById('df_4').className=clnT;
+    document.getElementById('df_3').className=clnM;
+    
+    if(no3){
+    document.getElementById('et_3').innerHTML=no3;	
+	document.getElementById('e_3').style.visibility='inherit';
+    }else{
+    document.getElementById('e_3').style.visibility='hidden';		
+    }
+    }	
+
+	if(no6){
+    document.getElementById('et_6').innerHTML=no6;	
+	document.getElementById('e_6').style.visibility='inherit';	
+    }else{
+    
+    
+    // checkeo CP
+    var pro=document.getElementById('df_6').value; 
+	var cpo=document.getElementById('df_10').value; 	
+	var cp=cpo;
+			
+			cp3=cp.substring(0,3);
+			if((cp3=='077') || (cp3=='078')){
+			cp=cp3;	
+			}else{
+			cp=cp.substring(0,2); 
+			cp=cp + '0';	
+			}
+		
+	var cln=document.getElementById('df_10').className; 		
+	if(pro!=cp){
+		cln=cln.replace('formI ','formI_e '); 
+		document.getElementById('et_6').innerHTML='El C.P. no coincide con la provincia';no0++;	
+		document.getElementById('e_6').style.visibility='inherit';	
+		}else{
+		cln=cln.replace('formI_e ','formI ');	
+		document.getElementById('e_6').style.visibility='hidden';	
+		}
+    document.getElementById('df_10').className=cln;
+    
+    
+    		
+    }
+    
+    if(no11){
+    document.getElementById('et_11').innerHTML=no11;	
+	document.getElementById('e_11').style.visibility='inherit';	
+    }else{
+    document.getElementById('e_11').style.visibility='hidden';		
+    }
+
+
+
+if(!no0){sendCupon();}
+	
+}
+
+function sendCupon(){$.ajaxSetup({ cache: false });
+$.ajaxSetup({'async': true});
+
+uid=window.top.ckk;
+val=document.getElementById('cursosCup').value;	
+var url='/ajx/sendCupon.php?uid=' + uid + '&cursos=' + val;
+$.getJSON(url,function(data) {$.each(data, function(key, val) {
+if(key=='ok'){
+window.top.idcupon=val;	
+document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;		
+}	
+});});
+	
+}
+
+function sendDatS(cmp,val){
+$.ajaxSetup({'async': true});
+if(val){
+document.getElementById(cmp).style.color='#444444';
+
+if((cmp=='df_dn')||(cmp=='df_mn')||(cmp=='df_an')){
+val=document.getElementById('df_an').value + document.getElementById('df_mn').value + document.getElementById('df_dn').value;
+cmp='df_12';
+//console.log('Naci:' + val);
+if(val.length < 8){val='';};
+}
+
+
+if((cmp=='df_7')&&(val!='ES')){document.getElementById('df_6').value='999';sendDat('df_6','999');}
+if((cmp=='df_7')&&(val=='ES')){document.getElementById('df_6').value='';sendDat('df_6','');}
+if((cmp=='df_6')&&(val!='999')){document.getElementById('df_7').value='ES';sendDat('df_7','ES');}
+if((cmp=='df_6')&&(val=='999')){document.getElementById('df_7').value='';sendDat('df_7','');}
+
+if(cmp=='df_6'){
+if(document.getElementById('lpdonde')){
+
+var lpd=document.getElementById('lpdonde').value;
+var lpd2=lpd.replace(val,'');
+if(lpd == lpd2){alert(document.getElementById('lpdondeE').value);};
+
+}
+}
+
+
+if((cmp=='df_15')&&(val < document.getElementById('esmin').value)){alert(document.getElementById('esminE').value);}
+
+if(val){sendDat(cmp,val);};
+}else{document.getElementById(cmp).style.color='#888888';}
+}
+
+
+
+
+
+
+
+
+function sendDat(cmp,val){$.ajaxSetup({ cache: false });
+$.ajaxSetup({'async': true});
+cmp=cmp.replace('df_','');
+
+
+uid=window.top.ckk;	
+
+
+		if((cmp==10)||(cmp==6)){
+		var pro=document.getElementById('df_6').value; 
+		var cpo=document.getElementById('df_10').value; 	
+		var cp=cpo;
+			
+			cp3=cp.substring(0,3);
+			if((cp3=='077') || (cp3=='078')){
+			cp=cp3;	
+			}else{
+			cp=cp.substring(0,2); 
+			cp=cp + '0';	
+			}
+		
+		
+		if(pro==cp){
+		setCookie("geoCP",cp,365);
+		window.top.geoCP=cp;	
+		var url='/ajx/chkCP.php?uid=' + uid + '&cp=' + cpo;
+		$.getJSON(url,function(data) {$.each(data, function(key, val) {});});	
+		
+		}
+			
+		}
+
+
+uid=window.top.ckk;	
+val=encodeURIComponent(val);
+var url='/ajx/updtUserData.php?uid=' + uid + '&cmp=' + cmp + '&val=' + val;
+$.getJSON(url,function(data) {$.each(data, function(key, val) {});});	
+
+	
+}
+
+
+function goContest(){
+var idcup=window.top.idcupon;
+var idp=window.top.idport;
+var url="https://www.seekformacion.com/ajx/fb/cApple.php?ref=CUP_" + idcup + '&idp=' + idp;
+window.location.href=url;	
+}	
+
