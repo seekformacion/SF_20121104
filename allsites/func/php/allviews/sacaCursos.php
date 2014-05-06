@@ -140,7 +140,7 @@ $idc=$v['where']['id'];
 
 
 $idt=$v['where']['idt'];
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 4 AND id_metodo !=5;");		
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt) AND id_metodo != 4 AND id_metodo !=5;");		
 $cin="";foreach ($res as $key => $data) {$idc=$data['id_cur']; $cin .=$idc . ",";};$cin=substr($cin, 0,-1);
 
 $provins=array();
@@ -165,7 +165,7 @@ return $provins;
 function getCURMet($met){global $v;
 $idc=$v['where']['id'];
 $idt=$v['where']['idt'];
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idc AND id_tipo IN ($idt) AND id_metodo=$met;");		
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt) AND id_metodo=$met;");		
 if(count($res)>0){return TRUE;}else{return FALSE;};
 }
 

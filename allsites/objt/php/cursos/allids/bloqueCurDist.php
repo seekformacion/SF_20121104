@@ -6,7 +6,7 @@ $idt=$v['where']['idt'];
 
 $idcur=$datCur['idCurso'];
 
-$res=DBselect("SELECT id_metodo, id_cur FROM skv_relCurCats WHERE id_cat=$idcatBD AND id_tipo IN ($idt) AND id_metodo NOT IN (1,2,3) AND id_cur != $idcur ORDER BY id_metodo;");
+$res=DBselect("SELECT id_metodo, id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idcatBD AND id_tipo IN ($idt) AND id_metodo NOT IN (1,2,3) AND id_cur != $idcur ORDER BY id_metodo;");
 
 $onli="";$dist="";
 foreach ($res as $key => $Vals) {

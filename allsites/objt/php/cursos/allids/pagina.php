@@ -49,7 +49,7 @@ $datCur['catDCurURL']=$catnoms[1]['url'];
 global $rOtroscur;
 
 $listcur="";	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE id_cat=$idcat AND id_cur != $idcur;");
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idcat AND id_cur != $idcur;");
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";};
 $listcur=trim(substr($listcur, 0,-1));
 
