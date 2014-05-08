@@ -513,7 +513,7 @@ for (i=1 ; i <= 50; i++){
 			}
 		
 	var cln=document.getElementById('df_10').className; 		
-	if(pro!=cp){
+	if((pro!=cp)&&(pro!=999)){
 		cln=cln.replace('formI ','formI_e '); 
 		document.getElementById('et_6').innerHTML='El C.P. no coincide con la provincia';no0++;	
 		document.getElementById('e_6').style.visibility='inherit';	
@@ -536,11 +536,34 @@ for (i=1 ; i <= 50; i++){
 
 
 
-if(!no0){sendCupon();}
+if(!no0){chkLegales();sendCupon();}
 	
 }
 
+function chkLegales(){if(document.getElementById('legalCent')){
+var iframe = document.getElementById('legalCent');
+var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+for (i=1 ; i <= 50; i++){
+if(innerDoc.getElementById('df_' + i)){cmp='df_' + i;
+
+
+if((i==29)||(i==30)||(i==31)||(i==38)){
+	if(innerDoc.getElementById(cmp).checked){var val=1;}else{var val=0;}
+}else{
+	var val=innerDoc.getElementById(cmp).value;	
+}
+
+sendDat(cmp,val);
+}}	
+
+	
+}}
+
+
 function sendCupon(){$.ajaxSetup({ cache: false });
+
+
 $.ajaxSetup({'async': true});
 
 uid=window.top.ckk;

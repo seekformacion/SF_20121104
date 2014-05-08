@@ -206,7 +206,7 @@ option.nfst {color:#444444;}
 .fmtF4 { background-position: -154px -110px;float: left;  height: 44px;  margin-left: 5px;  margin-top: 8px;  position: relative;  width: 48px;}
 
 
-.basesSeek {border: 1px solid #888888;float: left;position: relative;top: 5px;}
+.basesSeek {border: 1px solid #888888;float: left;position: relative;top: 5px; margin-bottom: 15px;}
 
 .cdcurF {position:relative; float:left; height:60px; width: 433px;}
 .fupForm {background-position: -75px -41px; position:absolute; top:3px; left:450px;width:15px; height:15px; cursor:pointer}
