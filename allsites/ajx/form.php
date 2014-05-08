@@ -163,14 +163,14 @@ $campos[6]=1;
 $campos[11]=1;
 
 
-
+/*
 $campos[8]=1;
 $campos[9]=1;
 $campos[15]=1;
 $campos[16]=1;
 $campos[18]=1;
 $campos[23]=1;
-
+*/
 
 ######## cabecera cursos
 $result['html']='
