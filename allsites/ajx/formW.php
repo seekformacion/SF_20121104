@@ -9,7 +9,7 @@ require_once ('iniAJX.php');
 
 
 
-$file = fopen ("form.php?uid=$uid&idc=$idc", "r");
+$file = fopen ("http://cursodecursos.com:8080/ajx/form.php?uid=$uid&idc=$idc", "r");
 while (!feof ($file)) { $form = fgets ($file, 1024);};
 fclose($file);
 
