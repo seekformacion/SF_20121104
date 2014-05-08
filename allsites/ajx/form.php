@@ -689,7 +689,7 @@ $res=DBselect("SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);
 if(count($res)>0){
 $result['html'].='
 
-<div class="basesSeek">
+<div class="basesSeek" style="display: inherit;">
 <iframe width="414" scrolling="auto" height="80" frameborder="0" marginwidth="5" marginheight="5" border="0" id="legalCent" src="/ajx/legales.php?cents=' . $centros . '">
 </iframe>
 </div>
