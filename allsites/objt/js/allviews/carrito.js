@@ -218,6 +218,7 @@ if(doit){showdoit();setcupon();};
 function setcupon(){
 
 uid=window.top.ckk;
+
 var url='/ajx/setcupon.php?uid=' + uid;
 $.getJSON(url, function(data) {
 $.each(data, function(key, val) {
@@ -628,7 +629,7 @@ cmp=cmp.replace('df_','');
 
 
 uid=window.top.ckk;	
-
+if(!uid){uid=getCookie('seekforID');}
 
 		if((cmp==10)||(cmp==6)){
 		var pro=document.getElementById('df_6').value; 
@@ -655,7 +656,8 @@ uid=window.top.ckk;
 		}
 
 
-uid=window.top.ckk;	
+uid=window.top.ckk;
+if(!uid){uid=getCookie('seekforID');}	
 val=encodeURIComponent(val);
 var url='/ajx/updtUserData.php?uid=' + uid + '&cmp=' + cmp + '&val=' + val;
 $.getJSON(url,function(data) {$.each(data, function(key, val) {});});	
