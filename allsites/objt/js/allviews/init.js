@@ -496,7 +496,7 @@ setCookie('csels',val,0);
 
 
 if(isMobile()) {
-var url='/ajx/formW.php?uid=' + uid + '&idc=' + idc;	
+var url='https://cursodecursos.com/ajx/formW.php?uid=' + uid + '&idc=' + idc;	
 window.open(url);
 
 }else{

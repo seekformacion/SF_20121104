@@ -567,6 +567,8 @@ function sendCupon(){$.ajaxSetup({ cache: false });
 $.ajaxSetup({'async': true});
 
 uid=window.top.ckk;
+if(!uid){uid=getCookie('seekforID');}
+
 val=document.getElementById('cursosCup').value;	
 var url='/ajx/sendCupon.php?uid=' + uid + '&cursos=' + val;
 $.getJSON(url,function(data) {$.each(data, function(key, val) {
@@ -662,10 +664,15 @@ $.getJSON(url,function(data) {$.each(data, function(key, val) {});});
 }
 
 
+function closeW(){
+window.close();	
+}
+
 function goContest(){
 var idcup=window.top.idcupon;
 var idp=window.top.idport;
 var url="https://www.seekformacion.com/ajx/fb/cApple.php?ref=CUP_" + idcup + '&idp=' + idp;
+//alert(url);
 window.location.href=url;	
 }	
 

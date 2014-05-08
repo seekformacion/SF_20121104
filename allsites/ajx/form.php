@@ -1,4 +1,5 @@
 <?php
+$idp="";
 foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
 $v['where']['view']='categorias';
@@ -9,7 +10,9 @@ require_once ('iniAJX.php');
 $paises=$v['vars']['paises'];asort($paises);
 $provins=$v['vars']['provS'];asort($provins);
 
+if(!$idp){
 $idp=$v['vars']['equiport'][$_SERVER['SERVER_NAME']];
+}
 $result['idp']=$idp;
 
 $provins['010']="Álaba";#
@@ -160,14 +163,14 @@ $campos[6]=1;
 $campos[11]=1;
 
 
-/*
+
 $campos[8]=1;
 $campos[9]=1;
 $campos[15]=1;
 $campos[16]=1;
 $campos[18]=1;
 $campos[23]=1;
-*/
+
 
 ######## cabecera cursos
 $result['html']='
@@ -409,14 +412,14 @@ $result['html'].='
 
 <br>
 
-<div style="position:relative; width: 450px; height:21px;">
+<div style="position:relative; float: left; width: 450px; height:21px;">
 <div class="nomCamp" style="width:118px;">								<span class="obli">*</span>Teléfono:</div>
 <div class="nomCamp" style="width:333px; position:absolute; left:118px"><span class="obli">*</span>E-Mail:</div>
 </div>
 <div class="clean"></div>
 
 <div class="contFields">
-<div style="position:relative; width: 450px; height: 21px; left: -2px;">
+<div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 
 <input name="telefono" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
 <input name="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
@@ -488,7 +491,7 @@ $val="";if(array_key_exists(10, $datSes)){$val=$datSes[10];}
 	
 $result['html'].='
 
-<div style="position:relative; width: 450px; height:21px">
+<div style="position:relative; float: left; width: 450px; height:21px">
 <div class="nomCamp" style="width:150px;"><span class="obli">*</span>País:</div>
 <div class="nomCamp" style="width:150px; position:absolute; left:108px"><span class="obli">*</span>Provincia:</div>
 <div class="nomCamp" style="width:100px; position:absolute; left:205px"><span class="obli">*</span>C.P:</div>
@@ -496,7 +499,7 @@ $result['html'].='
 <div class="clean"></div>
 
 <div class="contFields">
-<div style="position:relative; width: 450px; height: 21px; left: -2px;">
+<div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 	
 	
 <select class="formS " style="position:absolute; left:0px; width:100px; top:1px; margin:0px;' . $colSel1 . '"  id="df_7" onchange="sendDatS(this.id,this.value);">
