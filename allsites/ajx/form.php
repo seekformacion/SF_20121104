@@ -236,15 +236,16 @@ $result['html'].='
 ';
 
 
-
+$tab=0;
 #################################################################### Nombre ID: 1
 if(array_key_exists(1, $campos)){
 if(array_key_exists(1, $datSes)){$value=$datSes[1];}else{$value="";}	
+$tab++;
 $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Nombre:</div>
 
 <div class="contFields">
-<input name="nombre" value="' . $value . '" class="formI ftext1" id="df_1" onchange="sendDat(this.id,this.value);"/>
+<input name="nombre" value="' . $value . '" class="formI ftext1" id="df_1" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
 <div class="contError" id="e_1">
@@ -260,13 +261,13 @@ $result['html'].='
 #################################################################### Apellidos ID: 2
 if(array_key_exists(2, $campos)){
 if(array_key_exists(2, $datSes)){$value=$datSes[2];}else{$value="";}	
+$tab++;
 $result['html'].='
-
 
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
 <div class="contFields">
-<input name="apellidos" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);"/>
+<input name="apellidos" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
 <div class="contError" id="e_2">
@@ -281,7 +282,7 @@ $result['html'].='
 
 
 #################################################################### Sexo ID: 11
-if(array_key_exists(11, $campos)){$value1="";$value2="";$colSel="";
+if(array_key_exists(11, $campos)){$value1="";$value2="";$colSel="";$tab++;
 if(array_key_exists(11, $datSes)){$colSel="color:#444444;";if($datSes[11]==1){$value1="selected";}else{$value2="selected";};};	
 $result['html'].='
 
@@ -291,26 +292,26 @@ $result['html'].='
 
 <div class="contFields">
 
-<select class="formS " style="width:88px;' . $colSel . '" id="df_11" onchange="sendDatS(this.id,this.value);">
+<select class="formS " style="width:88px;' . $colSel . '" id="df_11" onchange="sendDatS(this.id,this.value);" tabindex="' . $tab . '">
 <option value="" class="fst">Seleccione</option>	
 <option value="1" class="nfst" ' . $value1 . '>Hombre</option>
 <option value="2" class="nfst" ' . $value2 . '>Mujer</option>	
 </select>
 ';
 
-$sanio="";$smes="";$sdia="";$colSel="";
+$sanio="";$smes="";$sdia="";$colSel="";$tab++;
 if(array_key_exists(12, $datSes)){$value=$datSes[12]; $colSel="color:#444444;"; $sanio=substr($value,0,4); $smes=substr($value,4,2); $sdia=substr($value,6,2);  }
 
 
 
 $result['html'].='
-<select class="formS " style="margin-left:0px; width:44px;' .$colSel . '" id="df_dn" onchange="sendDatS(this.id,this.value);">
+<select class="formS " style="margin-left:0px; width:44px;' .$colSel . '" id="df_dn" onchange="sendDatS(this.id,this.value);"  tabindex="' . $tab . '">
 <option value="" class="fst">Día</option>	
 ';
 
 
 
-$dia=0;
+$dia=0;$tab++;
 while ($dia <= 30){$dia++;
 if($dia <= 9){$dia='0' . $dia;};
 if($dia==$sdia){$sele="selected";}else{$sele="";}
@@ -322,11 +323,11 @@ $result['html'].='
 </select>
 
 
-<select class="formS " style="margin-left:-5px;width:47px;' .$colSel . '" id="df_mn" onchange="sendDatS(this.id,this.value);">
+<select class="formS " style="margin-left:-5px;width:47px;' .$colSel . '" id="df_mn" onchange="sendDatS(this.id,this.value);" tabindex="' . $tab . '">
 <option value="" class="fst">Mes</option>	
 ';
 
-$mes=0;
+$mes=0;$tab++;
 while ($mes <= 11){$mes++;
 if($mes <= 9){$mes='0' . $mes;};
 if($mes==$smes){$sele="selected";}else{$sele="";}
@@ -337,7 +338,7 @@ $result['html'].="<option value='$mes' class='fst' $sele>$mes</option>";
 $result['html'].='
 </select>
 
-<select class="formS "  style="margin-left:-5px;width:53px;' .$colSel . '"  id="df_an" onchange="sendDatS(this.id,this.value);">
+<select class="formS "  style="margin-left:-5px;width:53px;' .$colSel . '"  id="df_an" onchange="sendDatS(this.id,this.value);"  tabindex="' . $tab . '">
 <option value="" class="fst">Año</option>	
 ';
 
@@ -369,13 +370,13 @@ if(array_key_exists(18, $campos)){
 
 $colSel="";$value="";
 if(array_key_exists(18, $datSes)){$value=$datSes[18]; $colSel="color:#444444;";}
-	
+$tab++;	
 $result['html'].='
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Nacionalidad:</div>
 
 <div class="contFields">
-<select class="formS " style="width:253px;' . $colSel . '" id="df_18" onchange="sendDatS(this.id,this.value);">
+<select class="formS " style="width:253px;' . $colSel . '" id="df_18" onchange="sendDatS(this.id,this.value);" tabindex="' . $tab . '"/>
 <option value="" class="fst">Seleccione</option>	
 ';
 
@@ -407,7 +408,7 @@ if(array_key_exists(3, $campos)){
 $dmail="";$dtel="";	
 if(array_key_exists(3, $datSes)){$dmail=$datSes[3];}
 if(array_key_exists(4, $datSes)){$dtel=$datSes[4];}	
-	
+$tab++;	
 $result['html'].='
 
 
@@ -422,8 +423,8 @@ $result['html'].='
 <div class="contFields">
 <div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 
-<input name="telefono" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
-<input name="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
+<input  tabindex="' . $tab . '" name="telefono" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
+<input  tabindex="' . $tab++ . '" name="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
 
 </div>
 </div>
@@ -435,20 +436,22 @@ $result['html'].='
 <div class="clean"></div>
 <br>
 ';
+
 }
 
 
 
 #################################################################### Direccion ID 8
 if(array_key_exists(8, $campos)){
-$val="";if(array_key_exists(8, $datSes)){$val=$datSes[8];}	
+$val="";if(array_key_exists(8, $datSes)){$val=$datSes[8];}
+$tab++;	
 $result['html'].='
 
 
 <div class="nomCamp"><span class="obli">*</span>Dirección:</div>
 
 <div class="contFields">
-<input name="direccion" value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"/>
+<input name="direccion" value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
 </div>
 
 <div class="contError" id="e_8">
@@ -463,13 +466,14 @@ $result['html'].='
 
 #################################################################### Localidad ID 9
 if(array_key_exists(9, $campos)){
-$val="";if(array_key_exists(9, $datSes)){$val=$datSes[9];}	
+$val="";if(array_key_exists(9, $datSes)){$val=$datSes[9];}
+$tab++;	
 $result['html'].='
 
 <div class="nomCamp"><span class="obli">*</span>Localidad:</div>
 
 <div class="contFields">
-<input name="localidad" value="' . $val . '" class="formI ftext1" id="df_9" onchange="sendDat(this.id,this.value);"/>
+<input name="localidad" value="' . $val . '" class="formI ftext1" id="df_9" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
 </div>
 
 <div class="contError" id="e_9">
@@ -489,7 +493,8 @@ $colSel1="";$value1="";$colSel2="";$value2="";
 if(array_key_exists(7, $datSes)){$value1=$datSes[7]; $colSel1="color:#444444;";}
 if(array_key_exists(6, $datSes)){$value2=$datSes[6]; $colSel2="color:#444444;";}	
 $val="";if(array_key_exists(10, $datSes)){$val=$datSes[10];}		
-	
+
+$tab++;	
 $result['html'].='
 
 <div style="position:relative; float: left; width: 450px; height:21px">
@@ -503,7 +508,7 @@ $result['html'].='
 <div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 	
 	
-<select class="formS " style="position:absolute; left:0px; width:100px; top:1px; margin:0px;' . $colSel1 . '"  id="df_7" onchange="sendDatS(this.id,this.value);">
+<select  tabindex="' . $tab . '" class="formS " style="position:absolute; left:0px; width:100px; top:1px; margin:0px;' . $colSel1 . '"  id="df_7" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 
 ';
@@ -514,13 +519,15 @@ if($cod==$value1){$sel="selected";}else{$sel="";};
 $result['html'].="<option value='$cod' $sel>$valor</option>";
 }
 
+
+
+
+$tab++;
 $result['html'].='
-
-
 </select>	
 
 
-<select class="formS " style="position:absolute; left:108px; width:88px; top:1px; margin:0px;' . $colSel2 . '" id="df_6" onchange="sendDatS(this.id,this.value);">
+<select  tabindex="' . $tab . '" class="formS " style="position:absolute; left:108px; width:88px; top:1px; margin:0px;' . $colSel2 . '" id="df_6" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 ';
 
@@ -530,10 +537,11 @@ if($cod==$value2){$sel="selected";}else{$sel="";};
 $result['html'].="<option value='$cod' $sel>$valor</option>";
 }
 
+$tab++;
 $result['html'].='
 </select>	
 
-<input name="codigo_postal" value="' . $val . '" class="formI ftext1"  id="df_10"  style="position:absolute; left:205px; width:40px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
+<input tabindex="' . $tab . '" name="codigo_postal" value="' . $val . '" class="formI ftext1"  id="df_10"  style="position:absolute; left:205px; width:40px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
 
 
 </div>
@@ -556,14 +564,14 @@ if(array_key_exists(15, $campos)){
 	
 $colSel="";$value="";
 if(array_key_exists(15, $datSes)){$value=$datSes[15]; $colSel="color:#444444;";}
-	
+$tab++;	
 $result['html'].='
 
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Nivel de estudios:</div>
 
 <div class="contFields">
-<select class="formS " style="width:253px;' . $colSel . '"  id="df_15" onchange="sendDatS(this.id,this.value);">
+<select tabindex="' . $tab . '" class="formS " style="width:253px;' . $colSel . '"  id="df_15" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 ';
 
@@ -591,13 +599,14 @@ $result['html'].='
 
 #################################################################### Profesion ID 16
 if(array_key_exists(16, $campos)){
-$val="";if(array_key_exists(16, $datSes)){$val=$datSes[16];}	
+$val="";if(array_key_exists(16, $datSes)){$val=$datSes[16];}
+$tab++;	
 $result['html'].='
 
 <div class="nomCamp"><span class="obli">*</span>Profesión:</div>
 
 <div class="contFields">
-<input name="nombre" value="' . $val . '" class="formI ftext1" id="df_16" onchange="sendDat(this.id,this.value);"/>
+<input tabindex="' . $tab . '" name="nombre" value="' . $val . '" class="formI ftext1" id="df_16" onchange="sendDat(this.id,this.value);"/>
 </div>
 
 <div class="contError" id="e_16">
@@ -615,13 +624,13 @@ $result['html'].='
 if(array_key_exists(23, $campos)){
 $colSel="";$value="";
 if(array_key_exists(23, $datSes)){$value=$datSes[23]; $colSel="color:#444444;";}
-	
+$tab++;	
 $result['html'].='
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Situación actual:</div>
 
 <div class="contFields">
-<select class="formS " style="width:253px;' . $colSel . '" id="df_23" onchange="sendDatS(this.id,this.value);">
+<select tabindex="' . $tab . '" class="formS " style="width:253px;' . $colSel . '" id="df_23" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 ';
 
