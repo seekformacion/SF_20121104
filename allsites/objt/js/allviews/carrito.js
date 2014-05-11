@@ -542,22 +542,28 @@ if(!no0){chkLegales();sendCupon();}
 }
 
 function chkLegales(){if(document.getElementById('legalCent')){
-var iframe = document.getElementById('legalCent');
-var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+var cents=document.getElementById('Cents').value;
+cnts=cents.split(',');
+console.info(cnts);
 
-for (i=1 ; i <= 50; i++){
-if(innerDoc.getElementById('df_' + i)){cmp='df_' + i;
+		var iframe = document.getElementById('legalCent');
+		var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
 
+for (a=0; a<=cnts.length ; a++){var centro=cnts[a];
 
-if((i==29)||(i==30)||(i==31)||(i==38)){
-	if(innerDoc.getElementById(cmp).checked){var val=1;}else{var val=0;}
-}else{
-	var val=innerDoc.getElementById(cmp).value;	
+		for (i=1 ; i <= 50; i++){
+		if(innerDoc.getElementById('df_' + centro + "_" + i)){cmp='df_' + centro + "_"+ i;
+		
+		
+		if((i==29)||(i==30)||(i==31)||(i==38)){
+			if(innerDoc.getElementById(cmp).checked){var val=1;}else{var val=0;}
+		}else{
+			var val=innerDoc.getElementById(cmp).value;	
+		}
+		
+		sendDatC(i,centro,val);
+		}}	
 }
-
-sendDat(cmp,val);
-}}	
-
 	
 }}
 
@@ -620,6 +626,18 @@ if(val){sendDat(cmp,val);};
 
 
 
+function sendDatC(cmp,centro,val){$.ajaxSetup({ cache: false });
+$.ajaxSetup({'async': true});
+
+uid=window.top.ckk;	
+if(!uid){uid=getCookie('seekforID');}
+
+val=encodeURIComponent(val);
+var url='/ajx/updtUserDataC.php?uid=' + uid + '&cmp=' + cmp + '&val=' + val + '&centro=' + centro;
+$.getJSON(url,function(data) {$.each(data, function(key, val) {});});	
+
+	
+}
 
 
 
