@@ -69,9 +69,9 @@ OR bol_email like '%@hotmail.es'
 //vuelvo a cargar default
 include('/www/db-1.php');
 
-$asuntos[]="Hazte fan1 y gana un IPhone 5";
-$asuntos[]="Hazte fan2 y gana un IPhone 5";
-$asuntos[]="Hazte fan3 y gana un IPhone 5";
+$asuntos[]="Hola";
+//$asuntos[]="Hazte fan2 y gana un IPhone 5";
+//$asuntos[]="Hazte fan3 y gana un IPhone 5";
 
 $m=1;
 
@@ -100,7 +100,7 @@ $toN=$nombre;
 $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
-$message=loadChild('mails',"promo_apple_$m");
+$message="hola caracola";#loadChild('mails',"promo_apple_$m");
 
 DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
 if(sendM($from,$fromN,$to,$toN,$subject,$message)){
