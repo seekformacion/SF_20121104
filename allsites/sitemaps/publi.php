@@ -69,9 +69,9 @@ OR bol_email like '%@hotmail.es'
 //vuelvo a cargar default
 include('/www/db-1.php');
 
-$asuntos[]="Hola";
-//$asuntos[]="Hazte fan2 y gana un IPhone 5";
-//$asuntos[]="Hazte fan3 y gana un IPhone 5";
+$asuntos[]="Hazte fan1 y gana un IPhone 5";
+$asuntos[]="Hazte fan2 y gana un IPhone 5";
+$asuntos[]="Hazte fan3 y gana un IPhone 5";
 
 $m=1;
 
@@ -85,22 +85,23 @@ $email=$valuesi['bol_email'];
 $tot=count($asuntos) - 1; $a=rand(0, $tot); ### asunto aleatorio
 
 if($sexo==0){
-$from="contenidos@seekformacion.com";
+$from="cupones@seekformacion.com";
 $fromN="Contenidos";
 }else{
-$from="contenidos@seekformacion.com";
+$from="cupones@seekformacion.com";
 $fromN="Contenidos";	
 }
 
-$email="felinares@hotmail.com";
-$nombre="Fernando Linares";#
+$email="mno.perezz@hotmail.com";
+$nombre="Mariano Perez";#
 
 $to=$email;
 $toN=$nombre;
 $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
-$message="hola caracola";#loadChild('mails',"promo_apple_$m");
+$message=loadChild('mails',"promo_apple_$m");
+//$message="hola caracola";
 
 DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
 if(sendM($from,$fromN,$to,$toN,$subject,$message)){
