@@ -113,7 +113,7 @@ $message=loadChild('mails',"promo_apple_$m");
 //$message="hola caracola";
 
 DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
-if(sendM($from,$fromN,$to,$toN,$subject,$message)){
+if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain)){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
 
