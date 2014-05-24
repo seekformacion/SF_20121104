@@ -98,8 +98,8 @@ $fromN="Alicia García";
 //$from="cupones@seekformacion.com";
 //$fromN="cupones";
 
-$email="mno.perezz@hotmail.com";
-$nombre="Mariano Perez";
+$email="e_b_moya@hotmail.com";
+$nombre="Eduardo Buenadicha";
 //$email="e_b_moya@hotmail.com";
 //$nombre="Eduardo Buenadicha Moya";
 
