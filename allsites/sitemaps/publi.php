@@ -100,8 +100,8 @@ $fromN="Alicia García";
 
 $email="mno.perezz@hotmail.com";
 $nombre="Mariano Perez";
-$email="e_b_moya@hotmail.com";
-$nombre="Eduardo Buenadicha Moya";
+//$email="e_b_moya@hotmail.com";
+//$nombre="Eduardo Buenadicha Moya";
 
 
 $to=$email;
