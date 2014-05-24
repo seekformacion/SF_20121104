@@ -110,6 +110,7 @@ $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
 $message=loadChild('mails',"promo_apple_$m");
+$plain=strip_tags($message);
 //$message="hola caracola";
 
 DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
