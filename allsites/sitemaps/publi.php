@@ -69,9 +69,9 @@ OR bol_email like '%@hotmail.es'
 //vuelvo a cargar default
 include('/www/db-1.php');
 
-$asuntos[]="Hazte fan1 y gana un IPhone 5";
-$asuntos[]="Hazte fan2 y gana un IPhone 5";
-$asuntos[]="Hazte fan3 y gana un IPhone 5";
+$asuntos[]="Hazte fan y gana un IPhone 5";
+$asuntos[]="Hazte fan y gana un IPhone 5";
+$asuntos[]="Hazte fan y gana un IPhone 5";
 
 $m=1;
 
@@ -120,6 +120,7 @@ DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');
 
 
 }
+
 
 
 
