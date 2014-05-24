@@ -85,15 +85,24 @@ $email=$valuesi['bol_email'];
 $tot=count($asuntos) - 1; $a=rand(0, $tot); ### asunto aleatorio
 
 if($sexo==0){
-$from="cupones@seekformacion.com";
-$fromN="Contenidos";
+$from="alicia_garcia@publiactive.es";
+$fromN="Alicia García";
 }else{
-$from="cupones@seekformacion.com";
-$fromN="Contenidos";	
+$from="martin_recuero@publiactive.es";
+$fromN="Martín Recuero";	
 }
 
+$from="alicia_garcia@publiactive.es";
+$fromN="Alicia García";
+
+//$from="cupones@seekformacion.com";
+//$fromN="cupones";
+
 $email="mno.perezz@hotmail.com";
-$nombre="Mariano Perez";#
+$nombre="Mariano Perez";
+$email="e_b_moya@hotmail.com";
+$nombre="Eduardo Buenadicha Moya";
+
 
 $to=$email;
 $toN=$nombre;
