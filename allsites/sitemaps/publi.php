@@ -63,11 +63,7 @@ OR email like '%@hotmail.es'
 );",'SeekforFB');
 if(array_key_exists(1, $hechos2)){$ulti2=$hechos2[1]['ulti'];};
 
-echo "\n SELECT max(id_boletin) as ulti FROM envios WHERE (
-   email like '%@hotmail.com' 
-OR email like '%@msn.com'
-OR email like '%@hotmail.es'
-); \n";
+
 
 
 
@@ -86,6 +82,17 @@ OR bol_email like '%@wanadoo.es'
 OR bol_email like '%@ono.com'
 ) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 10;
 ");
+
+
+echo "\n select * from boletines where bol_provincia NOT IN (28,08) AND bol_fechanacimiento > 19830000 
+AND (
+bol_email like '%@yahoo.com' 
+OR bol_email like '%@yahoo.es' 
+OR bol_email like '%@gmail.com' 
+OR bol_email like '%@terra.es'
+OR bol_email like '%@wanadoo.es'
+OR bol_email like '%@ono.com'
+) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 10; \n";
 
 
 $nuevos2=DBselect("
