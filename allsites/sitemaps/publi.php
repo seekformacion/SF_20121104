@@ -98,10 +98,10 @@ $fromN="Alicia García";
 $from="concurso@laltalena.es";
 $fromN="Concurso";
 
-$email="e.b.moya@gmail.com";
-$nombre="Eduardo Buenadicha";
-//$email="e_b_moya@hotmail.com";
-//$nombre="Eduardo Buenadicha Moya";
+//$email="e.b.moya@gmail.com";
+//$nombre="Eduardo Buenadicha";
+$email="e_b_moya@hotmail.com";
+$nombre="Eduardo Buenadicha Moya";
 
 
 $to=$email;
