@@ -102,8 +102,8 @@ $nuevos = $nuevos1;
 include('/www/db-1.php');
 
 $asuntos[]="Hazte fan y gana un IPhone 5";
-$asuntos[]="Hazte fan y gana un IPhone 5";
-$asuntos[]="Hazte fan y gana un IPhone 5";
+$asuntos[]="Llévate un IPhone 5 concursando en Facebook";
+$asuntos[]="Síguenos en Facebook y consigue un IPhone 5";
 
 $m=1;
 
