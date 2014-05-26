@@ -80,7 +80,7 @@ OR bol_email like '%@gmail.com'
 OR bol_email like '%@terra.es'
 OR bol_email like '%@wanadoo.es'
 OR bol_email like '%@ono.com'
-) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 1;
+) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 10;
 ");
 
 
@@ -89,7 +89,7 @@ select * from boletines where bol_provincia NOT IN (28,08) AND bol_fechanacimien
 AND (bol_email like '%@hotmail.com' 
 OR bol_email like '%@msn.com'
 OR bol_email like '%@hotmail.es'
-) AND id_boletin > $ulti2 ORDER BY id_boletin LIMIT 1;
+) AND id_boletin > $ulti2 ORDER BY id_boletin LIMIT 10;
 ");
 
 
@@ -134,10 +134,11 @@ $nombre="Mariano Perez";
 $to=$email;
 $toN=$nombre;
 
+/*
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
-
+*/
 
 }
 
