@@ -42,8 +42,8 @@ includeCORE('templates/templates');
 includeCORE('funcs/general');
 includeCORE('mail/mail');
 
-$ulti1=0;
-$ulti2=0;
+$ulti1=1;
+$ulti2=1;
 
 $hechos1=DBselectSDB("SELECT max(id_boletin) as ulti FROM envios WHERE (
  email like '%@yahoo.com' 
