@@ -95,7 +95,8 @@ OR bol_email like '%@hotmail.es'
 ");
 
 
-$nuevos = array_merge($nuevos1, $nuevos2);
+//$nuevos = array_merge($nuevos1, $nuevos2);
+$nuevos = $nuevos1;
 
 //vuelvo a cargar default
 include('/www/db-1.php');
