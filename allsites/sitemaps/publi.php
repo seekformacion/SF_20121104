@@ -92,11 +92,8 @@ $from="martin_recuero@publiactive.es";
 $fromN="Martín Recuero";	
 }
 
-$from="alicia_garcia@publiactive.es";
-$fromN="Alicia García";
-
-$from="concurso@laltalena.es";
-$fromN="Concurso";
+$from="concurso@publiactive.net";
+$fromN="Concurso Apple";
 
 //$email="e.b.moya@gmail.com";
 //$nombre="Eduardo Buenadicha";
