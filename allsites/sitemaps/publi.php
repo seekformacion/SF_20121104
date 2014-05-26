@@ -63,7 +63,11 @@ OR email like '%@hotmail.es'
 );",'SeekforFB');
 if(array_key_exists(1, $hechos2)){$ulti2=$hechos2[1]['ulti'];};
 
-
+echo "\n SELECT max(id_boletin) as ulti FROM envios WHERE (
+   email like '%@hotmail.com' 
+OR email like '%@msn.com'
+OR email like '%@hotmail.es'
+); \n";
 
 
 
