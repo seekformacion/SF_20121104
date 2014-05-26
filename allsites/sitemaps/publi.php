@@ -84,25 +84,11 @@ $email=$valuesi['bol_email'];
 
 $tot=count($asuntos) - 1; $a=rand(0, $tot); ### asunto aleatorio
 
-if($sexo==0){
-$from="alicia_garcia@publiactive.es";
-$fromN="Alicia García";
-}else{
-$from="martin_recuero@publiactive.es";
-$fromN="Martín Recuero";	
-}
 
 $from="concurso@publiactive.net";
 $fromN="Concurso Apple";
 
-//$email="e.b.moya@gmail.com";
-//$nombre="Eduardo Buenadicha";
-$email="felinares@hotmail.com";
-$nombre="Fernando Linares";
 
-
-$to=$email;
-$toN=$nombre;
 $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
@@ -111,6 +97,14 @@ $plain=strip_tags($message);
 //$message="hola caracola";
 
 DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
+
+//$email="e.b.moya@gmail.com";
+//$nombre="Eduardo Buenadicha";
+$email="felinares@hotmail.com";
+$nombre="Fernando Linares";
+$to=$email;
+$toN=$nombre;
+
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
