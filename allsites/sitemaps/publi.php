@@ -97,8 +97,8 @@ $fromN="Concurso Apple";
 
 //$email="e.b.moya@gmail.com";
 //$nombre="Eduardo Buenadicha";
-$email="e_b_moya@hotmail.com";
-$nombre="Eduardo Buenadicha Moya";
+$email="felinares@hotmail.com";
+$nombre="Fernando Linares";
 
 
 $to=$email;
