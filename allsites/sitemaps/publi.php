@@ -95,8 +95,8 @@ $fromN="Martín Recuero";
 $from="alicia_garcia@publiactive.es";
 $fromN="Alicia García";
 
-//$from="cupones@seekformacion.com";
-//$fromN="cupones";
+$from="concurso@laltalena.es";
+$fromN="Concurso";
 
 $email="e.b.moya@gmail.com";
 $nombre="Eduardo Buenadicha";
