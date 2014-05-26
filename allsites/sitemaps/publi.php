@@ -132,16 +132,16 @@ DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id
 
 //$email="e.b.moya@gmail.com";
 //$nombre="Eduardo Buenadicha";
-$email="mno.perezz@hotmail.com";
-$nombre="Mariano Perez";
+//$email="mno.perezz@hotmail.com";
+//$nombre="Mariano Perez";
 $to=$email;
 $toN=$nombre;
 
-/*
+
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
-*/
+
 
 }
 
