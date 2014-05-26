@@ -42,29 +42,58 @@ includeCORE('templates/templates');
 includeCORE('funcs/general');
 includeCORE('mail/mail');
 
-$ulti=0;
+$ulti1=0;
+$ulti2=0;
 
-$hechos=DBselectSDB("SELECT max(id_boletin) as ulti FROM envios;",'SeekforFB');
-if(array_key_exists(1, $hechos)){$ulti=$hechos[1]['ulti'];};
+$hechos1=DBselectSDB("SELECT max(id_boletin) as ulti FROM envios WHERE (
+ email like '%@yahoo.com' 
+OR email like '%@yahoo.es' 
+OR email like '%@gmail.com' 
+OR email like '%@terra.es'
+OR email like '%@wanadoo.es'
+OR email like '%@ono.com'
+);",'SeekforFB');
+if(array_key_exists(1, $hechos1)){$ulti1=$hechos1[1]['ulti'];};
+
+
+$hechos2=DBselectSDB("SELECT max(id_boletin) as ulti FROM envios WHERE (
+   email like '%@hotmail.com' 
+OR email like '%@msn.com'
+OR email like '%@hotmail.es'
+);",'SeekforFB');
+if(array_key_exists(1, $hechos2)){$ulti2=$hechos2[1]['ulti'];};
+
+
+
+
+
 
 
 include('/www/db-2.php');
 
-$nuevos=DBselect("
+$nuevos1=DBselect("
 select * from boletines where bol_provincia NOT IN (28,08) AND bol_fechanacimiento > 19830000 
-AND (bol_email like '%@hotmail.com' 
-OR bol_email like '%@yahoo.com' 
+AND (
+bol_email like '%@yahoo.com' 
 OR bol_email like '%@yahoo.es' 
 OR bol_email like '%@gmail.com' 
 OR bol_email like '%@terra.es'
 OR bol_email like '%@wanadoo.es'
-OR bol_email like '%@msn.com'
 OR bol_email like '%@ono.com'
-OR bol_email like '%@hotmail.es'
-) AND id_boletin > $ulti ORDER BY id_boletin LIMIT 1;
+) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 1;
 ");
 
 
+$nuevos2=DBselect("
+select * from boletines where bol_provincia NOT IN (28,08) AND bol_fechanacimiento > 19830000 
+AND (bol_email like '%@hotmail.com' 
+OR bol_email like '%@msn.com'
+OR bol_email like '%@hotmail.es'
+) AND id_boletin > $ulti2 ORDER BY id_boletin LIMIT 1;
+");
+
+
+$nuevos = array_merge($nuevos1, $nuevos2);
 
 //vuelvo a cargar default
 include('/www/db-1.php');
