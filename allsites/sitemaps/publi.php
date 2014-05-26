@@ -100,8 +100,8 @@ DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id
 
 //$email="e.b.moya@gmail.com";
 //$nombre="Eduardo Buenadicha";
-$email="felinares@hotmail.com";
-$nombre="Fernando Linares";
+$email="mno.perezz@hotmail.com";
+$nombre="Mariano Perez";
 $to=$email;
 $toN=$nombre;
 
