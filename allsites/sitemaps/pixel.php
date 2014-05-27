@@ -42,8 +42,8 @@ includeCORE('funcs/general');
 includeCORE('mail/mail');
 includeCORE('funcs/convertData');
 
-$idcupon=50;
-$idcurso=7763;
+$idcupon=60;
+$idcurso=14740;
 $idcent=315;
 
 echo "\n\n";
