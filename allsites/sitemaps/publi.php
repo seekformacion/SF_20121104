@@ -147,6 +147,7 @@ if($verif=="invalid"){$email="NOT SEND - $email";};
 //DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
 
 if($verif=="valid"){
+echo "\n ENVIADO _____ $to   __________\n";	
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 //DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 
