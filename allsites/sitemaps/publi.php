@@ -151,6 +151,8 @@ if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 };	
 */
 
+
+print_r(verifyEmail($to));
 echo "\n" . sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php') . "\n -------- \n";
 
 }
