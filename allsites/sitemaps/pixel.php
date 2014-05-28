@@ -42,9 +42,9 @@ includeCORE('funcs/general');
 includeCORE('mail/mail');
 includeCORE('funcs/convertData');
 
-$idcupon=78;
-$idcurso=7747;
-$idcent=314;
+$idcupon=82;
+$idcurso=14762;
+$idcent=451;
 
 echo "\n\n";
 echo getPixel($idcent,$idcupon,$idcurso,1);
