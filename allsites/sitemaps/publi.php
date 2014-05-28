@@ -136,8 +136,20 @@ $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
 $message=loadChild('mails',"promo_apple_$m");
-$plain=strip_tags($message);
+//$plain=strip_tags($message);
+$plain="
+Concurso Apple
 
+¿Quieres ganar uno de estos fantásticos
+productos Apple?
+
+Participa en el concurso que Seekformación
+organiza en Facebook.
+
+Solo con participar en el concurso y hacerte fan
+de nuestra página podrás ganar uno de estos
+premios.
+";
 
 
 $to=$email;
