@@ -145,7 +145,7 @@ $plain=strip_tags($message);
 $to=$email;
 $toN=$nombre;
 
-$verif=verifyEmail($to,'concurso@publiactive.es');
+$verif=verifyEmail($to,'info@publiactive.es');
 echo "\n_____ $verif   __________\n";
 
 if($verif=="invalid"){$email="NOT SEND - $email"; echo "\nNO ENVIADO _____ $to   __________\n";	};
@@ -156,7 +156,7 @@ echo "\nENVIADO _____ $to   __________\n";
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');
 echo "_____________\n\n";
-sleep(1);		
+sleep(2);		
 }}
 
 
