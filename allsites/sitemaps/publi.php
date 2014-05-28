@@ -49,7 +49,6 @@ $hechos1=DBselectSDB("SELECT max(id_boletin) as ulti FROM envios WHERE (
  email like '%@yahoo.com' 
 OR email like '%@yahoo.es' 
 OR email like '%@gmail.com' 
-OR email like '%@terra.es'
 OR email like '%@wanadoo.es'
 OR email like '%@ono.com'
 );",'SeekforFB');
@@ -77,7 +76,6 @@ AND (
 bol_email like '%@yahoo.com' 
 OR bol_email like '%@yahoo.es' 
 OR bol_email like '%@gmail.com' 
-OR bol_email like '%@terra.es'
 OR bol_email like '%@wanadoo.es'
 OR bol_email like '%@ono.com'
 ) AND id_boletin > $ulti1 ORDER BY id_boletin LIMIT 10;
@@ -109,13 +107,14 @@ $m=1;
 
 global $valuesi;
 
+/*
 $nuevos=array();
 $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
 $nuevos[1]['bol_nombre']="Eduardo";
 $nuevos[1]['bol_apellidos']="Moya";
 $nuevos[1]['bol_email']="e.bmoya@yahoo.es";
-
+*/
 
 
 
