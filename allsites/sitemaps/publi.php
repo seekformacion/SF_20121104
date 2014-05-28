@@ -145,7 +145,7 @@ $plain=strip_tags($message);
 $to=$email;
 $toN=$nombre;
 
-$verif=verifyEmail($to,'info@publiactive.es');
+$verif=verifyEmail($to,'concurso@publiactive.es');
 echo "\n_____ $verif   __________\n";
 
 if($verif=="invalid"){$email="NOT SEND - $email"; echo "\nNO ENVIADO _____ $to   __________\n";	};
