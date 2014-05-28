@@ -114,7 +114,7 @@ $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
 $nuevos[1]['bol_nombre']="Eduardo";
 $nuevos[1]['bol_apellidos']="Buenadicha";
-$nuevos[1]['bol_email']="jirihjhfhfhh292jj@hotmail.com";
+$nuevos[1]['bol_email']="e.b.moya@gmail.com";
 
 foreach ($nuevos as $key => $valuesi) {
 $id=$valuesi['id_boletin'];	
