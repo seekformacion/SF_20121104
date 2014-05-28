@@ -152,7 +152,8 @@ if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 */
 
 
-print_r(verifyEmail($to,'felinaresseek@gmail.com'));
+print_r(verifyEmail($to,'concurso@publiactive.es'));
+echo "\n_________________\n"; 	
 //echo "\n" . sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php') . "\n -------- \n";
 
 }
