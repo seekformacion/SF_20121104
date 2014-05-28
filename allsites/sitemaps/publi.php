@@ -145,11 +145,13 @@ $plain=strip_tags($message);
 $to=$email;
 $toN=$nombre;
 
-
+/*
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
 // ---   DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
+*/
 
+echo "\n" . sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php') . "\n -------- \n";
 
 }
 
