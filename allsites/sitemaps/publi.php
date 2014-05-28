@@ -109,12 +109,17 @@ $m=1;
 
 global $valuesi;
 
+/*
 $nuevos=array();
 $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
 $nuevos[1]['bol_nombre']="Seek";
 $nuevos[1]['bol_apellidos']="Formacion";
 $nuevos[1]['bol_email']="seekformacion@hotmail.com";
+*/
+
+
+
 
 foreach ($nuevos as $key => $valuesi) {
 $id=$valuesi['id_boletin'];	
@@ -143,14 +148,15 @@ $toN=$nombre;
 $verif=verifyEmail($to,'concurso@publiactive.es');
 echo "\n_____ $verif   __________\n";
 
-if($verif=="invalid"){$email="NOT SEND - $email";};
-//DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
+if($verif=="invalid"){$email="NOT SEND - $email"; echo "\nNO ENVIADO _____ $to   __________\n";	};
+DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
 
 if($verif=="valid"){
-echo "\n ENVIADO _____ $to   __________\n";	
+echo "\nENVIADO _____ $to   __________\n";	
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
-//DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
-
+DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');
+echo "_____________\n\n";
+sleep(1);		
 }}
 
 
