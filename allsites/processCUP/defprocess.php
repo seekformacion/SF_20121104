@@ -2,7 +2,7 @@
 
 if($debug){
 	
-echo "\n\nprocesaso especifico de 315 \n";
+//echo "\n\nprocesaso especifico de 315 \n";
 
 echo "\nDatos que quiere el centro\n";
 print_r($datfC);
