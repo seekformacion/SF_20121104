@@ -136,7 +136,7 @@ $message=loadChild('mails',"promo_apple_$m");
 $plain=strip_tags($message);
 //$message="hola caracola";
 
-DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
+// ----  DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id,'$nombre','$email',$m,$a);",'SeekforFB');	
 
 //$email="e.b.moya@gmail.com";
 //$nombre="Eduardo Buenadicha";
@@ -147,7 +147,7 @@ $toN=$nombre;
 
 
 if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
-DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
+// ---   DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');		
 };	
 
 
