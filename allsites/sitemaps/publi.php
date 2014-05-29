@@ -107,14 +107,13 @@ $m=1;
 
 global $valuesi;
 
-/*
 $nuevos=array();
 $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
 $nuevos[1]['bol_nombre']="Fernando";
 $nuevos[1]['bol_apellidos']="Linares";
 $nuevos[1]['bol_email']="felinares@hotmail.com";
-*/
+
 
 
 
