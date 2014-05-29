@@ -105,7 +105,9 @@ $subject="Cupon enviado a $idcent;";
 $message="Cupon enviado a $idcent";
 $plain=$message;
 $message=loadChild('mails','cupon');
-sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail.php');
+
+$vconf=array();
+sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail.php',$vconf);
 
 
 

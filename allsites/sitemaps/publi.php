@@ -26,7 +26,7 @@ $v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
 $v['path']['baseURLskin'][2]="http://s3-eu-west-1.amazonaws.com/seekf"; ## baseURL del SKIN en CLOUD
 
 
-
+$vconf=array();
 
 
 
@@ -136,6 +136,12 @@ $subject=$asuntos[$a];
 
 $valuesi['a']=$a; $valuesi['m']=$m; 
 $message=loadChild('mails',"promo_apple_$m");
+
+
+$vconf['LU-1']="concurso@publiactive.net";
+$vconf['LU-2']="http://www.publiactive.net/ajx/baja.php?id=$id&bol=$email";
+
+
 //$plain=strip_tags($message);
 $plain="
 Concurso Apple
@@ -163,7 +169,7 @@ DBUpInsSDB("INSERT INTO envios (id_boletin,nombre,email,mail,asunto) VALUES ($id
 
 if($verif=="valid"){
 echo "\nENVIADO _____ $to   __________\n";	
-if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php')){
+if(sendM($from,$fromN,$to,$toN,$subject,$message,$plain,'mail2.php',$vconf)){
 DBUpInsSDB("UPDATE envios SET enviado=1 WHERE id_boletin=$id",'SeekforFB');
 echo "_____________\n\n";
 sleep(2);		
