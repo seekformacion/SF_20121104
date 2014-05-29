@@ -94,7 +94,7 @@ OR bol_email like '%@hotmail.es'
 
 
 //$nuevos = array_merge($nuevos1, $nuevos2);
-$nuevos = $nuevos1;
+$nuevos = $nuevos2;
 
 //vuelvo a cargar default
 include('/www/db-1.php');
@@ -107,13 +107,14 @@ $m=1;
 
 global $valuesi;
 
+/*
 $nuevos=array();
 $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
 $nuevos[1]['bol_nombre']="Mariano";
 $nuevos[1]['bol_apellidos']="Perez";
 $nuevos[1]['bol_email']="mno.perezz@gmail.com";
-
+*/
 
 
 
