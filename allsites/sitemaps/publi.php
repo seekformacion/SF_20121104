@@ -100,8 +100,8 @@ $nuevos = $nuevos1;
 include('/www/db-1.php');
 
 $asuntos[]="Hazte fan y gana un IPhone 5";
-$asuntos[]="Llévate un IPhone 5 concursando en Facebook";
-$asuntos[]="Síguenos en Facebook y consigue un IPhone 5";
+//$asuntos[]="Llévate un IPhone 5 concursando en Facebook";
+//$asuntos[]="Síguenos en Facebook y consigue un IPhone 5";
 
 $m=1;
 
@@ -110,9 +110,9 @@ global $valuesi;
 $nuevos=array();
 $nuevos[1]['id_boletin']="9999";
 $nuevos[1]['bol_sexo']="1";
-$nuevos[1]['bol_nombre']="Alfredo";
-$nuevos[1]['bol_apellidos']="Peñas";
-$nuevos[1]['bol_email']="alfredoo.penas@gmail.com";
+$nuevos[1]['bol_nombre']="Mariano";
+$nuevos[1]['bol_apellidos']="Perez";
+$nuevos[1]['bol_email']="mno.perezz@gmail.com";
 
 
 
