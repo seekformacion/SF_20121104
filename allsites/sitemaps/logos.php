@@ -21,24 +21,44 @@ $file=str_replace($myDirectory . "/", '', $file);
 if(!array_key_exists($file, $excludes)){$sites[]=$file;}
 }
 
-print_r($sites);
+//print_r($sites);
 
 
-
+######### img p
+$myDirectory=$v['path']['repo'] .	"/SeekFormacion_images/global/logos/p";
+echo "\n";
+foreach(glob("$myDirectory/*") as $file) {
+$file=str_replace($myDirectory, '/img/global/logos/p', $file);
+$logos[]=$file;
+}
 
 
 
 
 ######### img G
 $myDirectory=$v['path']['repo'] .	"/SeekFormacion_images/global/logos/g";
-
 echo "\n";
 foreach(glob("$myDirectory/*") as $file) {
 $file=str_replace($myDirectory, '/img/global/logos/g', $file);
-	
-//echo $file . "\n";
-   
+$logos[]=$file;
 }
+
+//print_r($logos);
+
+
+
+foreach ($sites as $key => $dom) {foreach ($logos as $key2 => $path) {
+		
+exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $dom && req.url == $path\"") . "\n";
+echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $dom && req.url == $path\"" . "\n";
+
+usleep(400000);
+//echo "GET: \n";
+$url="http://" . $dom . $path;	
+$content = file_get_contents($url);			
+echo $url. "\n";		
+	
+}}
 
 
 ?>
