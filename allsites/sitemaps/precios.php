@@ -43,7 +43,7 @@ includeCORE('funcs/general');
 $defP=array();
 
 $lcents="";
-$cents=DBselectSDB("select id, CPLA from skP_centros where lstPRE = 0 limit 50;",'seekpanel');
+$cents=DBselectSDB("select id, CPLA from skP_centros where CPLA > 0 limit 50;",'seekpanel');
 if(count($cents)>0){
 	foreach ($cents as $kk => $val){
 	$idc=$val['id']; $cpla=$val['CPLA'];	
@@ -53,8 +53,11 @@ if(count($cents)>0){
 
 	$lcents=substr($lcents, 0,-1);
 	
+echo "\n";
+echo $lcents;
+echo "\n";
 
-	
+/*
 $curs=DBselectSDB("select id, id_centro, cur_id_tipocurso, cur_id_metodo, CPLA from skP_cursos where id_centro IN ($lcents);",'seekpanel');
 if(count($curs)>0){foreach ($curs as $ky => $valc){
 
@@ -93,6 +96,8 @@ $precios[$idcu]=$cpl;
 }}
 
 
+
+
 if(count($precios)>0){
 $q="UPDATE skv_cursos 
    SET OrdDESC = CASE 
@@ -123,11 +128,20 @@ print_r($precios);
 
 }
 
-
+*/
 
 
 	
 }
+
+
+
+
+
+
+
+
+
 
 
 
