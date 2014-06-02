@@ -54,9 +54,8 @@ if(count($cents)>0){
 
 	$lcents=substr($lcents, 0,-1);
 	
-echo "\n";
-
-print_r($centros);
+//echo "\n";
+//print_r($centros);
 
 
 /*
@@ -97,7 +96,7 @@ foreach ($centros as $idcent => $kkk) {
 }}
 
 
-print_r($CPLAreg);
+//print_r($CPLAreg);
 
 
 
@@ -127,9 +126,6 @@ $precios[$idcu]=$cpl;
 }}
 
 
-//print_r($precios);
-
-/*
 
 if(count($precios)>0){
 $q="UPDATE skv_cursos 
@@ -161,7 +157,7 @@ print_r($precios);
 
 }
 
-*/
+
 
 
 	
