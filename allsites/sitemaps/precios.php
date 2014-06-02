@@ -55,9 +55,8 @@ if(count($cents)>0){
 	$lcents=substr($lcents, 0,-1);
 	
 echo "\n";
-echo $lcents;
-echo "\n";
 
+print_r($centros);
 
 
 /*
@@ -72,7 +71,7 @@ echo "\n";
 */
 
 
-
+$CPLAreg=array();
 if(count($centros)>0){
 foreach ($centros as $idcent => $kkk) {
 	
@@ -83,8 +82,9 @@ foreach ($centros as $idcent => $kkk) {
 	   $CPLn=$values['CPL'];
 	
 	$cplreg=array(); 
-    $cplreg=DBselectSDB("select id skP_cursos where $atributo $valor AND id_centro=$idcent;",'seekpanel');
-		if(count($cplreg)>0){foreach($cplreg as $kk => $idsREG){
+    $cplreg=DBselectSDB("select id FROM skP_cursos where $atributo $valor AND id_centro=$idcent;",'seekpanel');
+	echo "\nselect id FROM skP_cursos where $atributo $valor AND id_centro=$idcent;";
+	if(count($cplreg)>0){foreach($cplreg as $kk => $idsREG){
 			$CPLAreg[$idsREG['id']]=$CPLn;
 		}}
 	   
