@@ -83,7 +83,7 @@ foreach ($centros as $idcent => $kkk) {
 	
 	$cplreg=array(); 
     $cplreg=DBselectSDB("select id FROM skP_cursos where $atributo $valor AND id_centro=$idcent;",'seekpanel');
-	echo "\nselect id FROM skP_cursos where $atributo $valor AND id_centro=$idcent;";
+	//echo "\nselect id FROM skP_cursos where $atributo $valor AND id_centro=$idcent;";
 	if(count($cplreg)>0){foreach($cplreg as $kk => $idsREG){
 			$CPLAreg[$idsREG['id']]=$CPLn;
 		}}
@@ -97,7 +97,7 @@ foreach ($centros as $idcent => $kkk) {
 }}
 
 
-
+print_r($CPLAreg);
 
 
 
