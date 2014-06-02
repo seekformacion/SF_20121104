@@ -49,6 +49,7 @@ if(count($cents)>0){
 	$idc=$val['id']; $cpla=$val['CPLA'];	
 	$defP[$idc]=$cpla;
 	$lcents .=$idc . ",";	
+	$centros[$idc]=1;
 	}
 
 	$lcents=substr($lcents, 0,-1);
@@ -57,7 +58,50 @@ echo "\n";
 echo $lcents;
 echo "\n";
 
+
+
 /*
+	cursos
+	1,9,21,22,23,24,25,26,27,28,29,15,16,17,18,19,11
+	
+	masters	
+	2,3,8,10,12,13,14,20,5,6,7
+
+	opo
+	4
+*/
+
+
+
+if(count($centros)>0){
+foreach ($centros as $idcent => $kkk) {
+	
+	$reglas=DBselectSDB("select atributo, valor, CPL from skP_precios_rule where id_centro=$idcent AND proceso=1 ORDER BY orden ASC",'seekpanel');
+   	if(count($reglas)>0){ foreach ($reglas as $key => $values) {
+   	   $atributo=$values['atributo'];
+	   $valor=$values['valor'];
+	   $CPLn=$values['CPL'];
+	
+	$cplreg=array(); 
+    $cplreg=DBselectSDB("select id skP_cursos where $atributo $valor AND id_centro=$idcent;",'seekpanel');
+		if(count($cplreg)>0){foreach($cplreg as $kk => $idsREG){
+			$CPLAreg[$idsREG['id']]=$CPLn;
+		}}
+	   
+	}}
+		
+	
+	
+	
+	
+}}
+
+
+
+
+
+
+
 $curs=DBselectSDB("select id, id_centro, cur_id_tipocurso, cur_id_metodo, CPLA from skP_cursos where id_centro IN ($lcents);",'seekpanel');
 if(count($curs)>0){foreach ($curs as $ky => $valc){
 
@@ -71,23 +115,10 @@ $cpA=0; $cpB=0;
 
 if($CPLA!=''){
 	$cpl=$CPLA;
-	}else{
-			
-	$cpls=DBselectSDB("select CPL from skP_precios where id_centro=$idce AND id_tipo=$tip AND id_metodo=$met;",'seekpanel');	
-	if(array_key_exists(1, $cpls)){$cpl=$cpls[1]['CPL'];}else{
-			
-		$cpls=DBselectSDB("select CPL from skP_precios where id_centro=$idce AND id_tipo=$tip",'seekpanel');	
-		if(array_key_exists(1, $cpls)){$cpA=$cpls[1]['CPL'];}
-		
-		$cpls=DBselectSDB("select CPL from skP_precios where id_centro=$idce AND id_metodo=$met",'seekpanel');	
-		if(array_key_exists(1, $cpls)){$cpB=$cpls[1]['CPL'];}
-		
-		if($cpA>=$cpB){$cpl=$cpA;}else{$cpl=$cpB;}
-	
-	}
-	
-	if($cpl==0){$cpl=$defP[$idce];}
-		
+}elseif(array_key_exists($idcu, $CPLAreg)){
+	$cpl=$CPLAreg[$idcu];
+}else{   
+    $cpl=$defP[$idce]; 
 	}	
 	
 
@@ -96,7 +127,9 @@ $precios[$idcu]=$cpl;
 }}
 
 
+print_r($precios);
 
+/*
 
 if(count($precios)>0){
 $q="UPDATE skv_cursos 
