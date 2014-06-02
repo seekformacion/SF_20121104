@@ -127,7 +127,7 @@ $precios[$idcu]=$cpl;
 }}
 
 
-print_r($precios);
+//print_r($precios);
 
 /*
 
