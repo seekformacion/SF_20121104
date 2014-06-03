@@ -61,7 +61,10 @@ $date=date('Y') . date('m') . date('d');
 if(count($datos)>0){
 foreach ($datos as $idcent => $cups){foreach ($cups as $idcupon => $curs){foreach($curs as $idcurso => $idins){
 $err="";
-$err=DBUpInsSDB("INSERT INTO skP_cupones (id_cent,id_cupon,fecha,id_curso) VALUES ($idcent,$idcupon,$date,$idcurso);",'seekpanel');		
+
+$CPL=getCPLcup($idcupon,$idcent,$idcurso);#### obtengo el CPL al q se factura este cupon
+	
+$err=DBUpInsSDB("INSERT INTO skP_cupones (id_cent,id_cupon,fecha,id_curso,CPL) VALUES ($idcent,$idcupon,$date,$idcurso,'$CPL');",'seekpanel');		
 if(!$err){
 	
 ######## miro si se envia pixel	
