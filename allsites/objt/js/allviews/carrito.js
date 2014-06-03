@@ -632,7 +632,7 @@ if(lpd == lpd2){alert(document.getElementById('lpdondeE').value);};
 }
 
 
-if((cmp=='df_15')&&(val < document.getElementById('esmin').value)){alert(document.getElementById('esminE').value);}
+if((cmp=='df_15')&&(val < Number(document.getElementById('esmin').value))){alert(document.getElementById('esminE').value);}
 
 if(val){sendDat(cmp,val);};
 }else{document.getElementById(cmp).style.color='#888888';}
