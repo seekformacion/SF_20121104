@@ -12,7 +12,7 @@ temario, cur_palclave, cur_minestudi, cur_cat FROM skP_cursos WHERE id=$idcur;",
 #### tabla cursos
 $q="UPDATE skv_cursos SET ";
 if(count($nue)>0){ foreach ($nue as $key => $vals) {
-foreach ($vals as $camp => $valor){
+foreach ($vals as $camp => $valor){ $valor=addslashes($valor);
 $q.="$camp='$valor', ";	
 }}}
 $q=substr($q, 0,-2) . " WHERE id=$idcur;";
