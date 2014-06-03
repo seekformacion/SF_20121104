@@ -568,10 +568,26 @@ for (a=0; a<=cnts.length ; a++){var centro=cnts[a];
 }}
 
 
+function saveallCamp(){
+val=document.getElementById('cmpT').value;	
+camps=val.split(',');	
+//console.info(camps);
+for (var a=0 ; a < camps.length ; a++){
+var camp=camps[a];
+datos=camp.split('|'); var id=datos[0]; var tip=datos[1];
+//console.log('id:' + id + ' tip:' + tip);
+if(document.getElementById(id)){
+if(tip=='n'){sendDat(id,document.getElementById(id).value)}
+if(tip=='s'){sendDatS(id,document.getElementById(id).value)}	
+}}
+
+document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
+}
+
+
 function sendCupon(){$.ajaxSetup({ cache: false });
-
-
 $.ajaxSetup({'async': true});
+
 
 uid=window.top.ckk;
 if(!uid){uid=getCookie('seekforID');}
@@ -581,7 +597,7 @@ var url='/ajx/sendCupon.php?uid=' + uid + '&cursos=' + val;
 $.getJSON(url,function(data) {$.each(data, function(key, val) {
 if(key=='ok'){
 window.top.idcupon=val;	
-document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;		
+saveallCamp();		
 }	
 });});
 	
