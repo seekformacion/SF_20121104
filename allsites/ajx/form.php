@@ -247,7 +247,7 @@ $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Nombre:</div>
 
 <div class="contFields">
-<label style="visibility:hidden">nombre</label>
+<label style="display:none">nombre</label>
 <input name="first_name" autocomplete="on" x-autocompletetype="first_name" value="' . $value . '" class="formI ftext1" id="df_1" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
@@ -271,7 +271,7 @@ $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
 <div class="contFields">
-<label style="visibility:hidden">a</label>
+<label style="display:none">apellidos</label>
 <input name="additional-name last_name" autocomplete="on" x-autocompletetype="additional-name last_name" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
@@ -428,9 +428,9 @@ $result['html'].='
 <div class="contFields">
 <div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 
-<label style="visibility:hidden">telefono</label>
+<label style="display:none">telefono</label>
 <input tabindex="' . $tab . '" name="telefono" autocomplete="on" x-autocompletetype="tel-national" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
-<label style="visibility:hidden">email</label>
+<label style="display:none">email</label>
 <input tabindex="' . $tab++ . '" name="email" autocomplete="on" x-autocompletetype="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
 
 </div>
