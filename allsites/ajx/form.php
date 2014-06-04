@@ -271,7 +271,7 @@ $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
 <div class="contFields">
-<label style="display:none">apellidos</label>
+<label style="display:none">additional-name last_name</label>
 <input name="additional-name last_name" autocomplete="on" x-autocompletetype="additional-name last_name" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
