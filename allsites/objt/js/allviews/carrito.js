@@ -568,7 +568,7 @@ for (a=0; a<=cnts.length ; a++){var centro=cnts[a];
 }}
 
 
-function saveallCamp(){alert(2);
+function saveallCamp(){
 val=document.getElementById('cmpT').value;	
 camps=val.split(',');	
 //console.info(camps);
@@ -581,7 +581,6 @@ if(tip=='n'){sendDat(id,document.getElementById(id).value)}
 if(tip=='s'){sendDatS(id,document.getElementById(id).value)}	
 }}
 
-alert(3);
 document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
 }
 
@@ -597,8 +596,7 @@ val=document.getElementById('cursosCup').value;
 var url='/ajx/sendCupon.php?uid=' + uid + '&cursos=' + val;
 $.getJSON(url,function(data) {$.each(data, function(key, val) {
 if(key=='ok'){
-window.top.idcupon=val;
-alert(1);	
+window.top.idcupon=val;	
 saveallCamp();		
 }	
 });});
