@@ -425,8 +425,10 @@ $result['html'].='
 <div class="contFields">
 <div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 
-<input tabindex="' . $tab . '" name="telefono"  x-autocompletetype="tel-national" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
-<input tabindex="' . $tab++ . '" name="email"  x-autocompletetype="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
+<label style="visibility:hidden">telefono</label>
+<input tabindex="' . $tab . '" name="telefono" autocomplete="on" x-autocompletetype="tel-national" value="' . $dtel . '" class="formI ftext1" id="df_4"  style="position:absolute; left:0px;   width:100px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
+<label style="visibility:hidden">email</label>
+<input tabindex="' . $tab++ . '" name="email" autocomplete="on" x-autocompletetype="email" value="' . $dmail . '" class="formI ftext1" id="df_3"  style="position:absolute; left:117px; width:128px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
 
 </div>
 </div>
