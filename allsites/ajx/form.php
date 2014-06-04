@@ -261,6 +261,7 @@ $result['html'].='
 
 
 
+
 #################################################################### Apellidos ID: 2
 if(array_key_exists(2, $campos)){
 if(array_key_exists(2, $datSes)){$value=$datSes[2];}else{$value="";}	
@@ -270,7 +271,7 @@ $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
 <div class="contFields">
-<label style="visibility:hidden">apellidos</label>
+<label style="visibility:hidden">a</label>
 <input name="additional-name last_name" autocomplete="on" x-autocompletetype="additional-name last_name" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
