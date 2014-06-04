@@ -271,8 +271,7 @@ $result['html'].='
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
 <div class="contFields">
-<label style="display:none">apellido1 apellido2</label>
-<input name="apellido1 apellido2"  x-autocompletetype="apellido1 apellido2" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
+<input name="apellidos"  x-autocompletetype="apellidos" value="' . $value . '" class="formI ftext1" id="df_2" onchange="sendDat(this.id,this.value);" tabindex="' . $tab . '"/>
 </div>
 
 <div class="contError" id="e_2">
