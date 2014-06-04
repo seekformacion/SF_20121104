@@ -28,8 +28,7 @@ foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo .
 
 
 
-$v['where']['view']='categorias';
-$v['where']['id']=1; 
+
 
 global $v;
 
@@ -47,16 +46,18 @@ $v['admin']=0;
 $v['conf']['state']=1; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 
+$v['where']['view']='categorias';
+$v['where']['id']=1; 
 
 ########################################################### VARIABLES DE ENTORNO
 //$v['where']['idp']=						1; #### ID DEL PORTAL PARA TABLA urls
 
 $v['where']['site']=					$_SERVER['SERVER_NAME'];
-$v['path']['repo']=						"/www/repositorios";
+//$v['path']['repo']=						"/www/repositorios";
 $v['path']['bin']=$v['path']['repo'] .	"/SF_20121104";
 $v['path']['fw']=$v['path']['repo'] .	"/FrameW_1";
 $v['path']['img']=$v['path']['repo'] .	"/SeekFormacion_images";
-$v['path']['httpd']=					"/www/httpd/" . $v['where']['site'];
+//$v['path']['httpd']=					"/www/httpd/" . $v['where']['site'];
 
 $v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
 $v['path']['baseURLskin'][2]="http://s3-eu-west-1.amazonaws.com/seekf"; ## baseURL del SKIN en CLOUD
@@ -87,6 +88,7 @@ includeCORE('js/js');
 includeFUNC('funcmetas');
 
 loadCSS('objt','colores');
+loadCSS('objt','pagina');
 loadCSS('objt','carrito');
 loadJS('objt','carrito');
 
@@ -129,6 +131,21 @@ window.top.idport=$idp;
 ?>
 
 <script>
+
+function setCookie(c_name,value,exdays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+if(exdays==0){
+var c_value=escape(value);
+}else{
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());	
+}
+
+document.cookie=c_name + "=" + c_value + '; path=/';
+}
+
+
 function getCookie(w){
 	cName = "";
 	pCOOKIES = new Array();
