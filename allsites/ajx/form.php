@@ -450,14 +450,27 @@ $result['html'].='
 #################################################################### Direccion ID 8
 if(array_key_exists(8, $campos)){
 $val="";if(array_key_exists(8, $datSes)){$val=$datSes[8];}
-$tab++;	$cmpT.="df_8|n,";
+
+
+if(array_key_exists(26, $campos)){
+$val2="";if(array_key_exists(26, $datSes)){$val2=$datSes[26];}
+
 $result['html'].='
-
-
-<div class="nomCamp"><span class="obli">*</span>Dirección:</div>
+<div style="position:relative; float: left; width: 450px; height:21px;">
+<div class="nomCamp" style="width:118px;">								<span class="obli">*</span>Calle:</div>
+<div class="nomCamp" style="width:333px; position:absolute; left:205px"><span class="obli">*</span>Num:</div>
+</div>
+<div class="clean"></div>
 
 <div class="contFields">
-<input name="address1" autocomplete="on" x-autocompletetype="address1" value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
+<div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
+
+<label style="display:none">Direccion</label>
+<input name="address1" autocomplete="on" x-autocompletetype="address1"  style="position:absolute;left:0px;width:192px;top:1px; margin:0px;"  value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
+<label style="display:none">numero</label>
+<input name="numero" autocomplete="on" x-autocompletetype="numero"  style="position:absolute;left:206px;width:39px; top:1px; margin:0px;" value="' . $val2 . '" class="formI ftext1" id="df_26" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
+
+</div>
 </div>
 
 <div class="contError" id="e_8">
@@ -465,7 +478,29 @@ $result['html'].='
 <div class="TxtErr" id="et_8"></div>
 </div>
 <div class="clean"></div>
+
 ';
+
+}else{
+	
+$tab++;	$cmpT.="df_8|n,";							
+$result['html'].='
+<div class="nomCamp"><span class="obli">*</span>Dirección:</div>
+<div class="contFields">
+<input name="address1" autocomplete="on" x-autocompletetype="address1" value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
+</div>
+<div class="contError" id="e_8">
+<div class="iconos fleCErr"></div>
+<div class="TxtErr" id="et_8"></div>
+</div>
+<div class="clean"></div>
+';						
+					
+				
+			
+		
+	
+}
 }
 
 
@@ -513,8 +548,8 @@ $result['html'].='
 <div class="contFields">
 <div style="position:relative; float: left; width: 450px; height: 21px; left: -2px;">
 	
-	
-<select  tabindex="' . $tab . '" class="formS " style="position:absolute; left:0px; width:100px; top:1px; margin:0px;' . $colSel1 . '"  id="df_7" onchange="sendDatS(this.id,this.value);">
+<label style="display:none">pais</label>	
+<select name="pais" autocomplete="on" x-autocompletetype="pais" tabindex="' . $tab . '" class="formS " style="position:absolute; left:0px; width:100px; top:1px; margin:0px;' . $colSel1 . '"  id="df_7" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 
 ';
@@ -532,8 +567,8 @@ $tab++;
 $result['html'].='
 </select>	
 
-
-<select  tabindex="' . $tab . '" class="formS " style="position:absolute; left:108px; width:88px; top:1px; margin:0px;' . $colSel2 . '" id="df_6" onchange="sendDatS(this.id,this.value);">
+<label style="display:none">pais</label>
+<select name="provincia" autocomplete="on" x-autocompletetype="provincia"  tabindex="' . $tab . '" class="formS " style="position:absolute; left:108px; width:88px; top:1px; margin:0px;' . $colSel2 . '" id="df_6" onchange="sendDatS(this.id,this.value);">
 <option value="" class="fst">Seleccione</option>	
 ';
 

@@ -425,7 +425,7 @@ function sndForm(){
 $.ajaxSetup({'async': true});
 //console.log('sndForm');
 var no0="";
-var no3=""; var no6=""; var no11="";
+var no3=""; var no6=""; var no8=""; var no11="";
 for (i=1 ; i <= 50; i++){
 	
 	if(document.getElementById('df_' + i)){
@@ -447,6 +447,10 @@ for (i=1 ; i <= 50; i++){
 	}else if(i==6){if (!val){var no6='Campos obligatorios';}
 	}else if(i==7){if (!val){var no6='Campos obligatorios';}
 	}else if(i==10){if(!val){var no6='Campos obligatorios';}
+	
+	}else if(i==8){if (!val) {var no8='Campos obligatorios';}
+	}else if(i==26){if (!val){var no8='Campos obligatorios';}
+	
 	}else if(i==11){if(!val){var no11='Campos obligatorios';}	
 		
 	}else{	
@@ -467,6 +471,15 @@ for (i=1 ; i <= 50; i++){
 	if(!document.getElementById('df_dn').value){var no11='Campos obligatorios';document.getElementById('df_dn').className='formS_e ';}else{document.getElementById('df_dn').className='formS ';}
 	if(!document.getElementById('df_mn').value){var no11='Campos obligatorios';document.getElementById('df_mn').className='formS_e ';}else{document.getElementById('df_mn').className='formS ';}
 	if(!document.getElementById('df_an').value){var no11='Campos obligatorios';document.getElementById('df_an').className='formS_e ';}else{document.getElementById('df_an').className='formS ';}
+	
+	if(no8){
+    document.getElementById('et_8').innerHTML=no8;	
+	document.getElementById('e_8').style.visibility='inherit';	
+    }else{
+	document.getElementById('e_8').style.visibility='hidden';
+	}
+	
+	
 	
     if(no3){
     document.getElementById('et_3').innerHTML=no3;	
