@@ -515,10 +515,17 @@ var url='/ajx/form.php?uid=' + uid + '&idc=' + idc;
 
 
 function Ncsel(){$.ajaxSetup({ cache: false });
+
 uid=window.top.ckk;
+if(!uid){uid=getCookie('seekforID');}
+
+if(uid){
 var url='/ajx/curSelUID.php?do=5&uid=' + uid;
-	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  if(key=='N'){window.top.Ncs=val; hidTim();}  });
-	});	
+$.getJSON(url, function(data) {	$.each(data, function(key, val) {  if(key=='N'){window.top.Ncs=val; hidTim();}  });	});	
+}else{
+window.top.Ncs=0; hidTim();	
+}
+
 }
 
 function adCS(idc){$.ajaxSetup({ cache: false });
