@@ -7,6 +7,7 @@ $v['where']['view']='categorias';
 $v['where']['id']=1; 
 require_once ('iniAJX.php');
 
+
 includeCORE('funcs/funcSESSION');
 
 
