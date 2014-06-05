@@ -1,6 +1,5 @@
 <?php
-//header("content-type: application/json"); 
-print_r($_COOKIE);
+header("content-type: application/json"); 
 
 foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
 
