@@ -40,10 +40,10 @@ include('/www/dbA.php');
 
 #print_R($_GET);
 
-$v['debug']=1;
+$v['debug']=0;
 $v['admin']=0;
 
-$v['conf']['state']=2; # 1=test 2=produccion
+$v['conf']['state']=1; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 
 $v['where']['view']='categorias';
