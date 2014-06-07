@@ -43,7 +43,7 @@ include('/www/dbA.php');
 $v['debug']=0;
 $v['admin']=0;
 
-$v['conf']['state']=1; # 1=test 2=produccion
+$v['conf']['state']=2; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 
 $v['where']['view']='categorias';
@@ -57,7 +57,7 @@ $v['where']['site']=					$_SERVER['SERVER_NAME'];
 $v['path']['bin']=$v['path']['repo'] .	"/SF_20121104";
 $v['path']['fw']=$v['path']['repo'] .	"/FrameW_1";
 $v['path']['img']=$v['path']['repo'] .	"/SeekFormacion_images";
-//$v['path']['httpd']=					"/www/httpd/" . $v['where']['site'];
+$v['path']['httpd']=					"/www/httpd/" . $v['where']['site'];
 
 $v['path']['baseURLskin'][1]=""; ## baseURL del SKIN local
 $v['path']['baseURLskin'][2]="http://s3-eu-west-1.amazonaws.com/seekf"; ## baseURL del SKIN en CLOUD
