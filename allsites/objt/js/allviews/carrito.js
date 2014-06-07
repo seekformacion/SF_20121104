@@ -599,6 +599,8 @@ if(tip=='s'){sendDatS(id,document.getElementById(id).value)}
 }}
 
 document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
+vcup=document.getElementById('valorCup').value;
+ga('send', 'event', 'MasInfo','enviado','',vcup);
 }
 
 

@@ -483,6 +483,7 @@ if(/Mobi/i.test(navigator.userAgent) ) {return true;}else{return false;}
 }
 
 function masinfo(idc){$.ajaxSetup({'async': false}); $.ajaxSetup({ cache: false });
+ga('send', 'event', 'MasInfo','Abierto','','');
 uid=window.top.ckk;	//idc=Number(idc);	
 
 	window.top.cSELS.push(idc);
