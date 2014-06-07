@@ -51,6 +51,14 @@ if($v['where']['view']=='cms'){
 $Datos['description']=$v['where']['pagTittle'];
 }
 
+
+if(array_key_exists('HTTP_X_UA_DEVICE', $_SERVER)){
+$Datos['device']=$_SERVER['HTTP_X_UA_DEVICE'];
+}else{
+$Datos['device']='';	
+}
+
+
 $Datos['keywords']=getKeywords();
 ##########################################
 
