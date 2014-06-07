@@ -101,6 +101,17 @@ $imgI=loadIMG("iconos.png");
 createJS();
 $ljs=$v['linksjS'];
 
+$gaccounts[1]="UA-36119979-1"; $gaccountsN[1]="cursodecursos.com";
+$gaccounts[2]="UA-36119979-2"; $gaccountsN[2]="masterenmasters.com";
+$gaccounts[3]="UA-36119979-3"; $gaccountsN[3]="fp-formacionprofesional.com";
+$gaccounts[4]="UA-36119979-4"; $gaccountsN[4]="oposicionesa.com";
+
+$analytics=$gaccounts[$v['where']['idp']];
+$analyticsN=$gaccountsN[$v['where']['idp']];
+
+
+
+
 echo "
 
 <style>
@@ -119,6 +130,19 @@ $cssG
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
 
 $ljs
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '$analytics', '$analyticsN');
+  ga('send', 'pageview');
+
+</script>
 
 
 <script>
