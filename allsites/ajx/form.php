@@ -88,7 +88,7 @@ $centros="";$esmin=1000;$online=0;$cpdonde="";$valorCup=0;
 $res2=DBselect("SELECT id, OrdDESC, cur_minestudi, cur_id_tipocurso, cur_id_metodo, id_centro, (SELECT file_logo FROM skv_centros WHERE id=id_centro) as logo FROM skv_cursos WHERE id IN ($idc);");
 if(count($res2)>0){foreach ($res2 as $point => $valc){
 		
-$OrdDESC=$valc['OrdDESC'];	if($OrdDESC==""){$OrdDESC=0;}; 
+$OrdDESC=$valc['OrdDESC'];	if($OrdDESC==""){$OrdDESC=0;};  $OrdDESC=number_format($OrdDESC,2);
 
 $valorCup=$valorCup+$OrdDESC;
 
