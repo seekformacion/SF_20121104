@@ -84,9 +84,13 @@ $idcu=$vals['t_id']; $titu=$vals['pagTittleC'];
 $Dcurso[$idcu]['titu']=$titu;
 }}
 
-$centros="";$esmin=1000;$online=0;$cpdonde="";
-$res2=DBselect("SELECT id, cur_minestudi, cur_id_tipocurso, cur_id_metodo, id_centro, (SELECT file_logo FROM skv_centros WHERE id=id_centro) as logo FROM skv_cursos WHERE id IN ($idc);");
+$centros="";$esmin=1000;$online=0;$cpdonde="";$valorCup=0;
+$res2=DBselect("SELECT id, OrdDESC, cur_minestudi, cur_id_tipocurso, cur_id_metodo, id_centro, (SELECT file_logo FROM skv_centros WHERE id=id_centro) as logo FROM skv_cursos WHERE id IN ($idc);");
 if(count($res2)>0){foreach ($res2 as $point => $valc){
+		
+$OrdDESC=$valc['OrdDESC'];	if($OrdDESC==""){$OrdDESC=0;}; 
+
+$valorCup=$valorCup+$OrdDESC;
 
 $centros.=$valc['id_centro'] . ",";
 
@@ -735,6 +739,8 @@ Al solicitar más información pulsando el botón "solicitar información" estas
 <div class="clean"></div>
 
 <input type="hidden" id="cmpT" value="' . $cmpT .'">
+<input type="hidden" id="valorCup" value="' . $valorCup .'">
+
 </form>
 
 
