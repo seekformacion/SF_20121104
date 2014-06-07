@@ -497,7 +497,7 @@ var val= escape(window.top.cSELS.join(','));
 setCookie('csels',val,0);
 
 
-if(!isMobile()) {
+if(isMobile()) {
 var url='http://' + window.location.hostname + '/ajx/formW.php?uid=' + uid + '&idc=' + idc;	
 window.open(url);
 
