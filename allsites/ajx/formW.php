@@ -49,6 +49,7 @@ $v['conf']['mode']=1; # 1=local 2=cloud
 $v['where']['view']='categorias';
 $v['where']['id']=1; 
 
+
 ########################################################### VARIABLES DE ENTORNO
 //$v['where']['idp']=						1; #### ID DEL PORTAL PARA TABLA urls
 
