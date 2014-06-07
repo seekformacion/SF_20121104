@@ -40,7 +40,7 @@ include('/www/dbA.php');
 
 #print_R($_GET);
 
-$v['debug']=0;
+$v['debug']=1;
 $v['admin']=0;
 
 $v['conf']['state']=2; # 1=test 2=produccion
