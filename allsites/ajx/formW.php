@@ -43,12 +43,11 @@ include('/www/dbA.php');
 $v['debug']=0;
 $v['admin']=0;
 
-$v['conf']['state']=1; # 1=test 2=produccion
+$v['conf']['state']=2; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
 
 $v['where']['view']='categorias';
 $v['where']['id']=1; 
-
 
 ########################################################### VARIABLES DE ENTORNO
 //$v['where']['idp']=						1; #### ID DEL PORTAL PARA TABLA urls
