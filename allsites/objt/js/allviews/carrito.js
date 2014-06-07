@@ -598,8 +598,8 @@ if(tip=='n'){sendDat(id,document.getElementById(id).value)}
 if(tip=='s'){sendDatS(id,document.getElementById(id).value)}	
 }}
 
-document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
 vcup=document.getElementById('valorCup').value;
+document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
 ga('send', 'event', 'MasInfo','enviado','',vcup);
 }
 
