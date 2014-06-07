@@ -104,6 +104,7 @@ $Dcurso[$idcu]['logo']=$logo;
 if($idmet <= 3){$cpdonde.=$idcu . ",";}else{$online++;}
 
 }}
+$valorCup=number_format($valorCup,2);
 $centros=substr($centros, 0,-1);
 $cpdonde=substr($cpdonde, 0,-1);
 
