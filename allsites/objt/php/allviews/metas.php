@@ -57,7 +57,7 @@ $Datos['device']=$_SERVER['HTTP_X_UA_DEVICE'];
 }else{
 $Datos['device']='';	
 }
-
+$Datos['timestamp']=time();
 
 $Datos['keywords']=getKeywords();
 ##########################################
