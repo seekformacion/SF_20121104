@@ -9,11 +9,13 @@ if( ! ini_get('date.timezone') )
 
 function GetURLtoCACHE($idp){global $v;
 
-
-
+#################3 compruebo numero de url a realizar por iteracion.. 720 interaciones en 5 dias cada 10 min
+$limit=10;
+$dcats=DBselect("select count(id) from util_sitemap where idp IN ($idp);");
+if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/720),0);}
 
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND date < $dt ORDER BY id DESC limit 200;");
+$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND done = 0 ORDER BY id DESC limit $limit;");
 
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
@@ -28,7 +30,7 @@ $idpp2=str_replace('http://', '', $idpp);
 //echo "URL: $url \n";	
 refress($idpp,$idpp2,$url);
 
-DBUpIns("UPDATE util_sitemap SET date='$dt' WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
+DBUpIns("UPDATE util_sitemap SET done=1 WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
 
 
 $dcats=DBselect("select Redir, url from skf_urls where idp = ($idppp) AND t_id ='$t_id' AND tipo=$tipo;"); 
@@ -115,6 +117,20 @@ refress($ppp,$port,$urlR);
 }
 
 
+function getPageDevices($url){
+$devices[]="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.9 Safari/536.5";
+$devices[]="User agent: Mozilla/5.0 (Linux; Android 4.3; SPH-L710 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36";
+
+foreach ($devices as $key => $dev) {
+$c = curl_init($url);
+curl_setopt($c, CURLOPT_VERBOSE, true);
+curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($c, CURLOPT_USERAGENT, $dev);
+$page = curl_exec($c);
+curl_close($c);	
+}	
+}
+
 
 function refress($idpp,$idpp2,$url){
 
@@ -126,9 +142,9 @@ exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host ==
 
 //echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
 
-usleep(400000);
+sleep(5);
 //echo "GET: \n";	
-$content = file_get_contents($url);	
+getPageDevices($url);	
 
 }
 
