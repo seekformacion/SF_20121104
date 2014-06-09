@@ -607,7 +607,7 @@ document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK
 function sendCupon(){
 
 vcup=document.getElementById('valorCup').value;
-vcup=vcup.replace('.',',')
+vcup=Math.round(vcup);
 ga('send', 'event', 'MasInfo','enviado','enviado',vcup);
 
 $.ajaxSetup({ cache: false });
