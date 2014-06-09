@@ -485,7 +485,7 @@ if(window.top.device=='M'){return true;}else{return false;}
 }
 
 function masinfo(idc){$.ajaxSetup({'async': false}); $.ajaxSetup({ cache: false });
-ga('send', 'event', 'MasInfo','Abierto','','');
+ga('send', 'event', 'MasInfo','Abierto','Abierto','0');
 uid=window.top.ckk;	//idc=Number(idc);	
 
 	window.top.cSELS.push(idc);

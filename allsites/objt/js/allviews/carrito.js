@@ -600,7 +600,7 @@ if(tip=='s'){sendDatS(id,document.getElementById(id).value)}
 
 vcup=document.getElementById('valorCup').value;
 document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
-ga('send', 'event', 'MasInfo','enviado','',vcup);
+ga('send', 'event', 'MasInfo','enviado','enviado',vcup);
 }
 
 
