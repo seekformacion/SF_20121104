@@ -598,13 +598,18 @@ if(tip=='n'){sendDat(id,document.getElementById(id).value)}
 if(tip=='s'){sendDatS(id,document.getElementById(id).value)}	
 }}
 
-vcup=document.getElementById('valorCup').value;
+
 document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
-ga('send', 'event', 'MasInfo','enviado','enviado',vcup);
+
 }
 
 
-function sendCupon(){$.ajaxSetup({ cache: false });
+function sendCupon(){
+
+vcup=document.getElementById('valorCup').value;
+ga('send', 'event', 'MasInfo','enviado','enviado',vcup);
+
+$.ajaxSetup({ cache: false });
 $.ajaxSetup({'async': true});
 
 
