@@ -315,10 +315,10 @@ geoIMG();
 }
 
 
+
 function getgeoCP(){
 var UID=window.top.ckk;
 //var url='http:/ajx/geoip.php?uid=' + UID;
-
 
 	var surl =  "http://cursodecursos.com:8080/ajx/geoip2.php?uid=" + UID + "&callback=?"; 
 	var me = $(this); 
