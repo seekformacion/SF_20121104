@@ -1,4 +1,5 @@
 <?php
+header('P3P: CP="NOI ADM DEV COM NAV OUR STP"');
 header("content-type: application/json"); 
 
 
