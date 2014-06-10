@@ -6,6 +6,14 @@ $rest++;
 return $rest;	
 }
 
+function rcount($idc){
+$rest= ($idc % 21);
+$rest=$rest +3;
+return $rest;	
+}
+
+
+
 function minidatCUR($idcur){global $v;
 	
 $res=DBselect("SELECT t_id, url, pagTittle, pagTittleC FROM skf_urls WHERE tipo=2 AND t_id=$idcur;");	

@@ -8,6 +8,8 @@ $Datos['pagTittle']=$v['where']['pagTittle'];
 $Datos['id']=$datCur['id'];
 $Datos['imgLogoCent']=loadLogoCent('g/logo1.gif');
 $Datos['v']=valoracion($datCur['id']);
+$Datos['rv']=$Datos['v'] + 5;
+$Datos['rc']=rcount($datCur['id']);
 $Datos['cur_descripcion']=$datCur['cur_descripcion'];
 
 $Datos['tipo']=$v['vars']['eqtip'][$datCur['cur_id_tipocurso']]['s']; 
