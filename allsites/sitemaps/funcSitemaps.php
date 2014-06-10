@@ -143,7 +143,7 @@ exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host ==
 
 //echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
 
-sleep(5);
+sleep(3);
 //echo "GET: \n";	
 getPageDevices($url);	
 
