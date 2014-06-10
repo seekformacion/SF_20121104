@@ -320,7 +320,7 @@ var UID=window.top.ckk;
 //var url='http:/ajx/geoip.php?uid=' + UID;
 
 
-	var surl =  "/ajx/geoip2.php?uid=" + UID + "&callback=?"; 
+	var surl =  "http://cursodecursos.com:8080/ajx/geoip2.php?uid=" + UID + "&callback=?"; 
 	var me = $(this); 
 	$.getJSON(surl,  function(rtndata) { 
 	var cp=rtndata.message; var cp = cp.toString();
