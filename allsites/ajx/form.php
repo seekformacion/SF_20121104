@@ -774,7 +774,10 @@ Al solicitar más información pulsando el botón "solicitar información" estas
 ';
 
 $res=DBselect("SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);");
+echo "SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);";
+
 if(count($res)>0){
+	
 $result3['html'].='
 
 <div class="basesSeek" style="display: inherit;">
