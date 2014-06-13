@@ -774,7 +774,7 @@ Al solicitar más información pulsando el botón "solicitar información" estas
 ';
 
 $res=DBselect("SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);");
-echo "SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);";
+
 
 if(count($res)>0){
 	
@@ -798,7 +798,7 @@ if($promo==1){$result['html']=$result2['html']; $result['pie']=$result3['html'];
 
 
 
-//echo json_encode($result);
+echo json_encode($result);
 
 
 
