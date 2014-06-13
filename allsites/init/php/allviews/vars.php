@@ -6,6 +6,10 @@ $v['vars']['eqtempl'][1]="categorias";
 $v['vars']['eqtempl'][2]="cursos";
 $v['vars']['eqtempl'][5]="cms";
 
+
+$v['vars']['eqtempl'][20]="promos/ceac";
+
+
 $v['vars']['purl'][1]="http://cursodecursos.com";
 $v['vars']['purl'][2]="http://masterenmasters.com";
 $v['vars']['purl'][3]="http://fp-formacionprofesional.com";

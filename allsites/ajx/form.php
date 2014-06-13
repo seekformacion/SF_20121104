@@ -1,6 +1,8 @@
 <?php
 $idp="";
+$promo=0;
 foreach($_GET as $nombre_campo => $valor){  $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";   eval($asignacion);};
+//$promo=0;
 
 $v['where']['view']='categorias';
 $v['where']['id']=1; 
@@ -23,6 +25,8 @@ $provins['999']="Fuera de España";
 $datSes=array();
 #########3 datos de la session
 
+$datSes[7]='ES';$datSes[6]='';
+
 $res4=DBselect("SELECT cp, ct FROM skv_user_sessions WHERE seekforID='$uid';");		
 if(count($res4)>0){foreach ($res4 as $pp => $vals){
 	
@@ -44,7 +48,7 @@ $cp="$cp" . '0';
 $datSes[6]="$cp";
 }elseif($datSes[7]!=''){
 $datSes[6]="999";	
-}	
+}else{$datSes[7]='ES';}	
 }}
 
 
@@ -176,19 +180,20 @@ $campos[16]=1;
 $campos[18]=1;
 $campos[23]=1;
 */
-
+$result2['html']='';
 ######## cabecera cursos
 $result['html']='
 <form autocomplete="on" method="POST">
 <div class="TitForm">Solicita más información gratuita y sin compromiso</div>
 
 <input type="hidden" id="cc" value="' . $cc . '">
+
 <div style="position:relative; float:left; left:0px; width:470px; height: 60px; margin-top:10px; overflow:hidden;" class="gris3_BG" >
 <div style="top:0px; position: absolute;" id="cntCurF">
 
 ' . $htmlCur . '
 
-</div>';
+</div></div>';
 
 
 
@@ -200,6 +205,9 @@ $result['html'] .='
 1/' . $cc . '
 </div>
 <div class="fdwForm iconos" onclick="cuforMove(2);"></div>
+
+</div>
+
 ';
 }
 
@@ -217,7 +225,7 @@ $lpdondeE="Le recordamos que el curso del que solicita información no se impart
 
 
 if($lpdonde){
-$result['html'].="
+$result2['html'].="
 
 <input type='hidden' id='lpdonde' value='$lpdonde'>
 <input type='hidden' id='lpdondeE' value='$lpdondeE'>
@@ -226,20 +234,26 @@ $result['html'].="
 
 
 
-$result['html'].="
+$result2['html'].="
 <input type='hidden' id='cursosCup' value='$idc'>
 <input type='hidden' id='Cents' value='$centros'>
 ";	
 
 
-$result['html'].='
+$result2['html'].='
 
-</div>
+
 
 <input type="hidden" id="esmin" value="' . $v['vars']['equiEst'][$esmin] . '">
 <input type="hidden" id="esminE" value="' . $errEs . '">
 
-<div style="position: relative; float:left; margin-top: 10px; left:30px;" id="">
+
+';
+
+
+
+$result2['html'].='
+<div class="cntF" id="">
 ';
 
 
@@ -248,7 +262,7 @@ $tab=0;
 if(array_key_exists(1, $campos)){
 if(array_key_exists(1, $datSes)){$value=$datSes[1];}else{$value="";} 	
 $tab++; $cmpT="df_1|n,";
-$result['html'].='
+$result2['html'].='
 <div class="nomCamp"><span class="obli">*</span>Nombre:</div>
 
 <div class="contFields">
@@ -271,7 +285,7 @@ $result['html'].='
 if(array_key_exists(2, $campos)){
 if(array_key_exists(2, $datSes)){$value=$datSes[2];}else{$value="";}	
 $tab++; $cmpT.="df_2|n,";
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp"><span class="obli">*</span>Apellidos:</div>
 
@@ -293,7 +307,7 @@ $result['html'].='
 #################################################################### Sexo ID: 11
 if(array_key_exists(11, $campos)){$value1="";$value2="";$colSel="";$tab++; $cmpT.="df_11|s,";
 if(array_key_exists(11, $datSes)){$colSel="color:#444444;";if($datSes[11]==1){$value1="selected";}else{$value2="selected";};};	
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp" style="width:95px;"><span class="obli">*</span>Sexo:</div>
 <div class="nomCamp" style="width:355px;"><span class="obli">*</span>Fecha de nacimiento:</div>
@@ -313,7 +327,7 @@ if(array_key_exists(12, $datSes)){$value=$datSes[12]; $colSel="color:#444444;"; 
 
 
 $cmpT.="df_dn|s,";
-$result['html'].='
+$result2['html'].='
 <select class="formS " maxlength="2" name="bday-day" autocomplete="on" x-autocompletetype="bday-day" style="margin-left:0px; width:44px;' .$colSel . '" id="df_dn" onchange="sendDatS(this.id,this.value);"  tabindex="' . $tab . '">
 <option value="" class="fst">Día</option>	
 ';
@@ -324,11 +338,11 @@ $dia=0;$tab++;
 while ($dia <= 30){$dia++;
 if($dia <= 9){$dia='0' . $dia;};
 if($dia==$sdia){$sele="selected";}else{$sele="";}
-$result['html'].="<option value='$dia' class='fst' $sele>$dia</option>";	
+$result2['html'].="<option value='$dia' class='fst' $sele>$dia</option>";	
 }
 
 
-$result['html'].='
+$result2['html'].='
 </select>
 
 
@@ -340,11 +354,11 @@ $mes=0;$tab++;
 while ($mes <= 11){$mes++;
 if($mes <= 9){$mes='0' . $mes;};
 if($mes==$smes){$sele="selected";}else{$sele="";}
-$result['html'].="<option value='$mes' class='fst' $sele>$mes</option>";	
+$result2['html'].="<option value='$mes' class='fst' $sele>$mes</option>";	
 }
 
 
-$result['html'].='
+$result2['html'].='
 </select>
 
 <select class="formS "  name="bday-year" autocomplete="on" x-autocompletetype="bday-year" style="margin-left:-5px;width:53px;' .$colSel . '"  id="df_an" onchange="sendDatS(this.id,this.value);"  tabindex="' . $tab . '">
@@ -354,11 +368,11 @@ $result['html'].='
 $anio=2000;
 while ($anio >= 1900){$anio--;
 if($anio==$sanio){$sele="selected";}else{$sele="";}
-$result['html'].="<option value='$anio' class='fst' $sele>$anio</option>";	
+$result2['html'].="<option value='$anio' class='fst' $sele>$anio</option>";	
 }
 
 
-$result['html'].='
+$result2['html'].='
 </select>
 </div>
 
@@ -380,7 +394,7 @@ if(array_key_exists(18, $campos)){
 $colSel="";$value="";
 if(array_key_exists(18, $datSes)){$value=$datSes[18]; $colSel="color:#444444;";}
 $tab++;	$cmpT.="df_18|s,";
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Nacionalidad:</div>
 
@@ -392,10 +406,10 @@ $result['html'].='
 
 foreach ($paises as $cod => $valor){
 if($cod==$value){$sel="selected";}else{$sel="";};
-$result['html'].="<option value='$cod' $sel>$valor</option>";
+$result2['html'].="<option value='$cod' $sel>$valor</option>";
 }
 
-$result['html'].='
+$result2['html'].='
 </select>
 </div>
 
@@ -418,7 +432,7 @@ $dmail="";$dtel="";	$cmpT.="df_4|n,";$cmpT.="df_3|n,";
 if(array_key_exists(3, $datSes)){$dmail=$datSes[3];}
 if(array_key_exists(4, $datSes)){$dtel=$datSes[4];}	
 $tab++;	
-$result['html'].='
+$result2['html'].='
 
 
 <br>
@@ -460,7 +474,7 @@ $val="";if(array_key_exists(8, $datSes)){$val=$datSes[8];}
 if(array_key_exists(26, $campos)){
 $val2="";if(array_key_exists(26, $datSes)){$val2=$datSes[26];}
 
-$result['html'].='
+$result2['html'].='
 <div style="position:relative; float: left; width: 450px; height:21px;">
 <div class="nomCamp" style="width:118px;">								<span class="obli">*</span>Calle:</div>
 <div class="nomCamp" style="width:333px; position:absolute; left:205px"><span class="obli">*</span>Num:</div>
@@ -489,7 +503,7 @@ $result['html'].='
 }else{
 	
 $tab++;	$cmpT.="df_8|n,";							
-$result['html'].='
+$result2['html'].='
 <div class="nomCamp"><span class="obli">*</span>Dirección:</div>
 <div class="contFields">
 <input name="address1" autocomplete="on" x-autocompletetype="address1" value="' . $val . '" class="formI ftext1" id="df_8" onchange="sendDat(this.id,this.value);"  tabindex="' . $tab . '"/>
@@ -514,7 +528,7 @@ $result['html'].='
 if(array_key_exists(9, $campos)){
 $val="";if(array_key_exists(9, $datSes)){$val=$datSes[9];}
 $tab++;	$cmpT.="df_9|n,";
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp"><span class="obli">*</span>Localidad:</div>
 
@@ -541,7 +555,7 @@ if(array_key_exists(6, $datSes)){$value2=$datSes[6]; $colSel2="color:#444444;";}
 $val="";if(array_key_exists(10, $datSes)){$val=$datSes[10];}		
 
 $tab++;	$cmpT.="df_6|n,";$cmpT.="df_7|n,";$cmpT.="df_10|n,";
-$result['html'].='
+$result2['html'].='
 
 <div style="position:relative; float: left; width: 450px; height:21px">
 <div class="nomCamp" style="width:150px;"><span class="obli">*</span>País:</div>
@@ -562,14 +576,14 @@ $result['html'].='
 
 foreach ($paises as $cod => $valor){
 if($cod==$value1){$sel="selected";}else{$sel="";};
-$result['html'].="<option value='$cod' $sel>$valor</option>";
+$result2['html'].="<option value='$cod' $sel>$valor</option>";
 }
 
 
 
 
 $tab++;
-$result['html'].='
+$result2['html'].='
 </select>	
 
 <label style="display:none">pais</label>
@@ -580,11 +594,11 @@ $result['html'].='
 
 foreach ($provins as $cod => $valor){
 if($cod==$value2){$sel="selected";}else{$sel="";};
-$result['html'].="<option value='$cod' $sel>$valor</option>";
+$result2['html'].="<option value='$cod' $sel>$valor</option>";
 }
 
 $tab++;
-$result['html'].='
+$result2['html'].='
 </select>	
 
 <input tabindex="' . $tab . '" name="zip" autocomplete="on" x-autocompletetype="zip" value="' . $val . '" class="formI ftext1"  id="df_10"  style="position:absolute; left:205px; width:40px; top:1px; margin:0px;" onchange="sendDat(this.id,this.value);"/>
@@ -611,7 +625,7 @@ if(array_key_exists(15, $campos)){
 $colSel="";$value="";
 if(array_key_exists(15, $datSes)){$value=$datSes[15]; $colSel="color:#444444;";}
 $tab++;	$cmpT.="df_15|s,";
-$result['html'].='
+$result2['html'].='
 
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Nivel de estudios:</div>
@@ -624,11 +638,11 @@ $result['html'].='
 
 foreach ($v['vars']['estudi'] as $id => $values) {$valo=$values['s'];
 if($id==$value){$sel="selected";}else{$sel="";};
-$result['html'].="<option value='$id' class='fst' $sel>$valo</option>";	
+$result2['html'].="<option value='$id' class='fst' $sel>$valo</option>";	
 }
 
 
-$result['html'].='
+$result2['html'].='
 </select>
 </div>
 
@@ -647,7 +661,7 @@ $result['html'].='
 if(array_key_exists(16, $campos)){
 $val="";if(array_key_exists(16, $datSes)){$val=$datSes[16];}
 $tab++;	$cmpT.="df_16|s,";
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp"><span class="obli">*</span>Profesión:</div>
 
@@ -671,7 +685,7 @@ if(array_key_exists(23, $campos)){
 $colSel="";$value="";
 if(array_key_exists(23, $datSes)){$value=$datSes[23]; $colSel="color:#444444;";}
 $tab++;	$cmpT.="df_23|s,";
-$result['html'].='
+$result2['html'].='
 
 <div class="nomCamp" style="width:450px;"><span class="obli">*</span>Situación actual:</div>
 
@@ -683,11 +697,11 @@ $result['html'].='
 
 foreach ($v['vars']['situLab'] as $id => $values) {$valo=$values['s'];
 if($id==$value){$sel="selected";}else{$sel="";};
-$result['html'].="<option value='$id' class='fst' $sel>$valo</option>";	
+$result2['html'].="<option value='$id' class='fst' $sel>$valo</option>";	
 }
 
 
-$result['html'].='
+$result2['html'].='
 </select>
 </div>
 
@@ -711,9 +725,14 @@ $cmpT=substr($cmpT, 0,-1);
 
 #################################################################### Pie form
 
-$result['html'].='
+$result2['html'].='</div>';
 
-</div>
+$result['html'].=$result2['html'];
+
+
+
+
+$boton='
 
 <div style="position:relative; float:left; left:0px; width:470px; height: 60px; margin-top:10px;" class="gris3_BG">
 
@@ -724,16 +743,19 @@ $result['html'].='
 <div class="iconos fmtF1"></div>
 
 </div>
+';
 
-<div style="position:relative; float:left; left:0px; width:443px; margin-top:0px; margin-bottom:-5px; background-color:#DDDDDD; padding:10px 0px 10px 27px;" >
+
+$result3['html']='
+<div class="pieNue">
 
 
-<div style="position:relative; float:left: font-family: Arial; font-size:9px; color:#888888; margin-bottom:5px; width:414px;">
+<div class="pieTx" style="">
 Los campos marcados con asterisco (*), son campos obligatorios.
 </div>
 <div class="clean"></div>
 
-<div style="position:relative; float:left: font-family: Arial; font-size:9px; color:#888888; margin-bottom:5px; width:414px;">
+<div class="pieTx" style="">
 Al solicitar más información pulsando el botón "solicitar información" estas aceptando y dando tu conformidad a la 
 <span onclick="javascript:document.getElementById(\'bases\').style.display=\'block\';"  style="font-weight:bold; cursor:pointer;">política de privacidad y condiciones de uso</span>
 </div>
@@ -746,14 +768,14 @@ Al solicitar más información pulsando el botón "solicitar información" estas
 
 
 <div class="basesSeek" id="bases" style="display: none;">
-<iframe width="414" scrolling="auto" height="120" frameborder="0" marginwidth="5" marginheight="5" border="0" id="poli" src="/ajx/bases/basesForm.php" class="poli" style="display: block; ">
+<iframe scrolling="auto" height="120" frameborder="0" marginwidth="5" marginheight="5" border="0" id="poli" src="/ajx/bases/basesForm.php" class="poli" style="display: block; ">
 </iframe>
 </div>
 ';
 
 $res=DBselect("SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);");
 if(count($res)>0){
-$result['html'].='
+$result3['html'].='
 
 <div class="basesSeek" style="display: inherit;">
 <iframe width="414" style="display: inherit; visibility:inherit;" scrolling="auto" height="80" frameborder="0" marginwidth="5" marginheight="5" border="0" id="legalCent" src="/ajx/legales.php?cents=' . $centros . '&uid=' . $uid . '">
@@ -763,10 +785,14 @@ $result['html'].='
 ';
 }
 
-$result['html'].='
+$result3['html'].='
 </div>
 
 ';
+
+$result['html'].=$boton . $result3['html'];
+if($promo==1){$result['html']=$result2['html']; $result['pie']=$result3['html'];}
+
 
 
 echo json_encode($result);

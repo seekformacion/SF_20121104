@@ -598,8 +598,13 @@ if(tip=='n'){sendDat(id,document.getElementById(id).value)}
 if(tip=='s'){sendDatS(id,document.getElementById(id).value)}	
 }}
 
-
+if(!document.getElementById('todo')){
 document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK').innerHTML;
+}else{
+document.getElementById('todo').innerHTML=document.getElementById('cupOK').innerHTML;	
+document.getElementById('todo').style.width='540px';
+}
+
 
 }
 
