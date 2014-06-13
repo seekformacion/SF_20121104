@@ -781,7 +781,7 @@ if(count($res)>0){
 $result3['html'].='
 
 <div class="basesSeek" style="display: inherit;">
-<iframe width="414" style="display: inherit; visibility:inherit;" scrolling="auto" height="80" frameborder="0" marginwidth="5" marginheight="5" border="0" id="legalCent" src="/ajx/legales.php?cents=' . $centros . '&uid=' . $uid . '">
+<iframe class="poli" style="display: inherit; visibility:inherit;" scrolling="auto" height="80" frameborder="0" marginwidth="5" marginheight="5" border="0" id="legalCent" src="/ajx/legales.php?cents=' . $centros . '&uid=' . $uid . '">
 </iframe>
 </div>
 
