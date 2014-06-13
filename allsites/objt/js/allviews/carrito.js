@@ -561,7 +561,7 @@ if(!no0){chkLegales();sendCupon();}
 function chkLegales(){if(document.getElementById('legalCent')){
 var cents=document.getElementById('Cents').value;
 cnts=cents.split(',');
-console.info(cnts);
+//console.info(cnts);
 
 		var iframe = document.getElementById('legalCent');
 		var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
