@@ -798,7 +798,7 @@ if($promo==1){$result['html']=$result2['html']; $result['pie']=$result3['html'];
 
 
 
-echo json_encode($result);
+//echo json_encode($result);
 
 
 
