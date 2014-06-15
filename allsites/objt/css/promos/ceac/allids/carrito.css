@@ -22,8 +22,8 @@
 .ftext1 {width: 245px; height:22px;}
 
 
-.formS {height:23px;margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFFF;   border: 1px solid #AAAAAA; padding:3px 1px 1px 1px;  margin-right:6px; }
-.formS_e {height:23px;padding-top:3px; margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFA3;   border:1px dotted red; padding:3px 1px 1px 1px; margin-right:6px; }
+.formS {height:26px;margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFFF;   border: 1px solid #AAAAAA; padding:4px 1px;  margin-right:6px; }
+.formS_e {height:26px;padding-top:3px; margin-left:-2px; font-family:Arial; color:#888888; font-size:11px; background-color: #FFFFA3;   border:1px dotted red; padding:4px 1px; margin-right:6px; }
 
 
 option.fst {color:#888888;}
