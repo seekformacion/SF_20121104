@@ -766,12 +766,11 @@ Al solicitar más información pulsando el botón "solicitar información" estas
 
 </form>
 
-
-<div class="basesSeek" id="bases" style="display: none;">
-
+<div id="bases" style="display: none;">
+<div class="basesSeek">
 <iframe scrolling="auto" height="120" frameborder="0" marginwidth="5" marginheight="5" border="0" id="poli" src="/ajx/bases/basesForm.php" class="poli" style="display: block; ">
 </iframe>
-
+</div>
 ';
 
 $res=DBselect("SELECT id FROM skv_centros_legales WHERE id_centro IN ($centros);");
@@ -781,11 +780,10 @@ if(count($res)>0){
 	
 $result3['html'].='
 
-<br>
-
+<div class="basesSeek" style="display: inherit; margin-top:10px;">
 <iframe class="poli" style="display: inherit; visibility:inherit;" scrolling="auto" height="80" frameborder="0" marginwidth="5" marginheight="5" border="0" id="legalCent" src="/ajx/legales.php?cents=' . $centros . '&uid=' . $uid . '">
 </iframe>
-
+</div>
 
 ';
 }
