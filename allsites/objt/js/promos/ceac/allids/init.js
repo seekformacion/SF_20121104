@@ -31,8 +31,8 @@ function getCookie(w){
 
 
 
-function formPromo(idc){$.ajaxSetup({'async': false});
-init();	
+function fprom(){$.ajaxSetup({'async': false});
+idc=window.top.idcur;	
 uid=window.top.ckk;
 if(!uid){uid=getCookie('seekforID');}	
 var url='/ajx/form.php?promo=1&uid=' + uid + '&idc=' + idc;
@@ -42,6 +42,12 @@ var url='/ajx/form.php?promo=1&uid=' + uid + '&idc=' + idc;
 		if(key=='idp'){window.top.idport=val;} 
 	});
 	});	
+}
+
+function formPromo(idc){$.ajaxSetup({'async': false});
+window.top.idcur=idc;
+init();	
+	
 	
 }
 
@@ -130,7 +136,7 @@ getgeoCP();
 
 });
 });		
-	
+fprom();	
 }
 
 function getgeoCP(){$.ajaxSetup({'async': false});
