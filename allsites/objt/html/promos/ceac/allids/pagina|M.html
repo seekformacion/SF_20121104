@@ -1,0 +1,136 @@
+<!-- pagina -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ %metas%
+
+<html>
+<body>
+
+
+<div style="width: 100%" id="todo">
+
+<div style="margin-top:20px;"></div>
+<img src="/img/global/promos/ceac/logoCeac.jpg" style="position:relative; float:left;">	
+<img src="/img/global/promos/ceac/cur_%idc%.jpg" style="position:relative; float:left;">
+
+<div style="clear:both;"></div>
+
+<div style="font-family: Arial; position:relative; float:left; margin-top: 20px; color:#666666; font-size:14px; padding:20px;">
+
+<div style="color:#1A367F; font-size:25px;font-weight: bold; margin-bottom: 20px;">
+%pagTittle%	
+</div>
+
+%cms%
+
+<img src="/img/global/promos/ceac/opc_%idc%.gif" style="position:relative; float:left;left:-8px; top:12px; width:610px;">
+
+
+
+<div style="margin-top:20px; padding:20px 0px;; position:relative;
+			float:left;
+			font-family:'Oswald','sans-serif';
+			font-size: 24px;
+			height:40px;
+			width:100%;
+			background-color:orange;
+			color: white;
+			font-weight:bold;
+			text-align:center; cursor:pointer;" id="boton" onclick="MForm();">MÁS INFORMACIÓN ></div>
+
+
+</div>
+<div style="clear:both;"></div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="formu" style="display: none">
+<div style="position:relative;float:left; width: 300px; background-color: #eeeeee; ">
+	
+<img src="/img/global/promos/ceac/cab_%idc%.gif" style="position:relative; float: left; left:12px; top:20px;">	
+<div style="position:relative; float: left; left:12px; top:20px;font-family: 'Oswald', sans-serif;
+font-size: 16px;
+font-weight: 400;
+color: #D4693C; width: 275px; text-align: center; margin-top:10px; margin-bottom: 5px;">
+SOLICITA INFORMACIÓN SIN COMPROMISO	
+</div>
+
+	
+<div style="position:relative;float:left;" id="formdinamico"></div>
+<div style="position:relative;
+			float:left;
+			font-family:'Oswald','sans-serif';
+			font-size: 14px;
+			height:30px;
+			width:275px; 
+			background-color:orange;
+			color: white;
+			font-weight:bold;
+			text-align:center; left:11px; padding-top:10px; cursor:pointer; margin:15px 0px;" id="boton" onclick="sndForm();">SOLICITA INFORMACIÓN</div>
+<div style="position:relative;float:left;" id="pie"></div>
+
+</div>		
+	
+</div>
+
+
+<div id="cupOK" style="display: none">
+
+<div style="position:absolute; top:30px; left: 20px; width:460px; height:300px; z-index: 800" class="color2_BG"></div>
+<img style="position:absolute; top:30px; left: 236px; z-index: 810" src="/img/global/allviews/form/students.png">
+<div style="position:absolute; top:133px; left: 67px; width:361px; height:160px; z-index: 805" class="bloque shadow">
+
+<div style="position:relative; width:300; margin:30px 0px 0px 30px; font-family: Arial; font-size: 19px; color:#888888;">
+Tus datos han sido enviados correctamente.
+</div>
+
+<div style="position:relative; width:300; margin:10px 0px 0px 30px; font-family: Arial; font-size: 19px; color:#888888;">
+En breve te será facilitada más información detallada.	
+</div>
+
+</div>
+
+
+<div style="position:absolute; top:373px; left: 20px; width:460px; height:110px; z-index: 800; background-color: #dddddd"></div>
+<img style="position:absolute; top:383px; left: 64px; z-index: 810" src="/img/global/allviews/form/capple.png">
+<img style="position:absolute; top:347px; left: 336px; z-index: 810" src="/img/global/allviews/form/papple.png">
+<div style="position:absolute; width:236px; top:430px; left: 64px; z-index: 815; font-family: Arial; font-size: 11px; color:#666666;">
+Participa en nuestro concurso de <strong>Facebook</strong> y gana uno de estos productos Apple.
+</div>
+<img onclick="goContest();" style="position:absolute; top:461px; left: 145px; z-index: 820; cursor:pointer;" src="/img/global/allviews/form/participa.png">
+</div>
+
+
+
+
+	
+</body>
+</html>
+
+
+
+<script>
+function MForm(){
+document.getElementById("viewport").setAttribute("content", "width=300, user-scalable=no");	
+document.getElementById('todo').innerHTML=document.getElementById('formu').innerHTML;	
+	
+}
+
+
+formPromo(%idc%);
+</script>
+
+<!-- fin pagina -->
+
+
+
