@@ -33,7 +33,8 @@ function getCookie(w){
 
 function formPromo(idc){$.ajaxSetup({'async': false});
 init();	
-uid=window.top.ckk;	
+uid=window.top.ckk;
+if(!uid){uid=getCookie('seekforID');}	
 var url='/ajx/form.php?promo=1&uid=' + uid + '&idc=' + idc;
 	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  
 		if(key=='html'){document.getElementById('formdinamico').innerHTML=val;}
