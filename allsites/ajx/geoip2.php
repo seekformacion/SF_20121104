@@ -104,7 +104,7 @@ if (isset($_COOKIE["seekforReferal"])){
 $ante= $_COOKIE["seekforReferal"];
 }else{$ante="";}
 
-//$ante=$_SERVER['HTTP_USER_AGENT'];
+$ante=$_SERVER['HTTP_USER_AGENT'];
 
 $cp=$res['cp'];
 $ct=$res['ct']; $val['ins']=1; $dest=$_SERVER['HTTP_REFERER'];
