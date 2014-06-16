@@ -114,7 +114,7 @@ if (geoCP!=null && geoCP!="")
 
 
 
-function getCP(){
+function getCP(){$.ajaxSetup({'async': false});
 uid=window.top.ckk;
 var url='/ajx/getCP.php?&uid=' + uid;
 $.getJSON(url, function(data) {
@@ -132,7 +132,7 @@ getgeoCP();
 	
 }
 
-function getgeoCP(){
+function getgeoCP(){$.ajaxSetup({'async': false});
 var UID=window.top.ckk;
 //var url='http:/ajx/geoip.php?uid=' + UID;
 
