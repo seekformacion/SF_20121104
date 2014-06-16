@@ -103,24 +103,12 @@ function getremotecookie() {
 
 function checkGEOip(){
 $.ajaxSetup({'async': false});
-getCP();
-	
-var geoCP=getCookie("geoCP");	
-
-if (geoCP!=null && geoCP!="")
-  {
-  	window.top.geoCP=geoCP;
-  	 	
-  	}else{
-  	getgeoCP();
-  	}
-
-
+getgeoCP();
 }
 
 
 
-
+/*
 function getCP(){$.ajaxSetup({'async': false});
 uid=window.top.ckk;
 var url='/ajx/getCP.php?&uid=' + uid;
@@ -136,8 +124,10 @@ getgeoCP();
 
 });
 });		
-fprom();	
+	
 }
+*/
+
 
 function getgeoCP(){$.ajaxSetup({'async': false});
 var UID=window.top.ckk;
@@ -150,8 +140,8 @@ var UID=window.top.ckk;
 	//console.log(cp);
 	setCookie("geoCP",cp,365);
 	window.top.geoCP=cp;
-	
- 
+	fprom();
+   
  });
 
 	
