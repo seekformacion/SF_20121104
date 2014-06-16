@@ -31,7 +31,8 @@ function getCookie(w){
 
 
 
-function formPromo(idc){
+function formPromo(idc){$.ajaxSetup({'async': false});
+init();	
 uid=window.top.ckk;	
 var url='/ajx/form.php?promo=1&uid=' + uid + '&idc=' + idc;
 	$.getJSON(url, function(data) {	$.each(data, function(key, val) {  
