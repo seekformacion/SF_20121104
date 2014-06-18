@@ -467,11 +467,11 @@ for (i=1 ; i <= 50; i++){
 }	
 }
 
-
+	if(document.getElementById('df_dn')){
 	if(!document.getElementById('df_dn').value){var no11='Campos obligatorios';document.getElementById('df_dn').className='formS_e ';}else{document.getElementById('df_dn').className='formS ';}
 	if(!document.getElementById('df_mn').value){var no11='Campos obligatorios';document.getElementById('df_mn').className='formS_e ';}else{document.getElementById('df_mn').className='formS ';}
 	if(!document.getElementById('df_an').value){var no11='Campos obligatorios';document.getElementById('df_an').className='formS_e ';}else{document.getElementById('df_an').className='formS ';}
-	
+	}
 	
 	
 	
