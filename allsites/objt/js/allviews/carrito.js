@@ -451,7 +451,7 @@ for (i=1 ; i <= 50; i++){
 	}else if(i==8){if (!val) {var no8='Campos obligatorios';}
 	}else if((i==26)&&(document.getElementById('df_26'))){if (!val){var no8='Campos obligatorios';}
 	
-	}else if(i==11){if(!val){var no11='Campos obligatorios';}	
+	}else if(i==11){if((!val)&&(document.getElementById('df_11'))){var no11='Campos obligatorios';}	
 		
 	}else{	
 		
