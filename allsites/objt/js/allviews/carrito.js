@@ -544,13 +544,14 @@ for (i=1 ; i <= 50; i++){
     
     		
     }
-    console.info(no11);
+    
     if(no11){
     document.getElementById('et_11').innerHTML=no11;	
 	document.getElementById('e_11').style.visibility='inherit';	
     }else{
+    if(document.getElementById('e_11')){
     document.getElementById('e_11').style.visibility='hidden';		
-    }
+    }}
 
 
 
