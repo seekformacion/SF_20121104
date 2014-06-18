@@ -169,8 +169,10 @@ $campos[1]=1;
 $campos[2]=1;
 $campos[3]=1;
 $campos[6]=1;
-$campos[11]=1;
 
+if(!$promo){
+$campos[11]=1;
+}
 
 /*
 $campos[8]=1;
