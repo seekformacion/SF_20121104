@@ -8,7 +8,7 @@ $v['vars']['eqtempl'][5]="cms";
 
 
 $v['vars']['eqtempl'][20]="promos/ceac";
-
+$v['vars']['eqtempl'][21]="promos/edp";
 
 $v['vars']['purl'][1]="http://cursodecursos.com";
 $v['vars']['purl'][2]="http://masterenmasters.com";
