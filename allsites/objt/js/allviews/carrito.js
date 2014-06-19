@@ -604,6 +604,7 @@ document.getElementById('formdinamico').innerHTML=document.getElementById('cupOK
 }else{
 document.getElementById('todo').innerHTML=document.getElementById('cupOK').innerHTML;	
 document.getElementById('todo').style.width='540px';
+id(window.top.isM){document.getElementById("viewport").setAttribute("content", "width=540, user-scalable=no");}
 }
 
 
