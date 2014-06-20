@@ -52,7 +52,10 @@ $datSes[6]="999";
 }}
 
 
-
+if(($promo==1)&&(!array_key_exists(1,$datSes))){
+$datSes[6]='';	
+$datSes[7]='ES';	
+}
 
 
 
