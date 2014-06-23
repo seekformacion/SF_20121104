@@ -60,12 +60,17 @@ $idp=$Dcurr[1]['idp'];
 $nomc=$Dcurr[1]['pagTittle'];
 $urlC=$Dcurr[1]['url'];
 
+
+$Dpre=DBselectSDB("SELECT pccur FROM skv_cursos WHERE id=$idcc;",'seekformacion'); 
+$pre=$Dpre[1]['pccur'];
+
+if($pre > 5){
 $idccat=$cats[$idcc];		
 $Dcat=DBselectSDB("SELECT url FROM skf_urls WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
 $urlCAT=$Dcat[1]['url'];
+DBUpInsSDB("INSERT INTO urls (nom,urlca,urlcu,peso) VALUES ('$nomc','$urlCAT','$urlC','$pre');",'SeekforFB');
+}	
 
-DBUpInsSDB("INSERT INTO urls (nom,urlca,urlcu) VALUES ('$nomc','$urlCAT','$urlC');",'SeekforFB');
-	
 }}
 
 }}
