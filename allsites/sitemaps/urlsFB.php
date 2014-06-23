@@ -55,13 +55,13 @@ if(count($cur)>0){ foreach ($cur as $key => $val) {$id=$val['id_cur']; $lcursos 
 $curs=ordenaCURs($lcursos,0,4);
 
 if(count($curs)>0){ foreach ($curs as $key => $idcc) {
-$Dcurr=DBselectSDB("SELECT idp, pagTittle, url WHERE tipo=2 AND t_id=$idcc;",'seekformacion'); 			
+$Dcurr=DBselectSDB("SELECT idp, pagTittle, url FROM skf_urls WHERE tipo=2 AND t_id=$idcc;",'seekformacion'); 			
 $idp=$Dcurr[1]['idp'];
 $nomc=$Dcurr[1]['pagTittle'];
 $urlC=$Dcurr[1]['url'];
 
 $idccat=$cats[$idcc];		
-$Dcat=DBselectSDB("SELECT url WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
+$Dcat=DBselectSDB("SELECT url FROM skf_urls WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
 $urlCAT=$Dcat[1]['url'];
 
 DBUpInsSDB("INSERT INTO urls (nom,urlca,urlcu) VALUES ('$nomc','$urlCAT','$urlC');",'SeekforFB');
