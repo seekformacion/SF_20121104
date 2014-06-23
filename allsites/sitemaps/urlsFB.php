@@ -42,6 +42,16 @@ includeCORE('funcs/general');
 //includeCORE('mail/mail');
 includeFUNC('sacaCursos');
 
+$acentros[278]=1;
+$acentros[303]=1;
+$acentros[305]=1;
+$acentros[245]=1;
+$acentros[314]=1;
+$acentros[315]=1;
+$acentros[417]=1;
+$acentros[452]=1;
+$acentros[451]=1;
+
 $Lcentros="278,303,305,245,314,315,417,452,451";
 
 $DOp=DBselectSDB("select distinct cur_cat as cat from skv_cursos where pccur > 10 AND id_centro IN ($Lcentros);",'seekformacion'); 	
@@ -61,10 +71,11 @@ $nomc=$Dcurr[1]['pagTittle'];
 $urlC=$Dcurr[1]['url'];
 
 
-$Dpre=DBselectSDB("SELECT pccur FROM skv_cursos WHERE id=$idcc;",'seekformacion'); 
+$Dpre=DBselectSDB("SELECT pccur, id_centro FROM skv_cursos WHERE id=$idcc;",'seekformacion'); 
 $pre=$Dpre[1]['pccur'];
+$idcentro=$Dpre[1]['id_centro'];
 
-if($pre > 5){
+if(($pre > 5)&&(array_key_exists($idcentro, $acentros))){
 $idccat=$cats[$idcc];		
 $Dcat=DBselectSDB("SELECT url FROM skf_urls WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
 $urlCAT=$Dcat[1]['url'];
