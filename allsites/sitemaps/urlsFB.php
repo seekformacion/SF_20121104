@@ -40,7 +40,7 @@ includeCORE('db/dbfuncs');
 includeCORE('templates/templates');
 includeCORE('funcs/general');
 //includeCORE('mail/mail');
-includeCORE('funcs/sacaCursos');
+includeFUNC('sacaCursos');
 
 $Lcentros="278,303,305,245,314,315,417,452,451";
 
