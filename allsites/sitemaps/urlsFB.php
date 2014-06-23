@@ -49,7 +49,7 @@ if(count($DOp)>0){ foreach ($DOp as $key => $values) {$idCAT=$values['cat'];
 
 $lcursos="";	
 $cur=DBselectSDB("select id_cur from skv_relCurCats where id_cat=$idCAT AND showC=1;",'seekformacion'); 
-if(count($cur)>0){ foreach ($cur as $key => $val) {$id=$values['id_cur']; $lcursos .=$id . ",";
+if(count($cur)>0){ foreach ($cur as $key => $val) {$id=$val['id_cur']; $lcursos .=$id . ",";
 }} $lcursos=substr($lcursos,0,-1);
 
 $curs=ordenaCURs($lcursos,0,4);
