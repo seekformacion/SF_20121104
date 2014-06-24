@@ -79,7 +79,7 @@ if(($pre > 5)&&(array_key_exists($idcentro, $acentros))){
 $idccat=$cats[$idcc];		
 $Dcat=DBselectSDB("SELECT url FROM skf_urls WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
 $urlCAT=$Dcat[1]['url'];
-DBUpInsSDB("INSERT INTO urls (nom,urlca,urlcu,peso) VALUES ('$nomc','$urlCAT','$urlC','$pre');",'SeekforFB');
+DBUpInsSDB("INSERT INTO urls (id_curso,nom,urlca,urlcu,peso) VALUES ('$idcc','$nomc','$urlCAT','$urlC','$pre');",'SeekforFB');
 }	
 
 }}
