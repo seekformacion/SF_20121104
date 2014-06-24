@@ -68,7 +68,7 @@ if(count($curs)>0){ foreach ($curs as $key => $idcc) {
 $Dcurr=DBselectSDB("SELECT idp, pagTittle, url FROM skf_urls WHERE tipo=2 AND t_id=$idcc;",'seekformacion'); 			
 $idp=$Dcurr[1]['idp'];
 $nomc=$Dcurr[1]['pagTittle'];
-$urlC=$Dcurr[1]['url'];
+$urlC=$v['vars']['purl'][$idp] . $Dcurr[1]['url'];
 
 
 $Dpre=DBselectSDB("SELECT pccur, id_centro FROM skv_cursos WHERE id=$idcc;",'seekformacion'); 
@@ -78,7 +78,7 @@ $idcentro=$Dpre[1]['id_centro'];
 if(($pre > 5)&&(array_key_exists($idcentro, $acentros))){
 $idccat=$cats[$idcc];		
 $Dcat=DBselectSDB("SELECT url FROM skf_urls WHERE tipo=1 AND t_id=$idccat;",'seekformacion');
-$urlCAT=$Dcat[1]['url'];
+$urlCAT=$v['vars']['purl'][$idp] . $Dcat[1]['url'];
 DBUpInsSDB("INSERT INTO urls (id_curso,nom,urlca,urlcu,peso) VALUES ('$idcc','$nomc','$urlCAT','$urlC','$pre');",'SeekforFB');
 }	
 
