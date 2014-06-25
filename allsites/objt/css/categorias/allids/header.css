@@ -15,12 +15,15 @@
     position: relative;
 }
 
-.breadcrumbs {color: #FFFFFF;
-    margin-left: 33px;
-    position: relative;
-    top: -20px; }
+.breadcrumbs {color: #888888;
+     margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: -20px;
+     padding: 9px 13px;
+    width: 860px;
+    }
 
-.breadcrumbs a {color: #FFFFFF;}
+.breadcrumbs a {color: #88888;}
 
 .Tit_cat{width: 620px; margin-left:40px; min-height:40px; margin-top:6px;}
 .Tit_cat h1 {font-family: "brandon_grotesque_boldregular",sans-serif;

@@ -19,7 +19,14 @@
 
 
 
-.breadcrumbs {color: #FFFFFF; margin-bottom: 20px;    margin-left: 30px;    margin-top: -20px;}
+
+.breadcrumbs {color: #888888;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: -20px;
+    padding: 9px 13px;
+    width: 860px;
+    }
 
 .Tit_cur{width: 491px; margin-bottom:5px;}
 
@@ -29,7 +36,7 @@
  			 filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,strength=2,color=999999);
 }
 
-.breadcrumbs  a {color: #FFFFFF;}
+.breadcrumbs  a {color: #888888;}
 
 .margen_sup	{ height:22px;width: 920px;}
 
