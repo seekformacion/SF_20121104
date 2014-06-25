@@ -126,6 +126,8 @@ header("HTTP/1.1 301 Moved Permanently");
 header("Location: $newURL");
 		
 exit();	
+}else{
+header("HTTP/1.0 404 Not Found"); 	
 }	
 }
 
