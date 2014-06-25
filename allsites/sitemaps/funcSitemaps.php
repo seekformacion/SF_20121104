@@ -13,7 +13,7 @@ function GetURLtoCACHE($idp){global $v;
 $limit=10;
 $dcats=DBselect("select count(id) as tot from util_sitemap where idp IN ($idp);");
 if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/720),0);};
-//$limit=100;
+$limit=100;
 
 $dt=date('Y') . date('m') . date('d');
 $dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND done = 0 ORDER BY id DESC limit $limit;");
