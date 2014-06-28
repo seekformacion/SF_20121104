@@ -8,7 +8,7 @@ if( ! ini_get('date.timezone') )
 
 
 function GetURLtoCACHE($idp){global $v;
-
+$cc=0;
 #################3 compruebo numero de url a realizar por iteracion.. 720 interaciones en 5 dias cada 10 min
 $limit=10;
 $dcats=DBselect("select count(id) as tot from util_sitemap where idp IN ($idp);");
@@ -28,8 +28,13 @@ $idppp=$val['idp'];
 $idpp=$v['vars']['purl'][$idppp];
 $idpp2=str_replace('http://', '', $idpp);
 
-//echo "URL: $url \n";	
-refress($idpp,$idpp2,$url);
+//echo "URL: $url \n";
+$cc++;
+$urlsH[$cc][1]=$idpp;
+$urlsH[$cc][2]=$idpp2;
+$urlsH[$cc][3]=$url;
+	
+
 
 DBUpIns("UPDATE util_sitemap SET done=1 WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
 
@@ -60,6 +65,15 @@ refress($idpp,$idpp2,$urlR);
 
 	
 }}
+
+if(count($urlsH)>0){foreach($urlsH as $kk => $valor){
+refressB($valor[1],$valor[2],$valor[3]);
+}}
+
+if(count($urlsH)>0){foreach($urlsH as $kk => $valor){
+refressG($valor[1],$valor[2],$valor[3]);
+}}
+
 	
 }
 
@@ -148,6 +162,53 @@ sleep(2);
 getPageDevices($url);	
 
 }
+
+
+
+function refressB($idpp,$idpp2,$url){
+
+$url2=str_replace($idpp, '', $url);
+
+if($url2==""){$url2="/";};
+
+exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"") . "\n";
+
+//echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
+
+sleep(1);
+//echo "GET: \n";	
+//getPageDevices($url);	
+
+}
+
+
+
+
+function refressG($idpp,$idpp2,$url){
+
+$url2=str_replace($idpp, '', $url);
+
+if($url2==""){$url2="/";};
+
+//exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"") . "\n";
+//echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
+
+sleep(1);
+//echo "GET: \n";	
+getPageDevices($url);	
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 function doitC($idp,$idc,$url){global $sqlI;global $v;
