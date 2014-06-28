@@ -29,11 +29,7 @@ $idpp=$v['vars']['purl'][$idppp];
 $idpp2=str_replace('http://', '', $idpp);
 
 //echo "URL: $url \n";
-$cc++;
-$urlsH[$cc][1]=$idpp;
-$urlsH[$cc][2]=$idpp2;
-$urlsH[$cc][3]=$url;
-	
+
 
 
 DBUpIns("UPDATE util_sitemap SET done=1 WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
@@ -52,9 +48,22 @@ $urlR=str_replace($url2, $redir, $url);
 //echo $urlR . "\n";
 
 if($urlR!=$url){
-		
-//echo "RED: $urlR \n";		
-refress($idpp,$idpp2,$urlR);
+/*		
+$cc++;
+$urlsH[$cc][1]=$idpp;
+$urlsH[$cc][2]=$idpp2;
+$urlsH[$cc][3]=$urlR;
+*/
+//refress($idpp,$idpp2,$urlR);
+	
+}else{
+
+$cc++;
+$urlsH[$cc][1]=$idpp;
+$urlsH[$cc][2]=$idpp2;
+$urlsH[$cc][3]=$url;
+	
+
 	
 }
 
