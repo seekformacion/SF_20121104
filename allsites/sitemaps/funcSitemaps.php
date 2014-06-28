@@ -120,7 +120,7 @@ refress($ppp,$port,$urlR);
 
 function getPageDevices($url){
 $devices[]="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.9 Safari/536.5";
-$devices[]="User agent: Mozilla/5.0 (Linux; Android 4.3; SPH-L710 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36";
+//$devices[]="User agent: Mozilla/5.0 (Linux; Android 4.3; SPH-L710 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Safari/537.36";
 
 foreach ($devices as $key => $dev) {
 $c = curl_init($url);
@@ -143,7 +143,7 @@ exec("varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host ==
 
 //echo "varnishadm -T 127.0.0.1:6082 -S /etc/varnish/secret ban \"req.http.host == $idpp2 && req.url == $url2\"" . "\n";
 
-sleep(5);
+sleep(2);
 //echo "GET: \n";	
 getPageDevices($url);	
 
