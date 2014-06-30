@@ -1,6 +1,6 @@
 <?php
 
-$Datos['nomcat']=$v['where']['pagTittleSimp'];
+$Datos['nomcat']=$v['where']['pagTittle'];
 $txt=trim(TXTcat($v['where']['id']));
 
 if(!$txt){$txt=InventaTXTcat($v['where']['pagTittleSimp'],0);};
