@@ -33,6 +33,18 @@
 
 .desCcu{float: left;    left: 15px;    position: relative;    top: 15px;    width: 576px;}
 
+
+.desCcu h2 a { font-family: Arial;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0px;
+    }
+
+.desCcu h3 {color: #444444;
+    font-size: 12px;}
+
 .subBC {position: relative; margin-top:5px;}
 
 
