@@ -5,7 +5,7 @@
 .contSedes h3 {margin:10px 0px 0px 5px;font-family: "brandon_grotesque_boldregular",sans-serif;  font-size: 14px; font-weight:normal;}
 
 .contSedes{padding:5px;  position:relative; float:left; width: 285px;}
-.cadprov {position: relative; float:left; margin:15px 0px 0px 5px; border-bottom:1px solid #bbbbbb; width:270px; padding-bottom:5px;}
+.cadprov {position: relative; float:left; margin:10px 0px 0px 5px; border-bottom:1px solid #bbbbbb; width:270px; padding-bottom:5px;}
 
 #scrollbar4 { width: 300px; clear: both; margin: 10px 0 10px; }
 #scrollbar4 .viewport { width: 280px; height: 165px; overflow: hidden; position: relative; }

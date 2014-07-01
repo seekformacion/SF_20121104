@@ -5,7 +5,7 @@
 
 
 .contSedes{padding:5px;  position:relative; float:left; width: 540px;}
-.cadprov {position: relative; float:left; margin:15px 0px 0px 15px; border-bottom:1px solid #bbbbbb; width:250px; padding-bottom:5px;}
+.cadprov {position: relative; float:left; margin:10px 0px 0px 15px; border-bottom:1px solid #bbbbbb; width:250px; padding-bottom:5px;}
 
 #scrollbar4 { width: 570px; clear: both; margin: 10px 0 10px; }
 #scrollbar4 .viewport { width: 550px; height: 150px; overflow: hidden; position: relative; }

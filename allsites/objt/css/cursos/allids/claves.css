@@ -10,6 +10,14 @@
 
 .contClaves {padding:15px; position:absolute;}
 
+.overview h2 {
+ font-family: Arial;
+ font-size: 13px;
+ color: #444444;
+ font-weight: normal;
+ letter-spacing: 0;
+ line-height: 1.3;	
+}
 
 #scrollbar1 { width: 850px; clear: both; margin: 20px 0 10px; }
 #scrollbar1 .viewport { width: 830px; height: 240px; overflow: hidden; position: absolute; }
