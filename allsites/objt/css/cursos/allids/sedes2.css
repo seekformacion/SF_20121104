@@ -4,7 +4,8 @@
 .contSedes h3 {text-transform: uppercase;}
 
 
-.fsedeP { background-position: -385px 0; background-repeat: no-repeat; list-style-type: none; width:14px; height: 14px; position:relative; float:right; top:3px;}
+.fsedeP { background-position: -385px 0; background-repeat: no-repeat; list-style-type: none;
+ width:14px; height: 14px; position:relative; float:right; top:-5px;}
 
 #scrollbar4 .overview { list-style: none; position: absolute; left: 0; top: 0;}
 #scrollbar4 .thumb .end,
