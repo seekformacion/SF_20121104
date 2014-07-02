@@ -53,7 +53,20 @@ $v['where']['distancia']=0;
 
 
 ##### obtenemos numero de pagina
-if(strpos($url,'-pag')){$valsurl=explode('-pag',str_replace('.html','',$url)); $v['where']['pag']=$valsurl[1]; $url=str_replace('-pag' . $valsurl[1], '', $url); }else{ $v['where']['pag']=1;}
+if(strpos($url,'-pag')){
+		
+		
+$valsurl=explode('-pag',str_replace('.html','',$url));
+
+if(is_numeric($valsurl[1])){
+$v['where']['pag']=$valsurl[1];
+$url=str_replace('-pag' . $valsurl[1], '', $url); 
+}else{
+$v['where']['pag']=1;	
+}	
+	
+	
+}else{ $v['where']['pag']=1;}
 ################
 
 
