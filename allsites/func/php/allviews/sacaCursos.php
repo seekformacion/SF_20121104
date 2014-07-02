@@ -31,7 +31,7 @@ return $data['url'];
 #####################################3
 
 ################## compone el bloque de cursos de una pagina
-function getBloqueCursos(){global $data; $bloqueCursos="";	
+function getBloqueCursos(){global $data; $bloqueCursos="";	global $v;
 
 
 
