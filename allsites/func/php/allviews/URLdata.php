@@ -61,7 +61,18 @@ $valsurl=explode('-pag',str_replace('.html','',$url));
 if(is_numeric($valsurl[1])){
 $v['where']['pag']=$valsurl[1];
 $url=str_replace('-pag' . $valsurl[1], '', $url); 
-}else{
+}elseif(array_key_exists(2, $valsurl)){
+	
+if(is_numeric($valsurl[2])){
+
+$v['where']['pag']=$valsurl[2];
+$url=str_replace('-pag' . $valsurl[2], '', $url); 
+	
+}else{	
+$v['where']['pag']=1;	
+}	
+		
+}else{	
 $v['where']['pag']=1;	
 }	
 	
