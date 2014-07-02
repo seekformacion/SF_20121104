@@ -47,9 +47,10 @@ $data['url']=urlCur($data['id']);
 		
 $bloqueCursos .=loadChild('objt','cadaCurso');	
 }	
-}	
 
-
+}else{
+$v['return']=$v['where']['id'];	
+}
 
 return $bloqueCursos;
 }
