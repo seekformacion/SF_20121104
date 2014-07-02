@@ -104,20 +104,18 @@ $res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc A
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";$nc++;};
 $listcur=substr($listcur, 0,-1);
 
-if($listcur){
-	########## filtro provincias
-	if($idpro){
-	if(($idpro=='070')||($idpro=='077')||($idpro=='078')){}else{$idpro=substr($idpro, 0,2);};	
+
+########## filtro provincias
+if($idpro){
+if(($idpro=='070')||($idpro=='077')||($idpro=='078')){}else{$idpro=substr($idpro, 0,2);};	
 		
-	$res=DBselect("SELECT distinct(idcur) FROM skv_relCurPro WHERE idpro like '$idpro%'  AND idcur IN ($listcur);");
-	$listcur="";$nc=0;	
-	foreach ($res as $key => $data) {$listcur.=$data['idcur'] . ",";$nc++;}
-	$listcur=substr($listcur, 0,-1);	
-	}
-	############
-}else{
-$v['return']=$idc;	
+$res=DBselect("SELECT distinct(idcur) FROM skv_relCurPro WHERE idpro like '$idpro%'  AND idcur IN ($listcur);");
+$listcur="";$nc=0;	
+foreach ($res as $key => $data) {$listcur.=$data['idcur'] . ",";$nc++;}
+$listcur=substr($listcur, 0,-1);	
 }
+	############
+
 	
 	
 	
