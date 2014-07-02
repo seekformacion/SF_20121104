@@ -41,10 +41,23 @@ includeFUNC('URLdata');  ##### obtengo datos de la url tipo de pagina e id asoci
 #echo loadChild('objt','arbol');
 
 loadCSS('objt','colores');
-echo loadChild('objt','pagina');
+$pagina=loadChild('objt','pagina');
 
-
-
+if(!array_key_exists('return', $v)){
+echo $pagina;
+}else{
+$idcatM=$v['return'];
+$idp=$v['where']['idp'];
+$res=DBselect("SELECT url FROM skf_urls where idp=$idp AND tipo=1 AND t_id=$idcatM;");
+if(array_key_exists(1, $res)){
+$newURL=$res[1]['url'];
+header("HTTP/1.1 301 Moved Permanently"); 
+header("Location: $newURL");
+}else{
+header("HTTP/1.0 404 Not Found");	
+}
+	
+}
 
 	
 
