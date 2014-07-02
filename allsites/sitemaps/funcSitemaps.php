@@ -115,7 +115,7 @@ $id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior'];
 if($pri <= 1){$pri=1;};
 $pri=($pri/10);	
 if($pri==1){$pri="1.0";};	
-$SiteTXT .="<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n"; //echo "<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n";
+$SiteTXT .="<url>\n<loc>$url</loc>\n</url>\n\n"; //echo "<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n";
 echo "#";
 
 }}
