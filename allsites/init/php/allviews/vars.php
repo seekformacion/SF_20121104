@@ -1,6 +1,7 @@
 <?php
 
 #### version julio
+#### version chk2
 
 $v['vars']['eqtempl'][0]="home";
 $v['vars']['eqtempl'][1]="categorias";
