@@ -1,0 +1,113 @@
+.listCursos	{width:886px;padding-top:10px; padding-bottom: 20px; cursor:pointer;}
+
+
+.fichaCurso	{border:1px solid #dddddd;margin: 15px 0 5px 0; position:relative;}
+
+/*
+.fichaCurso .left {position:relative;padding:15px 10px 10px 27px;float:left;width:560px; cursor:pointer; }
+.fichaCurso .detalles {position:relative;float:left; margin-top:1px;padding:12px 0 0 10px; }
+.logoF {position:relative; float:left; border:1px solid #aaaaaa;  max-width: 60px; max-height:30px; padding: 1px;}
+.tipoF {position:relative; float:left; margin-left:4px;}
+.tipoF .pv {position:relative; top:20px; left: -1px;}
+.tipoF p {font-family:"brandon_grotesque_regularRg"; font-size:10px; line-height: 13px; margin:0px; text-transform:uppercase;}
+
+
+*/
+
+.fichaCurso table{ width:100%;}
+.fichaCurso table:hover{ background-color: #EEEEEE; cursor: pointer;}
+
+.fichaCurso p {font-size:12px; color:#444444;}
+.fichaCurso p strong {font-size:12px; color:#444444; font-weight:bold;}
+
+
+
+.valoracion {width:76px;height:15px; background-position: -4px -45px;}
+.masinfo {margin-top:30px;width:200px;height:50px; background-position: -4px -60px; cursor: pointer;}
+
+
+
+.addList {width: 52px; height: 43px;left: 834px;    position: absolute;    top: 9px; background-color:#eeeeee;border-bottom: 1px solid #DDDDDD;  border-top: 1px solid #DDDDDD;cursor: pointer;}
+.IaddList {width:26px; height: 22px; background-position: -140px -40px; margin: 11px 0 0 12px;}
+.IadlOFF {background-position: -140px -40px;}
+.IadlON {background-position: -113px -40px;}
+
+
+.tbCur { min-height: 140px;}
+.tdC1 { position:relative; vertical-align:top; padding:12px 17px;}
+.tdC2   { width:182px; padding:20px 20px 0 20px; border-left:1px solid #CCCCCC; border-right: 1px solid #CCCCCC;position:relative; vertical-align:top; }
+.tdC2 p {font-size:13px; color:red; text-transform: uppercase; margin:5px 0;}
+
+.lcuP {position:absolute; top:6px; right: 15px; font-size: 23px; font-family:Arial; font-style:italic; font-weight: bold; color:#2C4161;}
+
+
+.desCcu{float: left;    left: 15px;    position: relative;    top: 15px;    width: 576px;}
+
+
+
+
+.desCcu h3 {color: #444444;
+    font-size: 12px;}
+
+.subBC {position: relative; margin-top:5px;}
+
+
+
+
+
+/* Curso destacado */
+
+.cDes {position:relative; float:left;   height: 199px;
+ width: 309px;
+	
+}
+
+.cDcon {  border: 1px solid; padding:5px;
+    height: 147px;
+    left: 20px;
+    position: absolute;
+    top: 24px;
+    width: 259px; background-color:#FFFFFF; cursor: pointer; }
+ 
+
+.cDmt { font-size: 10px;
+    left: 20px;
+    position: absolute;
+    top: 7px;}
+    
+.cDtit { border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    font-size: 13px;
+    left: 0;
+    min-height: 33px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 259px;}
+
+.cDlog { border: 1px solid;
+    left: 152px;
+    position: absolute;
+    top: 75px;}
+
+.cDmet {
+
+    left: 9px;
+    position: absolute;
+    top: 77px;
+    width:50px;
+	
+}
+
+.cDmetT {
+position:relative; float: left; color:#666666;
+font-size:11px; text-transform: uppercase;	width: 146px;
+
+}
+
+.cDvalor {
+position:relative; float:left;	
+	
+}
+
+

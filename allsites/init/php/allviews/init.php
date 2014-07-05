@@ -40,8 +40,8 @@ includeFUNC('URLdata');  ##### obtengo datos de la url tipo de pagina e id asoci
 
 #echo loadChild('objt','arbol');
 
-loadCSS('objt','colores');
-$pagina=loadChild('objt','pagina');
+loadCSS('n_objt','colores');
+$pagina=loadChild('n_objt','pagina');
 
 if(!array_key_exists('return', $v)){
 echo $pagina;

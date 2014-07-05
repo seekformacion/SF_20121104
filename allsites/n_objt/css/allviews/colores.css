@@ -1,0 +1,44 @@
+
+
+.gris1 {color:#EBEBEB !important;}
+.gris1_BG {background-color:#EBEBEB !important;}
+
+
+.gris2 {color:#888888 !important;}
+.gris2_BG {background-color:#888888 !important;}
+
+.gris3 {color:#F1F4F8 !important;}
+.gris3_BG {background-color:#F1F4F8 !important;}
+
+.gris4 {color:#F4F7F4 !important;}
+.gris4_BG {background-color:#F4F7F4 !important;}
+
+
+.color {color:#2C4161 !important;}
+.color_BG {background-color:#2C4161 !important;}
+
+h2 strong {color:#37527A;}
+h3 strong {color:#37527A; font-weight:normal;}
+.color1 {color:#227324 !important;}
+.color1 a {color:#227324 !important;}
+.color1_BG {background-color:#227324 !important;}
+.bdc1 {border:1px solid #227324; }
+
+.color2 {color:#CED2DF !important;}
+.color2_BG {background-color: #CED2DF !important;}
+
+
+.titCAT a:hover { background-color: #E0F3E6; }
+.titCCUR a:hover { background-color: #E0F3E6; }
+.bloqueCurDist li:hover { background-color: #E0F3E6;}    
+.listadoPROVIS li:hover { background-color: #E0F3E6;}
+
+
+.color4_BG {background-color: #C7EBC9 !important;}
+
+
+.blanco {color:#ffffff !important;}
+.blanco_BG {background-color: #ffffff !important;}
+
+.negro {color:#000000 !important;}
+.negro_BG {background-color: #000000 !important;}

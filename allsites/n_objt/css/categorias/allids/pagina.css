@@ -1,0 +1,37 @@
+body {margin: 0}
+p {font-size:14px; font-family:Arial; color:#555555;}
+
+.page {position:relative; width:1200px; margin: 0 auto;}
+.cbpag {position:relative; float: left;  width: 1200px; height:15px;}
+
+.imgCat {position:relative; float:left; height:75px; width:280px; border:none; }
+.cabLogo{position:relative; float:left; height:75px; width:920px; background-image:url('/img/fondos/fondo1.jpg'); }
+.logo {position:relative; float: right; margin:5px 10px 0 0;}
+
+.cnt {position:relative; float: left;  width: 1200px;}
+
+/* col LEFT
+*/
+.cLin{position:relative; float:left;  width: 280px;height: 50px;}
+.cL	 {position:absolute; width: 280px; bottom:0; top:0; left: 0;}
+.cR  {position:relative; float:left; width: 860px; padding:20px 30px 10px 30px;   background-color: #FFFFFF; top:0; min-height: 900px; }
+
+
+.mSelN {position:relative;float:left; margin:10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;
+		font-size:13px; font-family: arial; color: #FFFFFF;}
+
+h1 {font-size:28px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
+h2 {font-size:18px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
+h2 a {text-transform: none;    letter-spacing: 0px;    }
+
+h3 {font-size:13px; font-family:Arial; font-weight: normal; color:#666666; margin:6px 0;}
+
+
+
+
+.breadcrumbs {font-size:14px; font-family:Arial; font-weight: normal; color:#FF9900; margin:7px 0 0 0; }
+.breadcrumbs a {font-size:14px; font-family:Arial; font-weight: normal; color:#FF9900; }
+
+.socLk {position:relative;float:left; width:100%;  margin: 15px 0 15px 0;}
+.fbLik {position:relative;float:left; }
+.glink {position:relative;float:left; margin-left:10px; }

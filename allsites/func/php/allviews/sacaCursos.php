@@ -45,7 +45,7 @@ $res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripci
 foreach ($res as $key => $data) {
 $data['url']=urlCur($data['id']);
 		
-$bloqueCursos .=loadChild('objt','cadaCurso');	
+$bloqueCursos .=loadChild('n_objt','cadaCurso');	
 }	
 
 }else{
