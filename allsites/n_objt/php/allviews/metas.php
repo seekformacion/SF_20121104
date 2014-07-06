@@ -8,6 +8,10 @@ includeFUNC('funcmetas');
 $lb=array("\n"); 
 $javacon=loadChild('n_objt','carrito');
 $java=str_replace($lb,'',$javacon);
+
+
+
+
 /*
 echo $javacon;
 echo "\n----------------\n ";
@@ -15,7 +19,7 @@ echo $java;
 echo "\n---------------- \n";
 */
 $v['JSpostPROCESS']['%listHTML%']=$java;
-//loadJS('objt','init');
+loadJS('n_objt','init');
 
 
 createCSS();
@@ -67,7 +71,6 @@ $Datos['imgIconos']=loadIMG("iconos.png");
 $Datos['imgValor']=loadIMG("valoracion.png");
 $Datos['imgFspain']=loadIMG("spainF.png");
 $Datos['imgIprovis']=loadIMG("spainP.png");
-
 
 
 $Datos['links_css']=$v['linksCSS'];

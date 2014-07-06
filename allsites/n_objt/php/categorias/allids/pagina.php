@@ -84,7 +84,7 @@ global $lccuT;
 //$Datos['curDEST']=$lccuT['html'];
 
 
-$Datos['metas']=loadChild('objt','metas');
+$Datos['metas']=loadChild('n_objt','metas');
 
 
 

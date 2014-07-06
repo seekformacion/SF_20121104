@@ -11,14 +11,15 @@
 .tipoF .pv {position:relative; top:20px; left: -1px;}
 .tipoF p {font-family:"brandon_grotesque_regularRg"; font-size:10px; line-height: 13px; margin:0px; text-transform:uppercase;}
 
+.fichaCurso p {font-size:12px; color:#444444;}
+.fichaCurso p strong {font-size:12px; color:#444444; font-weight:bold;}
 
 */
 
 .fichaCurso table{ width:100%;}
 .fichaCurso table:hover{ background-color: #EEEEEE; cursor: pointer;}
 
-.fichaCurso p {font-size:12px; color:#444444;}
-.fichaCurso p strong {font-size:12px; color:#444444; font-weight:bold;}
+
 
 
 
@@ -46,8 +47,7 @@
 
 
 
-.desCcu h3 {color: #444444;
-    font-size: 12px;}
+   
 
 .subBC {position: relative; margin-top:5px;}
 
