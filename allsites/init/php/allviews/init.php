@@ -43,9 +43,8 @@ includeFUNC('URLdata');  ##### obtengo datos de la url tipo de pagina e id asoci
 loadCSS('objt','colores');
 $pagina=loadChild('objt','pagina');
 
-if(!array_key_exists('return', $v)){
-echo $pagina;
-}else{
+
+if( (array_key_exists('return', $v) && ( ($v['where']['id_provi']) ||($v['where']['distancia']) ||($v['where']['online']) ) )){
 $idcatM=$v['return'];
 $idp=$v['where']['idp'];
 $res=DBselect("SELECT url FROM skf_urls where idp=$idp AND tipo=1 AND t_id=$idcatM;");
@@ -56,7 +55,8 @@ header("Location: $newURL");
 }else{
 header("HTTP/1.0 404 Not Found");	
 }
-	
+}else{
+echo $pagina;	
 }
 
 	
