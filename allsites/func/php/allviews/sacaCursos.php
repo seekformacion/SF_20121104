@@ -31,11 +31,20 @@ return $data['url'];
 #####################################3
 
 ################## compone el bloque de cursos de una pagina
-function getBloqueCursos(){global $data; $bloqueCursos="";	global $v;
+function getBloqueCursos(){global $data; $bloqueCursos="";	global $v; global $pesos;
 
 
 
-$listcur=trim(getCUR()); 
+$listcur=getCURcat();
+
+//echo "\n __________<br>\n $listcur <br>\n";
+#### eliminacion de huecos y comoas
+$listcur=str_replace(',,', ',', $listcur);
+if(substr($listcur, 0,1)==','){$listcur=substr($listcur, 1);}
+if(substr($listcur, strlen($listcur)-1,1)==','){$listcur=substr($listcur, 0,-1);}
+#################
+
+
 if($listcur){
 $res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripcion, cur_dirigidoa, cur_paraqueteprepara, 
 						id_centro, (SELECT nombre FROM skv_centros WHERE id=id_centro) as ncent, 
@@ -70,24 +79,13 @@ $idpro=$v['where']['id_provi'];
 $online=$v['where']['online'];
 $distancia=$v['where']['distancia'];
 
-$pals=array();
-$res=DBselect("SELECT id, keyword FROM skf_cat_keywords WHERE id_cat=$idc ORDER BY CHAR_LENGTH(keyword) DESC;");	
-foreach ($res as $key => $data) {
-$pals[]="\(" . $data['keyword'] . "\),";
-$pals[]="\(" . $data['keyword'] . "\).";			
-$pals[]="\(" . $data['keyword'] . "\)";
-$pals[]=$data['keyword'] . ",";
-$pals[]=$data['keyword'] . ".";	
-$pals[]=$data['keyword'];	
-}
-
 
 	
 $ini=(($pag-1)*$cpp);
 $fin=($ini+$cpp)-1;	
 
 
-	############# añado filtro online o a distancia
+############# añado filtro online o a distancia
 	if($online){
 	$onl="AND id_metodo=5";	
 	}elseif($distancia){
@@ -104,6 +102,8 @@ $listcur="";$nc=0;
 $res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt) $onl;");	
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";$nc++;};
 $listcur=substr($listcur, 0,-1);
+
+
 
 
 ########## filtro provincias
@@ -180,28 +180,53 @@ if(count($res)>0){return TRUE;}else{return FALSE;};
 
 
 ############# resalta palabras en un texto con <strong>
-function strongTXT($txt,$pals){
-	
+function strongTXT($txt,$pals){$marcos=array();
+$txt2=stripAccents($txt);
+$txt=utf8_decode($txt);
+
+echo "\n _________ \n $txt \n ____-- \n";
+
 $borros=array('\\');
+
+if(count($pals)>0){foreach ($pals as $point => $pal){$palsi[stripAccents($pal)]=strlen(stripAccents($pal));}}
+arsort($palsi);
+
+//$palsi=array();
+//$palsi[' auxiliar de enfermeria.'] = 22;
+
+//print_r($palsi);	
 	
-if(count($pals)>0){foreach ($pals as $point => $pal){
+if(count($palsi)>0){foreach ($palsi as $pal => $ll){
 	
 $pal=str_replace('/', '\/', $pal);	
-$pal2="/ $pal /i";
+$pal2="/ $pal/i";
 
+echo "\n$pal2 \n";
+//echo "$txt2 \n"; 
 
 $out=array();					
-preg_match_all($pal2, $txt, $out, PREG_OFFSET_CAPTURE); $c=0;
-foreach ($out[0] as $key => $value) {
-$p=$value[1] +1 +$c;
+preg_match_all($pal2, $txt2, $out, PREG_OFFSET_CAPTURE); $c=0;
+
+//echo "\n _________ \n $pal \n ____-- \n";
+//echo "\n _________ \n $pal2 \n ____-- \n";
+
+if(count($out[0])>0){
+print_r($out[0]);	
+foreach ($out[0] as $key => $value) {#if(!array_key_exists($value[1], $marcos)){ $marcos[$value[1]]=1;
+$p=$value[1] + 1 + $c;
 $l=$p + strlen( str_replace($borros,'' , $pal) );
 $txt=substr($txt,0,$l) . "</strong>" . substr($txt,$l);	
 $txt=substr($txt,0,$p) . "<strong>" . substr($txt,$p);
 $c=$c+17;
-}
-
-
 }}
+
+$txt2=stripAccents($txt);
+}}
+
+//echo "$txt \n";
+//$txt=utf8_encode($txt);
+
+echo "\n _________ \n $txt \n ____-- \n";
 return $txt;
 }
 ##################################

@@ -1,6 +1,6 @@
 <?php
 
-global $v;global $data; global $pals; 
+global $v;global $data; global $pals; global $pesos;
 $eqtip=$v['vars']['eqtip'];
 $eqmet=$v['vars']['eqmet'];
 $eqp=$v['vars']['provN'];
@@ -28,6 +28,7 @@ $nom="$nom en $np";
 $Datos['nombre']=$nom;# . "-" . $data['cur_id_metodo'] . "-" . $data['id'];
 $Datos['url']=$data['url'];
 $Datos['id']=$data['id'];
+$Datos['precio']=$pesos[$data['id']];
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 
 if($v['where']['id_provi']){$pp= ' en ' . normaliza($v['vars']['provN'][$v['where']['id_provi']]);}else{$pp="";};
@@ -40,7 +41,7 @@ $descripcion=$data['cur_paraqueteprepara'] . "</p><p>" . $data['cur_descripcion'
 
 if(strlen($descripcion)>400){$descripcion=substr($descripcion, 0,400) . "...";};
 
-$descripcion=strongTXT($descripcion,$pals);
+//$descripcion=strongTXT($descripcion,$pals);
 
 $Datos['cur_descripcion']= $descripcion;
 $Datos['ncent']=$data['ncent'];

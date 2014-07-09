@@ -5,7 +5,7 @@ includeFUNC('sacaCursos');
 includeFUNC('images');
 
 $idcat=$v['where']['id'];
-//catsINF($idcat);
+catsINF($idcat);
 
 
 $appid[1]="676600425716555";
@@ -48,9 +48,13 @@ $v['where']['bc']=$bc . " ". $v['where']['pagTittle'];
 
 //$Datos['sliders']=loadChild('objt','sliders');
 
-//$Datos['catsinf']=loadChild('objt','catsinf');
+$Datos['catsinf']=loadChild('n_objt','catsinf');
+
 
 $Datos['listCursos']=loadChild('n_objt','listCursos');
+
+
+$Datos['catsinf_Otras']=loadChild('n_objt','catsinf_Otras');
 
 global $lccu;
 $Datos['topCURinf']=$lccu['html'];

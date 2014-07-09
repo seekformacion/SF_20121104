@@ -63,7 +63,7 @@ $homes[1]=1;
 
 
 
- 
+/* 
 #########3 para curso destacado
 if(array_key_exists($idsup,$homes)){$idsup=$idcat;};
 
@@ -95,7 +95,7 @@ $lccuT['key']=$key; $lccuT['$idcc']=$idcc; $lccuT['pagTC']=$pagTC;
 $lccuT['html']=loadChild('objt','subCURcatsinfT');
 }}
 #########################	
-
+*/
 
 
 }
@@ -155,7 +155,7 @@ foreach ($dcats as $key => $value) {$limit--;
 if($limit>=0){$dcats2[$key]=$value;}	
 }
 
-$v['where']['cats_same']=$dcats2;
+//$v['where']['cats_same']=$dcats2;
 
 
 
@@ -171,13 +171,13 @@ $v['where']['cats_same']=$dcats2;
 
 
 
-function catsINF($idcat){global $v;
+function catsINF($idcat){global $v; global $ctinf;
 
 $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
 
 $lcats=array();
-
+$ctinf=array();
 
 $listC=CATS_inf_T($idcat);
 
@@ -204,7 +204,7 @@ if (array_key_exists($idc, $lcats)){$lcats[$idc]=$lcats[$idc]+$qty;}else{$lcats[
 
 
 $qty=0;$lcatsT="";
-foreach ($lcats as $idc => $qty) {if($qty>0){$lcatsT .=$idc . ",";};}; 
+foreach ($lcats as $idc => $qty) {if($qty>0){$lcatsT .=$idc . ","; $ctinf[$idc]=1;};}; 
 $lcatsT=substr($lcatsT, 0,-1);
 
 $dcats=array();

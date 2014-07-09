@@ -105,7 +105,7 @@ $v['vars']['eqmet'][4]['s']="A distancia";
 $v['vars']['eqmet'][5]['s']="Online";
 $v['vars']['eqmet'][6]['s']="En el extranjero";
 $v['vars']['eqmet'][7]['s']="Otros";
-
+$v['vars']['eqmet'][8]['s']="Otros";
 
 
 $v['vars']['certi'][0]="No reglado.";
