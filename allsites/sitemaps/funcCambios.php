@@ -27,6 +27,7 @@ if(count($nue)>0){ foreach ($nue as $key => $vals) {
 foreach ($vals as $camp => $valor){$valor=addslashes($valor);
 $q.="$camp='$valor', ";	
 }}}
+
 $q=substr($q, 0,-2) . " WHERE t_id=$idcur AND tipo=2;";
 $err.=DBUpInsSDB($q,'seekformacion');
 echo $err . "\n";
