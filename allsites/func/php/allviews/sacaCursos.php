@@ -86,7 +86,7 @@ $fin=($ini+$cpp)-1;
 
 
 ############# añado filtro online o a distancia
-	if($online){
+/*	if($online){
 	$onl="AND id_metodo=5";	
 	}elseif($distancia){
 	$onl="AND id_metodo=4";	
@@ -94,41 +94,19 @@ $fin=($ini+$cpp)-1;
 		if($idpro){
 		$onl="AND id_metodo != 5 AND id_metodo !=4";
 		}else{
-		$onl="";
+		
 		}		
 	}
 
+*/
+	
+$onl="";
 $listcur="";$nc=0;	
-$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt) $onl;");	
+$res=DBselect("SELECT id_cur FROM skv_relCurCats WHERE showC=1 AND id_cat=$idc AND id_tipo IN ($idt);");	
 foreach ($res as $key => $data) {$listcur.=$data['id_cur'] . ",";$nc++;};
 $listcur=substr($listcur, 0,-1);
 
 
-
-
-########## filtro provincias
-if($idpro){
-if(($idpro=='070')||($idpro=='077')||($idpro=='078')){}else{$idpro=substr($idpro, 0,2);};	
-		
-$res=DBselect("SELECT distinct(idcur) FROM skv_relCurPro WHERE idpro like '$idpro%'  AND idcur IN ($listcur);");
-$listcur="";$nc=0;	
-foreach ($res as $key => $data) {$listcur.=$data['idcur'] . ",";$nc++;}
-$listcur=substr($listcur, 0,-1);	
-}
-	############
-
-	
-	
-	
-	
-	
-$v['where']['npags']=ceil($nc/$cpp);
-$curs=ordenaCURs($listcur,$ini,$fin);
-
-
-
-$listcur="";	
-foreach ($curs as $key => $cur) {$listcur.=$cur . ",";};$listcur=substr($listcur, 0,-1);
 
 return $listcur;	
 }
@@ -230,6 +208,73 @@ echo "\n _________ \n $txt \n ____-- \n";
 return $txt;
 }
 ##################################
+
+
+function ordenaCURsNEW($curs,$ini,$fin){global $pesos; global $v;
+$np=round($v['where']['npags']/2);
+if($np==0){$np=1;}
+$cpp=$v['conf']['cpp'];
+arsort($pesos);
+//print_r($pesos);	
+
+$max=reset($pesos);
+$min=end($pesos);
+//echo "max: $max  min: $min  np:$np \n";
+$dife=round($max/$np);
+
+$a=0; $pos=$max;
+foreach ($pesos as $idcu => $peso) {$np=$v['where']['npags'];
+	while ($np > 0){
+	$pos=$max-($dife*$np);
+	if($peso>=$pos){$pf=$pos;}	
+	$np--;}	
+$npos[$pf][]=$idcu;
+}
+
+//print_r($npos);
+
+$almacen=array();
+
+foreach ($npos as $grupo => $lista){
+$almacen=suborder($lista,$almacen);	
+}
+
+
+$output = array_slice($almacen, $ini, $fin - $ini +1);
+foreach ($output as $ll => $id){$nlist[]=$id;};
+
+//print_r($nlist);
+return $nlist;	
+}
+
+
+
+
+function suborder($lista,$almacen){
+$curs="";	
+foreach($lista as $kk => $idcur){if($idcur){$curs.="$idcur,";}}$curs=substr($curs,0,-1);
+
+$lastC="";
+if($curs){
+$res=DBselect("SELECT id, pccur, id_centro, OrdDESC FROM skv_cursos WHERE id IN ($curs) ORDER BY pccur DESC, OrdDESC DESC;");		
+foreach ($res as $key => $value) {
+	if(!$value['pccur']){$value['pccur']=0;};
+	$idcent=$value['id_centro']; if($idcent==$lastC){$pcc=$value['pccur']-0.5;}else{$pcc=$value['pccur'];}$lastC=$idcent;
+	$preORD[$value['id']]=$pcc;
+	}
+
+arsort($preORD);	
+foreach ($preORD as $id => $kk) {$almacen[]=$id;}
+}	
+
+return $almacen;
+}	
+	
+
+
+
+
+
 
 
 

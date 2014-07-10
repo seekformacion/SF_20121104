@@ -43,7 +43,7 @@ if(count($cur)>0){foreach ($cur as $kk => $vals){
 	
 $idcur=$vals['id_cur'];
 
-$div=($idcur % 4);
+$div=($idcur % 8);
 
 
 if($div==$dorest){
