@@ -24,7 +24,7 @@ echo $err . "\n";
 $nue=DBselectSDB("SELECT idp, url, tipo, codTittle, pagTittle, pagTittleC, crsTittle FROM skP_C_urls WHERE t_id=$idcur;",'seekpanel');
 $q="UPDATE skf_urls SET ";
 if(count($nue)>0){ foreach ($nue as $key => $vals) {
-foreach ($vals as $camp => $valor){
+foreach ($vals as $camp => $valor){$valor=addslashes($valor);
 $q.="$camp='$valor', ";	
 }}}
 $q=substr($q, 0,-2) . " WHERE t_id=$idcur AND tipo=2;";
