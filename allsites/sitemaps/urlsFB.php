@@ -42,11 +42,10 @@ includeCORE('funcs/general');
 //includeCORE('mail/mail');
 includeFUNC('sacaCursos');
 
-$acentros[353]=1;
-$acentros[411]=1;
+
 $acentros[453]=1;
 
-$Lcentros="353,411,453";
+$Lcentros="453";
 
 $DOp=DBselectSDB("select distinct cur_cat as cat from skv_cursos where pccur > 5 AND id_centro IN ($Lcentros);",'seekformacion'); 	
 if(count($DOp)>0){ foreach ($DOp as $key => $values) {$idCAT=$values['cat'];
