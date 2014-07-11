@@ -39,7 +39,7 @@
 .tdC2   { width:182px; padding:20px 20px 0 20px; border-left:1px solid #CCCCCC; border-right: 1px solid #CCCCCC;position:relative; vertical-align:top; }
 .tdC2 p {font-size:13px; color:red; text-transform: uppercase; margin:5px 0;}
 
-.lcuP {position:absolute; top:6px; right: 15px; font-size: 23px; font-family:Arial; font-style:italic; font-weight: bold; color:#2C4161;}
+.lcuP {position:absolute; top:6px; right: 15px; font-size: 18px; font-family:Arial; font-style:italic; font-weight: bold; color:#2C4161;}
 
 
 .desCcu{float: left;    left: 15px;    position: relative;    top: 15px;    width: 576px;}
