@@ -14,10 +14,10 @@ $hoy=(date('Y') . date('m') . $d)*1;
 #################3 compruebo numero de url a realizar por iteracion.. 720 interaciones en 5 dias cada 10 min
 $limit=10;
 $dcats=DBselect("select count(id) as tot from util_cache where idp IN ($idp);");
-if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/420),0);};
+if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/500),0);};
 echo "\nlimite $limit\n\n";
 
-$limit=10;
+//$limit=10;
 
 
 
