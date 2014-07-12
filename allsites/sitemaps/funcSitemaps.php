@@ -106,7 +106,7 @@ echo "\n";
 $SiteTXT="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n\n";
 
 
-
+$dupli=array();
 $res=DBselect("SELECT * FROM util_sitemap WHERE idp=$idp ORDER BY tipo;");
 if(array_key_exists(1, $res)){ foreach ($res as $key => $value) {
 $id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior']; $date=$value['date']; $chksum=$value['chksum'];
@@ -115,7 +115,7 @@ $id=$value['id']; $idc=$value['t_id']; $url=$value['url']; $pri=$value['prior'];
 if($pri <= 1){$pri=1;};
 $pri=($pri/10);	
 if($pri==1){$pri="1.0";};	
-$SiteTXT .="<url>\n<loc>$url</loc>\n</url>\n\n"; //echo "<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n";
+if(!array_key_exists($url, $dupli)){$SiteTXT .="<url>\n<loc>$url</loc>\n</url>\n\n";$dupli[$url]=1;} //echo "<url>\n<loc>$url</loc>\n<priority>$pri</priority>\n</url>\n\n";
 echo "#";
 
 }}
