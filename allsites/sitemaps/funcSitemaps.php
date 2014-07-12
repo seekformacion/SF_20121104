@@ -345,10 +345,10 @@ return $c;
 function refressUCACHE(){$bor=array();$add=array();
 $a=1;
 while($a<=3){
-	$res=DBselect("select url, idp FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a);");
+	$res=DBselect("select url, idp FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a) limit 500;");
 	if(count($res)>0){foreach($res as $kk => $val){$t_id=$val['url']; $idp=$val['idp']; $add[$a][$t_id]=$idp;}};			
 	
-	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a);");
+	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a) limit 500;");
 	if(count($res)>0){foreach($res as $kk => $val){$id=$val['id']; $bor[]=$id;}};
 			
 	$a++;	
