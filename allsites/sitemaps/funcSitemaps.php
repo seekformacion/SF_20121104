@@ -17,7 +17,7 @@ $dcats=DBselect("select count(id) as tot from util_cache where idp IN ($idp);");
 if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/500),0);};
 echo "\nlimite $limit\n\n";
 
-//$limit=10;
+$limit=100;
 
 
 
