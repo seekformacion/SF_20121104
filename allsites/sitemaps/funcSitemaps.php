@@ -342,6 +342,35 @@ if(array_key_exists('1', $res2)){$c['P']=$res2[1]['c'];
 return $c;	
 }
 
+function refressUCACHE(){$bor=array();$add=array();
+$a=1;
+while($a<=3){
+	$res=DBselect("select url FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a);");
+	if(count($res)>0){foreach($res as $kk => $val){$t_id=$val['url']; $add[$a][$t_id]=1;}};			
+	
+	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a);");
+	if(count($res)>0){foreach($res as $kk => $val){$id=$val['id']; $bor[]=$id;}};
+			
+	$a++;	
+}	
 
+$ladds="";
+if(count($add)>0){foreach ($add as $tipo => $dats) {foreach($dats as $t_id => $un){
+$ladds .="($tipo,'$t_id'),";	
+}}
+$ladds=substr($ladds, 0,-1);
+DBUpIns("INSERT INTO util_cache (tipo,url) VALUES $ladds;");	
+}
+
+$lbor="";
+if(count($bor)>0){foreach ($bor as $kk => $id) {
+$lbor .="$id,";	
+}
+$lbor=substr($lbor, 0,-1);
+DBUpIns("DELETE FROM util_cache WHERE id IN ($lbor);");
+}
+
+	
+}
 
 ?>
