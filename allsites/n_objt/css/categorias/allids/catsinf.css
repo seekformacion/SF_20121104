@@ -1,5 +1,5 @@
 
-#cmenu {padding-top:10px;}
+
 
 #cmenu ul {
 position:relative;float:left;  width:260px; 
@@ -11,17 +11,21 @@ padding:0px; list-style: none; cursor:pointer;
 
 
 .topOp  { 
-padding: 7px 20px 10px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
+padding: 8px 32px 9px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
 color: #ffffff;
 font-family: arial;
-font-size: 13px;	
+font-size: 13px;
+background-position: right -33px !important;	
+	
 }
 .topOp:hover  {background-color: #ff8800 !important; }
 
 
 #cmenu li {
-padding: 7px 16px 5px 8px; border-bottom: 1px solid #999999; border-left:1px solid #999999; border-right:1px solid #999999; 	
-	
+padding: 8px 20px 5px 8px; border-bottom: 1px solid #999999; border-left:1px solid #999999; border-right:1px solid #999999; 	
+background-image:url('/img/iconos/fondico.png');
+background-repeat:no-repeat;
+background-position: right 10px;	
 }
 
 #cmenu li:hover {
@@ -31,5 +35,6 @@ background-color: #EEEEEE;
 
 #cmenu li a{
 font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
-	
+line-height: 1.5;
+display:block;	
 }

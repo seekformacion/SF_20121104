@@ -9,10 +9,41 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 .cbpag {position:relative; float: left;  width: 1200px; height:15px;}
 
 .imgCat {position:relative; float:left; height:75px; width:280px; border:none; }
-.cabLogo{position:relative; float:left; height:75px; width:920px; background-image:url('/img/fondos/fondo1.jpg'); }
+.imgCont {position:absolute; left:-280px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
+
+.cabLogo{position:relative; float:left; height:75px; width:920px;background-image:url('/img/fondos/fondo1.jpg');}
 .logo {position:relative; float: right; margin:5px 10px 0 0;}
 
 .cnt {position:relative; float: left;  width: 1200px;}
+
+
+
+/* col right
+*/
+
+#cmenu {padding-top:10px;}
+
+.busc {  background-color: #eeeeee;
+    border: 1px solid #999999;
+    color: #ffffff;
+    float: left;
+    font-family: arial;
+    font-size: 13px;
+    margin: 5px 10px;
+    padding: 4px 4px 2px 8px;
+    position: relative;
+    width: 246px;}
+
+.busc input {position:relative; float:left; background-color: transparent;margin:0px;width:212px; border:none; height:20px; font-size:15px; font-family:arial; padding:0px;}
+.busc input { color:#666666;  font-style:normal; margin-top:2px;}
+
+.busc input[type=submit] {cursor:pointer;position:relative; float:right;margin-top:0px; width:27px; height:26px; background-image:url('/img/iconos/iconos.png');}
+
+.busc ::-webkit-input-placeholder 	{color:#aaaaaa;  font-style:italic;}
+.busc :-moz-placeholder 			{color:#aaaaaa;  font-style:italic;}
+.busc ::-moz-placeholder 			{color:#aaaaaa;  font-style:italic;}
+.busc :-ms-input-placeholder 		{color:#aaaaaa;  font-style:italic;}
+
 
 /* col LEFT
 */
