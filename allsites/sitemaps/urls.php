@@ -152,7 +152,7 @@ DBUpIns("INSERT INTO util_sitemap (tipo,idp,t_id,url,prior,date) VALUES $SQQ;");
 
 
 
-
+refressUCACHE();
 
 
 
