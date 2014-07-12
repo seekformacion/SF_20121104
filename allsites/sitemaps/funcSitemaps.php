@@ -10,7 +10,7 @@ if( ! ini_get('date.timezone') )
 function GetURLtoCACHE($idp){global $v;
 $cc=0; 
 $d=date('d')-1; if(strlen($d)==1){$d="0" . $d;}
-$hoy=(date('Y') . date('m') . $d)*1;
+$hoy=(date('Y') . date('m') . date('d'))*1;
 #################3 compruebo numero de url a realizar por iteracion.. 720 interaciones en 5 dias cada 10 min
 $limit=10;
 $dcats=DBselect("select count(id) as tot from util_cache where idp IN ($idp);");
@@ -22,7 +22,7 @@ echo "\nlimite $limit\n\n";
 
 
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, tipo, idp from util_cache where idp IN ($idp) AND ldate < $hoy ORDER BY id DESC limit $limit;");
+$dcats=DBselect("select id, url, tipo, idp from util_cache where idp IN ($idp) AND ldate < $hoy ORDER BY ldate ASC limit $limit;");
 
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
