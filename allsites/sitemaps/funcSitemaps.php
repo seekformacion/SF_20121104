@@ -15,12 +15,14 @@ $hoy=(date('Y') . date('m') . $d)*1;
 $limit=10;
 $dcats=DBselect("select count(id) as tot from util_cache where idp IN ($idp);");
 if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/420),0);};
-$limit=100;
-
 echo "\nlimite $limit\n\n";
 
+$limit=10;
+
+
+
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, tipo, idp from util_cache where idp IN ($idp) AND ldate < $hoy ORDER BY id DESC limit 10;");
+$dcats=DBselect("select id, url, tipo, idp from util_cache where idp IN ($idp) AND ldate < $hoy ORDER BY id DESC limit $limit;");
 
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
