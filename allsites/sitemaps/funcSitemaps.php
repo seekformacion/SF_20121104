@@ -348,7 +348,7 @@ while($a<=3){
 	$res=DBselect("select url FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a) limit 500;");
 	if(count($res)>0){foreach($res as $kk => $val){$t_id=$val['url']; $add[$a][$t_id]=1;}};			
 	
-	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a); limit 500;");
+	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a) limit 500;");
 	if(count($res)>0){foreach($res as $kk => $val){$id=$val['id']; $bor[]=$id;}};
 			
 	$a++;	
