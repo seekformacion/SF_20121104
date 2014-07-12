@@ -345,8 +345,8 @@ return $c;
 function refressUCACHE(){$bor=array();$add=array();
 $a=1;
 while($a<=3){
-	$res=DBselect("select url FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a);");
-	if(count($res)>0){foreach($res as $kk => $val){$t_id=$val['url']; $add[$a][$t_id]=1;}};			
+	$res=DBselect("select url, idp FROM util_sitemap WHERE tipo=$a AND url NOT IN (select url FROM util_cache WHERE tipo=$a);");
+	if(count($res)>0){foreach($res as $kk => $val){$t_id=$val['url']; $idp=$val['idp']; $add[$a][$t_id]=$idp;}};			
 	
 	$res=DBselect("select id FROM util_cache WHERE tipo=$a AND url NOT IN (select url FROM util_sitemap WHERE tipo=$a);");
 	if(count($res)>0){foreach($res as $kk => $val){$id=$val['id']; $bor[]=$id;}};
@@ -355,11 +355,11 @@ while($a<=3){
 }	
 
 $ladds="";
-if(count($add)>0){foreach ($add as $tipo => $dats) {foreach($dats as $t_id => $un){
-$ladds .="($tipo,'$t_id'),";	
+if(count($add)>0){foreach ($add as $tipo => $dats) {foreach($dats as $t_id => $idp){
+$ladds .="($tipo,$idp,'$t_id'),";	
 }}
 $ladds=substr($ladds, 0,-1);
-DBUpIns("INSERT INTO util_cache (tipo,url) VALUES $ladds;");	
+DBUpIns("INSERT INTO util_cache (tipo,idp,url) VALUES $ladds;");	
 }
 
 $lbor="";
