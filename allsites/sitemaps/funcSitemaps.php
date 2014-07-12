@@ -8,21 +8,23 @@ if( ! ini_get('date.timezone') )
 
 
 function GetURLtoCACHE($idp){global $v;
-$cc=0;
+$cc=0; 
+$d=date('d')-1; if(strlen($d)==1){$d="0" . $d;}
+$hoy=(date('Y') . date('m') . $d)*1;
 #################3 compruebo numero de url a realizar por iteracion.. 720 interaciones en 5 dias cada 10 min
 $limit=10;
-$dcats=DBselect("select count(id) as tot from util_sitemap where idp IN ($idp);");
+$dcats=DBselect("select count(id) as tot from util_cache where idp IN ($idp);");
 if(array_key_exists(1, $dcats)){$tot=$dcats[1]['tot'];$limit=round(($tot/420),0);};
 $limit=100;
 
 $dt=date('Y') . date('m') . date('d');
-$dcats=DBselect("select id, url, t_id, tipo, idp from util_sitemap where idp IN ($idp) AND done = 0 ORDER BY id DESC limit $limit;");
+$dcats=DBselect("select id, url, tipo, idp from util_cache where idp IN ($idp) AND ldate < $hoy ORDER BY id DESC limit $limit;");
 
 if(count($dcats)>0){foreach($dcats as $key => $val){
 
 $id=$val['id'];	
 $tipo=$val['tipo'];
-$t_id=$val['t_id'];
+//$t_id=$val['t_id'];
 $url=$val['url'];
 $idppp=$val['idp'];
 $idpp=$v['vars']['purl'][$idppp];
@@ -34,39 +36,38 @@ $urlsH[$cc][1]=$idpp;
 $urlsH[$cc][2]=$idpp2;
 $urlsH[$cc][3]=$url;
 
-
-DBUpIns("UPDATE util_sitemap SET done=1 WHERE id=$id;");// echo "UPDATE util_sitemap SET date='$dt' WHERE id=$id; \n\n";	
-
-
-$dcats=DBselect("select Redir, url from skf_urls where idp = ($idppp) AND t_id ='$t_id' AND tipo=$tipo;"); 
-if(count($dcats)>0){
-$redir=$dcats[1]['Redir'];
-if($redir){
 	
-$url2=$dcats[1]['url']; 
-$redir=str_replace('.html', '', $redir);	
-$url2=str_replace('.html', '', $url2);
-	
-$urlR=str_replace($url2, $redir, $url);
-//echo $urlR . "\n";
 
-if($urlR!=$url){
-/*		
-$cc++;
-$urlsH[$cc][1]=$idpp;
-$urlsH[$cc][2]=$idpp2;
-$urlsH[$cc][3]=$urlR;
-*/
-//refress($idpp,$idpp2,$urlR);
-	
-}else{
-
-	
-}
-
-
-}}
-
+						/*    RECAHEO DE LOS REDIRECCIONAMIENTOS
+						$dcats=DBselect("select Redir, url from skf_urls where idp = ($idppp) AND t_id ='$t_id' AND tipo=$tipo;"); 
+						if(count($dcats)>0){
+						$redir=$dcats[1]['Redir'];
+						if($redir){
+							
+						$url2=$dcats[1]['url']; 
+						$redir=str_replace('.html', '', $redir);	
+						$url2=str_replace('.html', '', $url2);
+							
+						$urlR=str_replace($url2, $redir, $url);
+						//echo $urlR . "\n";
+						
+						if($urlR!=$url){
+							
+						$cc++;
+						$urlsH[$cc][1]=$idpp;
+						$urlsH[$cc][2]=$idpp2;
+						$urlsH[$cc][3]=$urlR;
+						
+						//refress($idpp,$idpp2,$urlR);
+							
+						}else{
+						
+							
+						}
+						
+						
+						}}
+						*/
 
 
 	
@@ -150,6 +151,9 @@ curl_setopt($c, CURLOPT_USERAGENT, $dev);
 $page = curl_exec($c);
 curl_close($c);	
 }	
+
+$hoy=(date('Y') . date('m') . date('d'))*1;
+DBUpIns("UPDATE util_cache SET ldate=$hoy WHERE url='$url';");
 }
 
 
