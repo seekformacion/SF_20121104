@@ -97,7 +97,7 @@ global $lccuT;
 
 $Datos['metas']=loadChild('n_objt','metas');
 
-
+ 														 if($v['debugIN']>0){$Datos['dbi']="<div>" . $v['dbi'] . "</div>";}else{$Datos['dbi']="";}
 
 
 

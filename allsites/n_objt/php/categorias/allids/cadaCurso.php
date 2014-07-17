@@ -28,7 +28,30 @@ $nom="$nom en $np";
 $Datos['nombre']=$nom;# . "-" . $data['cur_id_metodo'] . "-" . $data['id'];
 $Datos['url']=$data['url'];
 $Datos['id']=$data['id'];
+$Datos['pinp']=$data['pinp'];
+
+if($v['debugIN']>0){
 $Datos['precio']=$pesos[$data['id']];
+}else{
+$Datos['precio']=$data['price'];	
+}
+
+
+####### franja titulacion precio
+
+if(($data['cur_id_certificado']==1)||($data['cur_id_certificado']==2)||($data['cur_id_certificado']==7)||($data['cur_id_certificado']==10)){
+$tit=$v['vars']['certi'][$data['cur_id_certificado']];
+
+$Datos['tit']="<div class='titu'>$tit</div>";
+$Datos['prf']='prF';
+}else{
+$Datos['tit']="";
+$Datos['prf']='';	
+}
+###############################
+
+
+
 $Datos['tip']=$eqtip[$data['cur_id_tipocurso']]['s'];
 
 if($v['where']['id_provi']){$pp= ' en ' . normaliza($v['vars']['provN'][$v['where']['id_provi']]);}else{$pp="";};

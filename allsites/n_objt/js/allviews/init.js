@@ -1,6 +1,27 @@
 
 function lK(url){window.location.href =	url;}
 
+function detectIE() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    var trident = ua.indexOf('Trident/');
+
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    if (trident > 0) {
+        // IE 11 (or newer) => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    // other browser
+    return false;
+}
+
+
 
 function dMp(){ 
 if(document.getElementById('prov').className=='liPreC'){
@@ -17,6 +38,8 @@ document.getElementById('lisP').style.display='none';
 
     
 $(function () {$(window).bind( "scroll", function(e) {
+if(!detectIE()){	
+	
 var top=f_scrollTop();
 var hM =$("#cmenu").height();
 var hW =window.innerHeight;
@@ -32,8 +55,8 @@ var ptop=90-limit;
 
 var ptop2=footP-hM-ptop;
 
-console.log('top:' +top);
-console.log('limit:' + limit);
+//console.log('top:' +top);
+//console.log('limit:' + limit);
 
 if(top>limit){
 document.getElementById('cmenu').className='fijo';
@@ -63,7 +86,10 @@ if(top>ptop2){
 
 }else{
 document.getElementById('cmenu').className='nofijo';	
-};
+}
+
+}
+
 });});
 
 function f_scrollTop() {

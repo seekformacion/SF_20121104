@@ -20,6 +20,20 @@ $res=DBselect("SELECT t_id, url, pagTittle, pagTittleC FROM skf_urls WHERE tipo=
 return $res[1];	
 }
 
+
+function limpiaPrice($str){
+$str=strtolower($str);	
+$quitos=array('€','consultar','iva');	
+	
+$str=str_replace($quitos,'',$str);
+$str=str_replace(',','.',$str);
+$str=$str*1;
+
+if($str<=15){$str=0;}
+
+return round($str,0);	
+}
+
 ############### obtengo url de un curso dado
 function urlCur($idc){global $v;
 $res=DBselect("SELECT url, idp FROM skf_urls WHERE tipo=2 AND t_id=$idc;");		
@@ -44,13 +58,19 @@ if(substr($listcur, strlen($listcur)-1,1)==','){$listcur=substr($listcur, 0,-1);
 
 
 if($listcur){
-$res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripcion, cur_dirigidoa, cur_paraqueteprepara, 
+$res=DBselect("SELECT	id, nombre,	cur_id_tipocurso, cur_id_metodo, cur_descripcion, 
+						cur_dirigidoa, cur_paraqueteprepara, cur_id_certificado, cur_mostarprecio, cur_precio,  
 						id_centro, (SELECT nombre FROM skv_centros WHERE id=id_centro) as ncent, 
 						id_centro, (SELECT file_logo FROM skv_centros WHERE id=id_centro) as file_logo 
 						FROM skv_cursos where id IN ($listcur) ORDER BY FIELD(id, $listcur);");	
-	
-foreach ($res as $key => $data) {
+
+$ccc=0;	
+foreach ($res as $key => $data) {$ccc ++; if(($ccc % 2)){$data['pinp']='p';}else{$data['pinp']='i';}
 $data['url']=urlCur($data['id']);
+
+$data['cur_precio']=limpiaPrice($data['cur_precio']);
+
+if(($data['cur_mostarprecio']==1)&&($data['cur_precio']<500)&&($data['cur_precio'])){$data['price']=$data['cur_precio'] . "€";}else{$data['price']="";}
 		
 $bloqueCursos .=loadChild('n_objt','cadaCurso');	
 }	
@@ -181,8 +201,8 @@ $pesos2[$iddcc]=$pesos[$iddcc];
 
 arsort($pesos2);
 																					if($v['debugIN']>0){
-																					echo "<br>\n<br>\nOrdNEW Pesos:<br>\n";
-																					print_r($pesos);}
+																					$v['dbi'].=  "<br>\n<br>\nOrdNEW Pesos:<br>\n";
+																					$v['dbi'].=json_encode($pesos);}
 
 
 $max=reset($pesos2);
@@ -201,8 +221,8 @@ $npos[$pf][]=$idcu;
 
 //print_r($npos);
 																			      if($v['debugIN']>0){
-																					echo "<br>\n<br>\nOrdNEW Npos:<br>\n";
-																					print_r($npos);}
+																					$v['dbi'].=  "<br>\n<br>\nOrdNEW Npos:<br>\n";
+																					$v['dbi'].=json_encode($npos);}
 
 																			      
 
@@ -219,8 +239,8 @@ $output = array_slice($almacen, $ini, $fin - $ini +1);
 foreach ($output as $ll => $id){$nlist[]=$id;};
 																				
 																			      if($v['debugIN']>0){
-																					echo "<br>\n<br>\nOrdNEW nlist:<br>\n";
-																					print_r($nlist);}
+																					$v['dbi'].=  "<br>\n<br>\nOrdNEW nlist:<br>\n";
+																					$v['dbi'].=json_encode($nlist);}
 																				
 //print_r($nlist);
 return $nlist;	
