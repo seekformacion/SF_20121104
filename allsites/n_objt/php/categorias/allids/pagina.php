@@ -48,13 +48,20 @@ $v['where']['bc']=$bc . " ". $v['where']['pagTittle'];
 
 //$Datos['sliders']=loadChild('objt','sliders');
 
-$Datos['catsinf']=loadChild('n_objt','catsinf');
+
 
 
 $Datos['listCursos']=loadChild('n_objt','listCursos');
 
+if(count($v['where']['cats_inf'])>0){
+$Datos['catsinf']=loadChild('n_objt','catsinf');
+}else{
+$Datos['catsinf']="";	
+}
 
 $Datos['catsinf_Otras']=loadChild('n_objt','catsinf_Otras');
+$Datos['filtros']=loadChild('n_objt','filtros');
+
 
 global $lccu;
 $Datos['topCURinf']=$lccu['html'];

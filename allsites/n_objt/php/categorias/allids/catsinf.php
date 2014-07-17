@@ -1,5 +1,6 @@
 <?php
 
+
 $catsinf=$v['where']['cats_inf'];
 
 
@@ -33,6 +34,10 @@ if($noadmin){
 
 	
 }	
+
+$Datos['pagTittle']=$v['where']['pagTittle'];
+$Datos['bacKurl']=$v['where']['csup']['url'];
+
 	
 $rDatos['cadCinf']=$newc;
 

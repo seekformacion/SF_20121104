@@ -4,8 +4,8 @@
 $v['conf']['resolution']['A']="1110";
 $v['conf']['resolution']['B']="768";
 
-$v['conf']['cpp']=5;
-
+$v['conf']['cpp']=10;
+$v['conf']['limitENGINE']=150;
 
 $v['path']['l_css']="/lskin/css"; #ruta httpd relativa para almacenar los css en test  (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)
 $v['path']['c_css']="/cskin/css"; #ruta httpd relativa para almacenar los css en produccion    (OJO CON LOS PERMISOS DE ESTOS DIRECTORIOS 777)

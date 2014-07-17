@@ -8,17 +8,19 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 .page {position:relative; width:1200px; margin: 0 auto;}
 .cbpag {position:relative; float: left;  width: 1200px; height:15px;}
 
+
+
 .imgCat {position:relative; float:left; height:75px; width:280px; border:none; }
 .imgCont {position:absolute; left:-280px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
 
 .cabLogo{position:relative; float:left; height:75px; width:920px;background-image:url('/img/fondos/fondo1.jpg');}
-.logo {position:relative; float: right; margin:5px 10px 0 0;}
+.logo {position:relative; float: right; margin:5px 10px 0 0; z-index:999}
 
 .cnt {position:relative; float: left;  width: 1200px;}
 
 
 
-/* col right
+/* col l
 */
 
 #cmenu {padding-top:10px;}
@@ -45,7 +47,123 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 .busc :-ms-input-placeholder 		{color:#aaaaaa;  font-style:italic;}
 
 
-/* col LEFT
+
+/* cats inf */
+
+
+
+#cmenu ul {
+position:relative;float:left;  width:260px; 
+margin:5px 10px;background-color: #ffffff;
+	
+padding:0px; list-style: none; cursor:pointer;
+	
+}
+
+
+.topOp  { 
+padding: 8px 32px 9px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
+color: #ffffff;
+font-family: arial;
+font-size: 13px;
+background-position: right -33px !important;	
+	
+}
+.topOp:hover  {background-color: #ff8800 !important; }
+
+
+.topMs  { 
+padding: 8px 32px 9px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
+color: #ffffff;
+font-family: arial;
+font-size: 13px;
+background-image:none !important;	
+cursor:auto !important;	
+}
+.topMs:hover  {background-color: #ff9900 !important; }
+
+
+
+
+
+
+
+.topOp h2 {color: #ffffff;font-family: arial;font-size: 13px; padding:0; margin:0;}
+
+
+#cmenu li {
+padding: 8px 20px 5px 8px; border-bottom: 1px solid #999999; border-left:1px solid #999999; border-right:1px solid #999999; 	
+background-image:url('/img/iconos/fondico.png');
+background-repeat:no-repeat;
+background-position: right 10px;	
+}
+
+#cmenu li:hover {
+background-color: #EEEEEE;	
+	
+}
+
+#cmenu li a{
+font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;	
+}
+
+
+
+.liPreC h2, .liPreD h2{
+font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;
+}
+
+
+.liPreC {
+border-bottom: 1px solid #999999 !important;		
+padding-bottom:5px !important;
+background-position: right -73px !important;
+}
+
+.liPreD {
+border-bottom:0px !important;		
+padding-bottom:8px !important;
+background-position: right -100px !important;
+}
+
+
+
+
+
+
+#lisP {
+display:none;	
+margin-top:-5px !important;
+border-bottom: 1px solid #999999 !important;
+border-left: 1px solid #999999 !important;
+border-right: 1px solid #999999 !important;
+padding-bottom:10px !important;
+width: 258px !important;	
+}
+
+#lisP li {
+border-bottom:0px !important;
+border-left:0px !important;
+border-right:0px !important;
+padding: 5px 20px 5px 15px !important;
+background-position: right 8px !important;	
+}
+
+
+
+
+
+
+
+
+
+
+
+/* col r
 */
 .cLin{position:relative; float:left;  width: 280px;height: 50px;}
 .cL	 {position:absolute; width: 280px; bottom:0; top:0; left: 0;}

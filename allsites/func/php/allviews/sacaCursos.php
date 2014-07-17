@@ -56,7 +56,7 @@ $bloqueCursos .=loadChild('n_objt','cadaCurso');
 }	
 
 }else{
-$v['return']=$v['where']['id'];	
+//$v['return']=$v['where']['id'];	
 }
 
 return $bloqueCursos;
@@ -169,23 +169,29 @@ return $txt;
 
 
 function ordenaCURsNEW($curs,$ini,$fin){global $pesos; global $v;
-$np=round($v['where']['npags']/2);
+$np=round($v['where']['npags']/2);$pesos2=array();$npos=array();$nlist=array();
 if($np==0){$np=1;}
 $cpp=$v['conf']['cpp'];
-arsort($pesos);
-//print_r($pesos);												
+
+
+$pcursos=explode(',',$curs);
+foreach ($pcursos as $kk => $iddcc){if(array_key_exists($iddcc, $pesos)){
+$pesos2[$iddcc]=$pesos[$iddcc];	
+}}
+
+arsort($pesos2);
 																					if($v['debugIN']>0){
 																					echo "<br>\n<br>\nOrdNEW Pesos:<br>\n";
 																					print_r($pesos);}
 
 
-$max=reset($pesos);
-$min=end($pesos);
+$max=reset($pesos2);
+$min=end($pesos2);
 //echo "max: $max  min: $min  np:$np \n";
 $dife=round($max/$np);
 
 $a=0; $pos=$max;
-foreach ($pesos as $idcu => $peso) {$np=$v['where']['npags'];
+foreach ($pesos2 as $idcu => $peso) {$np=$v['where']['npags'];
 	while ($np > 0){
 	$pos=$max-($dife*$np);
 	if($peso>=$pos){$pf=$pos;}	

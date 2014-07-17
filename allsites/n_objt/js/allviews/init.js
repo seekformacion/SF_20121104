@@ -1,4 +1,20 @@
 
+function lK(url){window.location.href =	url;}
+
+
+function dMp(){ 
+if(document.getElementById('prov').className=='liPreC'){
+document.getElementById('prov').className='liPreD';
+document.getElementById('lisP').style.display='block';		
+}else{
+document.getElementById('prov').className='liPreC'	
+document.getElementById('lisP').style.display='none';
+}
+	
+}
+
+
+
     
 $(function () {$(window).bind( "scroll", function(e) {
 var top=f_scrollTop();
@@ -63,3 +79,6 @@ function f_filterResults(n_win, n_docel, n_body) {
 		n_result = n_docel;
 	return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
 }
+
+
+

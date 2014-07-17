@@ -46,12 +46,14 @@ $pagina=loadChild('n_objt','pagina');
 
 if( (array_key_exists('return', $v) && ( ($v['where']['id_provi']) ||($v['where']['distancia']) ||($v['where']['online']) ) )){
 $idcatM=$v['return'];
+
 $idp=$v['where']['idp'];
 $res=DBselect("SELECT url FROM skf_urls where idp=$idp AND tipo=1 AND t_id=$idcatM;");
+
 if(array_key_exists(1, $res)){
 $newURL=$res[1]['url'];
-header("HTTP/1.1 301 Moved Permanently"); 
-header("Location: $newURL");
+//header("HTTP/1.1 301 Moved Permanently"); 
+//header("Location: $newURL");
 }else{
 header("HTTP/1.0 404 Not Found");	
 }

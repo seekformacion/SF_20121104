@@ -3,11 +3,21 @@
 function breadCRUMBS($idcat){global $v;
 $idt=$v['where']['idt'];
 $idp=$v['where']['idp'];
-
+$id_sup="";
 
 
 $inf=DBselect("select id_sup, superiores from skf_cats where id=$idcat;");
 $sup=$inf[1]['superiores']; $id_sup=$inf[1]['id_sup']; $sup=substr($sup, 1); $sup=substr($sup, 0,-1); $sup=str_replace('|', ',', $sup); 
+
+$v['where']['csup']['nom']="home";
+$v['where']['csup']['url']="/";
+if($id_sup){
+$dcats=DBselect("select pagTittleC, url from skf_urls where t_id=$id_sup AND tipo IN (1);");
+if(count($dcats)>0){foreach ($dcats as $key => $dat) {$url=$dat['url']; $n=$dat['pagTittleC'];
+$v['where']['csup']['nom']=$n;
+$v['where']['csup']['url']=$url;
+}}}
+
 
 curDesc($id_sup,$idcat);
 

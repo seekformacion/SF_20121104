@@ -36,7 +36,7 @@ includeCORE('funcs/phrassCount');
 
 
 
-$idcur=5876;
+$idcur=8473;
 
 $limp=limpiaCur($idcur);
 $proccess=processCUR($idcur);
