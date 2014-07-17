@@ -1,5 +1,35 @@
 
 
+window.onresize = function() { 
+	viewport_set(); 
+}
+
+function viewport_set(){
+var ancho=$('#page').width();	
+document.getElementById("viewport").setAttribute("content", "user-scalable=no,width=" + ancho);  	
+document.getElementById("viewport").setAttribute("content", "user-scalable=no,width=" + ancho); 
+}
+
+
+function omenu(){
+var hW =window.innerHeight;	
+	
+if(document.getElementById('menu').style.display=="none"){	
+	document.getElementById('page').className='pageD';
+	document.getElementById('page').style.height=hW + 'px';
+	document.getElementById('shadow').style.display='block';	
+	document.getElementById('menu').style.display='block';
+}else{
+	document.getElementById('menu').style.display='none';
+	document.getElementById('shadow').style.display='none';	
+	document.getElementById('page').className='page';
+	document.getElementById('page').style.height='inherit';
+}	
+
+}
+
+
+
 function lK(url){window.location.href =	url;}
 
 function detectIE() {

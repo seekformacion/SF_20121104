@@ -1,29 +1,67 @@
-body {margin: 0}
+body {margin: 0;}
 p {font-size:14px; font-family:Arial; color:#666666;}
 
 
-.fijo {position:fixed; width:280px;}
-.nofijo {width:280px;}	
 
-.page {position:relative; width:1200px; margin: 0 auto;}
-.cbpag {position:relative; float: left;  width: 1200px; height:15px;}
+.cbpagT {position:fixed; top:0px; left:0px; height:15px;z-index: 1000000;}
 
+.pageD 	{position:relative;  margin: 15px 0;
+	
+    overflow: hidden;
+    position: fixed;
+     }
+
+.page 	{position:relative;  margin: 15px 0;
+	
+    overflow: inherit;
+    position: inherit;
+     }
 
 
 .imgCat {position:relative; float:left; height:75px; width:280px; border:none; }
-.imgCont {position:absolute; left:-280px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
-
-.cabLogo{position:relative; float:left; height:75px; width:920px;background-image:url('/img/fondos/fondo1.jpg');}
+.imgCont {position:absolute; left:40px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
 .logo {position:relative; float: right; margin:5px 10px 0 0; z-index:999}
 
-.cnt {position:relative; float: left;  width: 1200px;}
-
+.cabLogo{width: 100%; position:relative; float:left; height:75px;background-image:url('/img/fondos/fondo1.jpg');}
+.cnt 	{width: 100%; position:relative; float: left; }
+.cbpag 	{width: 100%; position:relative; float: left;  height:15px;}
 
 
 /* col l
 */
 
-#cmenu {padding-top:10px;}
+#Mmenu {
+height:75px; width:40px; position: relative; float:left; background-color:orange; 	
+}
+
+#MmenuL {
+  height:75px; width:40px;background-color:orange;
+  position: fixed;
+  left:330px;
+  top:50%;	
+  z-index: 1000000;	
+}
+
+#shadow {
+    background-color: #444444;
+    bottom: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 999999;		
+}
+
+#cmenu {
+	padding-top:10px; 
+    background-color: #CED2DF;
+    bottom: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 15px;
+    width: 320px;
+    z-index: 1000000;}
 
 .busc {  background-color: #ffffff;
     border: 1px solid #999999;
@@ -34,9 +72,9 @@ p {font-size:14px; font-family:Arial; color:#666666;}
     margin: 5px 10px;
     padding: 4px 4px 2px 8px;
     position: relative;
-    width: 246px;}
+    width: 286px;}
 
-.busc input {position:relative; float:left; background-color: transparent;margin:0px;width:212px; border:none; height:20px; font-size:15px; font-family:arial; padding:0px;}
+.busc input {position:relative; float:left; background-color: transparent;margin:0px;width:244px; border:none; height:20px; font-size:15px; font-family:arial; padding:0px;}
 .busc input { color:#666666;  font-style:normal; margin-top:2px;}
 
 .busc input[type=submit] {cursor:pointer;position:relative; float:right;margin-top:0px; width:27px; height:26px; background-image:url('/img/iconos/iconos.png');}
@@ -53,7 +91,7 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 
 
 #cmenu ul {
-position:relative;float:left;  width:260px; 
+position:relative;float:left;  width:300px; 
 margin:5px 10px;background-color: #ffffff;
 	
 padding:0px; list-style: none; cursor:pointer;
@@ -88,7 +126,7 @@ cursor:auto !important;
 
 
 
-.topOp h2 {color: #ffffff;font-family: arial;font-size: 13px; padding:0; margin:0;}
+.topOp h2 {color: #ffffff;font-family: arial;font-size: 14px; padding:0; margin:0;}
 
 
 #cmenu li {
@@ -104,7 +142,7 @@ background-color: #EEEEEE;
 }
 
 #cmenu li a{
-font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
 line-height: 1.5;
 display:block;	
 }
@@ -112,7 +150,7 @@ display:block;
 
 
 .liPreC h2, .liPreD h2{
-font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
 line-height: 1.5;
 display:block;
 }
@@ -142,7 +180,7 @@ border-bottom: 1px solid #999999 !important;
 border-left: 1px solid #999999 !important;
 border-right: 1px solid #999999 !important;
 padding-bottom:10px !important;
-width: 258px !important;	
+width: 298px !important;	
 }
 
 #lisP li {
@@ -166,8 +204,8 @@ background-position: right 8px !important;
 /* col r
 */
 .cLin{position:relative; float:left;  width: 280px;height: 50px;}
-.cL	 {position:absolute; width: 280px; bottom:0; top:0; left: 0;}
-.cR  {position:relative; float:left; width: 860px; padding:20px 30px 10px 30px;   background-color: #FFFFFF; top:0; min-height: 900px; }
+
+.cR  {position:relative; float:left;  padding:20px 15px 10px 15px;   background-color: #FFFFFF; top:0; min-height: 900px; }
 
 
 .mSelN {position:relative;float:left; margin:5px 10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;
