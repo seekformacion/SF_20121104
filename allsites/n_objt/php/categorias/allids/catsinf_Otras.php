@@ -2,6 +2,7 @@
 
 $catsinf=$v['where']['cats_inf_otras'];
 //print_r($catsinf);
+//$Datos['ctsin']=$v['where']['Catsin'];
 
 if(count($catsinf)>0){
 

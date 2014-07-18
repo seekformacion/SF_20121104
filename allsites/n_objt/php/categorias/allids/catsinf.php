@@ -35,8 +35,8 @@ if($noadmin){
 	
 }	
 
-$Datos['pagTittle']=$v['where']['pagTittle'];
-$Datos['bacKurl']=$v['where']['csup']['url'];
+$Datos['pagTittle']=$v['where']['Catsin'];
+
 
 	
 $rDatos['cadCinf']=$newc;

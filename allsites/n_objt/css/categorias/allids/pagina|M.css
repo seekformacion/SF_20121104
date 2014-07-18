@@ -1,26 +1,27 @@
 body {margin: 0;}
 p {font-size:14px; font-family:Arial; color:#666666;}
 
-
+.clb {clear:both;}
 
 .cbpagT {position:fixed; top:0px; left:0px; height:15px;z-index: 1000000;}
 
 .pageD 	{position:relative;  margin: 15px 0;
-	
-    overflow: hidden;
+	overflow-x: hidden;
+    overflow-y: hidden;
     position: fixed;
      }
 
 .page 	{position:relative;  margin: 15px 0;
 	
-    overflow: inherit;
+	overflow-x: hidden;
+    overflow-y: inherit;
     position: inherit;
      }
 
 
-.imgCat {position:relative; float:left; height:75px; width:280px; border:none; }
-.imgCont {position:absolute; left:40px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
-.logo {position:relative; float: right; margin:5px 10px 0 0; z-index:999}
+.imgCat {position:relative; float:left; height:75px; width:280px; border:none; margin-left:-55px; }
+.imgCont {position:absolute; left:14px; height:75px; width:280px;background-image:url('/img/fondos/mascara.png'); }
+.logo {position:relative; float: right; margin:5px 10px 0 0; z-index:999; height:40px;}
 
 .cabLogo{width: 100%; position:relative; float:left; height:75px;background-image:url('/img/fondos/fondo1.jpg');}
 .cnt 	{width: 100%; position:relative; float: left; }
@@ -31,37 +32,61 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 */
 
 #Mmenu {
-height:75px; width:40px; position: relative; float:left; background-color:orange; 	
+height:75px; width:69px; position: relative; float:left; background-color:#aaaaaa; z-index: 9999;
+background-image:url('/img/iconos/iconos.png');
+background-position: -88px -66px; 	
 }
 
 #MmenuL {
-  height:75px; width:40px;background-color:orange;
-  position: fixed;
-  left:330px;
+	
+  background-image:url('/img/iconos/iconos.png');
+  background-position: 0px -159px; 	
+  height:75px; width:40px;
+  position: fixed; margin-top:-10px;
+  left:320px;
   top:50%;	
   z-index: 1000000;	
 }
 
 #shadow {
-    background-color: #444444;
+    background-color: #000000;
     bottom: 0;
     overflow-y: auto;
     position: fixed;
     top: 0px;
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.6;
     z-index: 999999;		
 }
 
 #cmenu {
 	padding-top:10px; 
-    background-color: #CED2DF;
+    background-color: #aaaaaa;
     bottom: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     position: fixed;
     top: 15px;
     width: 320px;
-    z-index: 1000000;}
+    z-index: 1000000;
+    
+      
+    transition: all 0.3s ease-out 0s;
+     -webkit-transition: all 0.3s ease-out 0s;
+    }
+
+    
+.opened {
+ transform: translate3d(0px, 0px, 0px) !important;
+ -webkit-transform:	translate3d(0px, 0px, 0px) !important;
+}    
+
+.closed {
+ transform: translate3d(-320px, 0px, 0px) !important;
+ -webkit-transform: translate3d(-320px, 0px, 0px) !important;	
+}    
+
+
 
 .busc {  background-color: #ffffff;
     border: 1px solid #999999;
@@ -123,11 +148,21 @@ cursor:auto !important;
 
 
 
+.cdQ {
+	background-color: #ffffff;
+    cursor: pointer;
+    float: left;
+	position: relative;  
+    margin: 5px 10px;
+    width: 260px;
+    
+    border:1px solid #999999;
+}
 
 
 
 .topOp h2 {color: #ffffff;font-family: arial;font-size: 14px; padding:0; margin:0;}
-
+.topMs h2 {color: #ffffff;font-family: arial;font-size: 13px; padding:0; margin:0;}
 
 #cmenu li {
 padding: 8px 20px 5px 8px; border-bottom: 1px solid #999999; border-left:1px solid #999999; border-right:1px solid #999999; 	
@@ -157,12 +192,18 @@ display:block;
 
 
 .liPreC {
+font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;		
 border-bottom: 1px solid #999999 !important;		
 padding-bottom:5px !important;
 background-position: right -97px !important;
 }
 
 .liPreD {
+font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;		
 border-bottom:0px !important;		
 padding-bottom:8px !important;
 background-position: right -143px !important;
@@ -212,12 +253,21 @@ background-position: right 8px !important;
 		font-size:13px; font-family: arial; color: #FFFFFF;}
 
 h1 {font-size:28px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
-h2 {font-size:18px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
+h2 {font-size:22px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
 h2 a {text-transform: none;    letter-spacing: 0px; text-decoration: none;   }
 
-h3        {font-size:12px; font-family:Arial; font-weight: normal; color:#666666; margin:6px 0;}
-h3 p 	  {font-size:12px; font-family:Arial; font-weight: normal; color:#666666;}
-h3 strong {font-size:12px; color:#37527A; font-weight:normal;}
+
+h3 {font-size:18px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
+h3 a {text-transform: none;    letter-spacing: 0px; text-decoration: none;   }
+
+h4        {font-size:12px; font-family:Arial; font-weight: normal; color:#666666; margin:6px 0;}
+h4 p 	  {font-size:12px; font-family:Arial; font-weight: normal; color:#666666;}
+h4 strong {font-size:12px; color:#37527A; font-weight:normal;}
+
+
+
+
+
 
 
 .breadcrumbs {font-size:14px; font-family:Arial; font-weight: normal; color:#FF9900; margin:7px 0 0 0; }

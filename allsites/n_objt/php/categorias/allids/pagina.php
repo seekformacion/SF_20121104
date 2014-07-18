@@ -60,6 +60,10 @@ $Datos['catsinf']="";
 }
 
 $Datos['catsinf_Otras']=loadChild('n_objt','catsinf_Otras');
+
+
+
+$Datos['quitos']=loadChild('n_objt','quitos');
 $Datos['filtros']=loadChild('n_objt','filtros');
 
 
