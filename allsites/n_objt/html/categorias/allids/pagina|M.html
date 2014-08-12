@@ -2,20 +2,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-
-
 %metas%
-
-
-
 </head>
 
 
 
-<body class="gris1_BG" onload="viewport_set();">
+<body class="gris1_BG" onload="first();">
 
-	
+<!--	
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -25,36 +19,34 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>	
 <script>window.top.idcfA=%idcfA%;</script>	
-
+-->
 
 <div class="color_BG cbpagT"></div>	
 
-<div id="shadow" style="display:none;" onclick="omenu();">
+<div id="shadow" style="display:none;" onclick="cmenu();"></div>	
+<div id="MmenuL" style="display:none;" onclick="cmenu();"></div>
+
+
+
+
+<aside id="cmenu" class="closed">	
+<div class="busc">
+<input type="text" id="str" placeholder="¿Que estás buscando?"/>
+<input type="submit" id="busc_str" value="">
 </div>	
-<div id="MmenuL" style="display:none;" onclick="omenu();"></div>
 
+			
+%quitos%
 
-<aside id="menu">
-<div id="cmenu" class="closed">	
+%filtros%	
 
+%catsinf%	
 
-
-			<div class="busc">
-			<input type="text" id="str" placeholder="¿Que estás buscando?"/>
-			<input type="submit" id="busc_str" value="">
-			</div>	
+%catsinf_Otras%	
 			
-			%quitos%
-			
-			%filtros%	
-			
-			%catsinf%	
-			
-			%catsinf_Otras%	
-			
-			<div style="clear: both"></div>	
-</div>
+<div style="clear: both"></div>	
 </aside>
+
 	
 
 
@@ -63,9 +55,8 @@
 
 
 <div id="page" class="page">
-
-
 <div class="cabLogo">
+
 <div id="Mmenu" onclick="omenu();"></div>	
 <img class="imgCat" alt="%altIMGc%" src="%imgCat%">		
 <div class="imgCont"></div>
@@ -84,6 +75,8 @@
 
 <div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">%breadcrumbs%</div>
 
+
+<!--
 <div class="socLk">
 <div class="fbLik">
 <div class="fb-like" data-href="%fburl%" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -92,6 +85,7 @@
 <div class="g-plusone" data-size="medium"></div>
 </div>
 </div>
+-->
 
 <p>%txtDesc%</p>
 
@@ -117,7 +111,7 @@
 %dbi%
 </body>
 
-
+<!--
 <script type="text/javascript">
   window.___gcfg = {lang: 'es'};
 
@@ -127,7 +121,7 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-
+-->
 
 </html>
 

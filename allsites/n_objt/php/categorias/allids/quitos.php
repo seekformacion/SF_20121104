@@ -14,11 +14,13 @@ $lk='onclick="lK(\'' . $bacKurl . '\')"';
 
 $c=1;
 
-$bkn=$v['where']['pagTittleSimp'];
+$bkn=$v['where']['Catsin'];
+$bkn="<h2>" . strtoupper(substr($bkn, 0,1)) . substr($bkn, 1) . "</h2>";
 $bk=$v['where']['csup']['url'];
+$bk2='onclick="lK(\'' . $bk . '\')"';	
 
 $rDatos['cadaquito'][$c]['quito']=$bkn;	
-$rDatos['cadaquito'][$c]['lk']=$bk;
+$rDatos['cadaquito'][$c]['lk']=$bk2;
 
 
 if($idpro){$quito="<h2>" . "Presenciales / " . $v['vars']['provN'][$idpro] . "</h2>";$c++;}

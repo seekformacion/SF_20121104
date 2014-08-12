@@ -1,39 +1,91 @@
 
+function getAndroidVersion(ua) {
+    var ua = ua || navigator.userAgent; 
+    var match = ua.match(/Android\s([0-9\.]*)/);
+    return match ? match[1] : false;
+}
 
-window.onresize = function() { 
-	viewport_set(); 
+
+
+
+
+
+window.addEventListener("orientationchange", function() {
+
+if(parseInt(getAndroidVersion()) >=3){
+viewport_set();	
+}else{
+viewport_set_old();	
+} 
+
+
+}, false);
+
+
+		
+
+function first(){
+
+if(parseInt(getAndroidVersion())>=3){
+viewport_set();	
+}else{
+document.getElementById('cmenu').className='oldclosed';		
+}
+
 }
 
 function viewport_set(){
-var ancho=$('#page').width();	
-document.getElementById("viewport").setAttribute("content", "user-scalable=no,width=" + ancho);  	
-document.getElementById("viewport").setAttribute("content", "user-scalable=no,width=" + ancho); 
+var ancho=$('#page').width();
+document.getElementById("viewport").setAttribute("content", "user-scalable=no, width=" + ancho);  	
 }
+
+function viewport_set_old(){
+var ancho=$('#page').width();
+document.getElementById("viewport").setAttribute("content", "width=" + ancho);  	
+
+}
+
+
+
+
 
 
 function omenu(){
 var hW =window.innerHeight;	
-	
-if(document.getElementById('cmenu').className=="closed"){	
+
 	document.getElementById('page').className='pageD';
 	document.getElementById('page').style.height=hW + 'px';
 	document.getElementById('shadow').style.display='block';	
-	document.getElementById('cmenu').className='opened';
+	document.getElementById('MmenuL').style.display='block';
 	
-	setTimeout(function(){
-    document.getElementById('MmenuL').style.display='block';
-    }, 300);
-	
-		
+if(parseInt(getAndroidVersion())>=3){	
+document.getElementById('cmenu').className='opened';
 }else{
+document.getElementById('cmenu').className='oldopened';
+}		
+
+}
+
+
+
+function cmenu(){
+var hW =window.innerHeight;	
+
 	document.getElementById('MmenuL').style.display='none';	
-	document.getElementById('cmenu').className='closed';
 	document.getElementById('shadow').style.display='none';	
 	document.getElementById('page').className='page';
 	document.getElementById('page').style.height='inherit';
-}	
+
+if(parseInt(getAndroidVersion())>=3){	
+	document.getElementById('cmenu').className='closed';
+}else{
+document.getElementById('cmenu').className='oldclosed';	
+}
+
 
 }
+
+
 
 
 

@@ -6,8 +6,8 @@ includeFUNC('funcmetas');
 
 
 $lb=array("\n"); 
-$javacon=loadChild('n_objt','carrito');
-$java=str_replace($lb,'',$javacon);
+//$javacon=loadChild('n_objt','carrito');
+//$java=str_replace($lb,'',$javacon);
 
 
 
@@ -18,7 +18,11 @@ echo "\n----------------\n ";
 echo $java;
 echo "\n---------------- \n";
 */
-$v['JSpostPROCESS']['%listHTML%']=$java;
+
+
+//$v['JSpostPROCESS']['%listHTML%']=$java;
+
+loadJS('n_objt','swip');
 loadJS('n_objt','init');
 
 

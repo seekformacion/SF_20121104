@@ -71,21 +71,36 @@ background-position: -88px -66px;
     z-index: 1000000;
     
       
-    transition: all 0.3s ease-out 0s;
-     -webkit-transition: all 0.3s ease-out 0s;
+   
     }
 
-    
+
+
+.oldopened {
+display:block;	
+}
+
+.oldclosed {
+display:none;	
+}
+
+
 .opened {
- transform: translate3d(0px, 0px, 0px) !important;
- -webkit-transform:	translate3d(0px, 0px, 0px) !important;
-}    
+transition: all 0.3s ease-out 0s;
+-webkit-transition: all 0.3s ease-out 0s;
+transform: translate3d(0px, 0px, 0px) !important;
+-webkit-transform:	translate3d(0px, 0px, 0px) !important;	}
 
+    
 .closed {
- transform: translate3d(-320px, 0px, 0px) !important;
- -webkit-transform: translate3d(-320px, 0px, 0px) !important;	
-}    
+transition: all 0.3s ease-out 0s;
+-webkit-transition: all 0.3s ease-out 0s;
+transform: translate3d(-320px, 0px, 0px) !important;
+-webkit-transform:	translate3d(-320px, 0px, 0px) !important;
+}  
 
+.leyen {position:relative; float:left; width: 100%}
+.tipC {position: relative; float:left; width:200px; font-family:arial; font-size:12px; color:red; text-transform: uppercase;}
 
 
 .busc {  background-color: #ffffff;
@@ -149,17 +164,27 @@ cursor:auto !important;
 
 
 .cdQ {
-	background-color: #ffffff;
+	background-image:url('/img/iconos/fondico.png');
+	background-repeat:no-repeat;
+	background-position: right -360px;
+	background-color: #f4f4f4;
     cursor: pointer;
     float: left;
 	position: relative;  
     margin: 5px 10px;
-    width: 260px;
-    
-    border:1px solid #999999;
+    width: 270px;
+    padding: 5px 20px 4px 8px;
+    border:1px dotted red;
 }
 
 
+.cdQ h2 {
+    color: #888888;
+    display: block;
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 1.5;
+}
 
 .topOp h2 {color: #ffffff;font-family: arial;font-size: 14px; padding:0; margin:0;}
 .topMs h2 {color: #ffffff;font-family: arial;font-size: 13px; padding:0; margin:0;}
@@ -192,7 +217,7 @@ display:block;
 
 
 .liPreC {
-font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
 line-height: 1.5;
 display:block;		
 border-bottom: 1px solid #999999 !important;		
@@ -201,7 +226,7 @@ background-position: right -97px !important;
 }
 
 .liPreD {
-font-size:11px; font-family:Arial; text-decoration: none; color:#666666;
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
 line-height: 1.5;
 display:block;		
 border-bottom:0px !important;		
@@ -246,7 +271,7 @@ background-position: right 8px !important;
 */
 .cLin{position:relative; float:left;  width: 280px;height: 50px;}
 
-.cR  {position:relative; float:left;  padding:20px 15px 10px 15px;   background-color: #FFFFFF; top:0; min-height: 900px; }
+.cR  {position:relative; float:left;  padding:20px 15px 10px 15px;   background-color: #FFFFFF; top:0; min-height: 1900px; }
 
 
 .mSelN {position:relative;float:left; margin:5px 10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;

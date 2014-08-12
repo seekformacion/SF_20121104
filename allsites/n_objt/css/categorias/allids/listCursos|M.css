@@ -16,10 +16,10 @@
 
 */
 
-.fichaCursop table{ width:100%; background-color: #ffffff;}
+.fichaCursop table{ background-color: #ffffff;}
 .fichaCursop table:hover{ background-color: #EEEEEE; cursor: pointer;}
 
-.fichaCursoi table{ width:100%; background-color: #F8F8F8;}
+.fichaCursoi table{ background-color: #F8F8F8;}
 .fichaCursoi table:hover{ background-color: #EEEEEE; cursor: pointer;}
 
 
@@ -80,7 +80,7 @@
 .tdC1 h2 {display: block;
     float: left;
     position: relative;
-    width: 100%;
+    
     margin-bottom: 5px;
     }
 
@@ -88,7 +88,7 @@
 .tdC1 h4 {display: block;
     float: left;
     position: relative;
-    width: 100%;
+    
     margin-bottom: 5px;
     text-align:justify;
     }

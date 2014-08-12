@@ -13,8 +13,8 @@ $Datos['css']="topMs";
 $Datos['cabe']="Modalidad";
 $Datos['backUrl']='';
 
-
-if(($subs['dis']>0)&&(!$distancia)){
+$chk=0;
+if(($subs['dis']>0)&&(!$distancia)){$chk++;
 $rDatos['opcMET'][1]['pagTittle']=$v['where']['pagTittleSimp'] . " a distancia";
 $rDatos['opcMET'][1]['pagTittleC']="A distancia";
 
@@ -25,7 +25,7 @@ $url="/a_distancia$urlS" . "_a_distancia.html";
 $rDatos['opcMET'][1]['url']=$url;		
 }
 		
-if(($subs['onl']>0)&&(!$online)){
+if(($subs['onl']>0)&&(!$online)){$chk++;
 $rDatos['opcMET'][2]['pagTittle']=$v['where']['pagTittleSimp'] . " online";
 $rDatos['opcMET'][2]['pagTittleC']="Online";
 
@@ -36,8 +36,10 @@ $url="/online$urlS" . "_online.html";
 $rDatos['opcMET'][2]['url']=$url;		
 }
 
+if(!$chk){
+$rDatos['opcMET'][0]['pagTittle']=1;	
+}
 
-	
 if($subs['pre']>0){
 $Datos['presen'].="<li onclick='dMp();' id='prov' class='liPreC'>Presenciales</li></ul>
 

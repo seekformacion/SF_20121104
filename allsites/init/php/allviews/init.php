@@ -2,7 +2,7 @@
 
 global $v;
 
-$_SERVER['HTTP_X_UA_DEVICE']='M';
+//$_SERVER['HTTP_X_UA_DEVICE']='M';
 
 if(array_key_exists('q', $_GET)){
 $v['where']['url']=$_GET['q'];

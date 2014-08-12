@@ -140,17 +140,32 @@ background-position: right -143px !important;
 
 
 .cdQ {
-	background-color: #ffffff;
+	
+	background-image:url('/img/iconos/fondico.png');
+	background-repeat:no-repeat;
+	background-position: right -361px;
+	
+	background-color: #f4f4f4;
     cursor: pointer;
     float: left;
 	position: relative;  
     margin: 5px 10px;
-    width: 260px;
-    
-    border:1px solid #999999;
+    width: 230px;
+    padding: 5px 20px 4px 8px;
+    border:1px dotted red;
 }
 
+.cdQ:hover {background-color: #EEEEEE;}
 
+
+.cdQ h2 {
+  color: #888888;
+    display: block;
+    font-family: Arial;
+    font-size: 11px;
+    line-height: 1.5;	
+	
+}
 
 
 
@@ -179,7 +194,7 @@ background-position: right 8px !important;
 */
 .cLin{position:relative; float:left;  width: 280px;height: 50px;}
 .cL	 {position:absolute; width: 280px; bottom:0; top:0; left: 0;}
-.cR  {position:relative; float:left; width: 860px; padding:20px 30px 10px 30px;   background-color: #FFFFFF; top:0; min-height: 900px; }
+.cR  {position:relative; float:left; width: 860px; padding:20px 30px 10px 30px;   background-color: #FFFFFF; top:0; min-height: 1900px; }
 
 
 .mSelN {position:relative;float:left; margin:5px 10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;
