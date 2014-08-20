@@ -22,7 +22,7 @@ echo "\n---------------- \n";
 
 //$v['JSpostPROCESS']['%listHTML%']=$java;
 
-loadJS('n_objt','swip');
+//loadJS('n_objt','swip');
 loadJS('n_objt','init');
 
 

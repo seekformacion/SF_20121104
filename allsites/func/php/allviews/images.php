@@ -6,8 +6,8 @@
 function imgCATg($idcat){global $v;
 
 
-
 $inf=DBselect("select superiores from skf_cats where id=$idcat;");
+
 $sup=$inf[1]['superiores']; $sup=substr($sup, 1); $sup=str_replace('|', ',', $sup) .  $idcat; 	
 
 $catsup[0]= array_reverse(explode(",",$sup));
