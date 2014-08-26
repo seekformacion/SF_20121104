@@ -21,17 +21,16 @@ return $res[1];
 }
 
 
-function limpiaPrice($str){
-$str=strtolower($str);	
-$quitos=array('€','consultar','iva');	
-	
-$str=str_replace($quitos,'',$str);
-$str=str_replace(',','.',$str);
-$str=$str*1;
+function limpiaPrice($precio){
 
-if($str<=15){$str=0;}
 
-return round($str,0);	
+$precio=str_replace(',', '.', $precio);
+$precio = preg_replace('/[^0-9,\.]/','',$precio);
+$dec=explode('.', $precio); 
+if(count($dec)>1){if(strlen($dec[1])==3){$precio=str_replace('.', '', $precio);}};
+
+
+return $precio;	
 }
 
 ############### obtengo url de un curso dado
@@ -70,7 +69,16 @@ $data['url']=urlCur($data['id']);
 
 $data['cur_precio']=limpiaPrice($data['cur_precio']);
 
-if(($data['cur_mostarprecio']==1)&&($data['cur_precio']<500)&&($data['cur_precio'])){$data['price']=$data['cur_precio'] . "€";}else{$data['price']="";}
+if(($data['cur_mostarprecio']==1)&&($data['cur_precio']<500)&&($data['cur_precio'])){
+	
+$precio=$data['cur_precio'];	
+$precio=number_format($precio*1,2);
+$precio=str_replace('.', ',', $precio);
+$precio=str_replace(',00', '', $precio);
+		
+$data['price']=$precio . " €";
+
+}else{$data['price']="";}
 		
 $bloqueCursos .=loadChild('n_objt','cadaCurso');	
 }	

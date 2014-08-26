@@ -2,8 +2,8 @@ body {margin: 0}
 p {font-size:14px; font-family:Arial; color:#666666;}
 
 
-.fijo {position:fixed; width:280px;}
-.nofijo {width:280px;}	
+.fijo {position:fixed; width:340px;}
+.nofijo {width:340px;}	
 
 .page {position:relative; width:1200px; margin: 0 auto;}
 .cbpag {position:relative; float: left;  width: 1200px; height:15px;}
@@ -26,21 +26,25 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 
 
 .cR h2 { 
-	color: #37527a;
+	color: #37527a;text-decoration:none;
     font-family: Arial;
     font-size: 15px;
     font-weight: bold;
 	border: 1px solid #999999;
     float: left;
     height: 23px;
-    margin-left: 20px; margin-top:20px;
-    min-width: 100px;
+    margin-left: 10px; margin-top:20px;
+    min-width: 130px;
     padding: 11px 30px;
     position: relative;
     text-align: center;}    
 
+.cR a {
+ text-decoration:none;
+}
+
 .cR a h2{
-	cursor:pointer;
+	cursor:pointer; text-decoration:none;
 	background-image: url("/img/iconos/fondico.png");
     background-position: right -550px;
     background-repeat: no-repeat;}
@@ -53,9 +57,20 @@ p {font-size:14px; font-family:Arial; color:#666666;}
     float: left;
     height: 23px;
     margin:0px 0px;
+    width:420px;
     } 
 
+.cR p strong {color: #37527a;}
 
+
+.btt {
+margin-bottom:30px;	
+}
+
+.temario {font-size:14px; font-family:Arial; color:#666666;}
+.temario table {width:100%; font-size: 13px; font-family:arial; color:#666666; font-weight: normal;}
+
+.btt td {padding-right: 70px;}
 
 .val {position:relative; float:left; width:88px; height:17px; background-image:url('/img/iconos/iconos.png'); margin-left:-2px; margin-bottom:15px;}
 .v5 {background-position: 0px -65px;}
@@ -75,7 +90,7 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 .cnt {position:relative; float: left;  width: 1200px;}
 
 .cabSec {
-margin:40px 0px 20px 0px;
+margin:50px 0px 10px 0px;
 padding:0px;
 min-height:20px;
 border-bottom: 1px solid #37527a;	
