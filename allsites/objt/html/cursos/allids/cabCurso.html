@@ -1,7 +1,10 @@
 <!-- cabCurso -->	
-<div class="bloque cabCurso shadow" itemscope itemtype="http://schema.org/Product">
+<div itemscope itemtype="http://schema.org/Product" class="bloque cabCurso shadow">
  	<div class="descCurso">
-	<div class="Tit_cur"><h1 itemprop="name">%pagTittle%</h1></div>
+	
+	<div class="Tit_cur" itemprop="name">
+		<h1>%pagTittle%</h1>
+	</div>
 	<p itemprop="description">%cur_descripcion%</p>	
 	
 	</div>
@@ -21,12 +24,12 @@
 		<div class="tipoF">
 		<p>%tipo%</p>
 		<p>%metodo%</p>
-		<div class="valor v%v%" itemtype="http://schema.org/AggregateRating" itemscope="" itemprop="aggregateRating">
-		<meta content="%rv%" itemprop="ratingValue">
-		<meta content="10" itemprop="bestRating">
-		<meta content="%rc%" itemprop="ratingCount">
-			
+		
+		<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="valor v%v%" >
+			<meta content="%rv%" itemprop="ratingValue">
+			<meta content="10" itemprop="bestRating">
 		</div>
+		
 		</div>
 	
 		
