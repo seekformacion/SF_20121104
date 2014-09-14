@@ -7,11 +7,11 @@
 
 
 
-<body class="gris1_BG" onload="first();">
+<body class="gris1_BG" onload="init();">
 
 <!--	
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script async="true">(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -31,8 +31,8 @@
 
 <aside id="cmenu" class="closed">	
 <div class="busc">
-<input type="text" id="str" placeholder="¿Que estás buscando?"/>
-<input type="submit" id="busc_str" value="">
+<input type="text" id="str" placeholder="¿Que estás buscando?" onchange="search(%idp%);"/>
+<input type="submit" id="busc_str" value=""/>
 </div>	
 
 			
@@ -110,18 +110,6 @@
 
 %dbi%
 </body>
-
-<!--
-<script type="text/javascript">
-  window.___gcfg = {lang: 'es'};
-
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
--->
 
 </html>
 

@@ -2,7 +2,8 @@
 
 global $v;
 
-
+$v['debugIN']=0;
+$v['where']['cacheQ']=0;
 
 include('/www/dbA.php');  
 

@@ -41,7 +41,7 @@ background-position: -88px -66px;
 	
   background-image:url('/img/iconos/iconos.png');
   background-position: 0px -159px; 	
-  height:75px; width:40px;
+  height:60px; width:40px;
   position: fixed; margin-top:-10px;
   left:320px;
   top:50%;	
@@ -167,7 +167,7 @@ cursor:auto !important;
 	background-image:url('/img/iconos/fondico.png');
 	background-repeat:no-repeat;
 	background-position: right -360px;
-	background-color: #f4f4f4;
+	background-color: #F5F5BE;
     cursor: pointer;
     float: left;
 	position: relative;  

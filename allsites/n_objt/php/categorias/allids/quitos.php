@@ -14,10 +14,15 @@ $lk='onclick="lK(\'' . $bacKurl . '\')"';
 
 $c=1;
 
+if(!array_key_exists('search',$v)){
 $bkn=$v['where']['Catsin'];
 $bkn="<h2>" . strtoupper(substr($bkn, 0,1)) . substr($bkn, 1) . "</h2>";
 $bk=$v['where']['csup']['url'];
 $bk2='onclick="lK(\'' . $bk . '\')"';	
+}else{
+$bkn="<h2>". $v['where']['pagTittle'] ."</h2>";
+$bk2='onclick="window.history.back();"';	
+}
 
 $rDatos['cadaquito'][$c]['quito']=$bkn;	
 $rDatos['cadaquito'][$c]['lk']=$bk2;

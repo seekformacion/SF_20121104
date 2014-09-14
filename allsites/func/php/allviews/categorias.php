@@ -232,7 +232,7 @@ $dcats=array();
 $v['where']['cats_inf']=$dcats;
 
 
-if(count($dcats)<10){
+if((count($dcats)<10)&&(!array_key_exists('search', $v))){
 catsSAME($idcat);
 }else{
 $v['where']['cats_same']=array();	

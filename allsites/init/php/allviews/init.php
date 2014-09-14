@@ -2,7 +2,9 @@
 
 global $v;
 
-//$_SERVER['HTTP_X_UA_DEVICE']='M';
+$v['where']['cacheQ']=0;
+
+$_SERVER['HTTP_X_UA_DEVICE']='M';
 
 if(array_key_exists('q', $_GET)){
 $v['where']['url']=$_GET['q'];
@@ -10,6 +12,9 @@ $v['where']['url']=$_GET['q'];
 $v['where']['url']='/';	
 }
 
+
+
+if(strpos($v['where']['url'],'search/')){$v['where']['url']=str_replace('/search/','/',$v['where']['url']);$v['search']=1;};
 
 if(strpos($v['where']['url'],'|sql')){$v['where']['url']=str_replace('|sql','',$v['where']['url']);$v['debug']=-1;};
 if(strpos($v['where']['url'],'|dbi')){$v['where']['url']=str_replace('|dbi','',$v['where']['url']);$v['debugIN']=1;};

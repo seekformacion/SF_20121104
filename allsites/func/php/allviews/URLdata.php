@@ -81,13 +81,7 @@ $v['where']['pag']=1;
 ################
 
 
-$res=DBselect("SELECT id, tipo, t_id, codTittle, pagTittleC, Redir FROM skf_urls where idp=$idp AND url='$url';");
 
-
-if(count($res)>0){
-	
-$v['where']['view']=$eqtempl[$res[1]['tipo']];
-$v['where']['id']=	$res[1]['t_id'];
 
 $idts="";
 foreach ($v['vars']['tipPort'] as $idt => $idpp) {
@@ -95,6 +89,40 @@ if($idp==$idpp){$idts .=$idt . ",";};
 }
 $idts=substr($idts,0,-1);
 $v['where']['idt']=$idts; #### pueden crearse listas de tipos   ej: 1,2  EQUILAVE A: CURSOS Y MASTERS
+
+
+
+if(array_key_exists('search',$v)){
+$res=array();
+
+$v['where']['urlSimple']="/search" . $url;
+
+$url=str_replace('.html','',$url);
+$url=str_replace('_',' ',$url);
+$url=str_replace('/','',$url);
+
+$v['search']=$url;
+$v['where']['pagTittleSimp']=ucfirst($url);
+$v['where']['codTittle']=ucfirst($url);
+$v['where']['pagTittle']=ucfirst($url);
+
+$v['where']['view']='categorias';
+$v['where']['id']=0;
+
+}else{
+
+$res=DBselect("SELECT id, tipo, t_id, codTittle, pagTittleC, Redir FROM skf_urls where idp=$idp AND url='$url';");
+	
+}
+
+
+
+
+if(count($res)>0){
+	
+$v['where']['view']=$eqtempl[$res[1]['tipo']];
+$v['where']['id']=	$res[1]['t_id'];
+
 
 $v['where']['codTittle']=$res[1]['codTittle'];
 $v['where']['pagTittle']=$res[1]['pagTittleC'];
@@ -150,10 +178,22 @@ header("HTTP/1.1 301 Moved Permanently");
 header("Location: $newURL");
 		
 exit();	
+
 }else{
+
+if(!array_key_exists('search',$v)){	
 header("HTTP/1.0 404 Not Found"); 	
+}
+
 }	
 }
+
+
+
+
+
+
+
 
 
 ?>

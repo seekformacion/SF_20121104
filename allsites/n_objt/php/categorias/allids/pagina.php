@@ -17,34 +17,51 @@ $appid[4]="1468920489988724";
 $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['home']="http://" . $v['where']['site'];
 
+if(!array_key_exists('search', $v)){
 $v['imgCat']=imgCATg($v['where']['id']); 
+}else{
+$v['imgCat']="";	
+}
+
 $Datos['imgCat']=$v['imgCat'];
 
-
+$Datos['idp']=$v['where']['idp'];
 $Datos['fbAPP']=$appid[$v['where']['idp']];
 
 
 $Datos['pagTittle']=$v['where']['pagTittle'];# . " | " . $v['where']['id'];
+
+
 $Datos['idcfA']=$v['where']['id'];
 
 
-
+if(!array_key_exists('search', $v)){
 $Datos['breadcrumbs']=breadCRUMBS($idcat);
-
+$bc=$v['where']['bc2'];
+$bc=str_replace('<a href', '<a class="color1" href', $bc);
+$v['where']['bc']=$bc . " ". $v['where']['pagTittle'];
+	
+}else{
+$Datos['breadcrumbs']="";
+$bc="";
+$v['where']['bc']="";	
+}
 
 ###### descripcion y SOCIAL
+if(!array_key_exists('search', $v)){
 $txt=trim(TXTcat($v['where']['id']));
 if(!$txt){$txt=InventaTXTcat($v['where']['pagTittleSimp'],0);};
 $Datos['txtDesc']=$txt;
+}else{
+$Datos['txtDesc']="<br><br>";	
+}
+
 $Datos['fburl']="http://" . $v['where']['site']  . $v['where']['urlSimple'];
 
 
 
 
-$bc=$v['where']['bc2'];
 
-$bc=str_replace('<a href', '<a class="color1" href', $bc);
-$v['where']['bc']=$bc . " ". $v['where']['pagTittle'];
 
 //$Datos['sliders']=loadChild('objt','sliders');
 
