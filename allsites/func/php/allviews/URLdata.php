@@ -102,9 +102,11 @@ $url=str_replace('_',' ',$url);
 $url=str_replace('/','',$url);
 
 $v['search']=$url;
-$v['where']['pagTittleSimp']=ucfirst($url);
-$v['where']['codTittle']=ucfirst($url);
-$v['where']['pagTittle']=ucfirst($url);
+
+$url2=str_replace('-',' ',$url); 
+$v['where']['pagTittleSimp']=ucfirst($url2);
+$v['where']['codTittle']=ucfirst($url2);
+$v['where']['pagTittle']=ucfirst($url2);
 
 $v['where']['view']='categorias';
 $v['where']['id']=0;

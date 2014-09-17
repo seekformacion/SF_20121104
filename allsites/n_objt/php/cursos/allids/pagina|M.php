@@ -88,7 +88,7 @@ $listcur=trim(substr($listcur, 0,-1));
 
 $curs=array();$cc=0;
 if($listcur){$curs=ordenaCURs($listcur,0,5);}
-if(count($curs)>0){foreach ($curs as $p => $idcur){$cc++;$rOtroscur[$cc]=minidatCUR($idcur);};}
+if(count($curs)>0){foreach ($curs as $p => $idcursi){$cc++;$rOtroscur[$cc]=minidatCUR($idcursi);};}
 
 }else{$Datos['breadcrumbs']="";};
 

@@ -5,8 +5,12 @@ include('/www/dbA.php');
 
 //$dorest=$argv[1];
 
+
 $v['debug']=1;
 $v['admin']=0;
+$v['debugIN']=0;
+$v['where']['cacheQ']=0;
+
 
 $v['conf']['state']=1; # 1=test 2=produccion
 $v['conf']['mode']=1; # 1=local 2=cloud
@@ -36,11 +40,12 @@ includeCORE('funcs/phrassCount');
 
 
 
-$idcur=6007;
 
-$limp=limpiaCur($idcur);
-$proccess=processCUR($idcur);
 
+$dvals=engine_CAT(0,'diseno',1);
+
+print_r($dvals);
+insert_STR(1,0,'diseno',json_encode($dvals));
 
 
 

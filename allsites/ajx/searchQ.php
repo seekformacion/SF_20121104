@@ -9,6 +9,7 @@ require_once ('iniAJX.php');
 
 includeCORE('funcs/phrassCount');
 
+$stri=str_replace(' ','-',$str);
 $str=utf8_encode(limpiaStr($str));
 
 
@@ -20,6 +21,8 @@ if(array_key_exists(1, $res)){
 	if(array_key_exists(1, $res2)){
 	$do['lk']=$res2[1]['url'];	
 	}
+
+
 echo json_encode($do);
 exit;
 }
@@ -40,7 +43,9 @@ if(array_key_exists(1, $res)){
 	}else{
 		$do['lk']=$q_link;	
 	}
-
+    
+	DBUpInsSDB("UPDATE busquedas SET qheats=qheats+1 WHERE str='$str' AND idp=$idp;",'seek_engSTR');		
+	
 	echo json_encode($do);
 	exit;
 }
@@ -53,6 +58,13 @@ $listcur=getCURtotQUERY($str,$idp);
 
 $numCUR=count(explode(',',$listcur));
 
+if(!$listcur){
+$do=array();	
+$do['er']=1;	
+echo json_encode($do);
+exit;	
+}
+
 $res=DBselectSDB("select id_cat, count(id) as C from skv_relCurCats where id_cur IN ($listcur) GROUP BY id_cat ORDER BY C DESC;",'seekformacion'); 
 $ini=0;$tot=0;
 
@@ -63,7 +75,7 @@ if(count($res)>0){foreach($res as $cc => $vals){
 $idcat=$vals['id_cat'];
 $num=$vals['C'];
 	
-if(!$ini){$ini++; $max=$num; $id_cat2=$idcat;}
+if(!$ini){$ini++; $max=$num; $id_cat2=$idcat; $id_cat3=$idcat;}
 $tot=$tot+$num;	
 }
 $porc=$max/$tot*100;
@@ -76,11 +88,22 @@ $res2=DBselectSDB("SELECT url from skf_urls WHERE t_id=$id_cat2 AND tipo=1 AND i
 		if(array_key_exists(1, $res2)){
 		$do['lk']=$res2[1]['url'];	
 		}
+	
+	DBUpInsSDB("INSERT INTO busquedas (idp,str,id_cat,q_link) VALUES ($idp,'$str','$id_cat2','" . $do['lk'] . "');",'seek_engSTR');		
 	echo json_encode($do);
 	exit;
+}else{
+$id_cat3=0;	
 }
 
-$do['lk']="/search/$str.html";
+
+$ql="/search/$stri.html";
+
+DBUpInsSDB("INSERT INTO busquedas (idp,str,id_cat,q_link) VALUES ($idp,'$str','$id_cat3','$ql');",'seek_engSTR');	
+DBUpInsSDB("UPDATE cache_str SET img=$id_cat2 WHERE str='$str' AND idp=$idp;",'seek_engSTR');	
+
+
+$do['lk']=$ql;
 echo json_encode($do);
 
 ?>	

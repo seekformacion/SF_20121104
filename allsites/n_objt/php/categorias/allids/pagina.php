@@ -13,20 +13,35 @@ $appid[2]="586283288126818";
 $appid[3]="726238200741616";
 $appid[4]="1468920489988724";
 
+$idp=$v['where']['idp'];
+$Datos['idp']=$idp;
+$Datos['fbAPP']=$appid[$v['where']['idp']];
+
 
 $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['home']="http://" . $v['where']['site'];
 
 if(!array_key_exists('search', $v)){
-$v['imgCat']=imgCATg($v['where']['id']); 
+$img=imgCATg($v['where']['id']); 
+
+$Datos['imgC1']="<img class='imgCat' alt='". $v['where']['pagTittle'] . "' src='$img'>";
+$Datos['imgC2']="<div class='imgCont'></div>";
+
 }else{
-$v['imgCat']="";	
-}
+$strI=str_replace('-',' ',$v['search']);
+$res2=DBselectSDB("SELECT img from cache_str WHERE str='$strI' AND idp=$idp;",'seek_engSTR');
+if(array_key_exists(1, $res2)){$idcfM=$res2[1]['img'];
+$img=imgCATg($idcfM);
+$Datos['imgC2']="<div class='imgCont'></div>";
+$Datos['imgC1']="<img class='imgCat' alt='". $v['where']['pagTittle'] . "' src='$img'>";
+}else{
+	$img="";
+	$Datos['imgC2']="";	
+}}
 
-$Datos['imgCat']=$v['imgCat'];
 
-$Datos['idp']=$v['where']['idp'];
-$Datos['fbAPP']=$appid[$v['where']['idp']];
+
+
 
 
 $Datos['pagTittle']=$v['where']['pagTittle'];# . " | " . $v['where']['id'];
@@ -103,9 +118,11 @@ $Datos['topCURinf']=$lccu['html'];
 
 //$Datos['masCATS']=loadChild('objt','masCATS');
 
-
-//$Datos['navBAR']=loadChild('objt','navBAR');
-
+if($v['where']['npags']>1){
+$Datos['navBAR']=loadChild('n_objt','navBAR');
+}else{
+$Datos['navBAR']="";	
+}
 //$Datos['header']=loadChild('objt','header');
 //$Datos['footer']=loadChild('objt','footer');
 
