@@ -222,7 +222,7 @@ $cnt['temario']=ldsecc('temario',$cnte,"Temario.");
 
 
 $Datos['secciones']=$cnt['cert'] . $cnt['dur'] . $cnt['geo'] . $cnt['prepara'] . $cnt['dirigido'] . $cnt['temario'];
-
+$Datos['footer']=loadChild('n_objt','footer');
 
 //print_r($Datos);
 //$Datos['footer']=loadChild('objt','footer');

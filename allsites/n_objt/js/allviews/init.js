@@ -17,11 +17,14 @@ var dif= hW - hM;
 var fH=$("#cmenu").height();
 
 var max = $("#footer");
-var footP=max.position().top;
+var footP=max.position().top -35;
+
+var difoot=75 + $("#footer").height() +15;
 
 
-if(dif<0){dif=dif*-1; var limit=90+dif;}else{var limit=90;}
-var ptop=90-limit;
+
+if(dif<0){dif=dif*-1; var limit=difoot+dif;}else{var limit=difoot;}
+var ptop=difoot-limit;
 
 var ptop2=footP-hM-ptop;
 

@@ -151,6 +151,9 @@ function detectIE() {
 
 
 function search(idp){
+
+document.getElementById('busc_str').className="busc2";	
+	
 var str=document.getElementById('str').value;
 var cookie=getCookie("seekforID");
 
@@ -159,6 +162,7 @@ $.getJSON(url, function(data) {
 $.each(data, function(key, val) {
 
 if(key=='lk'){lK(val);}
+if(key=='er'){document.getElementById('busc_str').className="";alert('la búsqueda no produjo resultados'); }
 	
 });
 });

@@ -108,6 +108,7 @@ var hW =window.innerHeight;
 
 	document.getElementById('page').className='pageD';
 	document.getElementById('page').style.height=hW + 'px';
+	document.getElementById('page').style.overflow='hidden';
 	document.getElementById('shadow').style.display='block';	
 	document.getElementById('MmenuL').style.display='block';
 	
@@ -128,7 +129,8 @@ var hW =window.innerHeight;
 	document.getElementById('shadow').style.display='none';	
 	document.getElementById('page').className='page';
 	document.getElementById('page').style.height='inherit';
-
+	document.getElementById('page').style.overflow='visible';
+	
 if(parseInt(getAndroidVersion())>=3){	
 	document.getElementById('cmenu').className='closed';
 }else{

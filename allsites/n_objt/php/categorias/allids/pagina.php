@@ -97,7 +97,7 @@ $Datos['catsinf_Otras']=loadChild('n_objt','catsinf_Otras');
 
 $Datos['quitos']=loadChild('n_objt','quitos');
 $Datos['filtros']=loadChild('n_objt','filtros');
-
+$Datos['footer']=loadChild('n_objt','footer');
 
 global $lccu;
 $Datos['topCURinf']=$lccu['html'];

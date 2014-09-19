@@ -222,6 +222,7 @@ $cnt['temario']=ldsecc('temario',$cnte,"Temario.");
 
 
 $Datos['secciones']=$cnt['cert'] . $cnt['dur'] . $cnt['geo'] . $cnt['prepara'] . $cnt['dirigido'] . $cnt['temario'];
+$Datos['footer']=loadChild('n_objt','footer');
 
 $Datos['FURL']="/ajx/sinformacion.php?idcur=$idcur";
 
@@ -230,8 +231,8 @@ $Datos['FURL']="/ajx/sinformacion.php?idcur=$idcur";
 
 
 $Datos['form']=getForm();
-loadJS('n_objt','form');
-loadCSS('n_objt','form');
+//loadJS('n_objt','form');
+//loadCSS('n_objt','form');
 
 $Datos['metas']=loadChild('n_objt','metas');
 if($v['debugIN']>0){$Datos['dbi']="<div>" . $v['dbi'] . "</div>";}else{$Datos['dbi']="";}

@@ -1,15 +1,67 @@
+
+/*
+
+
+
+
+/*
+
+.topOp  { 
+padding: 8px 32px 9px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
+color: #ffffff;
+font-family: arial;
+font-size: 13px;
+background-position: right -46px !important;	
+	
+}
+.topOp:hover  {background-color: #ff8800 !important; }
+.topOp h2 {color: #ffffff;font-family: arial;font-size: 14px; padding:0; margin:0;}
+/*
+.liPreC h2, .liPreD h2{
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;
+}
+
+
+
+.liPreD {
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;		
+border-bottom:0px !important;		
+padding-bottom:8px !important;
+background-position: right -143px !important;
+}
+
+
+
+
+
+
+/* col r
+
+.cLin{position:relative; float:left;  width: 280px;height: 50px;}
+.mSelN {position:relative;float:left; margin:5px 10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;
+		font-size:13px; font-family: arial; color: #FFFFFF;}
+
+*/
+/*
+.socLk {position:relative;float:left; width:100%;  margin: 15px 0 15px 0;}
+.fbLik {position:relative;float:left; }
+.glink {position:relative;float:left; margin-left:10px; }
+
+*/
+
+
 body {margin: 0;}
 p {font-size:14px; font-family:Arial; color:#666666;}
 
-.clb {clear:both;}
+
 
 .cbpagT {position:fixed; top:0px; left:0px; height:15px;z-index: 1000000;}
 
-.pageD 	{position:relative;  margin: 15px 0;
-	overflow-x: hidden;
-    overflow-y: hidden;
-    position: fixed;
-     }
+
 
 .page 	{position:relative;  margin: 15px 0;
 	
@@ -28,8 +80,6 @@ p {font-size:14px; font-family:Arial; color:#666666;}
 .cbpag 	{width: 100%; position:relative; float: left;  height:15px;}
 
 
-/* col l
-*/
 
 #Mmenu {
 height:75px; width:69px; position: relative; float:left; background-color:#aaaaaa; z-index: 9999;
@@ -75,15 +125,9 @@ background-position: -88px -66px;
     }
 
 
-
 .oldopened {
 display:block;	
 }
-
-.oldclosed {
-display:none;	
-}
-
 
 .opened {
 transition: all 0.3s ease-out 0s;
@@ -91,13 +135,21 @@ transition: all 0.3s ease-out 0s;
 transform: translate3d(0px, 0px, 0px) !important;
 -webkit-transform:	translate3d(0px, 0px, 0px) !important;	}
 
-    
+
 .closed {
 transition: all 0.3s ease-out 0s;
 -webkit-transition: all 0.3s ease-out 0s;
 transform: translate3d(-320px, 0px, 0px) !important;
 -webkit-transform:	translate3d(-320px, 0px, 0px) !important;
-}  
+} 
+
+
+
+.oldclosed {
+display:none;	
+}
+    
+ 
 
 .leyen {position:relative; float:left; width: 100%}
 .tipC {position: relative; float:left; width:200px; font-family:arial; font-size:12px; color:red; text-transform: uppercase;}
@@ -117,7 +169,8 @@ transform: translate3d(-320px, 0px, 0px) !important;
 .busc input {position:relative; float:left; background-color: transparent;margin:0px;width:244px; border:none; height:20px; font-size:15px; font-family:arial; padding:0px;}
 .busc input { color:#666666;  font-style:normal; margin-top:2px;}
 
-.busc input[type=submit] {cursor:pointer;position:relative; float:right;margin-top:0px; width:27px; height:26px; background-image:url('/img/iconos/iconos.png');}
+.busc input[type=submit] {cursor:pointer;position:relative; 
+float:right;margin-top:0px; width:27px; height:26px; background-image:url('/img/iconos/iconos.png');}
 
 .busc ::-webkit-input-placeholder 	{color:#aaaaaa;  font-style:italic;}
 .busc :-moz-placeholder 			{color:#aaaaaa;  font-style:italic;}
@@ -139,15 +192,6 @@ padding:0px; list-style: none; cursor:pointer;
 }
 
 
-.topOp  { 
-padding: 8px 32px 9px 6px !important; background-color: #ff9900; border-top:1px solid #999999; 
-color: #ffffff;
-font-family: arial;
-font-size: 13px;
-background-position: right -46px !important;	
-	
-}
-.topOp:hover  {background-color: #ff8800 !important; }
 
 
 .topMs  { 
@@ -186,7 +230,7 @@ cursor:auto !important;
     line-height: 1.5;
 }
 
-.topOp h2 {color: #ffffff;font-family: arial;font-size: 14px; padding:0; margin:0;}
+
 .topMs h2 {color: #ffffff;font-family: arial;font-size: 13px; padding:0; margin:0;}
 
 #cmenu li {
@@ -207,32 +251,6 @@ line-height: 1.5;
 display:block;	
 }
 
-
-
-.liPreC h2, .liPreD h2{
-font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
-line-height: 1.5;
-display:block;
-}
-
-
-.liPreC {
-font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
-line-height: 1.5;
-display:block;		
-border-bottom: 1px solid #999999 !important;		
-padding-bottom:5px !important;
-background-position: right -97px !important;
-}
-
-.liPreD {
-font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
-line-height: 1.5;
-display:block;		
-border-bottom:0px !important;		
-padding-bottom:8px !important;
-background-position: right -143px !important;
-}
 
 
 
@@ -258,24 +276,35 @@ background-position: right 8px !important;
 }
 
 
+.liPreC {
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;		
+border-bottom: 1px solid #999999 !important;		
+padding-bottom:5px !important;
+background-position: right -97px !important;
+}
+
+.liPreD {
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;		
+border-bottom:0px !important;		
+padding-bottom:8px !important;
+background-position: right -143px !important;
+}
+
+.liPreC h2, .liPreD h2{
+font-size:13px; font-family:Arial; text-decoration: none; color:#666666;
+line-height: 1.5;
+display:block;
+}
 
 
 
 
+.cR  {position:relative; float:left;  padding:20px 15px 10px 15px;   background-color: #FFFFFF; top:0;  }
 
-
-
-
-
-/* col r
-*/
-.cLin{position:relative; float:left;  width: 280px;height: 50px;}
-
-.cR  {position:relative; float:left;  padding:20px 15px 10px 15px;   background-color: #FFFFFF; top:0; min-height: 1900px; }
-
-
-.mSelN {position:relative;float:left; margin:5px 10px; padding: 7px 2px 7px 6px; border:1px solid #999999; width:250px; background-color:#FF9900;
-		font-size:13px; font-family: arial; color: #FFFFFF;}
 
 h1 {font-size:28px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
 h2 {font-size:22px; font-family:Arial; font-weight: normal; color:#37527A; margin:0 0 0 -2px;}
@@ -287,7 +316,6 @@ h3 a {text-transform: none;    letter-spacing: 0px; text-decoration: none;   }
 
 h4        {font-size:12px; font-family:Arial; font-weight: normal; color:#666666; margin:6px 0;}
 h4 p 	  {font-size:12px; font-family:Arial; font-weight: normal; color:#666666;}
-h4 strong {font-size:12px; color:#37527A; font-weight:normal;}
 
 
 
@@ -298,6 +326,3 @@ h4 strong {font-size:12px; color:#37527A; font-weight:normal;}
 .breadcrumbs {font-size:14px; font-family:Arial; font-weight: normal; color:#FF9900; margin:7px 0 0 0; }
 .breadcrumbs a {font-size:14px; font-family:Arial; font-weight: normal; color:#FF9900; }
 
-.socLk {position:relative;float:left; width:100%;  margin: 15px 0 15px 0;}
-.fbLik {position:relative;float:left; }
-.glink {position:relative;float:left; margin-left:10px; }
