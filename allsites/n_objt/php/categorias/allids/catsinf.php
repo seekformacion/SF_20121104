@@ -43,6 +43,8 @@ $rDatos['cadCinf']=$newc;
 
 global $lccu; global $lccuT;
 $listCats=substr($listCats, 0,-1); $lcusos=""; $lccu['html']="";
+
+/*
 $curinf=DBselect("SELECT DISTINCT(id_cur) as idCUR FROM skv_relCurCats WHERE id_cat IN ($listCats) AND showC=1;");
 if(count($curinf)>0){foreach ($curinf as $k => $vals){$lcusos.=$vals['idCUR'] . ",";};};$lcusos=substr($lcusos, 0,-1);
 $lcusos=ordenaCURs($lcusos,0,2);
@@ -55,6 +57,8 @@ $lccu['html'] .=loadChild('objt','subCURcatsinf');
 
 	
 }}
+
+*/
 
 
 }else{
