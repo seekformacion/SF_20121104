@@ -26,6 +26,25 @@ $Datos['fbAPP']=$appid[$v['where']['idp']];
 $Datos['pagTittle']=$v['where']['pagTittle'];
 $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['home']="http://" . $v['where']['site'];
+$Datos['homet']=$v['vars']['purlT'][$v['where']['idp']];
+
+$Datos['port']="";
+
+$llK="onclick='lK(\"" . $v['vars']['purl'][1] . "\");'";
+if($v['where']['idp']==1){$selP="sel";$llK="";}else{$selP="";}
+$Datos['port'].="<div class='pTal $selP' $llK>Cursos</div>";
+
+$llK="onclick='lK(\"" . $v['vars']['purl'][2] . "\");'";
+if($v['where']['idp']==2){$selP="sel";$llK="";}else{$selP="";}
+$Datos['port'].="<div class='pTal $selP' $llK>Masters</div>";
+
+$llK="onclick='lK(\"" . $v['vars']['purl'][3] . "\");'";
+if($v['where']['idp']==3){$selP="sel";$llK="";}else{$selP="";}
+$Datos['port'].="<div class='pTal $selP' $llK>Grados</div>";
+
+$llK="onclick='lK(\"" . $v['vars']['purl'][4] . "\");'";
+if($v['where']['idp']==4){$selP="sel";$llK="";}else{$selP="";}
+$Datos['port'].="<div class='pTal $selP' $llK>Oposiciones</div>";
 
 
 $Datos['banner']=loadIMG("banner.jpg");

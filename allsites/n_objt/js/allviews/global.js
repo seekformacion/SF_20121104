@@ -34,6 +34,24 @@ function getCookie(w){
 
 
 
+function closAlert(){
+NOexpandM();	
+document.getElementById('header').innerHTML="";
+$("#header:not(:animated)").animate({height:15}, 300);	
+}
+
+function acceptC(){
+expandM();
+$("#header:not(:animated)").animate({height:75},300,function(){
+document.getElementById('header').innerHTML='<div class="alert"><div class="ialert iconos"></div> <div class="iconos closeA" onclick="closAlert();"></div> <div class="tAl">Esta página utiliza Cookies para mejorar su navegación. Si continua navegando entendemos que acepta la <a href="/cookies.html" style="color:#eeeeee; font-weight: normal;" >política de Cookies</a>.</div></div>';    
+});
+
+	
+}
+
+
+
+
 
 function checkCookie()
 {
@@ -43,7 +61,7 @@ var cookie=getCookie("seekforID");
   {
   	getDatForm(cookie);
   	}else{
-  	
+  	acceptC();	
   	getremotecookie();
   
   	}

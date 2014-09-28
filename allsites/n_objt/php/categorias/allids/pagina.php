@@ -20,6 +20,7 @@ $Datos['fbAPP']=$appid[$v['where']['idp']];
 
 $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['home']="http://" . $v['where']['site'];
+$Datos['homet']=$v['vars']['purlT'][$idp];
 
 if(!array_key_exists('search', $v)){
 $img=imgCATg($v['where']['id']); 

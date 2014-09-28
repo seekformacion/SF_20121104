@@ -6,9 +6,12 @@ checkCookie();
 }
 
 
+function NOexpandM(){}
+
+function expandM(){}
     
 $(function () {$(window).bind( "scroll", function(e) {
-if(!detectIE()){	
+if((!detectIE())&&(document.getElementById("cmenu"))){	
 	
 var top=f_scrollTop();
 var hM =$("#cmenu").height();

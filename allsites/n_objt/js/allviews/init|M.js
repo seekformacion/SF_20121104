@@ -90,6 +90,16 @@ if(document.getElementById('cmenu')){document.getElementById('cmenu').className=
 
 
 
+function NOexpandM(){
+var cnn=document.getElementById('page').className;
+var cnn=cnn.replace(' exP','');	
+document.getElementById('page').className=cnn;	
+}
+
+function expandM(){
+var cnn=document.getElementById('page').className + ' exP';	
+document.getElementById('page').className=cnn;	
+}
 
 
 

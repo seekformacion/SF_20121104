@@ -49,7 +49,7 @@ $Datos['fbAPP']=$appid[$v['where']['idp']];
 $Datos['pagTittle']=$v['where']['pagTittle'];
 $Datos['imgLogo']=loadIMG("logo.png");
 $Datos['home']="http://" . $v['where']['site'];
-
+$Datos['homet']=$v['vars']['purlT'][$v['where']['idp']];
 
 
 $idcentro=$datCur['id_centro'];$logo="";
